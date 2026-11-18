@@ -25,34 +25,37 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 749,
+    "collected": 1235,
     "trackFrom": "2026-11-12",
     "trackUntil": "2026-11-26",
-    "popularity": 3.2242
+    "popularity": 3.3643
   },
   "report": {
     "tracking": {
-      "start": "2026-11-16",
-      "end": "2026-11-17"
+      "start": "2026-11-14",
+      "end": "2026-11-18"
     },
     "sentiment": {
-      "positive": 28,
-      "neutral": 47,
-      "negative": 22
+      "positive": 8,
+      "neutral": 27,
+      "negative": 7
     },
-    "netSentiment": 1.27,
+    "netSentiment": 1.14,
     "awareness": {
       "level": "High",
-      "views": 6588430
+      "views": 1975669
     },
-    "reach": 600,
+    "reach": 965,
     "mentions": {
-      "total": 97,
+      "total": 42,
       "daily": [
+        1,
+        0,
         40,
-        57
+        0,
+        1
       ]
     },
     "regions": [
@@ -65,42 +68,51 @@
       "where": [
         [
           "Kerala",
-          92
+          73
         ],
         [
           "Unknown",
-          8
+          27
         ]
       ],
       "who": [
         [
           "General public",
-          97
+          82
         ],
         [
           "Fan page",
-          1
+          14
         ],
         [
           "Media press",
-          1
+          5
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          72
+          73
         ],
         [
           "Fan amplified promo",
-          23
-        ],
-        [
-          "News press coverage",
-          5
+          27
         ]
       ],
-      "topics": []
+      "topics": [
+        [
+          "General discussion",
+          90
+        ],
+        [
+          "Music / songs",
+          7
+        ],
+        [
+          "Acting / cast performance",
+          2
+        ]
+      ]
     }
   }
 }

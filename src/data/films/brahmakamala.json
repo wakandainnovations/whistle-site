@@ -10,7 +10,7 @@
   "year": 2026,
   "releaseDate": "2026-08-21",
   "featured": false,
-  "poster": null,
+  "poster": "/posters/brahmakamala.jpg",
   "backdrop": null,
   "trailer": null,
   "director": "Siddu Poornachandra",
@@ -30,38 +30,27 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-04-20",
-      "end": "2026-04-29"
+      "start": "2026-08-21",
+      "end": "2026-11-18"
     },
     "sentiment": {
       "positive": 0,
       "neutral": 0,
-      "negative": 3
+      "negative": 1
     },
     "netSentiment": 0,
     "awareness": {
       "level": "Medium",
       "views": 8449
     },
-    "reach": 493,
+    "reach": 492,
     "mentions": {
-      "total": 2,
-      "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
-      ]
+      "total": 0,
+      "daily": []
     },
     "regions": [],
     "audience": {

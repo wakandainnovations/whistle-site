@@ -30,145 +30,36 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-03-21",
+      "start": "2026-07-08",
       "end": "2026-07-16"
     },
     "sentiment": {
       "positive": 28,
       "neutral": 54,
-      "negative": 3
+      "negative": 0
     },
-    "netSentiment": 9.33,
+    "netSentiment": null,
     "awareness": {
-      "level": "Medium",
+      "level": "High",
       "views": 83535
     },
     "reach": 375,
     "mentions": {
-      "total": 85,
+      "total": 82,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        27,
-        35,
-        8,
-        2,
-        1,
-        0,
+        7,
+        42,
+        18,
         5,
-        4
+        0,
+        1,
+        3,
+        5,
+        1
       ]
     },
     "regions": [
@@ -181,65 +72,53 @@
       "where": [
         [
           "Tamil Nadu",
-          60
+          50
         ],
         [
           "Unknown",
-          40
+          50
         ]
       ],
       "who": [
         [
           "Media press",
-          43
-        ],
-        [
-          "General public",
-          29
-        ],
-        [
-          "Fan page",
-          14
+          75
         ],
         [
           "Verified celebrity influencer",
-          14
+          25
         ]
       ],
       "postType": [
         [
-          "Fan amplified promo",
-          43
-        ],
-        [
           "Official promo",
-          43
+          75
         ],
         [
-          "Organic opinion",
-          14
+          "Fan amplified promo",
+          25
         ]
       ],
       "topics": [
         [
           "Music / songs",
-          51
+          57
         ],
         [
           "Acting / cast performance",
-          4
+          5
         ],
         [
           "Direction",
-          2
+          1
         ],
         [
           "Screenplay",
-          2
+          1
         ],
         [
           "Story",
-          2
+          1
         ]
       ]
     }

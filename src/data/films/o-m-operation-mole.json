@@ -25,83 +25,109 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 788,
+    "collected": 1080,
     "trackFrom": "2026-11-13",
     "trackUntil": "2026-11-27",
-    "popularity": 7.4482
+    "popularity": 8.2553
   },
   "report": {
     "tracking": {
       "start": "2026-11-15",
-      "end": "2026-11-17"
+      "end": "2026-11-18"
     },
     "sentiment": {
-      "positive": 1,
+      "positive": 5,
       "neutral": 21,
       "negative": 0
     },
     "netSentiment": null,
     "awareness": {
       "level": "Medium",
-      "views": 969
+      "views": 1332
     },
-    "reach": 101,
+    "reach": 148,
     "mentions": {
-      "total": 22,
+      "total": 26,
       "daily": [
+        3,
+        19,
         0,
-        22,
-        0
+        4
       ]
     },
     "regions": [
       [
+        "Andhra Telangana",
+        33
+      ],
+      [
         "Kerala",
-        50
+        33
       ],
       [
         "Tamil Nadu",
-        50
+        33
       ]
     ],
     "audience": {
       "where": [
         [
           "Unknown",
-          71
+          75
+        ],
+        [
+          "Andhra Telangana",
+          8
         ],
         [
           "Kerala",
-          14
+          8
         ],
         [
           "Tamil Nadu",
-          14
+          8
         ]
       ],
       "who": [
         [
           "General public",
-          71
+          67
         ],
         [
           "Fan page",
-          29
+          17
+        ],
+        [
+          "Media press",
+          17
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          86
+          58
         ],
         [
           "Organic opinion",
-          14
+          25
+        ],
+        [
+          "News press coverage",
+          17
         ]
       ],
-      "topics": []
+      "topics": [
+        [
+          "General discussion",
+          92
+        ],
+        [
+          "Music / songs",
+          8
+        ]
+      ]
     }
   }
 }

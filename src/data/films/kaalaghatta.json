@@ -29,39 +29,35 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-06-06",
-      "end": "2026-06-18"
+      "start": "2026-06-14",
+      "end": "2026-06-22"
     },
     "sentiment": {
-      "positive": 3,
+      "positive": 2,
       "neutral": 1,
-      "negative": 3
+      "negative": 0
     },
-    "netSentiment": 1,
+    "netSentiment": null,
     "awareness": {
       "level": "Low",
       "views": 37
     },
     "reach": 258,
     "mentions": {
-      "total": 7,
+      "total": 3,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         2,
-        1,
-        1,
         0,
-        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         1
       ]
     },
@@ -75,53 +71,33 @@
       "where": [
         [
           "Karnataka",
-          86
-        ],
-        [
-          "Unknown",
-          14
+          100
         ]
       ],
       "who": [
         [
           "General public",
-          86
+          67
         ],
         [
           "Media press",
-          14
+          33
         ]
       ],
       "postType": [
         [
-          "Fan amplified promo",
-          43
-        ],
-        [
           "Organic opinion",
-          43
+          67
         ],
         [
           "News press coverage",
-          14
+          33
         ]
       ],
       "topics": [
         [
           "General discussion",
-          57
-        ],
-        [
-          "Acting / cast performance",
-          14
-        ],
-        [
-          "Music / songs",
-          14
-        ],
-        [
-          "Story",
-          14
+          100
         ]
       ]
     }

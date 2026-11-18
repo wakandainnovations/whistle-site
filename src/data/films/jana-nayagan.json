@@ -32,63 +32,51 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-07-23",
-      "end": "2026-08-02"
+      "start": "2026-07-26",
+      "end": "2026-08-01"
     },
     "sentiment": {
-      "positive": 134,
-      "neutral": 60,
-      "negative": 6
+      "positive": 125,
+      "neutral": 59,
+      "negative": 5
     },
-    "netSentiment": 22.33,
+    "netSentiment": 25,
     "awareness": {
       "level": "High",
-      "views": 263617650
+      "views": 190130164
     },
     "reach": 5748,
     "mentions": {
-      "total": 200,
+      "total": 189,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        142,
+        53,
+        88,
+        39,
         7,
-        42,
-        5,
         0,
-        2,
-        1
+        0,
+        2
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        88
+        89
       ],
       [
         "International",
-        6
+        7
       ],
       [
         "Kerala",
         3
       ],
       [
-        "Hindi Belt North India",
-        2
-      ],
-      [
         "Karnataka",
-        1
-      ],
-      [
-        "Andhra Telangana",
         1
       ]
     ],
@@ -100,7 +88,7 @@
         ],
         [
           "Unknown",
-          41
+          42
         ],
         [
           "International",
@@ -111,22 +99,14 @@
           2
         ],
         [
-          "Hindi Belt North India",
-          1
-        ],
-        [
           "Karnataka",
-          1
-        ],
-        [
-          "Andhra Telangana",
           1
         ]
       ],
       "who": [
         [
           "General public",
-          88
+          87
         ],
         [
           "Fan page",
@@ -144,11 +124,11 @@
       "postType": [
         [
           "Fan amplified promo",
-          83
+          86
         ],
         [
           "Organic opinion",
-          13
+          10
         ],
         [
           "Trade box office update",
@@ -162,27 +142,27 @@
       "topics": [
         [
           "General discussion",
-          74
+          84
         ],
         [
           "Acting / cast performance",
-          10
+          5
         ],
         [
           "Music / songs",
-          4
-        ],
-        [
-          "VFX",
-          4
+          3
         ],
         [
           "Direction",
           3
         ],
         [
-          "Story",
+          "VFX",
           3
+        ],
+        [
+          "Story",
+          2
         ]
       ]
     }

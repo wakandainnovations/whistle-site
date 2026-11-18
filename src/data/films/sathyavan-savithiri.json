@@ -24,34 +24,36 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 644,
+    "collected": 984,
     "trackFrom": "2026-11-13",
     "trackUntil": "2026-11-27",
-    "popularity": 1.5764
+    "popularity": 1.4656
   },
   "report": {
     "tracking": {
-      "start": "2026-11-16",
-      "end": "2026-11-17"
+      "start": "2026-11-15",
+      "end": "2026-11-18"
     },
     "sentiment": {
-      "positive": 2,
+      "positive": 4,
       "neutral": 70,
       "negative": 2
     },
-    "netSentiment": 1,
+    "netSentiment": 2,
     "awareness": {
       "level": "High",
-      "views": 15103
+      "views": 15130
     },
-    "reach": 208,
+    "reach": 268,
     "mentions": {
-      "total": 74,
+      "total": 76,
       "daily": [
-        73,
-        1
+        5,
+        69,
+        0,
+        2
       ]
     },
     "regions": [
@@ -64,29 +66,29 @@
       "where": [
         [
           "Tamil Nadu",
-          67
+          70
         ],
         [
           "Unknown",
-          33
+          30
         ]
       ],
       "who": [
         [
           "General public",
-          38
+          43
         ],
         [
           "Media press",
-          29
+          26
         ],
         [
           "Fan page",
-          19
+          17
         ],
         [
           "Official studio",
-          14
+          13
         ]
       ],
       "postType": [
@@ -96,18 +98,35 @@
         ],
         [
           "Fan amplified promo",
-          19
+          22
         ],
         [
           "Official promo",
-          14
+          13
         ],
         [
           "Organic opinion",
-          10
+          9
         ]
       ],
-      "topics": []
+      "topics": [
+        [
+          "General discussion",
+          87
+        ],
+        [
+          "Music / songs",
+          11
+        ],
+        [
+          "Acting / cast performance",
+          1
+        ],
+        [
+          "Lead pair",
+          1
+        ]
+      ]
     }
   }
 }

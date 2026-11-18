@@ -30,41 +30,29 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-20",
-      "end": "2026-08-02"
+      "start": "2026-06-01",
+      "end": "2026-08-01"
     },
     "sentiment": {
-      "positive": 34,
+      "positive": 33,
       "neutral": 9,
-      "negative": 67
+      "negative": 10
     },
-    "netSentiment": 0.51,
+    "netSentiment": 3.3,
     "awareness": {
       "level": "High",
-      "views": 193877
+      "views": 192860
     },
-    "reach": 314,
+    "reach": 315,
     "mentions": {
-      "total": 110,
+      "total": 52,
       "daily": [
         1,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
         0,
         0,
         0,
@@ -84,19 +72,16 @@
         2,
         14,
         0,
-        0,
         1,
-        2,
+        1,
         6,
-        4,
+        3,
+        3,
         1,
-        2,
+        1,
         0,
         0,
-        2,
-        7,
-        0,
-        0,
+        9,
         0,
         0,
         0,
@@ -125,42 +110,36 @@
         0,
         0,
         0,
-        67
+        0,
+        0,
+        10
       ]
     },
     "regions": [
       [
         "Karnataka",
-        97
-      ],
-      [
-        "Tamil Nadu",
-        3
+        100
       ]
     ],
     "audience": {
       "where": [
         [
           "Karnataka",
-          73
+          79
         ],
         [
           "Unknown",
-          25
-        ],
-        [
-          "Tamil Nadu",
-          2
+          21
         ]
       ],
       "who": [
         [
           "Media press",
-          59
+          62
         ],
         [
           "General public",
-          34
+          31
         ],
         [
           "Official studio",
@@ -170,37 +149,41 @@
       "postType": [
         [
           "News press coverage",
-          45
+          48
         ],
         [
           "Fan amplified promo",
-          25
+          29
         ],
         [
           "Official promo",
-          16
+          17
         ],
         [
           "Organic opinion",
-          14
+          7
         ]
       ],
       "topics": [
         [
           "General discussion",
-          60
-        ],
-        [
-          "Music / songs",
-          16
+          65
         ],
         [
           "Story",
-          16
+          15
+        ],
+        [
+          "Music / songs",
+          12
         ],
         [
           "Acting / cast performance",
-          7
+          6
+        ],
+        [
+          "Screenplay",
+          2
         ]
       ]
     }

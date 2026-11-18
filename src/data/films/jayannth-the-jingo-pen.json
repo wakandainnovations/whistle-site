@@ -24,12 +24,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 99,
+    "collected": 218,
     "trackFrom": "2026-11-07",
     "trackUntil": "2026-11-21",
-    "popularity": 0.5054
+    "popularity": 0.3516
   },
   "report": null
 }

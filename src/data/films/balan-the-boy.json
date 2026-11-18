@@ -31,68 +31,98 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-06-06",
-      "end": "2026-06-25"
+      "start": "2026-06-12",
+      "end": "2026-07-31"
     },
     "sentiment": {
-      "positive": 836,
-      "neutral": 300,
-      "negative": 88
+      "positive": 835,
+      "neutral": 302,
+      "negative": 10
     },
-    "netSentiment": 9.5,
+    "netSentiment": 83.5,
     "awareness": {
       "level": "High",
       "views": 775461
     },
-    "reach": 2598,
+    "reach": 2605,
     "mentions": {
-      "total": 1224,
+      "total": 1147,
       "daily": [
-        1,
-        5,
-        4,
-        5,
-        2,
-        4,
-        2,
-        268,
-        256,
-        186,
-        136,
-        105,
-        10,
-        17,
-        1,
-        0,
+        81,
+        316,
+        137,
+        172,
+        212,
         0,
         1,
-        125,
-        96
+        5,
+        0,
+        0,
+        0,
+        72,
+        149,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        50
+        58
       ],
       [
         "Kerala",
-        35
+        25
       ],
       [
         "Andhra Telangana",
-        12
-      ],
-      [
-        "Hindi Belt North India",
-        2
+        13
       ],
       [
         "International",
+        2
+      ],
+      [
+        "Hindi Belt North India",
         2
       ]
     ],
@@ -100,7 +130,7 @@
       "where": [
         [
           "Unknown",
-          79
+          83
         ],
         [
           "Tamil Nadu",
@@ -108,7 +138,7 @@
         ],
         [
           "Kerala",
-          7
+          4
         ],
         [
           "Andhra Telangana",
@@ -118,11 +148,11 @@
       "who": [
         [
           "General public",
-          63
+          61
         ],
         [
           "Official studio",
-          19
+          20
         ],
         [
           "Media press",
@@ -140,19 +170,19 @@
       "postType": [
         [
           "Fan amplified promo",
-          56
+          59
         ],
         [
           "Official promo",
-          28
+          29
         ],
         [
           "Organic opinion",
-          11
+          6
         ],
         [
           "News press coverage",
-          5
+          6
         ]
       ],
       "topics": [

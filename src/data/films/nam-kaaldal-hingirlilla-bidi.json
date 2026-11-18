@@ -30,12 +30,12 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
       "start": "2026-06-28",
-      "end": "2026-06-30"
+      "end": "2026-06-29"
     },
     "sentiment": {
       "positive": 1,
@@ -52,8 +52,7 @@
       "total": 4,
       "daily": [
         2,
-        1,
-        1
+        2
       ]
     },
     "regions": [],

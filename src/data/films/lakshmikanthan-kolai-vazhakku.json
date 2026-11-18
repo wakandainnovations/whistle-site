@@ -31,117 +31,116 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
       "start": "2026-06-02",
-      "end": "2026-07-10"
+      "end": "2026-07-09"
     },
     "sentiment": {
       "positive": 883,
       "neutral": 579,
-      "negative": 8
+      "negative": 7
     },
-    "netSentiment": 110.38,
+    "netSentiment": 126.14,
     "awareness": {
       "level": "High",
-      "views": 717698
+      "views": 717662
     },
-    "reach": 576,
+    "reach": 577,
     "mentions": {
-      "total": 1470,
+      "total": 1469,
       "daily": [
-        17,
-        21,
-        4,
-        6,
-        23,
-        4,
-        39,
-        126,
-        86,
-        25,
-        19,
-        10,
-        3,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        202,
-        26,
-        21,
-        181,
-        27,
-        13,
-        4,
-        86,
         30,
-        111,
+        9,
+        4,
+        12,
+        16,
+        11,
+        81,
+        78,
+        104,
+        17,
         8,
+        9,
+        3,
         2,
-        47,
-        126,
-        37,
-        66,
-        98
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        153,
+        68,
+        9,
+        156,
+        62,
+        9,
+        15,
+        11,
+        97,
+        98,
+        27,
+        5,
+        1,
+        103,
+        106,
+        12,
+        153
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        89
+        98
       ],
       [
         "Kannada Speaking South India",
-        5
+        1
       ],
       [
         "Karnataka",
-        5
+        1
       ]
     ],
     "audience": {
       "where": [
         [
-          "Tamil Nadu",
-          68
+          "Unknown",
+          51
         ],
         [
-          "Unknown",
-          24
+          "Tamil Nadu",
+          47
         ],
         [
           "Kannada Speaking South India",
-          4
+          1
         ],
         [
           "Karnataka",
-          4
+          1
         ]
       ],
       "who": [
         [
+          "General public",
+          41
+        ],
+        [
           "Media press",
-          54
+          36
         ],
         [
           "Official studio",
-          18
+          12
         ],
         [
           "Verified celebrity influencer",
-          16
-        ],
-        [
-          "General public",
-          8
+          7
         ],
         [
           "Fan page",
@@ -150,38 +149,38 @@
       ],
       "postType": [
         [
-          "Official promo",
-          76
+          "Fan amplified promo",
+          43
         ],
         [
-          "Fan amplified promo",
+          "Official promo",
+          41
+        ],
+        [
+          "News press coverage",
           12
         ],
         [
           "Organic opinion",
-          8
-        ],
-        [
-          "News press coverage",
-          2
+          3
         ],
         [
           "Trade box office update",
-          2
+          1
         ]
       ],
       "topics": [
         [
           "General discussion",
-          56
+          57
         ],
         [
           "Music / songs",
-          28
+          29
         ],
         [
           "Story",
-          8
+          7
         ],
         [
           "Acting / cast performance",

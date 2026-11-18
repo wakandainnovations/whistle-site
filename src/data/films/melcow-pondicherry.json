@@ -24,12 +24,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 359,
+    "collected": 374,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 0.903
+    "popularity": 0.8428
   },
   "report": {
     "tracking": {
@@ -60,7 +60,12 @@
       "where": [],
       "who": [],
       "postType": [],
-      "topics": []
+      "topics": [
+        [
+          "Acting / cast performance",
+          100
+        ]
+      ]
     }
   }
 }

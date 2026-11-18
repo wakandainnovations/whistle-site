@@ -31,41 +31,28 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-06-11",
-      "end": "2026-08-02"
+      "start": "2026-06-24",
+      "end": "2026-07-29"
     },
     "sentiment": {
-      "positive": 27,
+      "positive": 18,
       "neutral": 26,
-      "negative": 3
+      "negative": 2
     },
     "netSentiment": 9,
     "awareness": {
-      "level": "High",
-      "views": 1925631
+      "level": "Medium",
+      "views": 31441
     },
     "reach": 767,
     "mentions": {
-      "total": 56,
+      "total": 46,
       "daily": [
         1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
         0,
         0,
         0,
@@ -88,23 +75,19 @@
         1,
         0,
         0,
-        3,
+        4,
         6,
-        2,
-        16,
+        5,
+        11,
         3,
         2,
         1,
         0,
-        3,
-        7,
-        0,
-        0,
-        2,
+        10,
         0,
         0,
         1,
-        6
+        1
       ]
     },
     "regions": [
@@ -117,61 +100,61 @@
       "where": [
         [
           "Karnataka",
-          89
+          93
         ],
         [
           "Unknown",
-          11
+          7
         ]
       ],
       "who": [
         [
           "Media press",
-          54
+          65
         ],
         [
           "General public",
-          32
+          17
         ],
         [
           "Fan page",
-          7
+          9
         ],
         [
           "Official studio",
-          7
+          9
         ]
       ],
       "postType": [
         [
           "News press coverage",
-          46
-        ],
-        [
-          "Fan amplified promo",
-          23
+          57
         ],
         [
           "Official promo",
-          18
+          22
+        ],
+        [
+          "Fan amplified promo",
+          15
         ],
         [
           "Organic opinion",
-          13
+          7
         ]
       ],
       "topics": [
         [
           "Music / songs",
-          46
+          54
         ],
         [
           "Acting / cast performance",
-          13
+          11
         ],
         [
           "Direction",
-          3
+          2
         ]
       ]
     }

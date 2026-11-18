@@ -25,12 +25,68 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 209,
+    "collected": 212,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 0.8236
+    "popularity": 0.5568
   },
-  "report": null
+  "report": {
+    "tracking": {
+      "start": "2026-11-17",
+      "end": "2026-11-19"
+    },
+    "sentiment": {
+      "positive": 1,
+      "neutral": 0,
+      "negative": 0
+    },
+    "netSentiment": null,
+    "awareness": {
+      "level": "Medium",
+      "views": 27
+    },
+    "reach": 9,
+    "mentions": {
+      "total": 1,
+      "daily": [
+        0,
+        1,
+        0
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          100
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          100
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          100
+        ]
+      ],
+      "topics": [
+        [
+          "Acting / cast performance",
+          100
+        ]
+      ]
+    }
+  }
 }

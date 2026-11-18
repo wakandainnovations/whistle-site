@@ -29,78 +29,45 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-04-10",
-      "end": "2026-05-05"
+      "start": "2026-04-25",
+      "end": "2026-05-04"
     },
     "sentiment": {
-      "positive": 0,
+      "positive": 1,
       "neutral": 0,
-      "negative": 594
+      "negative": 108
     },
-    "netSentiment": 0,
+    "netSentiment": 0.01,
     "awareness": {
       "level": "Medium",
-      "views": 43861
+      "views": 30412
     },
-    "reach": 2398,
+    "reach": 2412,
     "mentions": {
-      "total": 594,
+      "total": 109,
       "daily": [
         1,
+        31,
+        27,
+        14,
+        14,
         0,
         0,
-        1,
-        1,
         0,
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0,
-        2,
-        1,
-        0,
-        55,
-        156,
-        86,
-        101,
-        111,
-        0,
-        1,
-        28,
-        33,
-        15
+        12,
+        10
       ]
     },
-    "regions": [
-      [
-        "Hindi Belt North India",
-        67
-      ],
-      [
-        "Andhra Telangana",
-        33
-      ]
-    ],
+    "regions": [],
     "audience": {
       "where": [
         [
-          "Hindi Belt North India",
-          43
-        ],
-        [
           "Unknown",
-          35
-        ],
-        [
-          "Andhra Telangana",
-          22
+          100
         ]
       ],
       "who": [
@@ -112,32 +79,32 @@
       "postType": [
         [
           "Organic opinion",
-          87
-        ],
-        [
-          "Fan amplified promo",
-          13
+          100
         ]
       ],
       "topics": [
         [
           "General discussion",
-          96
+          83
         ],
         [
           "Acting / cast performance",
-          2
+          8
         ],
         [
           "Direction",
-          1
+          4
         ],
         [
           "Story",
+          2
+        ],
+        [
+          "Runtime",
           1
         ],
         [
-          "VFX",
+          "Screenplay",
           1
         ]
       ]

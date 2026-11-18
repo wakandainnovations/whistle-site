@@ -29,11 +29,11 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-06-28",
+      "start": "2026-06-27",
       "end": "2026-07-05"
     },
     "sentiment": {
@@ -50,33 +50,56 @@
     "mentions": {
       "total": 16,
       "daily": [
-        2,
+        1,
+        1,
+        1,
         1,
         1,
         0,
-        1,
+        5,
         4,
-        3,
-        4
+        2
       ]
     },
-    "regions": [],
+    "regions": [
+      [
+        "Tamil Nadu",
+        100
+      ]
+    ],
     "audience": {
-      "where": [],
+      "where": [
+        [
+          "Tamil Nadu",
+          100
+        ]
+      ],
       "who": [
         [
+          "Fan page",
+          38
+        ],
+        [
           "Media press",
-          75
+          38
+        ],
+        [
+          "General public",
+          13
         ],
         [
           "Official studio",
-          25
+          13
         ]
       ],
       "postType": [
         [
+          "Fan amplified promo",
+          50
+        ],
+        [
           "Official promo",
-          100
+          50
         ]
       ],
       "topics": [

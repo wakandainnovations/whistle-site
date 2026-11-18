@@ -30,34 +30,36 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 1395,
+    "collected": 1789,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 4.1746
+    "popularity": 4.0049
   },
   "report": {
     "tracking": {
-      "start": "2026-11-16",
-      "end": "2026-11-17"
+      "start": "2026-11-15",
+      "end": "2026-11-18"
     },
     "sentiment": {
-      "positive": 66,
+      "positive": 70,
       "neutral": 179,
       "negative": 27
     },
-    "netSentiment": 2.44,
+    "netSentiment": 2.59,
     "awareness": {
       "level": "High",
-      "views": 5622
+      "views": 5906
     },
-    "reach": 630,
+    "reach": 746,
     "mentions": {
-      "total": 272,
+      "total": 276,
       "daily": [
-        261,
-        11
+        16,
+        256,
+        0,
+        4
       ]
     },
     "regions": [
@@ -70,29 +72,29 @@
       "where": [
         [
           "Andhra Telangana",
-          71
+          59
         ],
         [
           "Unknown",
-          29
+          41
         ]
       ],
       "who": [
         [
           "General public",
-          80
+          83
         ],
         [
           "Media press",
-          13
-        ],
-        [
-          "Verified celebrity influencer",
-          3
+          12
         ],
         [
           "Fan page",
-          3
+          2
+        ],
+        [
+          "Verified celebrity influencer",
+          2
         ],
         [
           "Official studio",
@@ -102,23 +104,19 @@
       "postType": [
         [
           "Organic opinion",
-          57
+          44
         ],
         [
           "Fan amplified promo",
-          21
+          37
         ],
         [
           "News press coverage",
-          20
+          16
         ],
         [
           "Official promo",
-          2
-        ],
-        [
-          "Trade box office update",
-          1
+          3
         ]
       ],
       "topics": [
@@ -133,10 +131,6 @@
         [
           "Story",
           2
-        ],
-        [
-          "Acting / cast performance",
-          1
         ]
       ]
     }

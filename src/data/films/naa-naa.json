@@ -31,38 +31,29 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-04-07",
-      "end": "2026-08-02"
+      "start": "2026-05-12",
+      "end": "2026-08-01"
     },
     "sentiment": {
-      "positive": 0,
+      "positive": 1,
       "neutral": 0,
-      "negative": 311
+      "negative": 108
     },
-    "netSentiment": 0,
+    "netSentiment": 0.01,
     "awareness": {
       "level": "Medium",
-      "views": 69650
+      "views": 64215
     },
-    "reach": 1517,
+    "reach": 1524,
     "mentions": {
-      "total": 311,
+      "total": 109,
       "daily": [
         1,
         0,
-        0,
-        0,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
         1,
         0,
         0,
@@ -70,32 +61,6 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        2,
-        0,
-        1,
-        1,
-        0,
-        0,
-        0,
-        1,
-        2,
-        4,
-        2,
-        4,
-        0,
-        131,
-        37,
-        4,
-        1,
-        0,
-        1,
-        2,
         0,
         0,
         0,
@@ -136,7 +101,6 @@
         0,
         0,
         0,
-        0,
         1,
         0,
         0,
@@ -144,14 +108,8 @@
         0,
         0,
         1,
-        1,
         0,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         1,
         0,
@@ -160,21 +118,32 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         5,
-        5,
+        2,
+        7,
         3,
-        5,
-        6,
-        5,
-        42,
-        35
+        3,
+        8,
+        20,
+        53
       ]
     },
     "regions": [],
     "audience": {
-      "where": [],
+      "where": [
+        [
+          "Unknown",
+          100
+        ]
+      ],
       "who": [
         [
           "General public",
@@ -190,22 +159,14 @@
       "topics": [
         [
           "General discussion",
-          97
-        ],
-        [
-          "Music / songs",
-          2
+          98
         ],
         [
           "Acting / cast performance",
           1
         ],
         [
-          "Lead pair",
-          1
-        ],
-        [
-          "Story",
+          "Music / songs",
           1
         ]
       ]

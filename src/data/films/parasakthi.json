@@ -37,191 +37,146 @@
   ],
   "watchCheckedOn": "2026-11-16",
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2025-12-24",
-      "end": "2026-04-01"
+      "start": "2026-01-17",
+      "end": "2026-03-15"
     },
     "sentiment": {
       "positive": 6,
       "neutral": 4,
-      "negative": 464
+      "negative": 332
     },
-    "netSentiment": 0.01,
+    "netSentiment": 0.02,
     "awareness": {
       "level": "Low",
       "views": 0
     },
     "reach": 1729,
     "mentions": {
-      "total": 474,
+      "total": 342,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
         2,
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1,
-        7,
-        1,
-        2,
-        0,
-        3,
-        1,
-        1,
-        4,
-        18,
-        2,
-        1,
-        2,
-        7,
-        1,
-        3,
-        8,
-        11,
-        2,
-        11,
-        3,
-        3,
-        9,
-        0,
-        0,
-        11,
-        3,
-        5,
-        5,
-        8,
-        2,
-        4,
-        5,
-        20,
-        8,
-        24,
-        31,
-        8,
-        19,
-        18,
-        18,
         6,
+        2,
         0,
+        0,
+        1,
+        0,
+        0,
+        9,
+        10,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0,
+        14,
+        0,
+        9,
+        1,
+        0,
+        4,
+        2,
+        0,
+        5,
+        4,
+        2,
+        1,
+        2,
+        4,
+        3,
+        2,
+        13,
+        12,
+        14,
+        17,
+        17,
+        7,
+        18,
+        25,
+        1,
+        1,
+        0,
+        0,
+        18,
+        7,
+        32,
+        0,
+        15,
+        31,
         0,
         10,
-        15,
-        26,
-        25,
         0,
-        44,
-        6,
-        7,
-        9,
-        3,
+        4,
         1,
         2,
-        12,
-        6,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1,
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
+        4,
+        4
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        80
+        73
       ],
       [
         "International",
-        8
-      ],
-      [
-        "Hindi Belt North India",
-        8
+        13
       ],
       [
         "Andhra Telangana",
-        5
+        7
+      ],
+      [
+        "Hindi Belt North India",
+        7
       ]
     ],
     "audience": {
       "where": [
         [
           "Tamil Nadu",
-          60
-        ],
-        [
-          "Unknown",
-          25
+          65
         ],
         [
           "International",
+          12
+        ],
+        [
+          "Unknown",
+          12
+        ],
+        [
+          "Andhra Telangana",
           6
         ],
         [
           "Hindi Belt North India",
           6
-        ],
-        [
-          "Andhra Telangana",
-          4
         ]
       ],
       "who": [
         [
           "General public",
-          96
-        ],
-        [
-          "Fan page",
-          2
+          95
         ],
         [
           "Verified celebrity influencer",
-          2
+          5
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          91
+          89
         ],
         [
           "Fan amplified promo",
-          9
+          11
         ]
       ],
       "topics": [
@@ -235,18 +190,18 @@
         ],
         [
           "Story",
-          2
-        ],
-        [
-          "Music / songs",
-          1
+          3
         ],
         [
           "Screenplay",
           1
         ],
         [
-          "Direction",
+          "Music / songs",
+          1
+        ],
+        [
+          "Lead pair",
           1
         ]
       ]

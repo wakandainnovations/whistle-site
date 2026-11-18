@@ -30,15 +30,15 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-06-30",
-      "end": "2026-07-18"
+      "start": "2026-07-14",
+      "end": "2026-07-17"
     },
     "sentiment": {
-      "positive": 3,
+      "positive": 2,
       "neutral": 4,
       "negative": 0
     },
@@ -49,27 +49,12 @@
     },
     "reach": 71,
     "mentions": {
-      "total": 7,
+      "total": 6,
       "daily": [
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         1,
         1,
-        1,
-        2,
-        1
+        3
       ]
     },
     "regions": [
@@ -82,41 +67,45 @@
       "where": [
         [
           "Unknown",
-          71
+          67
         ],
         [
           "Karnataka",
-          29
+          33
         ]
       ],
       "who": [
         [
           "General public",
-          57
+          50
         ],
         [
           "Official studio",
-          43
+          50
         ]
       ],
       "postType": [
         [
           "Official promo",
-          43
+          50
         ],
         [
           "Fan amplified promo",
-          29
+          33
         ],
         [
           "Organic opinion",
-          29
+          17
         ]
       ],
       "topics": [
         [
-          "Music / songs",
-          100
+          "General discussion",
+          83
+        ],
+        [
+          "Story",
+          17
         ]
       ]
     }

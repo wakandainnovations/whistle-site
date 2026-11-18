@@ -25,35 +25,36 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 800,
+    "collected": 1085,
     "trackFrom": "2026-11-13",
     "trackUntil": "2026-11-27",
-    "popularity": 1.6021
+    "popularity": 1.6695
   },
   "report": {
     "tracking": {
       "start": "2026-11-15",
-      "end": "2026-11-17"
+      "end": "2026-11-18"
     },
     "sentiment": {
-      "positive": 41,
+      "positive": 45,
       "neutral": 49,
       "negative": 5
     },
-    "netSentiment": 8.2,
+    "netSentiment": 9,
     "awareness": {
       "level": "High",
-      "views": 30367
+      "views": 32598
     },
-    "reach": 222,
+    "reach": 287,
     "mentions": {
-      "total": 95,
+      "total": 99,
       "daily": [
+        2,
+        93,
         0,
-        95,
-        0
+        4
       ]
     },
     "regions": [
@@ -66,46 +67,59 @@
       "where": [
         [
           "Unknown",
-          53
+          67
         ],
         [
           "Tamil Nadu",
-          47
+          33
         ]
       ],
       "who": [
         [
           "General public",
-          59
+          54
         ],
         [
           "Media press",
-          31
+          33
+        ],
+        [
+          "Official studio",
+          8
         ],
         [
           "Verified celebrity influencer",
-          6
+          4
         ],
         [
           "Fan page",
-          3
+          2
         ]
       ],
       "postType": [
         [
           "News press coverage",
-          59
+          44
         ],
         [
           "Fan amplified promo",
           38
         ],
         [
+          "Official promo",
+          13
+        ],
+        [
           "Organic opinion",
-          3
+          4
         ]
       ],
-      "topics": []
+      "topics": [
+        [
+          "General discussion",
+          100
+        ]
+      ]
     }
   }
 }

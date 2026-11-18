@@ -30,84 +30,29 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-04-21",
-      "end": "2026-06-19"
+      "start": "2026-06-11",
+      "end": "2026-06-15"
     },
     "sentiment": {
-      "positive": 5,
+      "positive": 4,
       "neutral": 1,
-      "negative": 8
+      "negative": 0
     },
-    "netSentiment": 0.63,
+    "netSentiment": null,
     "awareness": {
       "level": "Medium",
       "views": 72
     },
-    "reach": 487,
+    "reach": 488,
     "mentions": {
-      "total": 13,
+      "total": 5,
       "daily": [
-        1,
+        4,
         0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
-        2,
-        0,
-        0,
-        1,
-        1,
         0,
         0,
         1
@@ -116,56 +61,32 @@
     "regions": [
       [
         "Karnataka",
-        89
-      ],
-      [
-        "Tamil Nadu",
-        11
+        100
       ]
     ],
     "audience": {
       "where": [
         [
           "Karnataka",
-          73
-        ],
-        [
-          "Unknown",
-          18
-        ],
-        [
-          "Tamil Nadu",
-          9
+          100
         ]
       ],
       "who": [
         [
-          "General public",
-          64
-        ],
-        [
           "Media press",
-          36
+          100
         ]
       ],
       "postType": [
         [
-          "Organic opinion",
-          64
-        ],
-        [
           "News press coverage",
-          36
+          100
         ]
       ],
       "topics": [
         [
           "General discussion",
-          93
-        ],
-        [
-          "Acting / cast performance",
-          7
+          100
         ]
       ]
     }

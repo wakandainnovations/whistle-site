@@ -28,139 +28,79 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-04-07",
+      "start": "2026-06-06",
       "end": "2026-07-27"
     },
     "sentiment": {
-      "positive": 718,
+      "positive": 713,
       "neutral": 214,
-      "negative": 33
+      "negative": 13
     },
-    "netSentiment": 21.76,
+    "netSentiment": 54.85,
     "awareness": {
       "level": "High",
       "views": 818209
     },
     "reach": 1734,
     "mentions": {
-      "total": 965,
+      "total": 940,
       "daily": [
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        13,
-        67,
-        123,
-        201,
-        31,
-        32,
-        29,
-        177,
+        44,
+        55,
+        230,
         83,
-        45,
-        79,
-        6,
+        11,
+        42,
+        97,
+        138,
+        67,
+        40,
+        60,
         0,
         1,
-        3,
+        1,
+        0,
         0,
         1,
+        16,
+        35,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         1,
-        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
         12,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        5,
-        12
+        4
       ]
     },
     "regions": [
@@ -170,78 +110,70 @@
       ],
       [
         "International",
-        3
+        4
       ],
       [
         "Hindi Belt North India",
-        3
-      ],
-      [
-        "Kerala",
-        3
+        4
       ]
     ],
     "audience": {
       "where": [
         [
           "Tamil Nadu",
-          73
+          67
         ],
         [
           "Unknown",
-          21
+          27
         ],
         [
           "International",
-          2
+          3
         ],
         [
           "Hindi Belt North India",
-          2
-        ],
-        [
-          "Kerala",
-          2
+          3
         ]
       ],
       "who": [
         [
           "Media press",
-          45
-        ],
-        [
-          "General public",
-          27
+          54
         ],
         [
           "Verified celebrity influencer",
-          18
+          21
+        ],
+        [
+          "General public",
+          12
         ],
         [
           "Fan page",
-          6
+          7
         ],
         [
           "Official studio",
-          5
+          6
         ]
       ],
       "postType": [
         [
           "Official promo",
-          33
-        ],
-        [
-          "Organic opinion",
-          32
+          39
         ],
         [
           "Fan amplified promo",
-          19
+          23
         ],
         [
           "News press coverage",
-          15
+          20
+        ],
+        [
+          "Organic opinion",
+          18
         ],
         [
           "Trade box office update",
@@ -251,7 +183,7 @@
       "topics": [
         [
           "General discussion",
-          52
+          53
         ],
         [
           "Story",
@@ -259,7 +191,7 @@
         ],
         [
           "Acting / cast performance",
-          17
+          16
         ],
         [
           "Direction",

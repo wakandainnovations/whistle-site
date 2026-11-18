@@ -33,205 +33,210 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-04-21",
+      "start": "2026-04-08",
       "end": "2026-08-01"
     },
     "sentiment": {
-      "positive": 0,
-      "neutral": 0,
-      "negative": 752
+      "positive": 2,
+      "neutral": 1,
+      "negative": 62
     },
-    "netSentiment": 0,
+    "netSentiment": 0.03,
     "awareness": {
       "level": "Medium",
-      "views": 18326
+      "views": 1803
     },
-    "reach": 3072,
+    "reach": 3075,
     "mentions": {
-      "total": 752,
+      "total": 65,
       "daily": [
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
         3,
+        19,
+        16,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         2,
-        1,
-        0,
-        28,
-        243,
-        216,
-        186,
-        62,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        1,
-        1,
-        0,
-        1,
-        1,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3
+        1
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        92
-      ],
-      [
-        "Andhra Telangana",
-        8
+        100
       ]
     ],
     "audience": {
       "where": [
         [
           "Tamil Nadu",
-          69
+          50
         ],
         [
           "Unknown",
-          25
-        ],
-        [
-          "Andhra Telangana",
-          6
+          50
         ]
       ],
       "who": [
         [
           "General public",
-          76
-        ],
-        [
-          "Media press",
-          14
+          50
         ],
         [
           "Bot spam",
-          5
+          25
         ],
         [
-          "Fan page",
-          5
+          "Media press",
+          25
         ]
       ],
       "postType": [
         [
-          "Organic opinion",
-          62
-        ],
-        [
-          "Fan amplified promo",
-          19
-        ],
-        [
           "News press coverage",
-          19
+          50
+        ],
+        [
+          "Organic opinion",
+          50
         ]
       ],
       "topics": [
         [
           "General discussion",
-          95
+          80
         ],
         [
           "Story",
-          2
-        ],
-        [
-          "Acting / cast performance",
-          1
+          9
         ],
         [
           "Music / songs",
-          1
+          5
+        ],
+        [
+          "Acting / cast performance",
+          2
+        ],
+        [
+          "Direction",
+          2
+        ],
+        [
+          "Screenplay",
+          2
         ]
       ]
     }

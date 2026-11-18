@@ -29,261 +29,97 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-01-01",
-      "end": "2026-06-14"
+      "start": "2026-06-05",
+      "end": "2026-06-13"
     },
     "sentiment": {
-      "positive": 324,
+      "positive": 323,
       "neutral": 25,
-      "negative": 10
+      "negative": 5
     },
-    "netSentiment": 32.4,
+    "netSentiment": 64.6,
     "awareness": {
       "level": "High",
       "views": 65096
     },
     "reach": 476,
     "mentions": {
-      "total": 359,
+      "total": 352,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        27,
+        17,
+        14,
         46,
-        20,
-        77,
-        24,
-        57,
-        54,
-        24,
-        25
+        64,
+        46,
+        50,
+        19,
+        60,
+        36
       ]
     },
     "regions": [
       [
         "Hindi Belt North India",
-        54
+        78
       ],
       [
         "Tamil Nadu",
-        31
-      ],
-      [
-        "Kerala",
-        15
+        22
       ]
     ],
     "audience": {
       "where": [
         [
           "Hindi Belt North India",
-          41
+          64
         ],
         [
           "Tamil Nadu",
-          24
+          18
         ],
         [
           "Unknown",
-          24
-        ],
-        [
-          "Kerala",
-          12
+          18
         ]
       ],
       "who": [
         [
           "Media press",
-          51
+          56
         ],
         [
           "Official studio",
-          18
+          21
         ],
         [
           "Verified celebrity influencer",
-          16
+          19
         ],
         [
           "General public",
-          14
+          5
         ]
       ],
       "postType": [
         [
           "Official promo",
-          82
-        ],
-        [
-          "Organic opinion",
-          8
+          93
         ],
         [
           "Fan amplified promo",
-          6
+          2
         ],
         [
           "News press coverage",
-          4
+          2
+        ],
+        [
+          "Organic opinion",
+          2
         ]
       ],
       "topics": [
@@ -301,7 +137,7 @@
         ],
         [
           "Story",
-          3
+          2
         ],
         [
           "Direction",

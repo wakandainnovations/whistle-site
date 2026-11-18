@@ -31,95 +31,30 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-03-29",
-      "end": "2026-07-17"
+      "start": "2026-05-27",
+      "end": "2026-07-16"
     },
     "sentiment": {
-      "positive": 864,
+      "positive": 865,
       "neutral": 172,
-      "negative": 5
+      "negative": 1
     },
-    "netSentiment": 172.8,
+    "netSentiment": 865,
     "awareness": {
       "level": "High",
       "views": 382473
     },
     "reach": 1558,
     "mentions": {
-      "total": 1041,
+      "total": 1038,
       "daily": [
         1,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        2,
-        0,
-        0,
-        0,
-        0,
         1,
         0,
         0,
@@ -160,9 +95,14 @@
         0,
         0,
         0,
-        387,
-        648,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        77,
+        769,
+        190
       ]
     },
     "regions": [
@@ -225,7 +165,7 @@
       "topics": [
         [
           "General discussion",
-          77
+          79
         ],
         [
           "Story",
@@ -237,7 +177,7 @@
         ],
         [
           "First half",
-          5
+          4
         ],
         [
           "Runtime",

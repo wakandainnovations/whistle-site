@@ -10,7 +10,7 @@
   "year": 2026,
   "releaseDate": "2026-08-14",
   "featured": false,
-  "poster": null,
+  "poster": "/posters/chargesheet-03-08.jpg",
   "backdrop": null,
   "trailer": null,
   "director": "Venkat Bharadwaj",
@@ -30,7 +30,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": null
 }

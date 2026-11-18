@@ -31,62 +31,30 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-01-29",
-      "end": "2026-09-07"
+      "start": "2026-07-08",
+      "end": "2026-09-06"
     },
     "sentiment": {
-      "positive": 8,
-      "neutral": 2,
-      "negative": 17
+      "positive": 4,
+      "neutral": 1,
+      "negative": 5
     },
-    "netSentiment": 0.47,
+    "netSentiment": 0.8,
     "awareness": {
       "level": "High",
-      "views": 10591330
+      "views": 118243542
     },
     "reach": 2348,
     "mentions": {
-      "total": 27,
+      "total": 10,
       "daily": [
         1,
-        1,
-        1,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
         0,
         0,
         0,
@@ -107,140 +75,12 @@
         0,
         0,
         0,
+        3,
         0,
         0,
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        4,
-        2,
-        1,
-        1,
         0,
         0,
         0,
@@ -269,90 +109,53 @@
         0,
         0,
         0,
-        1,
-        1,
-        1,
         0,
-        4
+        0,
+        1,
+        3
       ]
     },
     "regions": [
       [
         "Hindi Belt North India",
-        57
-      ],
-      [
-        "Tamil Nadu",
-        29
-      ],
-      [
-        "International",
-        14
+        100
       ]
     ],
     "audience": {
       "where": [
         [
           "Unknown",
-          65
+          67
         ],
         [
           "Hindi Belt North India",
-          20
-        ],
-        [
-          "Tamil Nadu",
-          10
-        ],
-        [
-          "International",
-          5
+          33
         ]
       ],
       "who": [
         [
           "General public",
-          95
+          89
         ],
         [
           "Media press",
-          5
+          11
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          50
-        ],
-        [
-          "Fan amplified promo",
-          30
+          78
         ],
         [
           "News press coverage",
-          20
+          22
         ]
       ],
       "topics": [
         [
           "General discussion",
-          73
-        ],
-        [
-          "Acting / cast performance",
-          7
-        ],
-        [
-          "Music / songs",
-          7
-        ],
-        [
-          "Screenplay",
-          7
-        ],
-        [
-          "Story",
-          7
+          100
         ]
       ]
     }

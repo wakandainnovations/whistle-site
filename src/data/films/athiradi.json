@@ -30,120 +30,105 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-03",
-      "end": "2026-05-21"
+      "start": "2026-05-13",
+      "end": "2026-05-20"
     },
     "sentiment": {
-      "positive": 16,
-      "neutral": 0,
-      "negative": 467
+      "positive": 17,
+      "neutral": 2,
+      "negative": 191
     },
-    "netSentiment": 0.03,
+    "netSentiment": 0.09,
     "awareness": {
       "level": "High",
-      "views": 109612
+      "views": 78183
     },
     "reach": 2507,
     "mentions": {
-      "total": 480,
+      "total": 210,
       "daily": [
-        1,
-        6,
-        2,
-        6,
-        3,
-        1,
-        0,
+        4,
+        75,
+        57,
+        30,
+        22,
         0,
         3,
-        4,
-        4,
-        166,
-        89,
-        88,
-        50,
-        8,
-        3,
-        27,
         19
       ]
     },
     "regions": [
       [
         "Kerala",
-        91
+        86
       ],
       [
-        "Tamil Nadu",
-        9
+        "Hindi Belt North India",
+        14
       ]
     ],
     "audience": {
       "where": [
         [
           "Kerala",
-          87
+          75
         ],
         [
-          "Tamil Nadu",
-          9
+          "Hindi Belt North India",
+          13
         ],
         [
           "Unknown",
-          4
+          13
         ]
       ],
       "who": [
         [
           "General public",
-          98
+          88
         ],
         [
-          "Media press",
-          2
+          "Fan page",
+          13
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          97
-        ],
-        [
-          "Fan amplified promo",
-          2
+          75
         ],
         [
           "Trade box office update",
-          1
+          25
         ]
       ],
       "topics": [
         [
           "General discussion",
-          77
+          69
         ],
         [
           "Acting / cast performance",
-          9
+          15
         ],
         [
-          "Music / songs",
+          "First half",
           4
         ],
         [
           "Story",
-          2
+          4
         ],
         [
           "Screenplay",
           2
         ],
         [
-          "First half",
+          "Music / songs",
           2
         ]
       ]

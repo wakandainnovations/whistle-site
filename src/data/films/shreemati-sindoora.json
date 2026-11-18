@@ -30,114 +30,29 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-06",
-      "end": "2026-07-31"
+      "start": "2026-07-29",
+      "end": "2026-07-30"
     },
     "sentiment": {
-      "positive": 3,
+      "positive": 1,
       "neutral": 4,
-      "negative": 1
+      "negative": 0
     },
-    "netSentiment": 3,
+    "netSentiment": null,
     "awareness": {
       "level": "High",
-      "views": 252235
+      "views": 155442
     },
     "reach": 180,
     "mentions": {
-      "total": 8,
+      "total": 5,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         4,
-        0,
-        3
+        1
       ]
     },
     "regions": [
@@ -150,45 +65,41 @@
       "where": [
         [
           "Unknown",
-          57
+          80
         ],
         [
           "Karnataka",
-          43
+          20
         ]
       ],
       "who": [
         [
           "General public",
-          86
+          80
         ],
         [
           "Official studio",
-          14
+          20
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          71
+          80
         ],
         [
           "Official promo",
-          14
-        ],
-        [
-          "Organic opinion",
-          14
+          20
         ]
       ],
       "topics": [
         [
           "General discussion",
-          75
+          80
         ],
         [
-          "Music / songs",
-          25
+          "Screenplay",
+          20
         ]
       ]
     }

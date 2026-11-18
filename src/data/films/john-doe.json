@@ -25,17 +25,17 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 1021,
+    "collected": 1535,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 2.5909
+    "popularity": 2.4559
   },
   "report": {
     "tracking": {
-      "start": "2026-11-16",
-      "end": "2026-11-17"
+      "start": "2026-11-15",
+      "end": "2026-11-16"
     },
     "sentiment": {
       "positive": 28,
@@ -47,12 +47,12 @@
       "level": "High",
       "views": 4502
     },
-    "reach": 419,
+    "reach": 464,
     "mentions": {
       "total": 39,
       "daily": [
-        38,
-        1
+        2,
+        37
       ]
     },
     "regions": [
@@ -65,58 +65,79 @@
       "where": [
         [
           "Unknown",
-          59
+          63
         ],
         [
           "Tamil Nadu",
-          41
+          38
         ]
       ],
       "who": [
         [
           "General public",
-          59
+          63
         ],
         [
           "Media press",
-          18
+          17
         ],
         [
           "Fan page",
-          9
+          8
         ],
         [
           "Verified celebrity influencer",
-          9
+          8
         ],
         [
           "Official studio",
-          5
+          4
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          36
+          38
         ],
         [
           "Organic opinion",
-          23
+          25
         ],
         [
           "Trade box office update",
-          23
+          21
         ],
         [
           "News press coverage",
-          9
+          8
         ],
         [
           "Official promo",
-          9
+          8
         ]
       ],
-      "topics": []
+      "topics": [
+        [
+          "General discussion",
+          85
+        ],
+        [
+          "Story",
+          8
+        ],
+        [
+          "Climax",
+          3
+        ],
+        [
+          "Direction",
+          3
+        ],
+        [
+          "Screenplay",
+          3
+        ]
+      ]
     }
   }
 }

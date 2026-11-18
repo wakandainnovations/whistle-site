@@ -24,103 +24,137 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 1045,
+    "collected": 2470,
     "trackFrom": "2026-11-12",
     "trackUntil": "2026-11-26",
-    "popularity": 2.8746
+    "popularity": 2.8823
   },
   "report": {
     "tracking": {
       "start": "2026-11-15",
-      "end": "2026-11-17"
+      "end": "2026-11-18"
     },
     "sentiment": {
-      "positive": 38,
-      "neutral": 71,
-      "negative": 1
+      "positive": 62,
+      "neutral": 77,
+      "negative": 5
     },
-    "netSentiment": 38,
+    "netSentiment": 12.4,
     "awareness": {
       "level": "High",
-      "views": 10711
+      "views": 20158
     },
-    "reach": 444,
+    "reach": 1048,
     "mentions": {
-      "total": 110,
+      "total": 144,
       "daily": [
+        20,
+        90,
         0,
-        110,
-        0
+        34
       ]
     },
     "regions": [
       [
         "Andhra Telangana",
-        86
+        92
       ],
       [
         "International",
-        14
+        6
+      ],
+      [
+        "Tamil Nadu",
+        3
       ]
     ],
     "audience": {
       "where": [
         [
-          "Unknown",
-          53
+          "Andhra Telangana",
+          48
         ],
         [
-          "Andhra Telangana",
-          40
+          "Unknown",
+          48
         ],
         [
           "International",
-          7
+          3
+        ],
+        [
+          "Tamil Nadu",
+          1
         ]
       ],
       "who": [
         [
           "General public",
-          63
+          78
         ],
         [
           "Fan page",
-          17
+          12
         ],
         [
           "Official studio",
-          13
+          6
         ],
         [
           "Media press",
-          7
+          4
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          67
-        ],
-        [
-          "News press coverage",
-          13
-        ],
-        [
-          "Official promo",
-          13
+          45
         ],
         [
           "Organic opinion",
-          3
+          41
+        ],
+        [
+          "News press coverage",
+          6
+        ],
+        [
+          "Official promo",
+          6
         ],
         [
           "Trade box office update",
           3
         ]
       ],
-      "topics": []
+      "topics": [
+        [
+          "General discussion",
+          78
+        ],
+        [
+          "Music / songs",
+          13
+        ],
+        [
+          "Acting / cast performance",
+          5
+        ],
+        [
+          "Direction",
+          3
+        ],
+        [
+          "Story",
+          1
+        ],
+        [
+          "VFX",
+          1
+        ]
+      ]
     }
   }
 }

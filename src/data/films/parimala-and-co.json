@@ -32,128 +32,118 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-22",
-      "end": "2026-06-10"
+      "start": "2026-05-31",
+      "end": "2026-06-09"
     },
     "sentiment": {
-      "positive": 1528,
-      "neutral": 457,
-      "negative": 287
+      "positive": 1518,
+      "neutral": 452,
+      "negative": 195
     },
-    "netSentiment": 5.32,
+    "netSentiment": 7.78,
     "awareness": {
       "level": "High",
-      "views": 1304904
+      "views": 1254431
     },
     "reach": 2071,
     "mentions": {
-      "total": 2272,
+      "total": 2165,
       "daily": [
         1,
         0,
         0,
         0,
-        0,
-        0,
-        2,
-        2,
-        2,
-        0,
-        0,
-        0,
-        1,
-        210,
-        496,
-        412,
-        536,
-        363,
-        186,
-        61
+        371,
+        538,
+        354,
+        488,
+        265,
+        148
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        82
+        71
       ],
       [
         "Hindi Belt North India",
-        8
-      ],
-      [
-        "Kerala",
-        8
+        18
       ],
       [
         "International",
-        3
+        6
+      ],
+      [
+        "Kerala",
+        6
       ]
     ],
     "audience": {
       "where": [
         [
           "Tamil Nadu",
-          66
+          50
         ],
         [
           "Unknown",
-          19
+          29
         ],
         [
           "Hindi Belt North India",
-          6
-        ],
-        [
-          "Kerala",
-          6
+          13
         ],
         [
           "International",
-          2
+          4
+        ],
+        [
+          "Kerala",
+          4
         ]
       ],
       "who": [
         [
-          "General public",
-          48
-        ],
-        [
           "Media press",
-          22
+          32
         ],
         [
           "Verified celebrity influencer",
-          15
+          24
+        ],
+        [
+          "General public",
+          22
         ],
         [
           "Official studio",
-          10
+          14
         ],
         [
           "Fan page",
-          5
+          8
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          60
+          43
         ],
         [
           "Official promo",
-          22
+          30
         ],
         [
           "Fan amplified promo",
-          13
+          19
         ],
         [
           "News press coverage",
-          5
+          8
         ]
       ],
       "topics": [
@@ -171,7 +161,7 @@
         ],
         [
           "Story",
-          7
+          8
         ],
         [
           "Screenplay",

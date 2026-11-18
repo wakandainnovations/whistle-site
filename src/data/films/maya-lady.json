@@ -24,12 +24,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-17",
+  "syncedOn": "2026-11-18",
   "buzz": {
-    "collected": 439,
+    "collected": 443,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 0.6486
+    "popularity": 0.6403
   },
   "report": {
     "tracking": {
@@ -46,7 +46,7 @@
       "level": "Low",
       "views": 0
     },
-    "reach": 159,
+    "reach": 161,
     "mentions": {
       "total": 3,
       "daily": [
@@ -55,12 +55,37 @@
         0
       ]
     },
-    "regions": [],
+    "regions": [
+      [
+        "Andhra Telangana",
+        100
+      ]
+    ],
     "audience": {
-      "where": [],
-      "who": [],
-      "postType": [],
-      "topics": []
+      "where": [
+        [
+          "Andhra Telangana",
+          100
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          100
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          100
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          100
+        ]
+      ]
     }
   }
 }
