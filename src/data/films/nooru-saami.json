@@ -1,0 +1,275 @@
+{
+  "sample": false,
+  "auraId": 51,
+  "auraName": "Nooru Saami",
+  "title": "Nooru Saami",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-06-19",
+  "featured": false,
+  "poster": "/posters/nooru-saami.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Sasi",
+  "cast": [
+    "Vijay Antony",
+    "Swasika Vijay"
+  ],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": "2h 10m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-04-07",
+      "end": "2026-07-27"
+    },
+    "sentiment": {
+      "positive": 718,
+      "neutral": 214,
+      "negative": 33
+    },
+    "netSentiment": 21.76,
+    "awareness": {
+      "level": "High",
+      "views": 818209
+    },
+    "reach": 1734,
+    "mentions": {
+      "total": 965,
+      "daily": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        13,
+        67,
+        123,
+        201,
+        31,
+        32,
+        29,
+        177,
+        83,
+        45,
+        79,
+        6,
+        0,
+        1,
+        3,
+        0,
+        1,
+        1,
+        39,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        5,
+        12
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        92
+      ],
+      [
+        "International",
+        3
+      ],
+      [
+        "Hindi Belt North India",
+        3
+      ],
+      [
+        "Kerala",
+        3
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          73
+        ],
+        [
+          "Unknown",
+          21
+        ],
+        [
+          "International",
+          2
+        ],
+        [
+          "Hindi Belt North India",
+          2
+        ],
+        [
+          "Kerala",
+          2
+        ]
+      ],
+      "who": [
+        [
+          "Media press",
+          45
+        ],
+        [
+          "General public",
+          27
+        ],
+        [
+          "Verified celebrity influencer",
+          18
+        ],
+        [
+          "Fan page",
+          6
+        ],
+        [
+          "Official studio",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Official promo",
+          33
+        ],
+        [
+          "Organic opinion",
+          32
+        ],
+        [
+          "Fan amplified promo",
+          19
+        ],
+        [
+          "News press coverage",
+          15
+        ],
+        [
+          "Trade box office update",
+          1
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          52
+        ],
+        [
+          "Story",
+          20
+        ],
+        [
+          "Acting / cast performance",
+          17
+        ],
+        [
+          "Direction",
+          9
+        ],
+        [
+          "Screenplay",
+          1
+        ]
+      ]
+    }
+  }
+}

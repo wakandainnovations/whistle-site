@@ -1,0 +1,242 @@
+{
+  "sample": true,
+  "title": "Oppenheimer",
+  "titleConfirmed": true,
+  "language": "English",
+  "industry": "hollywood",
+  "year": 2023,
+  "releaseDate": "2023-07-21",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg",
+  "trailer": {
+    "youtubeId": "bK6ldnjE3Y0",
+    "channel": "Universal Pictures",
+    "kind": "trailer"
+  },
+  "director": "Christopher Nolan",
+  "cast": [
+    "Cillian Murphy",
+    "Emily Blunt",
+    "Matt Damon",
+    "Robert Downey Jr."
+  ],
+  "genres": [
+    "Drama",
+    "History",
+    "War"
+  ],
+  "runtime": "3h 1m",
+  "tmdbId": 872585,
+  "watch": [
+    "JioHotstar"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-06-21",
+      "end": "2023-08-20"
+    },
+    "sentiment": {
+      "positive": 38358,
+      "neutral": 5144,
+      "negative": 5732
+    },
+    "netSentiment": 6.69,
+    "awareness": {
+      "level": "High",
+      "views": 117600000
+    },
+    "reach": 108900,
+    "mentions": {
+      "total": 31370,
+      "daily": [
+        192,
+        175,
+        175,
+        225,
+        229,
+        224,
+        210,
+        413,
+        779,
+        844,
+        757,
+        436,
+        252,
+        250,
+        221,
+        276,
+        253,
+        280,
+        281,
+        365,
+        318,
+        412,
+        465,
+        414,
+        539,
+        546,
+        654,
+        732,
+        879,
+        962,
+        1536,
+        1280,
+        1257,
+        1132,
+        1229,
+        1078,
+        1134,
+        1049,
+        926,
+        958,
+        981,
+        777,
+        701,
+        562,
+        627,
+        433,
+        363,
+        336,
+        284,
+        300,
+        222,
+        191,
+        217,
+        158,
+        175,
+        149,
+        132,
+        133,
+        117,
+        95,
+        80
+      ]
+    },
+    "regions": [
+      [
+        "Maharashtra",
+        32
+      ],
+      [
+        "Karnataka",
+        23
+      ],
+      [
+        "Delhi NCR",
+        17
+      ],
+      [
+        "Andhra Telangana",
+        11
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Maharashtra",
+          21
+        ],
+        [
+          "Karnataka",
+          20
+        ],
+        [
+          "Unknown",
+          18
+        ],
+        [
+          "Delhi NCR",
+          15
+        ],
+        [
+          "Tamil Nadu",
+          10
+        ],
+        [
+          "Andhra Telangana",
+          10
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          34
+        ],
+        [
+          "Media press",
+          26
+        ],
+        [
+          "Fan page",
+          18
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Official studio",
+          6
+        ],
+        [
+          "Bot spam",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          54
+        ],
+        [
+          "Fan amplified promo",
+          17
+        ],
+        [
+          "News press coverage",
+          13
+        ],
+        [
+          "Official promo",
+          8
+        ],
+        [
+          "Trade box office update",
+          6
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          31
+        ],
+        [
+          "Box office commercial",
+          19
+        ],
+        [
+          "Story",
+          16
+        ],
+        [
+          "Music",
+          14
+        ],
+        [
+          "Direction technical craft",
+          9
+        ],
+        [
+          "Official promo",
+          7
+        ]
+      ]
+    }
+  }
+}

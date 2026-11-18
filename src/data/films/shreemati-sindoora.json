@@ -1,0 +1,196 @@
+{
+  "sample": false,
+  "auraId": 94,
+  "auraName": "Shreemati Sindoora",
+  "title": "Shreemati Sindoora",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-31",
+  "featured": false,
+  "poster": "/posters/shreemati-sindoora.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "R Anantha Raju",
+  "cast": [
+    "Vijay Raghavendra",
+    "Priya Hegde",
+    "Manasi Sudheer"
+  ],
+  "genres": [
+    "Drama",
+    "Fantasy"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [
+    "Sun NXT"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-05-06",
+      "end": "2026-07-31"
+    },
+    "sentiment": {
+      "positive": 3,
+      "neutral": 4,
+      "negative": 1
+    },
+    "netSentiment": 3,
+    "awareness": {
+      "level": "High",
+      "views": 252235
+    },
+    "reach": 180,
+    "mentions": {
+      "total": 8,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        3
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          57
+        ],
+        [
+          "Karnataka",
+          43
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          86
+        ],
+        [
+          "Official studio",
+          14
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          71
+        ],
+        [
+          "Official promo",
+          14
+        ],
+        [
+          "Organic opinion",
+          14
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          75
+        ],
+        [
+          "Music / songs",
+          25
+        ]
+      ]
+    }
+  }
+}

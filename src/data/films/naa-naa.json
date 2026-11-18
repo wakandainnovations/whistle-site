@@ -1,0 +1,214 @@
+{
+  "sample": false,
+  "auraId": 89,
+  "auraName": "Naa Naa",
+  "title": "Naa Naa",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2023,
+  "releaseDate": "2023-12-15",
+  "featured": false,
+  "poster": "/posters/naa-naa.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "N.V. Nirmal Kumar",
+  "cast": [
+    "Bharathiraja",
+    "Delhi Ganesh",
+    "Haripriya",
+    "M. Sasikumar"
+  ],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": "2h 31m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video",
+    "JioHotstar"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-04-07",
+      "end": "2026-08-02"
+    },
+    "sentiment": {
+      "positive": 0,
+      "neutral": 0,
+      "negative": 311
+    },
+    "netSentiment": 0,
+    "awareness": {
+      "level": "Medium",
+      "views": 69650
+    },
+    "reach": 1517,
+    "mentions": {
+      "total": 311,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        2,
+        4,
+        0,
+        131,
+        37,
+        4,
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        5,
+        5,
+        3,
+        5,
+        6,
+        5,
+        42,
+        35
+      ]
+    },
+    "regions": [],
+    "audience": {
+      "where": [],
+      "who": [
+        [
+          "General public",
+          100
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          100
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          97
+        ],
+        [
+          "Music / songs",
+          2
+        ],
+        [
+          "Acting / cast performance",
+          1
+        ],
+        [
+          "Lead pair",
+          1
+        ],
+        [
+          "Story",
+          1
+        ]
+      ]
+    }
+  }
+}

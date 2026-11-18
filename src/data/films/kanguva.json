@@ -1,0 +1,238 @@
+{
+  "sample": true,
+  "title": "Kanguva",
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2024,
+  "releaseDate": "2024-11-14",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/lycbTFBXqFN1kMdPEsnAFutKEEy.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/cpK4ZqGZVJAIIKo8EgpSHif8yNL.jpg",
+  "trailer": null,
+  "director": "Siva",
+  "cast": [
+    "Suriya",
+    "Bobby Deol",
+    "Disha Patani",
+    "Yogi Babu"
+  ],
+  "genres": [
+    "Action",
+    "Thriller",
+    "Fantasy"
+  ],
+  "runtime": "2h 34m",
+  "tmdbId": 622792,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2024-10-15",
+      "end": "2024-12-14"
+    },
+    "sentiment": {
+      "positive": 22786,
+      "neutral": 3837,
+      "negative": 37176
+    },
+    "netSentiment": 0.61,
+    "awareness": {
+      "level": "High",
+      "views": 148800000
+    },
+    "reach": 129500,
+    "mentions": {
+      "total": 36764,
+      "daily": [
+        303,
+        267,
+        268,
+        329,
+        307,
+        284,
+        312,
+        661,
+        989,
+        1598,
+        1222,
+        640,
+        344,
+        405,
+        332,
+        347,
+        370,
+        403,
+        384,
+        413,
+        580,
+        547,
+        673,
+        700,
+        799,
+        752,
+        891,
+        1142,
+        1164,
+        1430,
+        2117,
+        2251,
+        1907,
+        1694,
+        1289,
+        1119,
+        1138,
+        1001,
+        818,
+        632,
+        582,
+        616,
+        530,
+        407,
+        366,
+        239,
+        226,
+        171,
+        157,
+        108,
+        114,
+        75,
+        61,
+        54,
+        55,
+        46,
+        31,
+        34,
+        26,
+        25,
+        19
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        63
+      ],
+      [
+        "International",
+        12
+      ],
+      [
+        "Kerala",
+        9
+      ],
+      [
+        "Andhra Telangana",
+        9
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          51
+        ],
+        [
+          "Unknown",
+          25
+        ],
+        [
+          "International",
+          8
+        ],
+        [
+          "Kerala",
+          6
+        ],
+        [
+          "Andhra Telangana",
+          6
+        ],
+        [
+          "Karnataka",
+          4
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          37
+        ],
+        [
+          "Media press",
+          28
+        ],
+        [
+          "Fan page",
+          13
+        ],
+        [
+          "Verified celebrity",
+          12
+        ],
+        [
+          "Official studio",
+          6
+        ],
+        [
+          "Bot spam",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          34
+        ],
+        [
+          "Fan amplified promo",
+          28
+        ],
+        [
+          "Official promo",
+          17
+        ],
+        [
+          "News press coverage",
+          15
+        ],
+        [
+          "Trade box office update",
+          4
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          25
+        ],
+        [
+          "Story",
+          20
+        ],
+        [
+          "Box office commercial",
+          16
+        ],
+        [
+          "Music",
+          15
+        ],
+        [
+          "Direction technical craft",
+          13
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "sample": false,
+  "auraId": 49,
+  "auraName": "Valluvan",
+  "title": "Valluvan",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-06-12",
+  "featured": false,
+  "poster": "/posters/valluvan.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Shankar Sarathi",
+  "cast": [
+    "Ashna Zaveri",
+    "Chethan Cheenu"
+  ],
+  "genres": [
+    "Action",
+    "Thriller"
+  ],
+  "runtime": "2h 9m",
+  "tmdbId": null,
+  "watch": [
+    "Sun NXT"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-01-01",
+      "end": "2026-06-14"
+    },
+    "sentiment": {
+      "positive": 324,
+      "neutral": 25,
+      "negative": 10
+    },
+    "netSentiment": 32.4,
+    "awareness": {
+      "level": "High",
+      "views": 65096
+    },
+    "reach": 476,
+    "mentions": {
+      "total": 359,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        27,
+        46,
+        20,
+        77,
+        24,
+        57,
+        54,
+        24,
+        25
+      ]
+    },
+    "regions": [
+      [
+        "Hindi Belt North India",
+        54
+      ],
+      [
+        "Tamil Nadu",
+        31
+      ],
+      [
+        "Kerala",
+        15
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Hindi Belt North India",
+          41
+        ],
+        [
+          "Tamil Nadu",
+          24
+        ],
+        [
+          "Unknown",
+          24
+        ],
+        [
+          "Kerala",
+          12
+        ]
+      ],
+      "who": [
+        [
+          "Media press",
+          51
+        ],
+        [
+          "Official studio",
+          18
+        ],
+        [
+          "Verified celebrity influencer",
+          16
+        ],
+        [
+          "General public",
+          14
+        ]
+      ],
+      "postType": [
+        [
+          "Official promo",
+          82
+        ],
+        [
+          "Organic opinion",
+          8
+        ],
+        [
+          "Fan amplified promo",
+          6
+        ],
+        [
+          "News press coverage",
+          4
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          77
+        ],
+        [
+          "Acting / cast performance",
+          9
+        ],
+        [
+          "Music / songs",
+          8
+        ],
+        [
+          "Story",
+          3
+        ],
+        [
+          "Direction",
+          2
+        ],
+        [
+          "Screenplay",
+          2
+        ]
+      ]
+    }
+  }
+}

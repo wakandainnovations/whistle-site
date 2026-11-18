@@ -1,0 +1,187 @@
+{
+  "sample": false,
+  "auraId": 48,
+  "auraName": "Parimala And Co",
+  "title": "Parimala And Co",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-06-05",
+  "featured": false,
+  "poster": "/posters/parimala-and-co.avif",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Pandiraaj",
+  "cast": [
+    "Jayaram",
+    "Urvashi",
+    "Mysskin",
+    "Yogi Babu"
+  ],
+  "genres": [
+    "Comedy",
+    "Crime",
+    "Thriller"
+  ],
+  "runtime": "2h 18m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-05-22",
+      "end": "2026-06-10"
+    },
+    "sentiment": {
+      "positive": 1528,
+      "neutral": 457,
+      "negative": 287
+    },
+    "netSentiment": 5.32,
+    "awareness": {
+      "level": "High",
+      "views": 1304904
+    },
+    "reach": 2071,
+    "mentions": {
+      "total": 2272,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        1,
+        210,
+        496,
+        412,
+        536,
+        363,
+        186,
+        61
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        82
+      ],
+      [
+        "Hindi Belt North India",
+        8
+      ],
+      [
+        "Kerala",
+        8
+      ],
+      [
+        "International",
+        3
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          66
+        ],
+        [
+          "Unknown",
+          19
+        ],
+        [
+          "Hindi Belt North India",
+          6
+        ],
+        [
+          "Kerala",
+          6
+        ],
+        [
+          "International",
+          2
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          48
+        ],
+        [
+          "Media press",
+          22
+        ],
+        [
+          "Verified celebrity influencer",
+          15
+        ],
+        [
+          "Official studio",
+          10
+        ],
+        [
+          "Fan page",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          60
+        ],
+        [
+          "Official promo",
+          22
+        ],
+        [
+          "Fan amplified promo",
+          13
+        ],
+        [
+          "News press coverage",
+          5
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          74
+        ],
+        [
+          "Acting / cast performance",
+          8
+        ],
+        [
+          "Direction",
+          8
+        ],
+        [
+          "Story",
+          7
+        ],
+        [
+          "Screenplay",
+          1
+        ],
+        [
+          "First half",
+          1
+        ]
+      ]
+    }
+  }
+}

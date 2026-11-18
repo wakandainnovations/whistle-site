@@ -1,0 +1,216 @@
+{
+  "sample": true,
+  "title": "Mookuthi Amman 2",
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-06",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/dNNzsstJeQxnESyH0hZcLGblLMz.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/mxrT9YpOPuLq2PpSehAuCGCqu8r.jpg",
+  "trailer": null,
+  "director": "Sundar C",
+  "cast": [
+    "Nayanthara",
+    "Urvashi",
+    "Regena Cassandrra",
+    "Yogi Babu"
+  ],
+  "genres": [
+    "Fantasy",
+    "Drama",
+    "Comedy"
+  ],
+  "runtime": "2h 24m",
+  "tmdbId": 1327835,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-10-07",
+      "end": "2026-11-16"
+    },
+    "sentiment": {
+      "positive": 9942,
+      "neutral": 1077,
+      "negative": 7500
+    },
+    "netSentiment": 1.33,
+    "awareness": {
+      "level": "Medium",
+      "views": 42600000
+    },
+    "reach": 32900,
+    "mentions": {
+      "total": 12335,
+      "daily": [
+        105,
+        92,
+        100,
+        99,
+        94,
+        108,
+        135,
+        214,
+        347,
+        503,
+        364,
+        214,
+        147,
+        141,
+        121,
+        147,
+        148,
+        170,
+        161,
+        173,
+        193,
+        202,
+        220,
+        206,
+        272,
+        321,
+        362,
+        382,
+        345,
+        425,
+        850,
+        837,
+        606,
+        629,
+        571,
+        463,
+        403,
+        410,
+        414,
+        303,
+        338
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        66
+      ],
+      [
+        "International",
+        10
+      ],
+      [
+        "Andhra Telangana",
+        9
+      ],
+      [
+        "Karnataka",
+        8
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          51
+        ],
+        [
+          "Unknown",
+          24
+        ],
+        [
+          "International",
+          10
+        ],
+        [
+          "Kerala",
+          6
+        ],
+        [
+          "Andhra Telangana",
+          5
+        ],
+        [
+          "Karnataka",
+          4
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          53
+        ],
+        [
+          "Media press",
+          20
+        ],
+        [
+          "Fan page",
+          11
+        ],
+        [
+          "Verified celebrity",
+          9
+        ],
+        [
+          "Bot spam",
+          4
+        ],
+        [
+          "Official studio",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          47
+        ],
+        [
+          "Official promo",
+          16
+        ],
+        [
+          "News press coverage",
+          15
+        ],
+        [
+          "Fan amplified promo",
+          14
+        ],
+        [
+          "Trade box office update",
+          6
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          23
+        ],
+        [
+          "Box office commercial",
+          22
+        ],
+        [
+          "Music",
+          18
+        ],
+        [
+          "Direction technical craft",
+          12
+        ],
+        [
+          "Story",
+          12
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

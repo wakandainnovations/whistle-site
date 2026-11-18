@@ -1,0 +1,244 @@
+{
+  "sample": true,
+  "title": "Hanu-Man",
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2024,
+  "releaseDate": "2024-01-12",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/m1zq48rWSXxplzoJR8YtbXWnnHM.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/evUpfs4dw7AuZ5k8dkePVMFSg0T.jpg",
+  "trailer": {
+    "youtubeId": "Oqvly3MvlXA",
+    "channel": "PrimeShow Entertainment",
+    "kind": "trailer"
+  },
+  "director": "Prasanth Varma",
+  "cast": [
+    "Teja Sajja",
+    "Vinay Rai",
+    "Amritha Aiyer",
+    "Varalaxmi Sarathkumar"
+  ],
+  "genres": [
+    "Fantasy",
+    "Action",
+    "Comedy",
+    "Science Fiction"
+  ],
+  "runtime": "2h 39m",
+  "tmdbId": 869760,
+  "watch": [
+    "ZEE5",
+    "JioHotstar"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-12-13",
+      "end": "2024-02-11"
+    },
+    "sentiment": {
+      "positive": 17503,
+      "neutral": 2852,
+      "negative": 4376
+    },
+    "netSentiment": 4,
+    "awareness": {
+      "level": "Medium",
+      "views": 46800000
+    },
+    "reach": 48900,
+    "mentions": {
+      "total": 17990,
+      "daily": [
+        112,
+        106,
+        106,
+        128,
+        119,
+        113,
+        145,
+        220,
+        470,
+        530,
+        496,
+        213,
+        163,
+        146,
+        127,
+        142,
+        158,
+        185,
+        178,
+        179,
+        230,
+        201,
+        271,
+        280,
+        248,
+        357,
+        354,
+        370,
+        513,
+        490,
+        927,
+        952,
+        756,
+        644,
+        775,
+        620,
+        670,
+        509,
+        493,
+        546,
+        501,
+        446,
+        348,
+        343,
+        271,
+        283,
+        191,
+        213,
+        142,
+        149,
+        110,
+        121,
+        108,
+        100,
+        79,
+        79,
+        73,
+        54,
+        47,
+        46,
+        44
+      ]
+    },
+    "regions": [
+      [
+        "Andhra Telangana",
+        62
+      ],
+      [
+        "International",
+        13
+      ],
+      [
+        "Hindi Belt North India",
+        11
+      ],
+      [
+        "Karnataka",
+        7
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Andhra Telangana",
+          44
+        ],
+        [
+          "Unknown",
+          32
+        ],
+        [
+          "International",
+          8
+        ],
+        [
+          "Hindi Belt North India",
+          7
+        ],
+        [
+          "Karnataka",
+          6
+        ],
+        [
+          "Tamil Nadu",
+          3
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          43
+        ],
+        [
+          "Media press",
+          19
+        ],
+        [
+          "Fan page",
+          15
+        ],
+        [
+          "Verified celebrity",
+          13
+        ],
+        [
+          "Official studio",
+          6
+        ],
+        [
+          "Bot spam",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          39
+        ],
+        [
+          "Fan amplified promo",
+          21
+        ],
+        [
+          "Official promo",
+          20
+        ],
+        [
+          "News press coverage",
+          12
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          3
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          26
+        ],
+        [
+          "Story",
+          18
+        ],
+        [
+          "Music",
+          17
+        ],
+        [
+          "Direction technical craft",
+          16
+        ],
+        [
+          "Box office commercial",
+          11
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

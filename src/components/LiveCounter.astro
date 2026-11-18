@@ -1,0 +1,73 @@
+---
+// "Talking about it right now": a live interest counter with a moving pulse line.
+// PREVIEW: the numbers are simulated in the browser around a base taken from the film's reach.
+// Before launch, point `feed` at a real endpoint that returns { now: number, lastHour: number }.
+interface Props { title: string; reach: number; positiveShare: number; feed?: string }
+const { title, reach, positiveShare, feed } = Astro.props;
+const base = Math.max(12, Math.round(reach / 55));
+const lastHour = Math.max(30, Math.round(reach / 9));
+---
+<div class="live" data-base={base} data-hour={lastHour} data-pos={positiveShare} data-feed={feed ?? ''}>
+  <div class="live-top">
+    <span class="dot-live"><i></i>Live</span>
+    <span class="live-note">{feed ? 'Updated every few seconds' : 'Preview: simulated until the live feed is connected'}</span>
+  </div>
+  <div class="live-main">
+    <div>
+      <span class="live-n num" data-now>{base.toLocaleString('en-IN')}</span>
+      <span class="live-l">people talking about {title} right now</span>
+    </div>
+    <svg class="pulse" viewBox="0 0 160 48" preserveAspectRatio="none" aria-hidden="true"><path d="" /></svg>
+  </div>
+  <div class="live-row">
+    <span><b class="num" data-hour>{lastHour.toLocaleString('en-IN')}</b> posts in the last hour</span>
+    <span><b class="num" data-cheer>{positiveShare}%</b> of them cheering</span>
+  </div>
+</div>
+<style>
+  .live { padding: 22px 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; position: relative; overflow: hidden; }
+  .live::after { content: ""; position: absolute; right: -60px; top: -60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(closest-side, color-mix(in srgb, var(--neg) 28%, transparent), transparent); pointer-events: none; }
+  .live-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .dot-live { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--neg); font-weight: 500; }
+  .dot-live i { width: 9px; height: 9px; border-radius: 50%; background: var(--neg); box-shadow: 0 0 0 0 var(--neg); animation: ping 1.6s ease-out infinite; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--neg) 70%, transparent); } 100% { box-shadow: 0 0 0 10px transparent; } }
+  .live-note { font-size: 11.5px; color: var(--faint); }
+  .live-main { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; }
+  .live-n { display: block; font-family: var(--font-display); font-weight: 900; font-size: 64px; line-height: .9; transition: color .3s; }
+  .live-n.bump { color: var(--gold-text); }
+  .live-l { display: block; font-size: 15px; color: var(--muted); margin-top: 6px; }
+  .pulse { width: 160px; height: 48px; flex: none; }
+  .pulse path { fill: none; stroke: var(--neg); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  .live-row { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 14px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 12px; }
+  .live-row b { color: var(--fg); font-weight: 700; }
+  @media (max-width: 520px) { .pulse { width: 100px; } .live-n { font-size: 52px; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLElement>('.live').forEach((el) => {
+    const base = Number(el.dataset.base), hour0 = Number(el.dataset.hour);
+    const nowEl = el.querySelector<HTMLElement>('[data-now]')!;
+    const hourEl = el.querySelector<HTMLElement>('[data-hour]')!;
+    const path = el.querySelector<SVGPathElement>('.pulse path')!;
+    let now = base, hour = hour0;
+    const pts: number[] = Array.from({ length: 24 }, () => base * (0.85 + Math.random() * 0.3));
+    const fmt = (n: number) => Math.round(n).toLocaleString('en-IN');
+    const draw = () => {
+      const lo = Math.min(...pts) * 0.95, hi = Math.max(...pts) * 1.05;
+      path.setAttribute('d', pts.map((v, i) => `${i ? 'L' : 'M'}${(i / (pts.length - 1)) * 160} ${48 - ((v - lo) / (hi - lo || 1)) * 44 - 2}`).join(' '));
+    };
+    const tick = () => {
+      // drift around the base, with the odd spike
+      const spike = Math.random() < 0.08 ? base * 0.25 : 0;
+      now = Math.max(base * 0.6, now + (base - now) * 0.2 + (Math.random() - 0.5) * base * 0.12 + spike);
+      hour += Math.round(Math.random() * Math.max(2, hour0 / 400));
+      pts.shift(); pts.push(now);
+      nowEl.textContent = fmt(now);
+      hourEl.textContent = fmt(hour);
+      nowEl.classList.add('bump');
+      setTimeout(() => nowEl.classList.remove('bump'), 350);
+      draw();
+    };
+    draw();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(tick, 2200);
+  });
+</script>

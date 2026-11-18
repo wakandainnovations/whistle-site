@@ -1,0 +1,186 @@
+{
+  "sample": false,
+  "auraId": 35,
+  "auraName": "Karuppu",
+  "title": "Karuppu",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-04-15",
+  "featured": false,
+  "poster": "/posters/karuppu.avif",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/1eAuwNBy34kkM3xkl202z4f1NiI.jpg",
+  "trailer": {
+    "kind": "trailer",
+    "youtubeId": "JpVl_-1YgIo",
+    "channel": "Think Music India"
+  },
+  "director": "RJ Balaji",
+  "cast": [
+    "Surya",
+    "RJ Balaji",
+    "Trisha"
+  ],
+  "genres": [
+    "Action",
+    "Drama",
+    "Fantasy",
+    "Thriller"
+  ],
+  "runtime": "2h 32m",
+  "tmdbId": 1367220,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-05-07",
+      "end": "2026-05-21"
+    },
+    "sentiment": {
+      "positive": 68,
+      "neutral": 8,
+      "negative": 1244
+    },
+    "netSentiment": 0.05,
+    "awareness": {
+      "level": "High",
+      "views": 790749
+    },
+    "reach": 6826,
+    "mentions": {
+      "total": 1320,
+      "daily": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        342,
+        240,
+        320,
+        193,
+        51,
+        9,
+        66,
+        96
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        72
+      ],
+      [
+        "Kerala",
+        21
+      ],
+      [
+        "Hindi Belt North India",
+        4
+      ],
+      [
+        "Andhra Telangana",
+        2
+      ],
+      [
+        "International",
+        1
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          59
+        ],
+        [
+          "Kerala",
+          18
+        ],
+        [
+          "Unknown",
+          18
+        ],
+        [
+          "Hindi Belt North India",
+          3
+        ],
+        [
+          "Andhra Telangana",
+          2
+        ],
+        [
+          "International",
+          1
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          91
+        ],
+        [
+          "Media press",
+          4
+        ],
+        [
+          "Verified celebrity influencer",
+          4
+        ],
+        [
+          "Fan page",
+          1
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          91
+        ],
+        [
+          "Fan amplified promo",
+          6
+        ],
+        [
+          "News press coverage",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          78
+        ],
+        [
+          "Acting / cast performance",
+          5
+        ],
+        [
+          "Story",
+          4
+        ],
+        [
+          "Screenplay",
+          4
+        ],
+        [
+          "Music / songs",
+          4
+        ],
+        [
+          "First half",
+          2
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "sample": false,
+  "auraId": 112,
+  "auraName": "Lord Gaaga",
+  "title": "Lord Gaaga",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-10-23",
+  "featured": false,
+  "poster": "/posters/lord-gaaga.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "YK",
+  "cast": [],
+  "genres": [
+    "Action",
+    "Adventure",
+    "Psychedelic"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": null
+}

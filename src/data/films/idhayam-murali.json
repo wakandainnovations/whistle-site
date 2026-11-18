@@ -1,0 +1,340 @@
+{
+  "sample": false,
+  "auraId": 83,
+  "auraName": "Idhayam Murali",
+  "title": "Idhayam Murali",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-10",
+  "featured": false,
+  "poster": "/posters/idhayam-murali.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Aakash Baskaran",
+  "cast": [
+    "Atharvaa Murali",
+    "Preity Mukhundhan",
+    "Kayadu Lohar",
+    "Fahadh Faasil"
+  ],
+  "genres": [
+    "Comedy",
+    "Romance",
+    "Drama"
+  ],
+  "runtime": "2h 30m",
+  "tmdbId": null,
+  "watch": [
+    "Netflix"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-01-29",
+      "end": "2026-07-16"
+    },
+    "sentiment": {
+      "positive": 2234,
+      "neutral": 553,
+      "negative": 49
+    },
+    "netSentiment": 45.59,
+    "awareness": {
+      "level": "High",
+      "views": 1334300
+    },
+    "reach": 3835,
+    "mentions": {
+      "total": 2836,
+      "daily": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        255,
+        159,
+        560,
+        905,
+        179,
+        434,
+        46,
+        124,
+        157,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        62
+      ],
+      [
+        "Andhra Telangana",
+        15
+      ],
+      [
+        "Kerala",
+        15
+      ],
+      [
+        "International",
+        8
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          47
+        ],
+        [
+          "Unknown",
+          24
+        ],
+        [
+          "Andhra Telangana",
+          12
+        ],
+        [
+          "Kerala",
+          12
+        ],
+        [
+          "International",
+          6
+        ]
+      ],
+      "who": [
+        [
+          "Media press",
+          40
+        ],
+        [
+          "General public",
+          31
+        ],
+        [
+          "Verified celebrity influencer",
+          23
+        ],
+        [
+          "Official studio",
+          3
+        ],
+        [
+          "Bot spam",
+          2
+        ],
+        [
+          "Fan page",
+          2
+        ]
+      ],
+      "postType": [
+        [
+          "Official promo",
+          33
+        ],
+        [
+          "Fan amplified promo",
+          31
+        ],
+        [
+          "Organic opinion",
+          25
+        ],
+        [
+          "News press coverage",
+          11
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          65
+        ],
+        [
+          "Acting / cast performance",
+          13
+        ],
+        [
+          "Music / songs",
+          12
+        ],
+        [
+          "Story",
+          5
+        ],
+        [
+          "Lead pair",
+          2
+        ],
+        [
+          "Direction",
+          1
+        ]
+      ]
+    }
+  }
+}

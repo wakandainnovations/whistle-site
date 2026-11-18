@@ -1,0 +1,113 @@
+{
+  "sample": false,
+  "auraId": 9000033,
+  "auraName": "Sathyavan Savithiri",
+  "title": "Sathyavan Savithiri",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-20",
+  "featured": false,
+  "poster": "/posters/sathyavan-savithiri.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Praveen S Vijaay",
+  "cast": [],
+  "genres": [
+    "Drama",
+    "Crime"
+  ],
+  "runtime": "2h 16m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 644,
+    "trackFrom": "2026-11-13",
+    "trackUntil": "2026-11-27",
+    "popularity": 1.5764
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-11-16",
+      "end": "2026-11-17"
+    },
+    "sentiment": {
+      "positive": 2,
+      "neutral": 70,
+      "negative": 2
+    },
+    "netSentiment": 1,
+    "awareness": {
+      "level": "High",
+      "views": 15103
+    },
+    "reach": 208,
+    "mentions": {
+      "total": 74,
+      "daily": [
+        73,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          67
+        ],
+        [
+          "Unknown",
+          33
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          38
+        ],
+        [
+          "Media press",
+          29
+        ],
+        [
+          "Fan page",
+          19
+        ],
+        [
+          "Official studio",
+          14
+        ]
+      ],
+      "postType": [
+        [
+          "News press coverage",
+          57
+        ],
+        [
+          "Fan amplified promo",
+          19
+        ],
+        [
+          "Official promo",
+          14
+        ],
+        [
+          "Organic opinion",
+          10
+        ]
+      ],
+      "topics": []
+    }
+  }
+}

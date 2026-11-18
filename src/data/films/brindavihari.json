@@ -1,0 +1,101 @@
+{
+  "sample": false,
+  "auraId": 9000031,
+  "auraName": "Brindavihari",
+  "title": "Brindavihari",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-20",
+  "featured": false,
+  "poster": "/posters/brindavihari.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Srinivasa Raju",
+  "cast": [],
+  "genres": [
+    "Romance",
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 347,
+    "trackFrom": "2026-11-13",
+    "trackUntil": "2026-11-27",
+    "popularity": 0.6732
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-11-16",
+      "end": "2026-11-17"
+    },
+    "sentiment": {
+      "positive": 1,
+      "neutral": 8,
+      "negative": 0
+    },
+    "netSentiment": null,
+    "awareness": {
+      "level": "High",
+      "views": 13324917
+    },
+    "reach": 283,
+    "mentions": {
+      "total": 9,
+      "daily": [
+        5,
+        4
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          86
+        ],
+        [
+          "Unknown",
+          14
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          71
+        ],
+        [
+          "Media press",
+          29
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          43
+        ],
+        [
+          "Fan amplified promo",
+          29
+        ],
+        [
+          "News press coverage",
+          29
+        ]
+      ],
+      "topics": []
+    }
+  }
+}

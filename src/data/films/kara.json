@@ -1,0 +1,239 @@
+{
+  "sample": false,
+  "auraId": 86,
+  "auraName": "Kara",
+  "title": "Kara",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-04-30",
+  "featured": false,
+  "poster": "/posters/kara.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "T. Senthil Paramasivam, Vignesh Raja, Rajkumar Sekar",
+  "cast": [
+    "Dhanush",
+    "Mamitha Baiju",
+    "K.S. Ravikumar",
+    "Suraj Venjaramoodu"
+  ],
+  "genres": [
+    "Action",
+    "Thriller",
+    "Drama",
+    "Crime"
+  ],
+  "runtime": "2h 41m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-04-21",
+      "end": "2026-08-01"
+    },
+    "sentiment": {
+      "positive": 0,
+      "neutral": 0,
+      "negative": 752
+    },
+    "netSentiment": 0,
+    "awareness": {
+      "level": "Medium",
+      "views": 18326
+    },
+    "reach": 3072,
+    "mentions": {
+      "total": 752,
+      "daily": [
+        1,
+        3,
+        2,
+        1,
+        0,
+        28,
+        243,
+        216,
+        186,
+        62,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        92
+      ],
+      [
+        "Andhra Telangana",
+        8
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          69
+        ],
+        [
+          "Unknown",
+          25
+        ],
+        [
+          "Andhra Telangana",
+          6
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          76
+        ],
+        [
+          "Media press",
+          14
+        ],
+        [
+          "Bot spam",
+          5
+        ],
+        [
+          "Fan page",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          62
+        ],
+        [
+          "Fan amplified promo",
+          19
+        ],
+        [
+          "News press coverage",
+          19
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          95
+        ],
+        [
+          "Story",
+          2
+        ],
+        [
+          "Acting / cast performance",
+          1
+        ],
+        [
+          "Music / songs",
+          1
+        ]
+      ]
+    }
+  }
+}

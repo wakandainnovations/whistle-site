@@ -1,0 +1,214 @@
+{
+  "sample": true,
+  "title": "Disco",
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-06",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/yZ3AeO4bGYkSVT4onkAbLPTOSXe.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/nXeFm7r4mkxP4wMnS9i2lCORGxw.jpg",
+  "trailer": null,
+  "director": "Ullas Jose Chemban",
+  "cast": [
+    "Antony Varghese",
+    "Chemban Vinod Jose",
+    "Femina George",
+    "Arjun Ashokan"
+  ],
+  "genres": [
+    "Action"
+  ],
+  "runtime": "2h 25m",
+  "tmdbId": 1612811,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-10-07",
+      "end": "2026-11-16"
+    },
+    "sentiment": {
+      "positive": 5629,
+      "neutral": 760,
+      "negative": 1978
+    },
+    "netSentiment": 2.85,
+    "awareness": {
+      "level": "Medium",
+      "views": 14300000
+    },
+    "reach": 20100,
+    "mentions": {
+      "total": 5726,
+      "daily": [
+        47,
+        39,
+        42,
+        54,
+        47,
+        52,
+        51,
+        83,
+        173,
+        212,
+        166,
+        96,
+        61,
+        59,
+        66,
+        64,
+        65,
+        59,
+        80,
+        69,
+        72,
+        96,
+        89,
+        105,
+        101,
+        138,
+        130,
+        168,
+        177,
+        178,
+        392,
+        322,
+        339,
+        306,
+        305,
+        217,
+        215,
+        229,
+        230,
+        176,
+        156
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        66
+      ],
+      [
+        "International",
+        16
+      ],
+      [
+        "Tamil Nadu",
+        9
+      ],
+      [
+        "Karnataka",
+        6
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Kerala",
+          48
+        ],
+        [
+          "Unknown",
+          23
+        ],
+        [
+          "International",
+          14
+        ],
+        [
+          "Tamil Nadu",
+          6
+        ],
+        [
+          "Karnataka",
+          6
+        ],
+        [
+          "Andhra Telangana",
+          3
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          45
+        ],
+        [
+          "Media press",
+          24
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Fan page",
+          11
+        ],
+        [
+          "Official studio",
+          5
+        ],
+        [
+          "Bot spam",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          48
+        ],
+        [
+          "Fan amplified promo",
+          26
+        ],
+        [
+          "Official promo",
+          12
+        ],
+        [
+          "News press coverage",
+          8
+        ],
+        [
+          "Trade box office update",
+          4
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          25
+        ],
+        [
+          "Story",
+          20
+        ],
+        [
+          "Direction technical craft",
+          16
+        ],
+        [
+          "Box office commercial",
+          14
+        ],
+        [
+          "Music",
+          12
+        ],
+        [
+          "Official promo",
+          9
+        ]
+      ]
+    }
+  }
+}

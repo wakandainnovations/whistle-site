@@ -1,0 +1,35 @@
+---
+import { compact, sentimentShares } from '../lib/score';
+
+interface Props { sentiment: { positive: number; neutral: number; negative: number } }
+const { sentiment } = Astro.props;
+const pct = sentimentShares(sentiment);
+const parts = [
+  { name: 'Positive', n: sentiment.positive, p: pct.positive, color: 'var(--pos)' },
+  { name: 'Neutral', n: sentiment.neutral, p: pct.neutral, color: 'var(--neu)' },
+  { name: 'Negative', n: sentiment.negative, p: pct.negative, color: 'var(--neg)' },
+];
+const total = parts.reduce((s, p) => s + p.n, 0) || 1;
+const r = 40, c = 2 * Math.PI * r, gap = 1.6;
+let offset = 0;
+const arcs = parts.map((p) => {
+  const len = (c * p.n) / total;
+  const arc = { color: p.color, dash: `${Math.max(len - gap, 0)} ${c}`, offset: -offset };
+  offset += len;
+  return arc;
+});
+---
+<div class="donut-wrap">
+  <div class="donut">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r={r} fill="none" stroke="var(--surface-2)" stroke-width="13" />
+      {arcs.map((a) => <circle cx="50" cy="50" r={r} fill="none" stroke={a.color} stroke-width="13" stroke-dasharray={a.dash} stroke-dashoffset={a.offset} />)}
+    </svg>
+    <div class="c"><div><b class="num">{pct.positive}%</b><span>positive</span></div></div>
+  </div>
+  <div class="legend">
+    {parts.map((p) => (
+      <div><i style={`background:${p.color}`}></i><b>{p.name}</b><span class="num">{compact(p.n)} ({p.p}%)</span></div>
+    ))}
+  </div>
+</div>

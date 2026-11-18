@@ -1,0 +1,150 @@
+{
+  "sample": false,
+  "auraId": 97,
+  "auraName": "Ugly Story",
+  "title": "Ugly Story",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-05-22",
+  "featured": false,
+  "poster": "/posters/ugly-story.avif",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Pranava Swaroop",
+  "cast": [
+    "Avika Gor",
+    "Nandu Vijay Krishna",
+    "Ravi Teja Mahadasyam"
+  ],
+  "genres": [
+    "Drama",
+    "Thriller"
+  ],
+  "runtime": "2h 3m",
+  "tmdbId": null,
+  "watch": [
+    "ZEE5",
+    "JioHotstar"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-04-23",
+      "end": "2026-05-24"
+    },
+    "sentiment": {
+      "positive": 11,
+      "neutral": 4,
+      "negative": 159
+    },
+    "netSentiment": 0.07,
+    "awareness": {
+      "level": "High",
+      "views": 123336
+    },
+    "reach": 756,
+    "mentions": {
+      "total": 174,
+      "daily": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        31,
+        39,
+        44,
+        49,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Andhra Telangana",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Andhra Telangana",
+          86
+        ],
+        [
+          "Unknown",
+          14
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          100
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          86
+        ],
+        [
+          "Fan amplified promo",
+          14
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          80
+        ],
+        [
+          "Story",
+          13
+        ],
+        [
+          "Acting / cast performance",
+          5
+        ],
+        [
+          "Direction",
+          1
+        ],
+        [
+          "Music / songs",
+          1
+        ],
+        [
+          "Runtime",
+          1
+        ]
+      ]
+    }
+  }
+}

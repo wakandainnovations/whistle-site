@@ -1,0 +1,129 @@
+{
+  "sample": false,
+  "auraId": 85,
+  "auraName": "Kaalaghatta",
+  "title": "Kaalaghatta",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-06-19",
+  "featured": false,
+  "poster": "/posters/kaalaghatta.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "K Prakash Ambale",
+  "cast": [
+    "Abhi Das",
+    "Gahana Gowda",
+    "Prashanth Natana"
+  ],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": "1h 56m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-06-06",
+      "end": "2026-06-18"
+    },
+    "sentiment": {
+      "positive": 3,
+      "neutral": 1,
+      "negative": 3
+    },
+    "netSentiment": 1,
+    "awareness": {
+      "level": "Low",
+      "views": 37
+    },
+    "reach": 258,
+    "mentions": {
+      "total": 7,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        1,
+        0,
+        1,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          86
+        ],
+        [
+          "Unknown",
+          14
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          86
+        ],
+        [
+          "Media press",
+          14
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          43
+        ],
+        [
+          "Organic opinion",
+          43
+        ],
+        [
+          "News press coverage",
+          14
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          57
+        ],
+        [
+          "Acting / cast performance",
+          14
+        ],
+        [
+          "Music / songs",
+          14
+        ],
+        [
+          "Story",
+          14
+        ]
+      ]
+    }
+  }
+}

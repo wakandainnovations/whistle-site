@@ -1,0 +1,253 @@
+---
+import '../styles/global.css';
+import { getFilms } from '../lib/films';
+import Logo from '../components/Logo.astro';
+import FramehouseLockup from '../components/FramehouseLockup.astro';
+import Waves from '../components/Waves.astro';
+import { SITE, LANGUAGES } from '../site.config';
+import { TIERS, whistleScore, tierFor, scoreLabel } from '../lib/score';
+import { nowShowing } from '../lib/now';
+import { PLATFORMS } from '../lib/watch';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+const { title, description = SITE.description, image } = Astro.props;
+const pageTitle = title ? `${title} · ${SITE.brand}` : `${SITE.brand} Score`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const home = import.meta.env.BASE_URL;
+
+// Data for the header menus
+const films = await getFilms();
+const scoreOf = (f: (typeof films)[number]) => (f.data.report ? whistleScore(f.data.report.sentiment) : -1);
+const scored = films.filter((f) => f.data.report).sort((a, b) => scoreOf(b) - scoreOf(a));
+// the same film the homepage leads with: in theatres or coming soon, most traction and most positive
+const spot = nowShowing(films, 1)[0] ?? scored[0];
+const spotScore = scoreOf(spot);
+const langCount = (l: string) => films.filter((f) => f.data.language === l).length;
+const bandCount = (t: (typeof TIERS)[number]) => scored.filter((f) => scoreOf(f) >= t.min && scoreOf(f) <= t.max).length;
+const platforms = [...new Set(films.flatMap((f) => f.data.watch))]
+  .map((p) => ({ p, n: films.filter((f) => f.data.watch.includes(p)).length }))
+  .sort((a, b) => b.n - a.n);
+const here = Astro.url.pathname.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+    <meta name="twitter:card" content="summary" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  </head>
+  <body>
+    {SITE.previewNote && (
+      <div class="ribbon"><div class="wrap"><p>{SITE.previewNote}</p></div></div>
+    )}
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href={home} aria-label={`${SITE.brand} home`}>
+          <Logo />
+          <span class="brand-word">{SITE.brand}</span>
+          <span class="brand-by"><span class="by">by</span><FramehouseLockup size="sm" /></span>
+        </a>
+        <nav class="top" aria-label="Main">
+          <div class="nav-item">
+            <a class:list={['nav-link', { on: here.startsWith('/films') }]} href="/films">Films <span class="caret" aria-hidden="true"></span></a>
+            <div class="mega">
+              <div class="wrap mega-grid films-menu">
+                <div class="mega-col">
+                  <span class="mega-h">By language</span>
+                  {LANGUAGES.map((l) => <a href={`/films?lang=${l}`}>{l}<span class="num">{langCount(l)}</span></a>)}
+                </div>
+                <div class="mega-col">
+                  <span class="mega-h">By whistle</span>
+                  {TIERS.map((t) => <a href={`/films?band=${encodeURIComponent(t.name)}`}><span class="mi"><Waves waves={t.waves} size={16} />{t.name}</span><span class="num">{bandCount(t)}</span></a>)}
+                </div>
+                <div class="mega-col">
+                  <span class="mega-h">Streaming on</span>
+                  {platforms.slice(0, 6).map(({ p, n }) => <a href={`/films?platform=${encodeURIComponent(p)}`}><span class="mi"><i class="dot" style={`background:${PLATFORMS[p]?.color ?? 'var(--faint)'}`}></i>{p}</span><span class="num">{n}</span></a>)}
+                </div>
+                <div class="mega-col">
+                  <span class="mega-h">Lists</span>
+                  <a href="/films">Highest Whistle</a>
+                  <a href="/films?sort=posts">Most talked about</a>
+                  <a href="/films?sort=release">Newest</a>
+                  <a href="/#picks">Tonight's picks</a>
+                  <a href="/race"><span class="mi"><i class="live-dot"></i>The Whistle Race</span></a>
+                </div>
+                <a class="mega-spot" href={`/films/${spot.id}`}>
+                  {(spot.data.backdrop ?? spot.data.poster) && <img src={spot.data.backdrop ?? spot.data.poster!} alt="" loading="lazy" />}
+                  <span class="spot-body">
+                    <span class="mega-h">Featured</span>
+                    <span class="spot-title">{spot.data.title}</span>
+                    <span class="spot-score num"><Waves waves={tierFor(spotScore).waves} size={16} />{scoreLabel(spotScore)}</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class:list={['nav-link', 'race-link', { on: here === '/race' }]} href="/race"><i class="live-dot" aria-hidden="true"></i>Whistle Race</a>
+          </div>
+          <div class="nav-item">
+            <a class:list={['nav-link', { on: here === '/how' }]} href="/how">How it's scored <span class="caret" aria-hidden="true"></span></a>
+            <div class="mega">
+              <div class="wrap mega-grid cards-menu">
+                <a class="mega-card" href="/how#try"><span class="mega-h">01</span><b>Try it</b><span>Drag the cheers and complaints and watch the Whistle move.</span></a>
+                <a class="mega-card" href="/how#bands"><span class="mega-h">02</span><b>The four whistles</b><span class="tiers-mini">{TIERS.map((t) => <Waves waves={t.waves} size={20} />)}</span></a>
+                <a class="mega-card" href="/how#window"><span class="mega-h">03</span><b>The two months</b><span>A month before release to a month after.</span></a>
+                <a class="mega-card" href="/how#compare"><span class="mega-h">04</span><b>vs IMDb and RT</b><span>Voters, critics, and the crowd's own posts.</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class:list={['nav-link', { on: here === '/creators' }]} href="/creators">For creators <span class="caret" aria-hidden="true"></span></a>
+            <div class="mega">
+              <div class="wrap mega-grid cards-menu">
+                <a class="mega-card" href="/creators#badge"><span class="mega-h">Badge</span><b>Get a badge</b><img class="mini-badge" src={`/badge/${spot.id}.svg`} alt="" width="165" height="48" loading="lazy" /></a>
+                <a class="mega-card" href="/creators#use"><span class="mega-h">Use</span><b>Where to use it</b><span>Thumbnails, posts and video end cards.</span></a>
+                <a class="mega-card" href="/creators#partner"><span class="mega-h">Partner</span><b>Partner with us</b><span>Early access to new Whistles and full reports.</span></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="site">
+      <div class="wrap">
+        <a class="brand" href={home} aria-label={`${SITE.brand} home`}>
+          <Logo size={26} />
+          <span class="brand-word" style="font-size:22px">{SITE.brand}</span>
+        </a>
+        <div class="foot-text">
+          <p>
+            {SITE.brand} is a public film index from Framehouse, built by {SITE.company}. Scores come from public
+            posts and do not include critic reviews or user ratings.
+          </p>
+          <p class="credits">Posters and stills from TMDB. This site uses the TMDB API but is not endorsed or certified by TMDB. Trailers play from the studios’ official YouTube channels.</p>
+        </div>
+        <div class="makers">
+          <a class="maker" href="/how" aria-label="Framehouse"><FramehouseLockup size="lg" /></a>
+          <img class="wakanda" src="/brand/wakanda-logo.png" alt={SITE.company} width="118" height="24" />
+        </div>
+      </div>
+      <div class="wrap foot-bar">
+        <nav class="foot-links" aria-label="Footer">
+          <a href="/films">Films</a>
+          <a href="/race">Whistle Race</a>
+          <a href="/how">How it's scored</a>
+          <a href="/creators">For creators</a>
+          <a href="/contact">Contact us</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Use</a>
+        </nav>
+        <span class="foot-copy">© {new Date().getFullYear()} {SITE.legal.entity}</span>
+      </div>
+    </footer>
+    <style>
+      .brand-by { display: inline-flex; align-items: center; gap: 8px; text-transform: none; letter-spacing: 0; }
+      .brand-by .by { font-family: var(--font-mono); font-size: 11px; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; }
+      .foot-text { display: flex; flex-direction: column; gap: 8px; flex: 1 1 360px; min-width: 0; }
+      .credits { font-size: 12px !important; }
+      .makers { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+      .maker { text-decoration: none; }
+      .wakanda { width: 118px; height: auto; }
+      footer.site .foot-bar { border-top: 1px solid var(--line); padding-block: 18px 28px; display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; }
+      .foot-links { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+      .foot-links a { font-size: 13.5px; color: var(--muted); text-decoration: none; }
+      .foot-links a:hover { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
+      .foot-copy { font-size: 12.5px; color: var(--faint); }
+      @media (max-width: 600px) { .foot-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; width: 100%; } }
+
+      /* ---------- header mega menus ---------- */
+      nav.top { gap: 4px; }
+      .nav-item { position: static; }
+      .nav-link { display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px; border-radius: 999px; transition: background .2s, color .2s; }
+      .nav-link.on { color: var(--fg) !important; }
+      .caret { width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .25s; opacity: .7; }
+      .mega { position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 40px 60px -30px rgba(0,0,0,.6);
+        opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .2s, transform .25s cubic-bezier(.3,1.3,.5,1), visibility 0s .25s; }
+      /* a bridge so the pointer can travel from the link down into the panel */
+      .mega::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+      @media (hover: hover) {
+        .nav-item:hover .nav-link { background: var(--surface-2); color: var(--fg); }
+        .nav-item:hover .caret { transform: translateY(1px) rotate(225deg); }
+        .nav-item:hover .mega, .nav-item:focus-within .mega { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+      }
+      .nav-item:focus-within .mega { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+      .mega-grid { display: grid; gap: 28px; align-items: start; justify-content: stretch; padding-block: 28px 32px !important; }
+      .films-menu { align-items: stretch; }
+      .films-menu .mega-col { align-self: start; }
+      .films-menu { grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.3fr); }
+      .cards-menu { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+      .mega-h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); }
+      .mega-col { display: flex; flex-direction: column; gap: 2px; }
+      .mega-col .mega-h { margin-bottom: 8px; }
+      .mega-col a { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 7px 10px; margin-inline: -10px; border-radius: 8px; text-decoration: none; color: var(--fg); font-size: 14.5px; font-weight: 500; transition: background .15s, transform .2s cubic-bezier(.3,1.6,.5,1); }
+      .mega-col a:hover { background: var(--surface-2); transform: translateX(4px); }
+      .mega-col a .num { font-size: 12px; color: var(--faint); }
+      .mi { display: inline-flex; align-items: center; gap: 8px; }
+      .mi :global(.waves) { color: var(--gold-text); }
+      .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+      .mega-spot { position: relative; display: flex; align-items: flex-end; min-height: 200px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); text-decoration: none; color: #fff; isolation: isolate; }
+      .mega-spot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .6s ease; }
+      .mega-spot::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(10,5,14,.92)); z-index: -1; }
+      .mega-spot:hover img { transform: scale(1.06); }
+      .spot-body { display: flex; flex-direction: column; gap: 4px; padding: 16px; }
+      .spot-title { font-family: var(--font-display); font-weight: 900; font-size: 30px; text-transform: uppercase; line-height: .9; }
+      .spot-score { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: .04em; text-transform: uppercase; color: #F8B840; }
+      .mega-card { display: flex; flex-direction: column; gap: 8px; padding: 20px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); text-decoration: none; transition: transform .3s cubic-bezier(.3,1.5,.5,1), border-color .2s; }
+      .mega-card:hover { transform: translateY(-4px) rotate(-.6deg); border-color: var(--gold); }
+      .mega-card b { font-family: var(--font-display); font-weight: 800; font-size: 22px; text-transform: uppercase; line-height: 1; }
+      .mega-card span:not(.mega-h) { font-size: 13.5px; color: var(--muted); }
+      .tiers-mini { display: flex; gap: 10px; color: var(--gold-text) !important; }
+      .live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--neg); display: inline-block; flex: none; animation: live-ping 1.6s ease-out infinite; }
+      @keyframes live-ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--neg) 70%, transparent); } 100% { box-shadow: 0 0 0 8px transparent; } }
+      .mini-badge { width: 165px; height: auto; margin-top: 4px; }
+      @media (max-width: 960px) { .films-menu { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mega-spot { display: none; } }
+      .nav-link { white-space: nowrap; }
+      @media (max-width: 960px) {
+        header.site .wrap { flex-wrap: wrap; row-gap: 6px; }
+        nav.top { display: flex !important; width: calc(100% + 28px); margin-inline: -14px; overflow-x: auto; scrollbar-width: none; -webkit-mask: linear-gradient(90deg, #000 85%, transparent); mask: linear-gradient(90deg, #000 85%, transparent); }
+        nav.top::-webkit-scrollbar { display: none; }
+        .nav-link { font-size: 13.5px !important; padding: 7px 12px; white-space: nowrap; }
+        .caret, .mega { display: none; }
+      }
+      :root[data-theme="light"] .wakanda { filter: invert(1) hue-rotate(180deg); }
+      @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .wakanda { filter: invert(1) hue-rotate(180deg); } }
+    </style>
+
+    <script>
+      // Copy buttons: <button data-copy="text"> or data-copy-from="#id">, with an optional data-done="#id" message.
+      document.addEventListener('click', async (e) => {
+        const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-copy], [data-copy-from]');
+        if (!btn) return;
+        const from = btn.dataset.copyFrom ? document.querySelector<HTMLElement>(btn.dataset.copyFrom) : null;
+        const text = btn.dataset.copy ?? from?.textContent ?? '';
+        const done = btn.dataset.done ? document.querySelector<HTMLElement>(btn.dataset.done) : null;
+        try {
+          await navigator.clipboard.writeText(text);
+          if (done) { done.hidden = false; setTimeout(() => (done.hidden = true), 1800); }
+        } catch {
+          if (from) { const r = document.createRange(); r.selectNodeContents(from); getSelection()?.removeAllRanges(); getSelection()?.addRange(r); }
+        }
+      });
+    </script>
+  </body>
+</html>

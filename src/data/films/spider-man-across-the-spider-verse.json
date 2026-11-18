@@ -1,0 +1,243 @@
+{
+  "sample": true,
+  "title": "Spider-Man: Across the Spider-Verse",
+  "titleConfirmed": true,
+  "language": "English",
+  "industry": "hollywood",
+  "year": 2023,
+  "releaseDate": "2023-06-01",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/kVd3a9YeLGkoeR50jGEXM6EqseS.jpg",
+  "trailer": {
+    "youtubeId": "cqGjhVJWtEg",
+    "channel": "Sony Pictures Entertainment",
+    "kind": "trailer"
+  },
+  "director": "Joaquim Dos Santos",
+  "cast": [
+    "Shameik Moore",
+    "Hailee Steinfeld",
+    "Oscar Isaac",
+    "Brian Tyree Henry"
+  ],
+  "genres": [
+    "Animation",
+    "Action",
+    "Adventure",
+    "Science Fiction"
+  ],
+  "runtime": "2h 20m",
+  "tmdbId": 569094,
+  "watch": [
+    "SonyLIV"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-05-02",
+      "end": "2023-07-01"
+    },
+    "sentiment": {
+      "positive": 27358,
+      "neutral": 3451,
+      "negative": 2379
+    },
+    "netSentiment": 11.5,
+    "awareness": {
+      "level": "High",
+      "views": 70200000
+    },
+    "reach": 57000,
+    "mentions": {
+      "total": 26067,
+      "daily": [
+        187,
+        152,
+        142,
+        146,
+        172,
+        156,
+        209,
+        365,
+        618,
+        795,
+        529,
+        298,
+        234,
+        193,
+        217,
+        181,
+        250,
+        229,
+        269,
+        273,
+        282,
+        304,
+        296,
+        309,
+        383,
+        426,
+        547,
+        537,
+        622,
+        755,
+        1245,
+        1362,
+        983,
+        1118,
+        1129,
+        922,
+        984,
+        765,
+        777,
+        699,
+        624,
+        627,
+        620,
+        459,
+        470,
+        388,
+        399,
+        345,
+        269,
+        227,
+        220,
+        218,
+        193,
+        175,
+        130,
+        137,
+        115,
+        113,
+        98,
+        91,
+        89
+      ]
+    },
+    "regions": [
+      [
+        "Maharashtra",
+        26
+      ],
+      [
+        "Delhi NCR",
+        21
+      ],
+      [
+        "Karnataka",
+        20
+      ],
+      [
+        "Tamil Nadu",
+        14
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          25
+        ],
+        [
+          "Karnataka",
+          18
+        ],
+        [
+          "Maharashtra",
+          17
+        ],
+        [
+          "Delhi NCR",
+          17
+        ],
+        [
+          "Tamil Nadu",
+          10
+        ],
+        [
+          "Andhra Telangana",
+          8
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          34
+        ],
+        [
+          "Media press",
+          27
+        ],
+        [
+          "Fan page",
+          17
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Official studio",
+          7
+        ],
+        [
+          "Bot spam",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          45
+        ],
+        [
+          "Fan amplified promo",
+          24
+        ],
+        [
+          "Official promo",
+          13
+        ],
+        [
+          "News press coverage",
+          13
+        ],
+        [
+          "Trade box office update",
+          3
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Box office commercial",
+          24
+        ],
+        [
+          "Cast performance",
+          23
+        ],
+        [
+          "Music",
+          16
+        ],
+        [
+          "Story",
+          16
+        ],
+        [
+          "Direction technical craft",
+          10
+        ],
+        [
+          "Politics personal life",
+          6
+        ]
+      ]
+    }
+  }
+}

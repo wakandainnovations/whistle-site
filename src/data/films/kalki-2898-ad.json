@@ -1,0 +1,244 @@
+{
+  "sample": true,
+  "title": "Kalki 2898-AD",
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2024,
+  "releaseDate": "2024-06-27",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/rstcAnBeCkxNQjNp3YXrF6IP1tW.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/seAIZLEq2Il2psjMUREDbSdRmbu.jpg",
+  "trailer": {
+    "youtubeId": "y1-w1kUGuz8",
+    "channel": "Vyjayanthi Network",
+    "kind": "trailer"
+  },
+  "director": "Nag Ashwin",
+  "cast": [
+    "Amitabh Bachchan",
+    "Prabhas",
+    "Deepika Padukone",
+    "Kamal Haasan"
+  ],
+  "genres": [
+    "Drama",
+    "Action",
+    "Fantasy",
+    "Science Fiction"
+  ],
+  "runtime": "2h 56m",
+  "tmdbId": 801688,
+  "watch": [
+    "Netflix",
+    "Prime Video"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2024-05-28",
+      "end": "2024-07-27"
+    },
+    "sentiment": {
+      "positive": 39555,
+      "neutral": 5663,
+      "negative": 16156
+    },
+    "netSentiment": 2.45,
+    "awareness": {
+      "level": "High",
+      "views": 146600000
+    },
+    "reach": 131200,
+    "mentions": {
+      "total": 51423,
+      "daily": [
+        364,
+        354,
+        392,
+        388,
+        309,
+        362,
+        454,
+        644,
+        1133,
+        1618,
+        1250,
+        790,
+        461,
+        368,
+        386,
+        451,
+        468,
+        531,
+        564,
+        489,
+        526,
+        655,
+        663,
+        655,
+        839,
+        856,
+        1092,
+        1163,
+        1314,
+        1673,
+        3028,
+        2168,
+        2319,
+        2324,
+        2008,
+        1772,
+        1833,
+        1784,
+        1543,
+        1472,
+        1127,
+        1194,
+        1139,
+        997,
+        772,
+        640,
+        609,
+        535,
+        464,
+        409,
+        301,
+        264,
+        260,
+        213,
+        214,
+        183,
+        169,
+        134,
+        109,
+        122,
+        105
+      ]
+    },
+    "regions": [
+      [
+        "Andhra Telangana",
+        65
+      ],
+      [
+        "International",
+        13
+      ],
+      [
+        "Karnataka",
+        9
+      ],
+      [
+        "Hindi Belt North India",
+        7
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Andhra Telangana",
+          47
+        ],
+        [
+          "Unknown",
+          26
+        ],
+        [
+          "International",
+          9
+        ],
+        [
+          "Hindi Belt North India",
+          8
+        ],
+        [
+          "Karnataka",
+          6
+        ],
+        [
+          "Tamil Nadu",
+          4
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          44
+        ],
+        [
+          "Media press",
+          26
+        ],
+        [
+          "Fan page",
+          11
+        ],
+        [
+          "Verified celebrity",
+          10
+        ],
+        [
+          "Bot spam",
+          5
+        ],
+        [
+          "Official studio",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          51
+        ],
+        [
+          "Fan amplified promo",
+          16
+        ],
+        [
+          "Official promo",
+          13
+        ],
+        [
+          "News press coverage",
+          13
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          30
+        ],
+        [
+          "Story",
+          16
+        ],
+        [
+          "Music",
+          15
+        ],
+        [
+          "Direction technical craft",
+          13
+        ],
+        [
+          "Box office commercial",
+          12
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

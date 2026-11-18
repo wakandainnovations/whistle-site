@@ -1,0 +1,200 @@
+{
+  "sample": true,
+  "title": "V. Shantaram",
+  "titleConfirmed": true,
+  "language": "Hindi",
+  "industry": "hindi",
+  "year": 2026,
+  "releaseDate": "2026-11-18",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/cary9HR1kSMzbPYXJeKqsposXZp.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Abhijeet Deshpande",
+  "cast": [
+    "Siddhant Chaturvedi",
+    "Tamannaah Bhatia"
+  ],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": 1590846,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-10-19",
+      "end": "2026-11-16"
+    },
+    "sentiment": {
+      "positive": 1580,
+      "neutral": 275,
+      "negative": 710
+    },
+    "netSentiment": 2.23,
+    "awareness": {
+      "level": "Medium",
+      "views": 4700000
+    },
+    "reach": 4900,
+    "mentions": {
+      "total": 1870,
+      "daily": [
+        30,
+        32,
+        31,
+        30,
+        38,
+        35,
+        36,
+        64,
+        112,
+        153,
+        110,
+        61,
+        47,
+        46,
+        38,
+        48,
+        46,
+        52,
+        56,
+        48,
+        56,
+        53,
+        76,
+        72,
+        84,
+        83,
+        97,
+        102,
+        134
+      ]
+    },
+    "regions": [
+      [
+        "Hindi Belt North India",
+        49
+      ],
+      [
+        "Maharashtra",
+        19
+      ],
+      [
+        "International",
+        12
+      ],
+      [
+        "Gujarat",
+        10
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Hindi Belt North India",
+          32
+        ],
+        [
+          "Unknown",
+          27
+        ],
+        [
+          "Maharashtra",
+          14
+        ],
+        [
+          "International",
+          11
+        ],
+        [
+          "South India",
+          9
+        ],
+        [
+          "Gujarat",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          44
+        ],
+        [
+          "Fan page",
+          19
+        ],
+        [
+          "Media press",
+          17
+        ],
+        [
+          "Verified celebrity",
+          10
+        ],
+        [
+          "Official studio",
+          5
+        ],
+        [
+          "Bot spam",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          45
+        ],
+        [
+          "Fan amplified promo",
+          17
+        ],
+        [
+          "News press coverage",
+          15
+        ],
+        [
+          "Official promo",
+          14
+        ],
+        [
+          "Trade box office update",
+          6
+        ],
+        [
+          "Ticket merch",
+          3
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          31
+        ],
+        [
+          "Box office commercial",
+          22
+        ],
+        [
+          "Story",
+          18
+        ],
+        [
+          "Music",
+          9
+        ],
+        [
+          "Direction technical craft",
+          9
+        ],
+        [
+          "Official promo",
+          6
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,92 @@
+---
+// /privacy. Written to match what the site actually does today: no accounts, no forms, no analytics,
+// no advertising. If any of that changes (sign-ups, Whistle Pro, analytics), update this page first.
+import Legal from '../layouts/Legal.astro';
+import Fill from '../components/Fill.astro';
+import { SITE } from '../site.config';
+const L = SITE.legal;
+
+const sections = [
+  { id: 'who', title: 'Who we are' },
+  { id: 'visit', title: 'When you visit' },
+  { id: 'third', title: 'Other services on our pages' },
+  { id: 'posts', title: 'Public posts behind the scores' },
+  { id: 'cookies', title: 'Cookies' },
+  { id: 'keep', title: 'How long we keep data' },
+  { id: 'rights', title: 'Your rights' },
+  { id: 'children', title: 'Children' },
+  { id: 'changes', title: 'Changes' },
+  { id: 'contact', title: 'Contact and grievances' },
+];
+---
+<Legal title="Privacy Policy" description={`How ${SITE.brand} handles data: what we collect when you visit, and how the public posts behind each score are used.`} sections={sections}>
+  <div class="summary">
+    <h2>In short</h2>
+    <ul>
+      <li>You don't need an account. We only get personal details if you choose to write to us.</li>
+      <li>We don't run advertising or tracking cookies.</li>
+      <li>Whistle scores are built from public posts. We only publish totals and percentages, never individual posts or who wrote them.</li>
+    </ul>
+  </div>
+
+  <section id="who">
+    <h2>Who we are</h2>
+    <p>{SITE.brand} is a public film index from Framehouse, run by <b><Fill value={L.entity} label="legal entity name" /></b>, <Fill value={L.address} label="registered address" /> ("we", "us"). We decide how the data described here is used, which makes us the data fiduciary under India's Digital Personal Data Protection Act, 2023.</p>
+  </section>
+
+  <section id="visit">
+    <h2>When you visit</h2>
+    <p>Like any website, the server that delivers our pages receives technical details with each request: your IP address, browser and device type, the page you asked for, the page that linked you here, and the time. Our hosting provider keeps these in short-lived logs so the site can run and be protected from abuse. We don't combine them with anything else or use them to identify you.</p>
+    <p>Searching, filtering, using the badge builder and copying links all happen in your browser. None of it is sent to us.</p>
+    <p>If you write to us through the <a href="/contact">contact form</a>, we receive your name, email address and message. We use them only to reply to you, and delete them once the conversation is finished, unless the law requires us to keep them.</p>
+  </section>
+
+  <section id="third">
+    <h2>Other services on our pages</h2>
+    <p>Some parts of our pages load from other companies. When they do, your browser connects to them directly and they receive your IP address and browser details under their own privacy policies:</p>
+    <ul>
+      <li><b>Google Fonts</b> for the site's typefaces.</li>
+      <li><b>The Movie Database (TMDB)</b> for posters and stills.</li>
+      <li><b>YouTube</b> for trailers. We use YouTube's privacy-enhanced mode, and nothing loads from YouTube until you press play.</li>
+      <li><b>Streaming services</b>: "Watch on" links take you to TMDB's where-to-watch page and from there to the service you choose.</li>
+    </ul>
+  </section>
+
+  <section id="posts">
+    <h2>Public posts behind the scores</h2>
+    <p>Framehouse reads public posts about a film from a month before its release to a month after. Each post is sorted by whether it cheers the film, complains, or doesn't take a side, plus the kind of account that posted it, roughly where it came from and what it talks about.</p>
+    <p>On {SITE.brand} we only publish the result as totals and percentages: for example, "58 of every 100 posts loved it" or "71% of posts came from Tamil Nadu". We don't show individual posts, usernames or profiles, and you can't look up a person on this site.</p>
+    <p>If you think a post of yours was included and you'd like it left out of future counts, write to us using the <a href="/contact?topic=posts">contact form</a>.</p>
+  </section>
+
+  <section id="cookies">
+    <h2>Cookies</h2>
+    <p>{SITE.brand} doesn't set cookies, and we don't use analytics or advertising trackers. If we add analytics later, we'll update this page and ask for your consent where the law requires it.</p>
+  </section>
+
+  <section id="keep">
+    <h2>How long we keep data</h2>
+    <p>Server logs are kept for a short period by our hosting provider and then deleted. The aggregated statistics behind each score are kept for as long as the film is listed.</p>
+  </section>
+
+  <section id="rights">
+    <h2>Your rights</h2>
+    <p>Under India's data protection law you can ask us what personal data we hold about you, ask us to correct or erase it, and withdraw consent you've given. You can also nominate someone to exercise these rights for you. We'll respond within a reasonable time. Because we don't keep personal details about visitors, most requests will be about public posts (see above).</p>
+  </section>
+
+  <section id="children">
+    <h2>Children</h2>
+    <p>{SITE.brand} is a general-audience site and isn't directed at children. We don't knowingly collect personal data from anyone under 18.</p>
+  </section>
+
+  <section id="changes">
+    <h2>Changes</h2>
+    <p>If the way we handle data changes, for example when sign-ups or Whistle Pro launch, we'll update this page and the date at the top before the change takes effect.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact and grievances</h2>
+    <p>For privacy questions or requests, write to us through our <a href="/contact?topic=privacy">contact form</a>.</p>
+    <p>Grievance Officer: <Fill value={L.grievanceOfficer} label="name of Grievance Officer" />, reachable through the same form. If you're not satisfied with our response, you can complain to the Data Protection Board of India.</p>
+  </section>
+</Legal>

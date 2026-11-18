@@ -1,0 +1,242 @@
+{
+  "sample": true,
+  "title": "Aavesham",
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2024,
+  "releaseDate": "2024-04-11",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/k5RWPaNjgRcNvGoawYaQHQwyctI.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/sJa3WaCx3IyU7zkudlMs7lb13gt.jpg",
+  "trailer": {
+    "youtubeId": "L0yEMl8PXnw",
+    "channel": "Anwar Rasheed Entertainment",
+    "kind": "teaser"
+  },
+  "director": "Jithu Madhavan",
+  "cast": [
+    "Fahadh Faasil",
+    "Hipster",
+    "Mithun Jai Sankar",
+    "Roshan Shanavas"
+  ],
+  "genres": [
+    "Comedy",
+    "Action"
+  ],
+  "runtime": "2h 36m",
+  "tmdbId": 1084812,
+  "watch": [
+    "Prime Video",
+    "JioHotstar"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2024-03-12",
+      "end": "2024-05-11"
+    },
+    "sentiment": {
+      "positive": 15774,
+      "neutral": 1464,
+      "negative": 3005
+    },
+    "netSentiment": 5.25,
+    "awareness": {
+      "level": "Medium",
+      "views": 40700000
+    },
+    "reach": 38100,
+    "mentions": {
+      "total": 14556,
+      "daily": [
+        106,
+        96,
+        92,
+        95,
+        95,
+        91,
+        120,
+        164,
+        366,
+        422,
+        355,
+        194,
+        144,
+        116,
+        130,
+        111,
+        112,
+        136,
+        150,
+        143,
+        161,
+        189,
+        199,
+        179,
+        201,
+        271,
+        287,
+        338,
+        408,
+        447,
+        795,
+        650,
+        627,
+        563,
+        488,
+        471,
+        510,
+        423,
+        431,
+        408,
+        426,
+        372,
+        344,
+        299,
+        242,
+        211,
+        212,
+        180,
+        146,
+        108,
+        118,
+        85,
+        84,
+        84,
+        59,
+        69,
+        60,
+        56,
+        41,
+        38,
+        38
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        61
+      ],
+      [
+        "International",
+        17
+      ],
+      [
+        "Tamil Nadu",
+        10
+      ],
+      [
+        "Karnataka",
+        8
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Kerala",
+          49
+        ],
+        [
+          "Unknown",
+          26
+        ],
+        [
+          "International",
+          11
+        ],
+        [
+          "Tamil Nadu",
+          6
+        ],
+        [
+          "Karnataka",
+          5
+        ],
+        [
+          "Andhra Telangana",
+          3
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          37
+        ],
+        [
+          "Media press",
+          20
+        ],
+        [
+          "Fan page",
+          19
+        ],
+        [
+          "Verified celebrity",
+          15
+        ],
+        [
+          "Official studio",
+          6
+        ],
+        [
+          "Bot spam",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          48
+        ],
+        [
+          "Fan amplified promo",
+          24
+        ],
+        [
+          "News press coverage",
+          14
+        ],
+        [
+          "Official promo",
+          9
+        ],
+        [
+          "Trade box office update",
+          3
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          23
+        ],
+        [
+          "Box office commercial",
+          17
+        ],
+        [
+          "Story",
+          17
+        ],
+        [
+          "Music",
+          14
+        ],
+        [
+          "Direction technical craft",
+          14
+        ],
+        [
+          "Official promo",
+          9
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+---
+// A tiny theatre: rows of seats, filled to match a band. Hovering the parent .band makes the crowd do a wave.
+interface Props { fill: number; seed?: number }
+const { fill, seed = 7 } = Astro.props;
+const ROWS = 5, COLS = 11, total = ROWS * COLS;
+
+// Deterministic shuffle so the same seats are filled on every build
+let s = seed;
+const rand = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
+const order = Array.from({ length: total }, (_, i) => i).sort(() => rand() - 0.5);
+const filled = new Set(order.slice(0, Math.round(total * fill)));
+const aisle = 5; // gap after this column
+---
+<div class="seats" aria-hidden="true">
+  <span class="screen"></span>
+  {Array.from({ length: ROWS }, (_, r) => (
+    <div class="row">
+      {Array.from({ length: COLS }, (_, c) => {
+        const i = r * COLS + c;
+        return <i class:list={[{ on: filled.has(i), aisle: c === aisle }]} style={`--d:${c * 45 + r * 20}ms`}></i>;
+      })}
+    </div>
+  ))}
+</div>
+<style>
+  .seats { display: flex; flex-direction: column; gap: 5px; align-items: center; padding-top: 4px; }
+  .screen { width: 78%; height: 5px; border-radius: 50% 50% 0 0 / 100% 100% 0 0; background: var(--gold); opacity: .55; margin-bottom: 8px; box-shadow: 0 6px 18px var(--glow); }
+  .row { display: flex; gap: 4px; }
+  .row:nth-child(n+4) { gap: 4.5px; }
+  i { width: 13px; height: 11px; border-radius: 4px 4px 2px 2px; background: var(--surface-2); border: 1px solid var(--line); display: block; transition: transform .35s cubic-bezier(.3,1.6,.5,1), background .2s; transition-delay: var(--d); }
+  i.on { background: var(--gold); border-color: transparent; }
+  i.aisle { margin-right: 9px; }
+  :global(.band:hover) i.on, :global(.band:focus-within) i.on { transform: translateY(-5px); }
+  :global(.band:hover) i:not(.on) { background: color-mix(in srgb, var(--surface-2) 80%, var(--fg)); }
+  @media (prefers-reduced-motion: reduce) { i { transition: none; } }
+</style>

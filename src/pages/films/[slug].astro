@@ -1,0 +1,341 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getFilms } from '../../lib/films';
+import Layout from '../../layouts/Layout.astro';
+import Dial from '../../components/Dial.astro';
+import Poster from '../../components/Poster.astro';
+import Bars from '../../components/Bars.astro';
+import MentionsChart from '../../components/MentionsChart.astro';
+import SentimentDonut from '../../components/SentimentDonut.astro';
+import Trailer from '../../components/Trailer.astro';
+import WatchChips from '../../components/WatchChips.astro';
+import FilmCard from '../../components/FilmCard.astro';
+import TierChip from '../../components/TierChip.astro';
+import Waves from '../../components/Waves.astro';
+import CrowdMood from '../../components/CrowdMood.astro';
+import LiveCounter from '../../components/LiveCounter.astro';
+import Locked from '../../components/Locked.astro';
+import { plain, plainDriver, inTen, buzzWord, cheersPerBoo } from '../../lib/plain';
+import { TIERS, whistleScore, tierFor, scoreLabel, compact, formatDate, daysBetween } from '../../lib/score';
+
+export async function getStaticPaths() {
+  const films = await getFilms();
+  return films.map((film) => ({ params: { slug: film.id }, props: { film, films } }));
+}
+
+const { film, films } = Astro.props as { film: CollectionEntry<'films'>; films: CollectionEntry<'films'>[] };
+const f = film.data;
+const r = f.report;
+// as of the build; a film whose release is still ahead shows its pre-release buzz
+const upcoming = !!f.releaseDate && Date.parse(`${f.releaseDate}T00:00:00Z`) > Date.now();
+const score = r ? whistleScore(r.sentiment) : null;
+const tier = score !== null ? tierFor(score) : null;
+const sided = r ? r.sentiment.positive + r.sentiment.negative : 0;
+const posts = r ? sided + r.sentiment.neutral : 0;
+const longDate = { month: 'short', day: 'numeric', year: 'numeric' } as const;
+
+// Plain-language numbers for the report
+const addDays = (iso: string, n: number) => { const d = new Date(`${iso}T00:00:00Z`); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+const peakIdx = r ? r.mentions.daily.indexOf(Math.max(...r.mentions.daily)) : -1;
+const peakDate = r && peakIdx >= 0 ? addDays(r.tracking.start, peakIdx) : null;
+const peakAfterRelease = peakDate && f.releaseDate ? daysBetween(f.releaseDate, peakDate) - 1 : null;
+const plainRows = (rows: [string, number][], n = 4, say = plain) => rows.filter(([k]) => k !== 'Unknown' && k !== 'Bot spam').slice(0, n).map(([k, v]) => [say(k), v] as [string, number]);
+const net = r ? cheersPerBoo(r.netSentiment) : null;
+const posShare = r && posts ? Math.round((r.sentiment.positive / posts) * 100) : 0;
+const topTopic = r ? plainRows(r.audience.topics).find(([k]) => k !== 'The film overall' && k !== 'Promos and posters')?.[0] : undefined;
+const topRegion = r ? plain(r.regions[0]?.[0] ?? '') : '';
+
+const description = r && score !== null && tier
+  ? `${f.title}: ${scoreLabel(score)} (${tier.name}), from ${compact(posts)} public posts.`
+  : `${f.title} (${f.language}, ${f.year}): trailer and Whistle Score, coming soon.`;
+
+// "If you liked the buzz on this": well-scored films sharing a genre, same language first
+const shared = (x: CollectionEntry<'films'>) => x.data.genres.filter((g) => f.genres.includes(g)).length;
+const similar = films
+  .filter((x) => x.id !== film.id && x.data.report && whistleScore(x.data.report.sentiment) >= 70)
+  .map((x) => ({ x, rank: (x.data.language === f.language ? 2 : 0) + shared(x) + whistleScore(x.data.report!.sentiment) / 100 }))
+  .filter(({ x }) => shared(x) > 0 || x.data.language === f.language)
+  .sort((a, b) => b.rank - a.rank)
+  .slice(0, 4)
+  .map(({ x }) => x);
+
+const recommendation = score === null ? '' : upcoming ? (score >= 60 ? 'One to watch for.' : 'The buzz is mixed so far.') : score >= 75 ? 'Worth your night.' : score >= 60 ? 'A safe pick.' : score >= 40 ? 'Watch the trailer first.' : 'The crowd says skip.';
+
+let verdict = '';
+if (r && score !== null) {
+  const leaning = upcoming ? (score >= 60 ? 'is excited so far' : score >= 40 ? 'is split so far' : 'is cold so far') : score >= 60 ? 'leaned positive' : score >= 40 ? 'was split' : 'leaned negative';
+  const ratio = r.netSentiment === null
+    ? 'Nobody posted a complaint'
+    : r.netSentiment === 0
+      ? 'Nobody has cheered it yet'
+      : r.netSentiment >= 1
+        ? `For every negative post there were ${r.netSentiment.toFixed(1)} positive ones`
+        : `For every positive post there were ${(1 / r.netSentiment).toFixed(1)} negative ones`;
+  verdict = `The crowd ${leaning}. ${ratio}${r.regions[0] ? `, and most of the noise came from ${plain(r.regions[0][0])}` : ''}.`;
+}
+---
+<Layout title={f.title} description={description} image={score !== null ? `/badge/${film.id}.svg` : f.backdrop ?? undefined}>
+  <main>
+    <section class:list={['film-top', { 'has-backdrop': !!f.backdrop }]}>
+      {f.backdrop && <div class="backdrop" style={`background-image:url('${f.backdrop}')`} aria-hidden="true"></div>}
+      <div class="wrap crumb"><a href="/films">← All films</a></div>
+
+      <div class="film-hero">
+        <div class="wrap">
+          <Poster language={f.language} year={f.year} title={f.title} poster={f.poster} label={f.titleConfirmed ? f.title : undefined} eager />
+          <div style="min-width:0">
+            <span class="eyebrow">Whistle report</span>
+            <h1>{f.title}</h1>
+            {f.aka.length > 0 && <p class="aka">Also known as {f.aka[0]}</p>}
+            <div class="facts">
+              {f.sample && <span class="sample-chip">Sample data</span>}
+              <span>{f.language}</span>
+              {f.releaseDate && <span class="num">{upcoming ? 'Releases' : 'Released'} {formatDate(f.releaseDate, longDate)}</span>}
+              {f.runtime && <span class="num">{f.runtime}</span>}
+              {f.genres.length > 0 && <span>{f.genres.join(', ')}</span>}
+              {r && <span class="num">Tracked {formatDate(r.tracking.start)} – {formatDate(r.tracking.end, longDate)}</span>}
+              {r && <span class="num">{compact(posts)} posts read</span>}
+            </div>
+            {(f.director || f.cast.length > 0) && (
+              <dl class="credits">
+                {f.director && <div><dt>Director</dt><dd>{f.director}</dd></div>}
+                {f.cast.length > 0 && <div><dt>Starring</dt><dd>{f.cast.join(', ')}</dd></div>}
+              </dl>
+            )}
+            {verdict && <p class="verdict">{verdict} {recommendation && <b class="rec">{recommendation}</b>}</p>}
+            {f.watch.length > 0 && (
+              <div class="where">
+                <WatchChips watch={f.watch} tmdbId={f.tmdbId} title={f.title} size="md" label />
+                {f.watchPlaceholder
+                  ? <span class="where-note">Placeholder: streaming platforms aren't confirmed for this film yet.</span>
+                  : f.watchCheckedOn && <span class="where-note">Streaming in India, from JustWatch via TMDB. Checked {formatDate(f.watchCheckedOn, longDate)}.</span>}
+              </div>
+            )}
+          </div>
+
+          {score !== null && tier ? (
+            <div class="ticket scorebox">
+              <span class="mono">Whistle Score</span>
+              <Dial score={score} size={190} />
+              <div class="score-meta">
+                <TierChip score={score} />
+                <span class="basis num">Positive share of {compact(posts)} posts</span>
+              </div>
+              <div class="perf" aria-hidden="true"></div>
+              <div class="actions">
+                <button class="btn" type="button" data-copy={new URL(`/films/${film.id}`, Astro.site).href} data-done="#shared">Copy link</button>
+                <a class="btn" href={`/creators?film=${film.id}#badge`}>Get the badge</a>
+              </div>
+              <span class="copied" id="shared" hidden>Link copied</span>
+            </div>
+          ) : (
+            <div class="ticket scorebox pending">
+              <span class="mono">Whistle Score</span>
+              <div class="pending-dial" aria-hidden="true"><span>?</span></div>
+              <span class="tier muted-tier">Score coming soon</span>
+              <span class="basis">We're counting the posts from the month before release to the month after.</span>
+              <div class="perf" aria-hidden="true"></div>
+              <div class="actions">
+                <button class="btn" type="button" data-copy={new URL(`/films/${film.id}`, Astro.site).href} data-done="#shared">Copy link</button>
+              </div>
+              <span class="copied" id="shared" hidden>Link copied</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" style="padding-bottom:72px">
+      <div class="rows">
+        {f.trailer && (
+          <div class="panel trailer-panel" id="trailer">
+            <div class="panel-head"><div><h3>{f.trailer.kind === 'trailer' ? 'Trailer' : f.trailer.kind === 'teaser' ? 'Teaser' : 'Showcase'}</h3><p>Watch it, then see what the crowd made of it.</p></div></div>
+            <Trailer youtubeId={f.trailer.youtubeId} title={f.title} channel={f.trailer.channel} />
+          </div>
+        )}
+
+        {r && score !== null && tier ? (
+          <>
+            <div class="section-head verdict-head">
+              <span class="eyebrow">{upcoming ? 'Pre-release buzz' : "The crowd's verdict"}</span>
+              <h2>{upcoming ? 'What people are saying so far' : 'What people really thought'}</h2>
+            </div>
+
+            <div class="headline">
+              <div class="headline-main">
+                <p class="big-say"><b class="num">{inTen(score)}</b> people posting {upcoming ? <>are <em>looking forward</em> to</> : <em>loved</em>} {f.title}.</p>
+                <p class="small-say">
+                  {topTopic && <>Most of the talk was about <b>{topTopic.toLowerCase()}</b>. </>}
+                  {topRegion && <>It was loudest in <b>{topRegion}</b>. </>}
+                  {recommendation}
+                </p>
+              </div>
+              <LiveCounter title={f.title} reach={r.reach} positiveShare={posShare} />
+            </div>
+
+            <div class="quick">
+              {net && <div class="q"><span class="q-v num">{net.value}</span><span class="q-l">{net.label}</span></div>}
+              {r.awareness.views > 0 && <div class="q"><span class="q-v num">{compact(r.awareness.views)}</span><span class="q-l">trailer and clip views. <b>{buzzWord(r.awareness.level)} buzz.</b></span></div>}
+              {r.reach > 0 && <div class="q"><span class="q-v num">{compact(r.reach)}</span><span class="q-l">different people posted about it</span></div>}
+              {peakDate && <div class="q"><span class="q-v">{formatDate(peakDate)}</span><span class="q-l">the loudest day{peakAfterRelease !== null && peakAfterRelease >= 0 ? `, ${peakAfterRelease} days after release` : ''}</span></div>}
+            </div>
+
+            <div class="panel">
+              <div class="panel-head"><div><h3>Out of every 100 posts</h3><p>Each head is one in a hundred posts about the film.</p></div></div>
+              <CrowdMood sentiment={r.sentiment} />
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <div><h3>When people were talking</h3><p>{peakDate ? `Talk peaked on ${formatDate(peakDate, longDate)}.` : 'Posts per day.'} Higher means more people posting that day.</p></div>
+                <div style="text-align:right"><span class="big num">{r.mentions.total.toLocaleString('en-US')}</span><p class="num">mentions in {daysBetween(r.tracking.start, r.tracking.end)} days</p></div>
+              </div>
+              {r.mentions.daily.length > 1 ? <MentionsChart daily={r.mentions.daily} start={r.tracking.start} end={r.tracking.end} /> : <p class="empty">No day-by-day counts for this film yet.</p>}
+            </div>
+
+            <div class="two">
+              <div class="panel">
+                <div class="panel-head"><div><h3>What got people talking</h3><p>Share of posts about each thing.</p></div></div>
+                {r.audience.topics.length ? <Bars rows={plainRows(r.audience.topics)} /> : <p class="empty">Not sorted by topic yet.</p>}
+              </div>
+              <div class="panel">
+                <div class="panel-head"><div><h3>Where the noise came from</h3><p>Share of posts from each place.</p></div></div>
+                {r.regions.length ? <Bars rows={plainRows(r.regions)} /> : <p class="empty">Not enough posts with a known location yet.</p>}
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head"><div><h3>Who was talking</h3><p>Share of posts by what was driving them.</p></div></div>
+              {r.audience.postType.length ? <Bars rows={plainRows(r.audience.postType, 5, plainDriver)} /> : <p class="empty">Not sorted yet.</p>}
+              {(r.audience.where.length > 0 || r.audience.who.length > 0) && (
+                <details class="more">
+                  <summary>See the full breakdown</summary>
+                  <div class="aud">
+                    {r.audience.where.length > 0 && <div><h4>Where they are</h4><Bars rows={r.audience.where.map(([k, v]) => [plain(k), v] as [string, number])} /></div>}
+                    {r.audience.who.length > 0 && <div><h4>What kind of accounts</h4><Bars rows={r.audience.who.map(([k, v]) => [plain(k), v] as [string, number])} /></div>}
+                  </div>
+                </details>
+              )}
+            </div>
+
+            <div class="pro-block">
+              <div class="pro-head">
+                <div>
+                  <span class="eyebrow">Whistle Pro</span>
+                  <h2>Go deeper on {f.title}</h2>
+                </div>
+                <a class="btn gold" href="#pro" data-pro>Get Whistle Pro</a>
+              </div>
+              <div class="pro-grid">
+                <Locked title="Will it last?" teaser="Our forecast for week two and beyond." shape="line" seed={score + 1} />
+                <Locked title="Fans vs critics" teaser="Where the crowd and the reviewers disagree." shape="rings" seed={score + 2} />
+                <Locked title="Scenes people whistled at" teaser="The moments the crowd couldn't stop posting about. Spoiler-safe." shape="list" seed={score + 3} />
+                <Locked title="Box office pulse" teaser="How the buzz lines up with ticket sales, city by city." shape="bars" seed={score + 4} />
+              </div>
+              <p class="pro-toast" id="pro-toast" hidden>Whistle Pro is coming soon.</p>
+            </div>
+
+            <div class="panel method">
+              <div>
+                <div class="panel-head" style="margin-bottom:10px"><div><h3>How we got {score}%</h3></div></div>
+                <p>We read <b>{posts.toLocaleString('en-US')}</b> public posts. <b>{r.sentiment.positive.toLocaleString('en-US')}</b> cheered the film, <b>{r.sentiment.negative.toLocaleString('en-US')}</b> complained, and {r.sentiment.neutral.toLocaleString('en-US')} didn't take a side.</p>
+                <p>{r.sentiment.positive.toLocaleString('en-US')} cheers out of {posts.toLocaleString('en-US')} posts is <b>{scoreLabel(score)}</b>.</p>
+              </div>
+              <div>
+                <div class="panel-head" style="margin-bottom:10px"><div><h3>What the whistles mean</h3></div></div>
+                <div class="bars">
+                  {TIERS.map((t) => (
+                    <div class:list={['bar-row', { lead: t === tier }]}><span class="n"><Waves waves={t.waves} size={15} />{t.name}</span><span class="p num">{t.min}–{t.max}%</span></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div class="panel coming">
+            <div class="panel-head"><div><h3>What the report will show</h3><p>Once the score is ready, this page fills in with:</p></div></div>
+            <ul class="list-plain coming-list">
+              <li>The Whistle, and how many in 10 people loved it</li>
+              <li>How many people are talking about it right now</li>
+              <li>The loudest day, and how the talk rose and fell</li>
+              <li>What people talked about, and where</li>
+            </ul>
+          </div>
+        )}
+
+        {similar.length > 0 && (
+          <div class="similar">
+            <div class="section-head" style="margin-bottom:20px">
+              <span class="eyebrow">If you liked the buzz on {f.title}</span>
+              <h2>The crowd also loved</h2>
+            </div>
+            <div class="grid">{similar.map((x) => <FilmCard film={x} />)}</div>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .film-top { position: relative; isolation: isolate; }
+  .backdrop { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center 25%; opacity: .5; }
+  .backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 35%, transparent) 0%, var(--bg) 92%), linear-gradient(90deg, var(--bg) 0%, transparent 60%); }
+  .has-backdrop .film-hero { padding-block: 32px 56px; }
+  .score-meta { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+  .credits { margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+  .credits div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .credits dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+  .credits dd { margin: 0; font-size: 15px; font-weight: 500; }
+  .pending-dial { width: 150px; aspect-ratio: 1; border-radius: 50%; border: 6px dashed var(--line); display: grid; place-items: center; }
+  .pending-dial span { font-family: var(--font-display); font-weight: 900; font-size: 64px; color: var(--faint); line-height: 1; }
+  .muted-tier { background: var(--surface-2); color: var(--fg); }
+  .pending .basis { max-width: 26ch; }
+  .coming-list { margin-top: 0; }
+  .trailer-panel { scroll-margin-top: 90px; }
+  .sample-chip { border-style: dashed !important; color: var(--gold-text) !important; border-color: var(--gold-text) !important; }
+  .rec { color: var(--gold-text) !important; }
+  .where { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .where-note { font-size: 12px; color: var(--faint); }
+  .similar { margin-top: 40px; }
+  .aka { margin-top: 8px; font-size: 15px; color: var(--muted); }
+  .empty { font-size: 14px; color: var(--faint); }
+
+  /* plain-language report */
+  .verdict-head { margin: 16px 0 -4px; }
+  .headline { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+  .headline-main { padding: 28px; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  .big-say { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(32px, 4vw, 48px); line-height: .98; }
+  .big-say b { color: var(--gold-text); font-weight: 900; }
+  .big-say em { font-style: normal; color: var(--pos); }
+  .small-say { color: var(--muted); font-size: 16px; }
+  .small-say b { color: var(--fg); font-weight: 600; }
+  .quick { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .q { padding: 20px 22px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; transition: transform .35s cubic-bezier(.3,1.5,.5,1), border-color .2s; }
+  .q:hover { transform: translateY(-4px) rotate(-.6deg); border-color: var(--gold); }
+  .q-v { font-family: var(--font-display); font-weight: 900; font-size: 46px; line-height: .95; text-transform: uppercase; }
+  .q-l { font-size: 14px; color: var(--muted); }
+  .q-l b { color: var(--fg); font-weight: 600; }
+  .more { margin-top: 18px; border-top: 1px dashed var(--line); padding-top: 14px; }
+  .more summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--gold-text); list-style: none; }
+  .more summary::before { content: "+ "; }
+  .more[open] summary::before { content: "– "; }
+  .more .aud { margin-top: 16px; }
+  .pro-block { display: flex; flex-direction: column; gap: 18px; padding: 28px; border-radius: calc(var(--radius) + 4px); border: 1px solid color-mix(in srgb, var(--gold) 45%, var(--line)); background: radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--gold) 10%, transparent), transparent 60%), var(--bg); }
+  .pro-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .pro-head h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 4vw, 42px); text-transform: uppercase; line-height: 1; margin-top: 8px; }
+  .pro-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .pro-toast { font-size: 14px; color: var(--gold-text); }
+  .method b { color: var(--fg); font-weight: 600; }
+  @media (max-width: 960px) { .headline { grid-template-columns: 1fr; } .quick, .pro-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .quick, .pro-grid { grid-template-columns: 1fr; } .q-v { font-size: 40px; } }
+</style>
+
+<script>
+  // Whistle Pro isn't on sale yet: the buttons say so instead of going anywhere
+  document.querySelectorAll('[data-pro], .locked').forEach((el) => el.addEventListener('click', (e) => {
+    e.preventDefault();
+    const t = document.getElementById('pro-toast');
+    if (t) { t.hidden = false; setTimeout(() => (t.hidden = true), 2400); }
+  }));
+</script>

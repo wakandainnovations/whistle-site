@@ -1,0 +1,55 @@
+---
+// A Whistle Pro panel: the title and a one-line teaser are readable, the content is a blurred,
+// made-up shape (bars, a line, a list or rings) with nothing film-specific in it.
+interface Props { title: string; teaser: string; shape?: 'bars' | 'line' | 'list' | 'rings'; seed?: number }
+const { title, teaser, shape = 'bars', seed = 3 } = Astro.props;
+let s = seed;
+const rand = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
+const bars = Array.from({ length: 9 }, () => 25 + rand() * 70);
+const line = Array.from({ length: 12 }, () => 8 + rand() * 30);
+---
+<div class="locked" tabindex="0">
+  <div class="locked-head">
+    <span class="pro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5" /><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" /></svg>Pro</span>
+    <h4>{title}</h4>
+    <p>{teaser}</p>
+  </div>
+  <div class="lock-area">
+  <div class="blurred" aria-hidden="true">
+    {shape === 'bars' && <div class="b-bars">{bars.map((h) => <i style={`height:${h}%`}></i>)}</div>}
+    {shape === 'line' && (
+      <svg class="b-line" viewBox="0 0 220 60" preserveAspectRatio="none">
+        <path d={line.map((v, i) => `${i ? 'L' : 'M'}${(i / 11) * 220} ${60 - v}`).join(' ') + ' L220 60 L0 60 Z'} />
+      </svg>
+    )}
+    {shape === 'list' && <div class="b-list">{[78, 64, 52, 40].map((w) => <span><i></i><b style={`width:${w}%`}></b></span>)}</div>}
+    {shape === 'rings' && <div class="b-rings"><i></i><i></i><i></i></div>}
+  </div>
+  <span class="unlock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5" /><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" /></svg>Unlock with Whistle Pro</span>
+  </div>
+</div>
+<style>
+  .locked { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); overflow: hidden; outline: none; transition: transform .35s cubic-bezier(.3,1.5,.5,1), border-color .2s; }
+  .locked:hover, .locked:focus-visible { transform: translateY(-4px); border-color: var(--gold); }
+  .locked-head { display: flex; flex-direction: column; gap: 6px; }
+  .pro { align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); background: var(--gold); padding: 3px 8px 3px 6px; border-radius: 6px; }
+  .pro svg, .unlock svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+  .locked h4 { font-family: var(--font-display); font-weight: 800; font-size: 22px; text-transform: uppercase; line-height: 1; }
+  .locked p { font-size: 13.5px; color: var(--muted); }
+  .blurred { height: 110px; filter: blur(7px); opacity: .75; user-select: none; pointer-events: none; transition: filter .4s; }
+  .locked:hover .blurred { filter: blur(9px); }
+  .b-bars { height: 100%; display: flex; align-items: flex-end; gap: 7px; }
+  .b-bars i { flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, var(--gold), var(--bar)); }
+  .b-line { width: 100%; height: 100%; }
+  .b-line path { fill: color-mix(in srgb, var(--pos) 40%, transparent); stroke: var(--pos); stroke-width: 3; }
+  .b-list { display: flex; flex-direction: column; gap: 12px; padding-top: 6px; }
+  .b-list span { display: flex; gap: 10px; align-items: center; }
+  .b-list i { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); flex: none; }
+  .b-list b { height: 12px; border-radius: 6px; background: var(--muted); }
+  .b-rings { height: 100%; display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .b-rings i { width: 74px; height: 74px; border-radius: 50%; border: 12px solid var(--pos); border-right-color: var(--neg); }
+  .b-rings i:nth-child(2) { border-color: var(--gold); border-bottom-color: var(--bar); }
+  .lock-area { position: relative; margin-top: auto; }
+  .unlock { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; font-size: 13.5px; font-weight: 700; padding: 10px 16px; border-radius: 999px; background: var(--fg); color: var(--bg); box-shadow: 0 14px 30px -12px rgba(0,0,0,.7); transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
+  .locked:hover .unlock { transform: translate(-50%, -50%) scale(1.06); }
+</style>

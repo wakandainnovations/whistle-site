@@ -1,0 +1,39 @@
+{
+  "sample": false,
+  "auraId": 9000035,
+  "auraName": "Hail Mary",
+  "title": "Hail Mary",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-26",
+  "featured": false,
+  "poster": "/posters/hail-mary.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/79U66ITUw5N0mbJ6v7s1BntJsv5.jpg",
+  "trailer": null,
+  "director": "Vishnu Revikumar",
+  "cast": [
+    "Kunchacko Boban",
+    "Suraj Venjaramoodu",
+    "Anu Sithara",
+    "Jagadish"
+  ],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": 1704200,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-11-19",
+    "trackUntil": "2026-12-03",
+    "popularity": 0.8511
+  },
+  "report": null
+}

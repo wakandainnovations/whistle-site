@@ -1,0 +1,241 @@
+{
+  "sample": true,
+  "title": "Dune: Part Two",
+  "titleConfirmed": true,
+  "language": "English",
+  "industry": "hollywood",
+  "year": 2024,
+  "releaseDate": "2024-03-01",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/eZ239CUp1d6OryZEBPnO2n87gMG.jpg",
+  "trailer": {
+    "youtubeId": "U2Qp5pL3ovA",
+    "channel": "Warner Bros.",
+    "kind": "trailer"
+  },
+  "director": "Denis Villeneuve",
+  "cast": [
+    "Timothée Chalamet",
+    "Zendaya",
+    "Rebecca Ferguson",
+    "Javier Bardem"
+  ],
+  "genres": [
+    "Science Fiction",
+    "Adventure"
+  ],
+  "runtime": "2h 47m",
+  "tmdbId": 693134,
+  "watch": [
+    "Netflix"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2024-01-31",
+      "end": "2024-03-31"
+    },
+    "sentiment": {
+      "positive": 28455,
+      "neutral": 2671,
+      "negative": 5021
+    },
+    "netSentiment": 5.67,
+    "awareness": {
+      "level": "High",
+      "views": 88500000
+    },
+    "reach": 68000,
+    "mentions": {
+      "total": 29706,
+      "daily": [
+        185,
+        198,
+        204,
+        196,
+        213,
+        186,
+        256,
+        372,
+        724,
+        840,
+        616,
+        404,
+        263,
+        197,
+        264,
+        254,
+        260,
+        259,
+        293,
+        324,
+        283,
+        362,
+        423,
+        459,
+        502,
+        484,
+        552,
+        573,
+        784,
+        713,
+        1650,
+        1223,
+        1190,
+        1405,
+        1160,
+        1223,
+        1100,
+        1029,
+        1011,
+        849,
+        751,
+        618,
+        585,
+        612,
+        519,
+        398,
+        349,
+        328,
+        281,
+        265,
+        242,
+        203,
+        176,
+        147,
+        157,
+        126,
+        107,
+        113,
+        90,
+        82,
+        74
+      ]
+    },
+    "regions": [
+      [
+        "Maharashtra",
+        26
+      ],
+      [
+        "Karnataka",
+        26
+      ],
+      [
+        "Delhi NCR",
+        18
+      ],
+      [
+        "Andhra Telangana",
+        13
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          22
+        ],
+        [
+          "Maharashtra",
+          21
+        ],
+        [
+          "Delhi NCR",
+          17
+        ],
+        [
+          "Karnataka",
+          16
+        ],
+        [
+          "Andhra Telangana",
+          10
+        ],
+        [
+          "Tamil Nadu",
+          9
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          48
+        ],
+        [
+          "Verified celebrity",
+          15
+        ],
+        [
+          "Media press",
+          14
+        ],
+        [
+          "Fan page",
+          14
+        ],
+        [
+          "Bot spam",
+          5
+        ],
+        [
+          "Official studio",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          49
+        ],
+        [
+          "Fan amplified promo",
+          21
+        ],
+        [
+          "News press coverage",
+          12
+        ],
+        [
+          "Official promo",
+          11
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          29
+        ],
+        [
+          "Box office commercial",
+          18
+        ],
+        [
+          "Story",
+          17
+        ],
+        [
+          "Music",
+          13
+        ],
+        [
+          "Direction technical craft",
+          12
+        ],
+        [
+          "Politics personal life",
+          6
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "sample": false,
+  "auraId": 92,
+  "auraName": "Ramani Kalyanam",
+  "title": "Ramani Kalyanam",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-05-22",
+  "featured": false,
+  "poster": "/posters/ramani-kalyanam.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Vijay Adireddy",
+  "cast": [
+    "Rajasekhar Aningi",
+    "Mahaboob Basha",
+    "Deepshikha Chandran"
+  ],
+  "genres": [
+    "Drama",
+    "Romance"
+  ],
+  "runtime": "2h 10m",
+  "tmdbId": null,
+  "watch": [
+    "Netflix"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-05-15",
+      "end": "2026-05-23"
+    },
+    "sentiment": {
+      "positive": 4,
+      "neutral": 1,
+      "negative": 4
+    },
+    "netSentiment": 1,
+    "awareness": {
+      "level": "Medium",
+      "views": 2762
+    },
+    "reach": 223,
+    "mentions": {
+      "total": 9,
+      "daily": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        5,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Andhra Telangana",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Andhra Telangana",
+          50
+        ],
+        [
+          "Unknown",
+          50
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          100
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          100
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          67
+        ],
+        [
+          "Direction",
+          11
+        ],
+        [
+          "Screenplay",
+          11
+        ],
+        [
+          "Story",
+          11
+        ]
+      ]
+    }
+  }
+}

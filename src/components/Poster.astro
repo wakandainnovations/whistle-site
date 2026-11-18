@@ -1,0 +1,23 @@
+---
+// Film poster, or a typographic stand-in until the real poster is added.
+interface Props { language: string; year: number; title: string; poster?: string | null; score?: number | null; label?: string; showMeta?: boolean; eager?: boolean }
+const { language, year, title, poster, score, label, showMeta = !poster, eager = false } = Astro.props;
+import Waves from './Waves.astro';
+import { tierFor, scoreLabel } from '../lib/score';
+---
+<div class="poster">
+  {poster
+    ? <img src={poster} alt={`Poster for ${title}`} loading={eager ? 'eager' : 'lazy'} />
+    : <span class="pt">{label ?? 'Title to confirm'}</span>}
+  {showMeta && <span class="pl">{language} · {year}</span>}
+  {score != null
+    ? <span class="badge num" title={scoreLabel(score)}><Waves waves={tierFor(score).waves} size={16} />{score}<small>%</small></span>
+    : score === null && <span class="badge soon">Soon</span>}
+</div>
+<style>
+  .poster img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .poster:has(img)::after { display: none; }
+  .badge.num { display: inline-flex; align-items: center; gap: 4px; }
+  .badge.num small { font-size: .5em; align-self: flex-start; margin-top: 2px; margin-left: -2px; }
+  .badge.soon { font-size: 15px; padding: 6px 8px 5px; letter-spacing: .06em; text-transform: uppercase; background: var(--surface); color: var(--fg); border: 1px solid var(--line); }
+</style>

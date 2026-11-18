@@ -1,0 +1,201 @@
+{
+  "sample": false,
+  "auraId": 52,
+  "auraName": "Lakshmikanthan Kolai Vazhakku",
+  "title": "Lakshmikanthan Kolai Vazhakku",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-06-19",
+  "featured": false,
+  "poster": "/posters/lakshmikanthan-kolai-vazhakku.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Dayal Padmanabhan",
+  "cast": [
+    "Vetri Sudley",
+    "Rangaraj Pandey",
+    "Brigida Saga"
+  ],
+  "genres": [
+    "Crime",
+    "Drama",
+    "Political"
+  ],
+  "runtime": "1h 47m",
+  "tmdbId": null,
+  "watch": [
+    "Netflix"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-06-02",
+      "end": "2026-07-10"
+    },
+    "sentiment": {
+      "positive": 883,
+      "neutral": 579,
+      "negative": 8
+    },
+    "netSentiment": 110.38,
+    "awareness": {
+      "level": "High",
+      "views": 717698
+    },
+    "reach": 576,
+    "mentions": {
+      "total": 1470,
+      "daily": [
+        17,
+        21,
+        4,
+        6,
+        23,
+        4,
+        39,
+        126,
+        86,
+        25,
+        19,
+        10,
+        3,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        202,
+        26,
+        21,
+        181,
+        27,
+        13,
+        4,
+        86,
+        30,
+        111,
+        8,
+        2,
+        47,
+        126,
+        37,
+        66,
+        98
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        89
+      ],
+      [
+        "Kannada Speaking South India",
+        5
+      ],
+      [
+        "Karnataka",
+        5
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          68
+        ],
+        [
+          "Unknown",
+          24
+        ],
+        [
+          "Kannada Speaking South India",
+          4
+        ],
+        [
+          "Karnataka",
+          4
+        ]
+      ],
+      "who": [
+        [
+          "Media press",
+          54
+        ],
+        [
+          "Official studio",
+          18
+        ],
+        [
+          "Verified celebrity influencer",
+          16
+        ],
+        [
+          "General public",
+          8
+        ],
+        [
+          "Fan page",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Official promo",
+          76
+        ],
+        [
+          "Fan amplified promo",
+          12
+        ],
+        [
+          "Organic opinion",
+          8
+        ],
+        [
+          "News press coverage",
+          2
+        ],
+        [
+          "Trade box office update",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          56
+        ],
+        [
+          "Music / songs",
+          28
+        ],
+        [
+          "Story",
+          8
+        ],
+        [
+          "Acting / cast performance",
+          3
+        ],
+        [
+          "Direction",
+          3
+        ],
+        [
+          "Screenplay",
+          1
+        ]
+      ]
+    }
+  }
+}

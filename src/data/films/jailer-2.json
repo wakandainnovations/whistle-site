@@ -1,0 +1,236 @@
+{
+  "sample": true,
+  "title": "Jailer 2",
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-10-15",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/upwdEyhhYZ7pT2hD535fr2MGfpx.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/m0ks2o59mOAz6WdCybJ5FAUNTOU.jpg",
+  "trailer": null,
+  "director": "Nelson",
+  "cast": [
+    "Rajinikanth",
+    "S. J. Suryah",
+    "Suraj Venjaramoodu",
+    "Ramya Krishnan"
+  ],
+  "genres": [
+    "Action",
+    "Comedy",
+    "Drama"
+  ],
+  "runtime": "2h 45m",
+  "tmdbId": 1234139,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-09-15",
+      "end": "2026-11-14"
+    },
+    "sentiment": {
+      "positive": 42076,
+      "neutral": 6848,
+      "negative": 17186
+    },
+    "netSentiment": 2.45,
+    "awareness": {
+      "level": "Very high",
+      "views": 162500000
+    },
+    "reach": 158100,
+    "mentions": {
+      "total": 41612,
+      "daily": [
+        276,
+        255,
+        246,
+        255,
+        317,
+        286,
+        337,
+        545,
+        923,
+        1336,
+        1190,
+        576,
+        362,
+        345,
+        352,
+        351,
+        336,
+        429,
+        416,
+        508,
+        415,
+        466,
+        630,
+        711,
+        694,
+        705,
+        791,
+        992,
+        984,
+        1271,
+        2128,
+        2041,
+        1905,
+        1910,
+        1579,
+        1339,
+        1423,
+        1396,
+        1192,
+        1262,
+        1152,
+        974,
+        789,
+        828,
+        679,
+        577,
+        497,
+        340,
+        302,
+        335,
+        293,
+        239,
+        193,
+        184,
+        132,
+        130,
+        113,
+        102,
+        109,
+        83,
+        86
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        66
+      ],
+      [
+        "International",
+        11
+      ],
+      [
+        "Kerala",
+        9
+      ],
+      [
+        "Andhra Telangana",
+        7
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          49
+        ],
+        [
+          "Unknown",
+          22
+        ],
+        [
+          "International",
+          10
+        ],
+        [
+          "Kerala",
+          8
+        ],
+        [
+          "Karnataka",
+          6
+        ],
+        [
+          "Andhra Telangana",
+          5
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          55
+        ],
+        [
+          "Media press",
+          18
+        ],
+        [
+          "Verified celebrity",
+          12
+        ],
+        [
+          "Fan page",
+          9
+        ],
+        [
+          "Official studio",
+          3
+        ],
+        [
+          "Bot spam",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          43
+        ],
+        [
+          "Fan amplified promo",
+          25
+        ],
+        [
+          "Official promo",
+          15
+        ],
+        [
+          "News press coverage",
+          13
+        ],
+        [
+          "Trade box office update",
+          3
+        ],
+        [
+          "Ticket merch",
+          1
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          24
+        ],
+        [
+          "Box office commercial",
+          24
+        ],
+        [
+          "Direction technical craft",
+          14
+        ],
+        [
+          "Story",
+          13
+        ],
+        [
+          "Music",
+          10
+        ],
+        [
+          "Official promo",
+          9
+        ]
+      ]
+    }
+  }
+}

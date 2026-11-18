@@ -1,0 +1,16 @@
+---
+// Labelled percentage bars. The first row is highlighted; bars scale to the largest value.
+interface Props { rows: [string, number][]; suffix?: string; scaled?: boolean }
+const { rows, suffix = '%', scaled = true } = Astro.props;
+const max = Math.max(...rows.map((r) => r[1]), 0);
+const width = (v: number) => (scaled ? (max ? (v / max) * 100 : 0) : v);
+---
+<div class="bars">
+  {rows.map(([name, value], i) => (
+    <div class:list={['bar-row', { lead: i === 0 }]}>
+      <span class="n">{name}</span>
+      <span class="p num">{value}{suffix}</span>
+      <span class="track"><i style={`width:${width(value)}%`}></i></span>
+    </div>
+  ))}
+</div>

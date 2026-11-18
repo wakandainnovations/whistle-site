@@ -1,0 +1,35 @@
+{
+  "sample": false,
+  "auraId": 50,
+  "auraName": "Habeebi",
+  "title": "Habeebi",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-06-12",
+  "featured": false,
+  "poster": "/posters/habeebi.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Meera Kathiravan",
+  "cast": [
+    "Kasthoori Raja"
+  ],
+  "genres": [
+    "Drama",
+    "Period",
+    "Romantic"
+  ],
+  "runtime": "2h 37m",
+  "tmdbId": null,
+  "watch": [
+    "Sun NXT"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": null
+}

@@ -1,0 +1,107 @@
+{
+  "sample": false,
+  "auraId": 9000032,
+  "auraName": "O.M: Operation Mole",
+  "title": "O.M: Operation Mole",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-20",
+  "featured": false,
+  "poster": "/posters/o-m-operation-mole.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Rajkumar Periasamy",
+  "cast": [],
+  "genres": [
+    "Crime",
+    "Action",
+    "Thriller"
+  ],
+  "runtime": "2h 59m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 788,
+    "trackFrom": "2026-11-13",
+    "trackUntil": "2026-11-27",
+    "popularity": 7.4482
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-11-15",
+      "end": "2026-11-17"
+    },
+    "sentiment": {
+      "positive": 1,
+      "neutral": 21,
+      "negative": 0
+    },
+    "netSentiment": null,
+    "awareness": {
+      "level": "Medium",
+      "views": 969
+    },
+    "reach": 101,
+    "mentions": {
+      "total": 22,
+      "daily": [
+        0,
+        22,
+        0
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        50
+      ],
+      [
+        "Tamil Nadu",
+        50
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          71
+        ],
+        [
+          "Kerala",
+          14
+        ],
+        [
+          "Tamil Nadu",
+          14
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          71
+        ],
+        [
+          "Fan page",
+          29
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          86
+        ],
+        [
+          "Organic opinion",
+          14
+        ]
+      ],
+      "topics": []
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "sample": false,
+  "auraId": 9000039,
+  "auraName": "Haindava",
+  "title": "Haindava",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "/posters/haindava.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/v1rEI5dG3tuywuOZfNRKMmgB9kC.jpg",
+  "trailer": null,
+  "director": "Ludheer Byreddy",
+  "cast": [
+    "Bellamkonda Srinivas",
+    "Samyuktha",
+    "J. D. Chakravarthi",
+    "Saurabh Sachdeva"
+  ],
+  "genres": [
+    "Fantasy",
+    "Action"
+  ],
+  "runtime": null,
+  "tmdbId": 1417808,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-11-20",
+    "trackUntil": "2026-12-04",
+    "popularity": 0.9114
+  },
+  "report": null
+}

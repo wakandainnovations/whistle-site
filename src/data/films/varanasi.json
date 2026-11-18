@@ -1,0 +1,146 @@
+{
+  "sample": false,
+  "auraId": 99,
+  "auraName": "Varanasi",
+  "title": "Varanasi",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2027,
+  "releaseDate": "2027-06-18",
+  "featured": false,
+  "poster": "/posters/varanasi.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "S.S. Rajamouli",
+  "cast": [
+    "Mahesh Babu",
+    "Priyanka Chopra Jonas",
+    "Prithviraj Sukumaran"
+  ],
+  "genres": [
+    "Action",
+    "Adventure",
+    "Fantasy"
+  ],
+  "runtime": "3h",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-04-10",
+      "end": "2026-05-05"
+    },
+    "sentiment": {
+      "positive": 0,
+      "neutral": 0,
+      "negative": 594
+    },
+    "netSentiment": 0,
+    "awareness": {
+      "level": "Medium",
+      "views": 43861
+    },
+    "reach": 2398,
+    "mentions": {
+      "total": 594,
+      "daily": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        2,
+        1,
+        0,
+        55,
+        156,
+        86,
+        101,
+        111,
+        0,
+        1,
+        28,
+        33,
+        15
+      ]
+    },
+    "regions": [
+      [
+        "Hindi Belt North India",
+        67
+      ],
+      [
+        "Andhra Telangana",
+        33
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Hindi Belt North India",
+          43
+        ],
+        [
+          "Unknown",
+          35
+        ],
+        [
+          "Andhra Telangana",
+          22
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          100
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          87
+        ],
+        [
+          "Fan amplified promo",
+          13
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          96
+        ],
+        [
+          "Acting / cast performance",
+          2
+        ],
+        [
+          "Direction",
+          1
+        ],
+        [
+          "Story",
+          1
+        ],
+        [
+          "VFX",
+          1
+        ]
+      ]
+    }
+  }
+}

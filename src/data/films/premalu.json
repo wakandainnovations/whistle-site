@@ -1,0 +1,241 @@
+{
+  "sample": true,
+  "title": "Premalu",
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2024,
+  "releaseDate": "2024-02-09",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/uPpmBjY3znUqGY8kYwI5xvOrSc0.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/gDyLcjvmdAhmYqjCMwZ9PndnAVm.jpg",
+  "trailer": {
+    "youtubeId": "rR_2ti4l3nM",
+    "channel": "Bhavana Studios",
+    "kind": "trailer"
+  },
+  "director": "Girish A. D.",
+  "cast": [
+    "Naslen",
+    "Mamitha Baiju",
+    "Sangeeth Prathap",
+    "Shyam Mohan"
+  ],
+  "genres": [
+    "Romance",
+    "Comedy"
+  ],
+  "runtime": "2h 35m",
+  "tmdbId": 1149791,
+  "watch": [
+    "aha"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2024-01-10",
+      "end": "2024-03-10"
+    },
+    "sentiment": {
+      "positive": 14770,
+      "neutral": 1310,
+      "negative": 1826
+    },
+    "netSentiment": 8.09,
+    "awareness": {
+      "level": "Medium",
+      "views": 32800000
+    },
+    "reach": 28900,
+    "mentions": {
+      "total": 11983,
+      "daily": [
+        83,
+        71,
+        85,
+        79,
+        81,
+        78,
+        100,
+        158,
+        291,
+        311,
+        298,
+        150,
+        106,
+        99,
+        80,
+        97,
+        95,
+        93,
+        97,
+        124,
+        125,
+        128,
+        147,
+        174,
+        195,
+        214,
+        235,
+        275,
+        246,
+        295,
+        554,
+        600,
+        526,
+        526,
+        407,
+        377,
+        409,
+        401,
+        400,
+        377,
+        325,
+        332,
+        298,
+        241,
+        236,
+        204,
+        164,
+        139,
+        102,
+        108,
+        97,
+        80,
+        82,
+        68,
+        51,
+        59,
+        46,
+        49,
+        45,
+        40,
+        30
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        62
+      ],
+      [
+        "International",
+        18
+      ],
+      [
+        "Karnataka",
+        9
+      ],
+      [
+        "Tamil Nadu",
+        8
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Kerala",
+          46
+        ],
+        [
+          "Unknown",
+          24
+        ],
+        [
+          "International",
+          14
+        ],
+        [
+          "Tamil Nadu",
+          7
+        ],
+        [
+          "Karnataka",
+          6
+        ],
+        [
+          "Andhra Telangana",
+          3
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          44
+        ],
+        [
+          "Media press",
+          17
+        ],
+        [
+          "Fan page",
+          16
+        ],
+        [
+          "Verified celebrity",
+          14
+        ],
+        [
+          "Official studio",
+          6
+        ],
+        [
+          "Bot spam",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          42
+        ],
+        [
+          "Fan amplified promo",
+          25
+        ],
+        [
+          "Official promo",
+          17
+        ],
+        [
+          "News press coverage",
+          9
+        ],
+        [
+          "Trade box office update",
+          6
+        ],
+        [
+          "Ticket merch",
+          1
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          23
+        ],
+        [
+          "Story",
+          20
+        ],
+        [
+          "Direction technical craft",
+          17
+        ],
+        [
+          "Box office commercial",
+          15
+        ],
+        [
+          "Music",
+          14
+        ],
+        [
+          "Official promo",
+          7
+        ]
+      ]
+    }
+  }
+}

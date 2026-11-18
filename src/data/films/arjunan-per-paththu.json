@@ -1,0 +1,247 @@
+{
+  "sample": false,
+  "auraId": 78,
+  "auraName": "Arjunan Per Paththu",
+  "title": "Arjunan Per Paththu",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-17",
+  "featured": false,
+  "poster": "/posters/arjunan-per-paththu.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "R. Rajmohan",
+  "cast": [
+    "Yogi Babu",
+    "Aruldoss",
+    "Lenin Bharathi"
+  ],
+  "genres": [
+    "Drama",
+    "Crime"
+  ],
+  "runtime": "2h",
+  "tmdbId": null,
+  "watch": [
+    "JioHotstar"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-03-21",
+      "end": "2026-07-16"
+    },
+    "sentiment": {
+      "positive": 28,
+      "neutral": 54,
+      "negative": 3
+    },
+    "netSentiment": 9.33,
+    "awareness": {
+      "level": "Medium",
+      "views": 83535
+    },
+    "reach": 375,
+    "mentions": {
+      "total": 85,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        27,
+        35,
+        8,
+        2,
+        1,
+        0,
+        5,
+        4
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          60
+        ],
+        [
+          "Unknown",
+          40
+        ]
+      ],
+      "who": [
+        [
+          "Media press",
+          43
+        ],
+        [
+          "General public",
+          29
+        ],
+        [
+          "Fan page",
+          14
+        ],
+        [
+          "Verified celebrity influencer",
+          14
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          43
+        ],
+        [
+          "Official promo",
+          43
+        ],
+        [
+          "Organic opinion",
+          14
+        ]
+      ],
+      "topics": [
+        [
+          "Music / songs",
+          51
+        ],
+        [
+          "Acting / cast performance",
+          4
+        ],
+        [
+          "Direction",
+          2
+        ],
+        [
+          "Screenplay",
+          2
+        ],
+        [
+          "Story",
+          2
+        ]
+      ]
+    }
+  }
+}

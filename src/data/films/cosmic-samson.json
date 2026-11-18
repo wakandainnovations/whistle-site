@@ -1,0 +1,34 @@
+{
+  "sample": false,
+  "auraId": 9000037,
+  "auraName": "Cosmic Samson",
+  "title": "Cosmic Samson",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "/posters/cosmic-samson.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Abhijith Joseph",
+  "cast": [],
+  "genres": [
+    "Action"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-11-20",
+    "trackUntil": "2026-12-04",
+    "popularity": 1.186
+  },
+  "report": null
+}

@@ -1,0 +1,45 @@
+---
+// "Out of every 100 posts": a 20×5 grid of little heads, coloured loved / meh / didn't like it.
+// The heads fill in one by one when the grid scrolls into view.
+import { sentimentShares } from '../lib/score';
+interface Props { sentiment: { positive: number; neutral: number; negative: number } }
+const { sentiment } = Astro.props;
+const sh = sentimentShares(sentiment);
+// make the three parts add up to exactly 100 heads
+const loved = sh.positive, meh = Math.max(0, 100 - sh.positive - sh.negative), nope = 100 - loved - meh;
+const cells = [...Array(loved).fill('pos'), ...Array(meh).fill('neu'), ...Array(nope).fill('neg')];
+---
+<div class="mood">
+  <div class="heads" aria-hidden="true">
+    {cells.map((c, i) => <i class={c} style={`--d:${i * 9}ms`}></i>)}
+  </div>
+  <ul class="legend">
+    <li><b class="num pos">{loved}</b><span>loved it</span></li>
+    <li><b class="num neu">{meh}</b><span>were on the fence</span></li>
+    <li><b class="num neg">{nope}</b><span>didn’t like it</span></li>
+  </ul>
+</div>
+<style>
+  .mood { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: center; }
+  .heads { width: 100%; max-width: 560px; display: grid; grid-template-columns: repeat(20, minmax(0, 1fr)); gap: 6px; }
+  .heads i { aspect-ratio: 3 / 4; border-radius: 50% 50% 30% 30% / 40% 40% 30% 30%; display: block; position: relative; transform: scale(0); transition: transform .4s cubic-bezier(.3,1.6,.5,1) var(--d); }
+  .heads i::before { content: ""; position: absolute; left: 22%; right: 22%; top: -38%; aspect-ratio: 1; border-radius: 50%; background: inherit; }
+  .heads i { margin-top: 30%; }
+  .heads.in i { transform: scale(1); }
+  .heads .pos { background: var(--pos); }
+  .heads .neu { background: var(--neu); opacity: .55; }
+  .heads .neg { background: var(--neg); }
+  .legend { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .legend li { display: flex; align-items: baseline; gap: 8px; font-size: 15px; color: var(--muted); }
+  .legend b { font-family: var(--font-display); font-weight: 900; font-size: 40px; line-height: 1; }
+  .legend .pos { color: var(--pos); } .legend .neu { color: var(--neu); } .legend .neg { color: var(--neg); }
+  @media (max-width: 760px) { .mood { grid-template-columns: 1fr; } .legend { flex-direction: row; flex-wrap: wrap; gap: 10px 24px; } }
+  @media (max-width: 520px) { .heads { grid-template-columns: repeat(10, minmax(0, 1fr)); } }
+  @media (prefers-reduced-motion: reduce) { .heads i { transform: none; transition: none; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLElement>('.heads').forEach((el) => {
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('in'); io.disconnect(); } }, { threshold: .3 });
+    io.observe(el);
+  });
+</script>

@@ -1,0 +1,423 @@
+---
+// /how: how the Whistle is measured, told visually:
+//  1. the machine: posts fall in, get sorted into cheers / complaints / on the fence, the Whistle comes out
+//  2. try it: two sliders and the score + band update live
+//  3. the two-month listening window
+//  4. the four whistles on one meter
+//  5. what we track, and how Whistle sits beside IMDb and Rotten Tomatoes
+import Layout from '../layouts/Layout.astro';
+import { getFilms } from '../lib/films';
+import Waves from '../components/Waves.astro';
+import { TIERS, whistleScore, scoreLabel, compact } from '../lib/score';
+
+const all = await getFilms();
+const scored = all.filter((f) => f.data.report);
+const featured = scored.find((f) => f.data.featured) ?? scored[0];
+const fr = featured.data.report!;
+const fScore = whistleScore(fr.sentiment);
+const scoreOf = (f: (typeof all)[number]) => whistleScore(f.data.report!.sentiment);
+const bandFilms = (t: (typeof TIERS)[number]) => scored.filter((f) => scoreOf(f) >= t.min && scoreOf(f) <= t.max && f.data.poster);
+
+// Made-up example posts for the animation; nothing here is about a real film.
+const POSTS = [
+  ['pos', 'That interval block!! Whistles all over the hall'],
+  ['neg', 'Second half dragged so much'],
+  ['pos', 'Goosebumps in the climax. Watch it in theatres'],
+  ['neu', 'Booking tickets for Sunday'],
+  ['pos', 'BGM is on another level'],
+  ['neg', 'Too long. Could have cut 30 mins'],
+  ['pos', 'Best performance of the year, easily'],
+  ['neu', 'Trailer out at 6pm today'],
+  ['pos', 'Took my parents. They loved it'],
+  ['neg', 'Story is predictable from scene one'],
+  ['pos', 'Repeat value is crazy'],
+  ['neu', 'Anyone know the runtime?'],
+];
+
+const TRACKED = [
+  ['Sentiment', 'Cheers, complaints and on-the-fence posts.', 'M4 12h4l3-8 4 16 3-8h2'],
+  ['Mentions per day', 'How the talk rose and fell across the two months.', 'M3 20V10M9 20V4M15 20v-8M21 20v-5'],
+  ['Views', 'Trailer and clip views across platforms.', 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'],
+  ['Reach', 'How many different people posted.', 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21a7 7 0 0 1 14 0M17 3.5a4 4 0 0 1 0 7.5M22 21a7 7 0 0 0-4-6.3'],
+  ['Where', 'The states and cities the noise came from.', 'M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z'],
+  ['Who and what', 'Fans, media, celebrities. Story, music, acting.', 'M21 12a9 9 0 1 1-4-7.5L21 3v6h-6'],
+];
+---
+<Layout title="How it's scored" description="The Whistle is the share of public posts that cheer a film, from the month before release to the month after.">
+  <main class="how-page">
+    <!-- 1. hero: the machine -->
+    <section class="wrap machine-hero">
+      <div class="mh-copy">
+        <span class="eyebrow">How it's scored</span>
+        <h1>We count the <em>cheers.</em></h1>
+        <p>No voting, no critics. We read what people post about a film on their own, sort every post, and work out how many of them cheered.</p>
+        <nav class="subnav" aria-label="On this page">
+          <a href="#try">Try it</a><a href="#window">The two months</a><a href="#bands">The four whistles</a><a href="#track">What we track</a><a href="#compare">vs IMDb and RT</a>
+        </nav>
+      </div>
+
+      <div class="machine" id="machine" aria-label="Posts being sorted into cheers, on the fence and complaints">
+        <div class="feed" aria-hidden="true">
+          <span class="feed-label mono">Posts coming in</span>
+          <div class="feed-lane" id="feed"></div>
+        </div>
+        <div class="buckets">
+          <div class="bucket pos"><span class="b-n num" data-b="pos">0</span><span class="b-l">cheers</span><span class="b-fill"><i data-f="pos"></i></span></div>
+          <div class="bucket neu"><span class="b-n num" data-b="neu">0</span><span class="b-l">on the fence</span><span class="b-fill"><i data-f="neu"></i></span></div>
+          <div class="bucket neg"><span class="b-n num" data-b="neg">0</span><span class="b-l">complaints</span><span class="b-fill"><i data-f="neg"></i></span></div>
+        </div>
+        <div class="out">
+          <span class="out-eq mono">cheers ÷ all posts</span>
+          <span class="out-score num"><b id="m-score">–</b><small>%</small></span>
+          <span class="out-unit"><Waves waves={2} size={18} />Whistle</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. try it -->
+    <section class="section" id="try">
+      <div class="wrap try">
+        <div class="try-copy">
+          <span class="eyebrow">Try it</span>
+          <h2>Move the crowd</h2>
+          <p>Drag the sliders. The Whistle is the share of all posts that cheer, so complaints and posts on the fence both pull it down.</p>
+          <p class="real">The real thing: <b>{featured.data.title}</b> had {compact(fr.sentiment.positive)} cheers, {compact(fr.sentiment.negative)} complaints and {compact(fr.sentiment.neutral)} on the fence, which is a <b>{scoreLabel(fScore)}</b>.</p>
+          <button class="btn" type="button" id="try-real" data-pos={fr.sentiment.positive} data-neg={fr.sentiment.negative} data-neu={fr.sentiment.neutral}>Load {featured.data.title}'s numbers</button>
+        </div>
+        <div class="try-box">
+          <label class="slide pos"><span><b>Cheers</b><output id="o-pos" class="num"></output></span><input type="range" id="s-pos" min="0" max="10000" step="50" value="7000" /></label>
+          <label class="slide neg"><span><b>Complaints</b><output id="o-neg" class="num"></output></span><input type="range" id="s-neg" min="0" max="10000" step="50" value="2400" /></label>
+          <label class="slide neu"><span><b>On the fence</b><output id="o-neu" class="num"></output></span><input type="range" id="s-neu" min="0" max="10000" step="50" value="900" /></label>
+          <div class="try-result">
+            <span class="tr-score num"><b id="t-score">0</b><small>%</small></span>
+            <span class="tr-side">
+              <span class="tr-unit">Whistle</span>
+              <span class="tr-band" id="t-band">
+                {TIERS.map((t) => <span class="tb" data-band={t.name} hidden><Waves waves={t.waves} size={22} />{t.name}</span>)}
+              </span>
+            </span>
+          </div>
+          <div class="tug" aria-hidden="true"><i class="tug-pos" id="tug-pos"></i><i class="tug-neg" id="tug-neg"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. the window -->
+    <section class="section" id="window">
+      <div class="wrap">
+        <div class="section-head"><span class="eyebrow">When we listen</span><h2>Two months, one film</h2><p>We start a month before release, while the trailer is doing the rounds, and stop a month after, once word of mouth has settled.</p></div>
+        <div class="window">
+          <svg class="wave-line" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true">
+            <defs><linearGradient id="wl" x1="0" x2="1"><stop offset="0" stop-color="var(--bar)" /><stop offset=".5" stop-color="var(--gold)" /><stop offset="1" stop-color="var(--pos)" /></linearGradient></defs>
+            <path class="wl-area" d="M0 150 C 80 150, 120 70, 160 95 S 260 140, 330 120 S 450 60, 500 18 S 560 70, 640 95 S 760 105, 820 125 S 940 140, 1000 145 L1000 160 L0 160 Z" />
+            <path class="wl-line" d="M0 150 C 80 150, 120 70, 160 95 S 260 140, 330 120 S 450 60, 500 18 S 560 70, 640 95 S 760 105, 820 125 S 940 140, 1000 145" />
+          </svg>
+          <div class="marks">
+            <div class="mk" style="--x:0%"><b>Day −30</b><span>We start listening</span></div>
+            <div class="mk" style="--x:16%"><b>Trailer</b><span>The first big spike</span></div>
+            <div class="mk rel" style="--x:50%"><b>Release day</b><span>Usually the loudest</span></div>
+            <div class="mk" style="--x:70%"><b>Word of mouth</b><span>Good films stay loud</span></div>
+            <div class="mk" style="--x:100%"><b>Day +30</b><span>The Whistle is final</span></div>
+          </div>
+        </div>
+        <p class="race-link"><a class="btn gold" href="/race">See films in their window right now: The Whistle Race →</a></p>
+      </div>
+    </section>
+
+    <!-- 4. bands -->
+    <section class="section" id="bands">
+      <div class="wrap">
+        <div class="section-head"><span class="eyebrow">The scale</span><h2>Four ways a hall can whistle</h2><p>The more waves on the whistle, the louder the crowd.</p></div>
+        <div class="meter" role="list">
+          {[...TIERS].reverse().map((t) => {
+            const fs = bandFilms(t);
+            return (
+              <a class="seg" role="listitem" href={`/films?band=${encodeURIComponent(t.name)}`} style={`--w:${t.max - t.min + 1}`} data-waves={t.waves}>
+                <span class="seg-bar"></span>
+                <span class="seg-icon"><Waves waves={t.waves} size={44} /></span>
+                <span class="seg-name">{t.name}</span>
+                <span class="seg-range num">{t.min}–{t.max}%</span>
+                <span class="seg-line">{t.line}</span>
+                <span class="seg-posters" aria-hidden="true">{fs.slice(0, 3).map((f) => <img src={f.data.poster!.replace('/w500/', '/w185/')} alt="" loading="lazy" />)}</span>
+                <span class="seg-count num">{fs.length} {fs.length === 1 ? 'film' : 'films'} →</span>
+              </a>
+            );
+          })}
+        </div>
+        <div class="meter-axis num" aria-hidden="true"><span>0</span><span>40</span><span>60</span><span>75</span><span>100</span></div>
+      </div>
+    </section>
+
+    <!-- 5. what we track -->
+    <section class="section" id="track">
+      <div class="wrap">
+        <div class="section-head"><span class="eyebrow">Inside every film page</span><h2>What we track</h2></div>
+        <div class="tracked">
+          {TRACKED.map(([h, p, d]) => (
+            <div class="tr-item">
+              <span class="tr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={d} /></svg></span>
+              <h3>{h}</h3><p>{p}</p>
+            </div>
+          ))}
+        </div>
+        <p class="see"><a class="btn" href={`/films/${featured.id}`}>See it on a real film: {featured.data.title} →</a></p>
+      </div>
+    </section>
+
+    <!-- 6. compare -->
+    <section class="section" id="compare">
+      <div class="wrap">
+        <div class="section-head"><span class="eyebrow">Another layer</span><h2>Three numbers, three crowds</h2></div>
+        <div class="compare">
+          <div class="cmp">
+            <span class="cmp-badge imdb"><b>8.2</b><small>/10</small></span>
+            <h3>IMDb</h3><p>People who choose to rate the film, on a ten-point scale.</p><span class="cmp-who mono">Voters</span>
+          </div>
+          <div class="cmp">
+            <span class="cmp-badge rt"><b>92</b><small>%</small></span>
+            <h3>Rotten Tomatoes</h3><p>The share of professional reviews that recommend it.</p><span class="cmp-who mono">Critics</span>
+          </div>
+          <div class="cmp us">
+            <span class="cmp-badge wh"><Waves waves={2} size={24} /><b>{fScore}</b><small>%</small></span>
+            <h3>Whistle</h3><p>The share of public posts that cheer it, a month either side of release.</p><span class="cmp-who mono">Everyone posting</span>
+          </div>
+        </div>
+        <p class="cmp-note">IMDb and Rotten Tomatoes figures above are illustrative.</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script is:inline define:vars={{ POSTS, tiers: TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t.waves })) }}>
+  window.__HOW = { POSTS, tiers };
+</script>
+
+<style is:global>
+  .how-page .machine-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px; align-items: center; padding-block: 56px 24px; }
+  .how-page .mh-copy h1 { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(56px, 8vw, 110px); line-height: .86; margin-top: 14px; }
+  .how-page .mh-copy h1 em { font-style: normal; color: var(--gold-text); display: inline-block; transform: rotate(-3deg); }
+  .how-page .mh-copy p { color: var(--muted); font-size: 18px; max-width: 46ch; margin-top: 18px; }
+
+  /* the machine */
+  .how-page .machine { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: auto auto; gap: 14px; padding: 18px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 30px 60px -30px rgba(0,0,0,.7); }
+  .how-page .feed { grid-row: 1 / 3; position: relative; height: 380px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); overflow: hidden; }
+  .how-page .feed-label { position: absolute; top: 10px; left: 10px; z-index: 2; background: var(--bg); padding: 3px 6px; border-radius: 6px; }
+  .how-page .feed-lane { position: absolute; inset: 0; -webkit-mask: linear-gradient(180deg, transparent, #000 18%, #000 80%, transparent); mask: linear-gradient(180deg, transparent, #000 18%, #000 80%, transparent); }
+  .how-page .post { position: absolute; left: 12px; right: 12px; padding: 9px 12px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); font-size: 13px; line-height: 1.3; display: flex; gap: 8px; align-items: flex-start; animation: drop 4.2s linear forwards; }
+  .how-page .post::before { content: ""; flex: none; width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--muted), var(--faint)); }
+  .how-page .post.sorted { transition: transform .5s cubic-bezier(.5,0,.7,.4), opacity .5s; opacity: 0; }
+  .how-page .post.sorted.pos { transform: translate(120%, 20px) scale(.6); border-color: var(--pos); }
+  .how-page .post.sorted.neg { transform: translate(120%, 120px) scale(.6); border-color: var(--neg); }
+  .how-page .post.sorted.neu { transform: translate(120%, 70px) scale(.6); border-color: var(--neu); }
+  .how-page .post .tag { display: none; }
+  .how-page .post.tagged .tag { display: inline-block; margin-left: auto; flex: none; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; }
+  .how-page .post.pos .tag { background: color-mix(in srgb, var(--pos) 25%, transparent); color: var(--pos); }
+  .how-page .post.neg .tag { background: color-mix(in srgb, var(--neg) 25%, transparent); color: var(--neg); }
+  .how-page .post.neu .tag { background: color-mix(in srgb, var(--neu) 25%, transparent); color: var(--muted); }
+  @keyframes drop { from { top: -60px; } to { top: 46%; } }
+  .how-page .buckets { display: flex; flex-direction: column; gap: 8px; }
+  .how-page .bucket { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; gap: 2px 10px; align-items: baseline; padding: 10px 12px; border-radius: 12px; background: var(--bg); border: 1px solid var(--line); }
+  .how-page .b-n { font-family: var(--font-display); font-weight: 900; font-size: 28px; line-height: 1; }
+  .how-page .bucket.pos .b-n { color: var(--pos); } .how-page .bucket.neg .b-n { color: var(--neg); } .how-page .bucket.neu .b-n { color: var(--neu); }
+  .how-page .b-l { font-size: 13px; color: var(--muted); }
+  .how-page .b-fill { grid-column: 1 / -1; height: 5px; border-radius: 9px; background: var(--surface-2); overflow: hidden; }
+  .how-page .b-fill i { display: block; height: 100%; width: 0; border-radius: inherit; transition: width .5s; }
+  .how-page .bucket.pos .b-fill i { background: var(--pos); } .how-page .bucket.neg .b-fill i { background: var(--neg); } .how-page .bucket.neu .b-fill i { background: var(--neu); }
+  .how-page .out { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 14px; border-radius: 14px; background: var(--gold); color: var(--gold-ink); }
+  .how-page .out-eq { color: color-mix(in srgb, var(--gold-ink) 70%, transparent); font-size: 10.5px; text-align: center; }
+  .how-page .out-score { font-family: var(--font-display); font-weight: 900; font-size: 64px; line-height: .85; }
+  .how-page .out-score small { font-size: .4em; vertical-align: top; }
+  .how-page .out-score b.bump { display: inline-block; animation: bump .35s; }
+  @keyframes bump { 50% { transform: scale(1.12); } }
+  .how-page .out-unit { display: inline-flex; gap: 5px; align-items: center; font-family: var(--font-display); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: 15px; }
+
+  /* try it */
+  .how-page .try { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
+  .how-page .try h2, .how-page .window-h { font-family: var(--font-display); font-weight: 800; font-size: clamp(34px, 5vw, 52px); line-height: .98; text-transform: uppercase; margin: 10px 0 14px; }
+  .how-page .try-copy p { color: var(--muted); max-width: 46ch; }
+  .how-page .try-copy .real { margin: 16px 0; color: var(--fg); }
+  .how-page .try-copy .real b { color: var(--gold-text); }
+  .how-page .try-box { padding: 26px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 18px; }
+  .how-page .slide { display: flex; flex-direction: column; gap: 8px; }
+  .how-page .slide > span { display: flex; justify-content: space-between; font-size: 15px; }
+  .how-page .slide output { font-family: var(--font-mono); color: var(--muted); }
+  .how-page .slide input { width: 100%; height: 8px; -webkit-appearance: none; appearance: none; border-radius: 9px; background: var(--surface-2); outline: none; }
+  .how-page .slide input::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: var(--c); border: 4px solid var(--bg); box-shadow: 0 0 0 2px var(--c); cursor: grab; transition: transform .2s; }
+  .how-page .slide input::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--c); border: 4px solid var(--bg); cursor: grab; }
+  .how-page .slide input:active::-webkit-slider-thumb { transform: scale(1.2); }
+  .how-page .slide.pos { --c: var(--pos); } .how-page .slide.neg { --c: var(--neg); } .how-page .slide.neu { --c: var(--neu); }
+  .how-page .slide.pos b { color: var(--pos); } .how-page .slide.neg b { color: var(--neg); } .how-page .slide.neu b { color: var(--muted); }
+  .how-page .try-result { display: flex; align-items: center; gap: 18px; padding-top: 12px; border-top: 1px dashed var(--line); }
+  .how-page .tr-score { font-family: var(--font-display); font-weight: 900; font-size: 92px; line-height: .8; color: var(--gold-text); }
+  .how-page .tr-score small { font-size: .4em; vertical-align: top; }
+  .how-page .tr-side { display: flex; flex-direction: column; gap: 8px; }
+  .how-page .tr-unit { font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: .14em; text-transform: uppercase; }
+  .how-page .tb { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 800; font-size: 22px; text-transform: uppercase; padding: 6px 14px 5px 10px; border-radius: 999px; background: var(--gold); color: var(--gold-ink); animation: pop .35s cubic-bezier(.3,1.6,.5,1); }
+  .how-page .tb[data-band="Half Whistle"] { background: transparent; color: var(--gold-text); box-shadow: inset 0 0 0 2px var(--gold); }
+  .how-page .tb[data-band="No Whistle"] { background: var(--surface-2); color: var(--muted); }
+  @keyframes pop { from { transform: scale(.7); opacity: 0; } }
+  .how-page .tug { display: flex; height: 14px; border-radius: 99px; overflow: hidden; background: var(--surface-2); }
+  .how-page .tug i { display: block; height: 100%; transition: width .3s; }
+  .how-page .tug-pos { background: var(--pos); } .how-page .tug-neg { background: var(--neg); }
+
+  /* window */
+  .how-page .window { position: relative; padding: 30px 28px 24px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); }
+  .how-page .wave-line { width: 100%; height: 160px; display: block; }
+  .how-page .wl-area { fill: color-mix(in srgb, var(--gold) 12%, transparent); }
+  .how-page .wl-line { fill: none; stroke: url(#wl); stroke-width: 4; vector-effect: non-scaling-stroke; stroke-dasharray: 2000; stroke-dashoffset: 2000; transition: stroke-dashoffset 2.2s cubic-bezier(.3,.6,.3,1); }
+  .how-page .window.in .wl-line { stroke-dashoffset: 0; }
+  .how-page .marks { position: relative; height: 70px; margin-top: 10px; border-top: 2px solid var(--line); }
+  .how-page .mk { position: absolute; left: var(--x); top: -7px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; width: 140px; }
+  .how-page .mk:first-child { transform: none; align-items: flex-start; text-align: left; }
+  .how-page .mk:last-child { transform: translateX(-100%); align-items: flex-end; text-align: right; }
+  .how-page .mk::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 3px solid var(--muted); margin-bottom: 6px; }
+  .how-page .mk.rel::before { border-color: var(--gold); background: var(--gold); box-shadow: 0 0 20px var(--gold); }
+  .how-page .mk b { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 17px; }
+  .how-page .mk.rel b { color: var(--gold-text); }
+  .how-page .mk span { font-size: 12.5px; color: var(--muted); }
+  .how-page .race-link { margin-top: 22px; }
+
+  /* bands meter */
+  .how-page .meter { display: flex; gap: 6px; }
+  .how-page .seg { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px; padding: 0 0 16px; text-decoration: none; color: var(--gold-text); border-radius: 16px; transition: transform .35s cubic-bezier(.3,1.5,.5,1); }
+  .how-page .seg[data-waves="0"] { color: var(--faint); }
+  .how-page .seg-bar { height: 18px; border-radius: 6px; background: var(--gold); opacity: calc(.25 + var(--o, .25)); margin-bottom: 10px; transition: height .3s; }
+  .how-page .seg[data-waves="0"] .seg-bar { --o: 0; background: var(--line); }
+  .how-page .seg[data-waves="1"] .seg-bar { --o: .2; }
+  .how-page .seg[data-waves="2"] .seg-bar { --o: .45; }
+  .how-page .seg[data-waves="3"] .seg-bar { --o: .75; }
+  .how-page .seg:hover { transform: translateY(-6px); }
+  .how-page .seg:hover .seg-bar { height: 26px; }
+  .how-page .seg:hover .w1 { animation: wave 1s ease-in-out infinite; }
+  .how-page .seg:hover .w2 { animation: wave 1s ease-in-out .12s infinite; }
+  .how-page .seg:hover .w3 { animation: wave 1s ease-in-out .24s infinite; }
+  .how-page .seg-name { font-family: var(--font-display); font-weight: 900; font-size: 26px; text-transform: uppercase; line-height: 1; color: var(--fg); }
+  .how-page .seg-range { font-family: var(--font-mono); font-size: 13px; }
+  .how-page .seg-line { font-size: 14px; color: var(--muted); }
+  .how-page .seg-posters { display: flex; margin-top: 4px; }
+  .how-page .seg-posters img { width: 40px; height: 60px; object-fit: cover; border-radius: 6px; border: 2px solid var(--bg); margin-right: -12px; transition: transform .3s cubic-bezier(.3,1.5,.5,1); }
+  .how-page .seg:hover .seg-posters img:nth-child(1) { transform: rotate(-8deg); }
+  .how-page .seg:hover .seg-posters img:nth-child(3) { transform: rotate(8deg); }
+  .how-page .seg-count { font-family: var(--font-mono); font-size: 12px; color: var(--faint); }
+  .how-page .seg:hover .seg-count { color: var(--gold-text); }
+  .how-page .meter-axis { display: none; }
+
+  /* tracked */
+  .how-page .tracked { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .how-page .tr-item { padding: 22px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; transition: transform .35s cubic-bezier(.3,1.5,.5,1), border-color .2s; }
+  .how-page .tr-item:hover { transform: translateY(-5px) rotate(-.8deg); border-color: var(--gold); }
+  .how-page .tr-ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--surface-2); }
+  .how-page .tr-ic svg { width: 22px; height: 22px; fill: none; stroke: var(--gold-text); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .how-page .tr-item p { color: var(--muted); font-size: 14.5px; }
+  .how-page .see { margin-top: 20px; }
+
+  /* compare */
+  .how-page .compare { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .how-page .cmp { padding: 26px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; transition: transform .35s cubic-bezier(.3,1.5,.5,1); }
+  .how-page .cmp:hover { transform: translateY(-6px) rotate(-1deg); }
+  .how-page .cmp.us { border-color: var(--gold); background: radial-gradient(120% 100% at 100% 0%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 60%), var(--surface); }
+  .how-page .cmp-badge { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 12px; font-family: var(--font-display); font-weight: 900; font-size: 44px; line-height: 1; margin-bottom: 8px; }
+  .how-page .cmp-badge small { font-size: .45em; opacity: .75; }
+  .how-page .cmp-badge.imdb { background: #F5C518; color: #000; }
+  .how-page .cmp-badge.rt { background: #FA320A; color: #fff; }
+  .how-page .cmp-badge.wh { background: var(--gold); color: var(--gold-ink); }
+  .how-page .cmp h3 { font-family: var(--font-display); font-weight: 800; font-size: 26px; text-transform: uppercase; }
+  .how-page .cmp p { color: var(--muted); font-size: 15px; }
+  .how-page .cmp-who { margin-top: auto; padding-top: 10px; }
+  .how-page .cmp.us .cmp-who { color: var(--gold-text); }
+  .how-page .cmp-note { font-size: 12px; color: var(--faint); margin-top: 12px; }
+
+  @media (max-width: 960px) {
+    .how-page .machine-hero, .how-page .try { grid-template-columns: 1fr; gap: 28px; }
+    .how-page .tracked { grid-template-columns: 1fr 1fr; }
+    .how-page .meter { flex-wrap: wrap; }
+    .how-page .seg { flex: 1 1 45%; }
+  }
+  @media (max-width: 600px) {
+    .how-page .machine { grid-template-columns: 1fr; }
+    .how-page .feed { grid-row: auto; height: 220px; }
+    .how-page .tracked, .how-page .compare { grid-template-columns: 1fr; }
+    .how-page .seg { flex: 1 1 100%; }
+    .how-page .mk { width: 90px; }
+    .how-page .mk span { display: none; }
+    .how-page .tr-score { font-size: 72px; }
+  }
+</style>
+
+<script>
+  const { POSTS, tiers } = (window as any).__HOW as { POSTS: [string, string][]; tiers: { name: string; min: number; max: number }[] };
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tierOf = (s: number) => tiers.find((t) => s >= t.min && s <= t.max) ?? tiers[tiers.length - 1];
+  const fmt = (n: number) => n.toLocaleString('en-IN');
+
+  // ---------- the machine: posts drop in, get a label, fly to their bucket ----------
+  const feed = document.getElementById('feed')!;
+  const counts = { pos: 0, neu: 0, neg: 0 };
+  const scoreEl = document.getElementById('m-score')!;
+  const LABEL: Record<string, string> = { pos: 'cheer', neg: 'complaint', neu: 'on the fence' };
+  let i = 0;
+  function dropPost() {
+    const [kind, text] = POSTS[i++ % POSTS.length];
+    const el = document.createElement('div');
+    el.className = `post ${kind}`;
+    el.innerHTML = `<span></span><span class="tag">${LABEL[kind]}</span>`;
+    el.firstElementChild!.textContent = text;
+    feed.append(el);
+    setTimeout(() => el.classList.add('tagged'), 2600);
+    setTimeout(() => {
+      el.classList.add('sorted');
+      counts[kind as keyof typeof counts]++;
+      const total = counts.pos + counts.neu + counts.neg;
+      (['pos', 'neu', 'neg'] as const).forEach((k) => {
+        document.querySelector(`[data-b="${k}"]`)!.textContent = String(counts[k]);
+        document.querySelector<HTMLElement>(`[data-f="${k}"]`)!.style.width = `${(counts[k] / total) * 100}%`;
+      });
+      if (total) {
+        scoreEl.textContent = String(Math.round((counts.pos / total) * 100));
+        scoreEl.classList.remove('bump'); void scoreEl.offsetWidth; scoreEl.classList.add('bump');
+      }
+    }, 4300);
+    setTimeout(() => el.remove(), 5000);
+  }
+  const io = new IntersectionObserver(([e]) => { running = e.isIntersecting; }, { threshold: 0.2 });
+  let running = true;
+  io.observe(document.getElementById('machine')!);
+  if (!still) { dropPost(); setInterval(() => { if (running && !document.hidden) dropPost(); }, 1050); }
+  else { counts.pos = 7; counts.neg = 1; counts.neu = 2; scoreEl.textContent = '70'; }
+
+  // ---------- try it ----------
+  const sPos = document.getElementById('s-pos') as HTMLInputElement;
+  const sNeg = document.getElementById('s-neg') as HTMLInputElement;
+  const sNeu = document.getElementById('s-neu') as HTMLInputElement;
+  const tScore = document.getElementById('t-score')!;
+  let lastBand = '';
+  function calc() {
+    const p = +sPos.value, n = +sNeg.value, u = +sNeu.value;
+    document.getElementById('o-pos')!.textContent = fmt(p);
+    document.getElementById('o-neg')!.textContent = fmt(n);
+    document.getElementById('o-neu')!.textContent = fmt(u);
+    const s = p + n + u ? Math.round((p / (p + n + u)) * 100) : 0;
+    tScore.textContent = String(s);
+    const band = tierOf(s).name;
+    if (band !== lastBand) {
+      document.querySelectorAll<HTMLElement>('.tb').forEach((b) => (b.hidden = b.dataset.band !== band));
+      lastBand = band;
+    }
+    document.getElementById('tug-pos')!.style.width = `${p + n + u ? (p / (p + n + u)) * 100 : 50}%`;
+    document.getElementById('tug-neg')!.style.width = `${p + n + u ? ((n + u) / (p + n + u)) * 100 : 50}%`;
+  }
+  [sPos, sNeg, sNeu].forEach((el) => el.addEventListener('input', calc));
+  const real = document.getElementById('try-real') as HTMLButtonElement;
+  real.addEventListener('click', () => {
+    const p = +real.dataset.pos!, n = +real.dataset.neg!, u = +real.dataset.neu!;
+    const max = Math.ceil(Math.max(p, n, u) * 1.5 / 1000) * 1000;
+    [sPos, sNeg, sNeu].forEach((el) => (el.max = String(Math.max(10000, max))));
+    sPos.value = String(p); sNeg.value = String(n); sNeu.value = String(u);
+    calc();
+  });
+  calc();
+
+  // ---------- the window line draws itself when it scrolls in ----------
+  const win = document.querySelector('.window')!;
+  new IntersectionObserver(([e], o) => { if (e.isIntersecting) { win.classList.add('in'); o.disconnect(); } }, { threshold: 0.3 }).observe(win);
+</script>

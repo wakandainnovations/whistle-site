@@ -1,0 +1,242 @@
+{
+  "sample": true,
+  "title": "Bandra",
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2023,
+  "releaseDate": "2023-11-10",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/k5gnPQBFThLWRr4SzOzgl6mXSWz.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/4b11MuVXy6FMtbOSMk4IiNNLmbY.jpg",
+  "trailer": {
+    "youtubeId": "IGTRpElZlh8",
+    "channel": "ZEE5 Malayalam",
+    "kind": "trailer"
+  },
+  "director": "Arun Gopy",
+  "cast": [
+    "Dileep",
+    "Tamannaah Bhatia",
+    "Mamta Mohandas",
+    "R. Sarathkumar"
+  ],
+  "genres": [
+    "Action",
+    "Drama",
+    "Thriller"
+  ],
+  "runtime": "2h 35m",
+  "tmdbId": 1013057,
+  "watch": [
+    "ZEE5"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-10-11",
+      "end": "2023-12-10"
+    },
+    "sentiment": {
+      "positive": 2766,
+      "neutral": 1014,
+      "negative": 5616
+    },
+    "netSentiment": 0.49,
+    "awareness": {
+      "level": "Medium",
+      "views": 17000000
+    },
+    "reach": 17700,
+    "mentions": {
+      "total": 5847,
+      "daily": [
+        51,
+        51,
+        47,
+        49,
+        49,
+        59,
+        61,
+        106,
+        162,
+        227,
+        196,
+        97,
+        68,
+        61,
+        55,
+        71,
+        76,
+        78,
+        72,
+        85,
+        76,
+        103,
+        101,
+        113,
+        108,
+        119,
+        158,
+        151,
+        191,
+        208,
+        411,
+        365,
+        273,
+        267,
+        240,
+        186,
+        140,
+        144,
+        110,
+        106,
+        90,
+        89,
+        62,
+        65,
+        52,
+        37,
+        28,
+        23,
+        21,
+        18,
+        13,
+        12,
+        9,
+        9,
+        6,
+        6,
+        4,
+        4,
+        3,
+        3,
+        2
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        62
+      ],
+      [
+        "International",
+        15
+      ],
+      [
+        "Tamil Nadu",
+        10
+      ],
+      [
+        "Karnataka",
+        9
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Kerala",
+          49
+        ],
+        [
+          "Unknown",
+          23
+        ],
+        [
+          "International",
+          13
+        ],
+        [
+          "Tamil Nadu",
+          7
+        ],
+        [
+          "Karnataka",
+          5
+        ],
+        [
+          "Andhra Telangana",
+          3
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          46
+        ],
+        [
+          "Media press",
+          23
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Fan page",
+          11
+        ],
+        [
+          "Official studio",
+          5
+        ],
+        [
+          "Bot spam",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          54
+        ],
+        [
+          "Fan amplified promo",
+          20
+        ],
+        [
+          "Official promo",
+          10
+        ],
+        [
+          "News press coverage",
+          9
+        ],
+        [
+          "Trade box office update",
+          6
+        ],
+        [
+          "Ticket merch",
+          1
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          25
+        ],
+        [
+          "Story",
+          20
+        ],
+        [
+          "Music",
+          16
+        ],
+        [
+          "Direction technical craft",
+          15
+        ],
+        [
+          "Box office commercial",
+          14
+        ],
+        [
+          "Official promo",
+          5
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "sample": true,
+  "title": "Ramayana: Rise of a Legend",
+  "titleConfirmed": true,
+  "language": "Hindi",
+  "industry": "hindi",
+  "year": 2026,
+  "releaseDate": "2026-11-05",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/vBQ7wks68OhJKlb3RnXSl2yXBXK.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/yHVZncPRZr63mezRX20IyKLrSkv.jpg",
+  "trailer": null,
+  "director": "Nitesh Tiwari",
+  "cast": [
+    "Ranbir Kapoor",
+    "Yash",
+    "Sai Pallavi",
+    "Ravi Dubey"
+  ],
+  "genres": [
+    "Fantasy",
+    "Action",
+    "Adventure"
+  ],
+  "runtime": "3h 15m",
+  "tmdbId": 656908,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-10-06",
+      "end": "2026-11-16"
+    },
+    "sentiment": {
+      "positive": 63067,
+      "neutral": 4798,
+      "negative": 12917
+    },
+    "netSentiment": 4.88,
+    "awareness": {
+      "level": "Very high",
+      "views": 205400000
+    },
+    "reach": 183600,
+    "mentions": {
+      "total": 67481,
+      "daily": [
+        544,
+        467,
+        520,
+        492,
+        558,
+        503,
+        673,
+        1099,
+        2033,
+        2290,
+        2103,
+        1063,
+        652,
+        618,
+        704,
+        632,
+        632,
+        841,
+        705,
+        843,
+        911,
+        891,
+        1085,
+        1242,
+        1471,
+        1484,
+        1574,
+        1755,
+        1898,
+        2382,
+        3831,
+        3494,
+        3070,
+        3832,
+        2866,
+        2821,
+        3175,
+        2943,
+        2225,
+        2351,
+        2364,
+        1844
+      ]
+    },
+    "regions": [
+      [
+        "Hindi Belt North India",
+        49
+      ],
+      [
+        "Maharashtra",
+        21
+      ],
+      [
+        "South India",
+        12
+      ],
+      [
+        "International",
+        11
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Hindi Belt North India",
+          35
+        ],
+        [
+          "Unknown",
+          25
+        ],
+        [
+          "Maharashtra",
+          13
+        ],
+        [
+          "International",
+          11
+        ],
+        [
+          "South India",
+          9
+        ],
+        [
+          "Gujarat",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          50
+        ],
+        [
+          "Media press",
+          15
+        ],
+        [
+          "Verified celebrity",
+          14
+        ],
+        [
+          "Fan page",
+          13
+        ],
+        [
+          "Official studio",
+          4
+        ],
+        [
+          "Bot spam",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          45
+        ],
+        [
+          "Fan amplified promo",
+          23
+        ],
+        [
+          "Official promo",
+          13
+        ],
+        [
+          "News press coverage",
+          12
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          31
+        ],
+        [
+          "Direction technical craft",
+          17
+        ],
+        [
+          "Story",
+          16
+        ],
+        [
+          "Box office commercial",
+          13
+        ],
+        [
+          "Music",
+          10
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

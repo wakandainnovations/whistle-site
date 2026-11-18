@@ -1,0 +1,242 @@
+{
+  "sample": true,
+  "title": "Joker: Folie à Deux",
+  "titleConfirmed": true,
+  "language": "English",
+  "industry": "hollywood",
+  "year": 2024,
+  "releaseDate": "2024-10-02",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/if8QiqCI7WAGImKcJCfzp6VTyKA.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/AVWlQpVhpudyFsSh3OQIieHHYf.jpg",
+  "trailer": {
+    "youtubeId": "_OKAwz2MsJs",
+    "channel": "Warner Bros.",
+    "kind": "trailer"
+  },
+  "director": "Todd Phillips",
+  "cast": [
+    "Joaquin Phoenix",
+    "Lady Gaga",
+    "Brendan Gleeson",
+    "Catherine Keener"
+  ],
+  "genres": [
+    "Drama",
+    "Crime",
+    "Thriller"
+  ],
+  "runtime": "2h 18m",
+  "tmdbId": 889737,
+  "watch": [
+    "Netflix"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2024-09-02",
+      "end": "2024-11-01"
+    },
+    "sentiment": {
+      "positive": 9721,
+      "neutral": 3726,
+      "negative": 17281
+    },
+    "netSentiment": 0.56,
+    "awareness": {
+      "level": "High",
+      "views": 73100000
+    },
+    "reach": 54800,
+    "mentions": {
+      "total": 15045,
+      "daily": [
+        140,
+        130,
+        113,
+        109,
+        125,
+        148,
+        129,
+        221,
+        476,
+        613,
+        391,
+        250,
+        170,
+        149,
+        137,
+        173,
+        164,
+        192,
+        193,
+        227,
+        185,
+        242,
+        226,
+        315,
+        258,
+        336,
+        339,
+        443,
+        414,
+        551,
+        1147,
+        961,
+        677,
+        613,
+        579,
+        522,
+        422,
+        366,
+        367,
+        309,
+        253,
+        209,
+        185,
+        167,
+        134,
+        96,
+        81,
+        82,
+        65,
+        52,
+        36,
+        29,
+        26,
+        23,
+        20,
+        15,
+        13,
+        11,
+        10,
+        8,
+        8
+      ]
+    },
+    "regions": [
+      [
+        "Maharashtra",
+        28
+      ],
+      [
+        "Karnataka",
+        19
+      ],
+      [
+        "Delhi NCR",
+        19
+      ],
+      [
+        "Tamil Nadu",
+        15
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          31
+        ],
+        [
+          "Maharashtra",
+          18
+        ],
+        [
+          "Karnataka",
+          15
+        ],
+        [
+          "Delhi NCR",
+          15
+        ],
+        [
+          "Tamil Nadu",
+          9
+        ],
+        [
+          "Andhra Telangana",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          38
+        ],
+        [
+          "Media press",
+          22
+        ],
+        [
+          "Fan page",
+          16
+        ],
+        [
+          "Verified celebrity",
+          13
+        ],
+        [
+          "Official studio",
+          6
+        ],
+        [
+          "Bot spam",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          38
+        ],
+        [
+          "Fan amplified promo",
+          22
+        ],
+        [
+          "News press coverage",
+          17
+        ],
+        [
+          "Official promo",
+          14
+        ],
+        [
+          "Trade box office update",
+          6
+        ],
+        [
+          "Ticket merch",
+          3
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          27
+        ],
+        [
+          "Box office commercial",
+          21
+        ],
+        [
+          "Direction technical craft",
+          14
+        ],
+        [
+          "Story",
+          14
+        ],
+        [
+          "Music",
+          13
+        ],
+        [
+          "Politics personal life",
+          6
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "sample": false,
+  "auraId": 36,
+  "auraName": "Athiradi",
+  "title": "Athiradi",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-04-14",
+  "featured": false,
+  "poster": "/posters/athiradi.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Arun Anirudhan",
+  "cast": [
+    "Basil Joseph",
+    "Tovino Thomas"
+  ],
+  "genres": [
+    "Action",
+    "Comedy"
+  ],
+  "runtime": "2h 37m",
+  "tmdbId": null,
+  "watch": [
+    "JioHotstar",
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-05-03",
+      "end": "2026-05-21"
+    },
+    "sentiment": {
+      "positive": 16,
+      "neutral": 0,
+      "negative": 467
+    },
+    "netSentiment": 0.03,
+    "awareness": {
+      "level": "High",
+      "views": 109612
+    },
+    "reach": 2507,
+    "mentions": {
+      "total": 480,
+      "daily": [
+        1,
+        6,
+        2,
+        6,
+        3,
+        1,
+        0,
+        0,
+        3,
+        4,
+        4,
+        166,
+        89,
+        88,
+        50,
+        8,
+        3,
+        27,
+        19
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        91
+      ],
+      [
+        "Tamil Nadu",
+        9
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Kerala",
+          87
+        ],
+        [
+          "Tamil Nadu",
+          9
+        ],
+        [
+          "Unknown",
+          4
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          98
+        ],
+        [
+          "Media press",
+          2
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          97
+        ],
+        [
+          "Fan amplified promo",
+          2
+        ],
+        [
+          "Trade box office update",
+          1
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          77
+        ],
+        [
+          "Acting / cast performance",
+          9
+        ],
+        [
+          "Music / songs",
+          4
+        ],
+        [
+          "Story",
+          2
+        ],
+        [
+          "Screenplay",
+          2
+        ],
+        [
+          "First half",
+          2
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "sample": true,
+  "title": "Madame Web",
+  "titleConfirmed": true,
+  "language": "English",
+  "industry": "hollywood",
+  "year": 2024,
+  "releaseDate": "2024-02-16",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/pwGmXVKUgKN13psUjlhC9zBcq1o.jpg",
+  "trailer": {
+    "youtubeId": "s_76M4c4LTo",
+    "channel": "Sony Pictures Entertainment",
+    "kind": "trailer"
+  },
+  "director": "SJ Clarkson",
+  "cast": [
+    "Dakota Johnson",
+    "Sydney Sweeney",
+    "Isabela Merced",
+    "Celeste O'Connor"
+  ],
+  "genres": [
+    "Action",
+    "Fantasy"
+  ],
+  "runtime": "1h 57m",
+  "tmdbId": 634492,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2024-01-17",
+      "end": "2024-03-17"
+    },
+    "sentiment": {
+      "positive": 4103,
+      "neutral": 1056,
+      "negative": 14547
+    },
+    "netSentiment": 0.28,
+    "awareness": {
+      "level": "Medium",
+      "views": 51000000
+    },
+    "reach": 32600,
+    "mentions": {
+      "total": 8788,
+      "daily": [
+        72,
+        89,
+        83,
+        74,
+        96,
+        97,
+        96,
+        148,
+        295,
+        365,
+        322,
+        198,
+        115,
+        108,
+        99,
+        98,
+        112,
+        103,
+        113,
+        144,
+        139,
+        174,
+        159,
+        182,
+        227,
+        208,
+        236,
+        259,
+        365,
+        326,
+        621,
+        477,
+        387,
+        385,
+        297,
+        271,
+        236,
+        187,
+        145,
+        114,
+        108,
+        86,
+        73,
+        72,
+        47,
+        40,
+        32,
+        23,
+        17,
+        13,
+        11,
+        10,
+        8,
+        6,
+        5,
+        4,
+        3,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "regions": [
+      [
+        "Maharashtra",
+        29
+      ],
+      [
+        "Karnataka",
+        24
+      ],
+      [
+        "Delhi NCR",
+        17
+      ],
+      [
+        "Tamil Nadu",
+        14
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          33
+        ],
+        [
+          "Maharashtra",
+          19
+        ],
+        [
+          "Karnataka",
+          17
+        ],
+        [
+          "Delhi NCR",
+          13
+        ],
+        [
+          "Tamil Nadu",
+          7
+        ],
+        [
+          "Andhra Telangana",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          51
+        ],
+        [
+          "Media press",
+          22
+        ],
+        [
+          "Fan page",
+          11
+        ],
+        [
+          "Verified celebrity",
+          8
+        ],
+        [
+          "Official studio",
+          5
+        ],
+        [
+          "Bot spam",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          44
+        ],
+        [
+          "Official promo",
+          18
+        ],
+        [
+          "Fan amplified promo",
+          17
+        ],
+        [
+          "News press coverage",
+          15
+        ],
+        [
+          "Trade box office update",
+          4
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          30
+        ],
+        [
+          "Box office commercial",
+          22
+        ],
+        [
+          "Story",
+          17
+        ],
+        [
+          "Direction technical craft",
+          11
+        ],
+        [
+          "Music",
+          9
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

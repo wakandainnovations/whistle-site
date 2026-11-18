@@ -1,0 +1,35 @@
+{
+  "sample": false,
+  "auraId": 9000041,
+  "auraName": "Niram",
+  "title": "Niram",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "/posters/niram.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Krishna Balaram",
+  "cast": [],
+  "genres": [
+    "Thriller",
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-11-20",
+    "trackUntil": "2026-12-04",
+    "popularity": 0.5946
+  },
+  "report": null
+}

@@ -1,0 +1,32 @@
+{
+  "sample": false,
+  "auraId": 9000021,
+  "auraName": "Amalaamrutha",
+  "title": "Amalaamrutha",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-13",
+  "featured": false,
+  "poster": "/posters/amalaamrutha.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": null,
+  "cast": [],
+  "genres": [],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 161,
+    "trackFrom": "2026-11-06",
+    "trackUntil": "2026-11-20",
+    "popularity": 0.0388
+  },
+  "report": null
+}

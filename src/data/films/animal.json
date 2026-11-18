@@ -1,0 +1,242 @@
+{
+  "sample": true,
+  "title": "Animal",
+  "titleConfirmed": true,
+  "language": "Hindi",
+  "industry": "hindi",
+  "year": 2023,
+  "releaseDate": "2023-12-01",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/hr9rjR3J0xBBKmlJ4n3gHId9ccx.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/lprsAHkwMxk2iC6VZxNmV0H7g1t.jpg",
+  "trailer": {
+    "youtubeId": "8FkLRUJj-o0",
+    "channel": "T-Series",
+    "kind": "trailer"
+  },
+  "director": "Sandeep Reddy Vanga",
+  "cast": [
+    "Ranbir Kapoor",
+    "Rashmika Mandanna",
+    "Anil Kapoor",
+    "Bobby Deol"
+  ],
+  "genres": [
+    "Action",
+    "Crime",
+    "Drama"
+  ],
+  "runtime": "3h 21m",
+  "tmdbId": 781732,
+  "watch": [
+    "Netflix"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-11-01",
+      "end": "2023-12-31"
+    },
+    "sentiment": {
+      "positive": 43516,
+      "neutral": 5740,
+      "negative": 37070
+    },
+    "netSentiment": 1.17,
+    "awareness": {
+      "level": "Very high",
+      "views": 185100000
+    },
+    "reach": 176300,
+    "mentions": {
+      "total": 52098,
+      "daily": [
+        439,
+        381,
+        406,
+        362,
+        356,
+        387,
+        411,
+        852,
+        1269,
+        1877,
+        1548,
+        897,
+        478,
+        516,
+        463,
+        532,
+        573,
+        569,
+        653,
+        631,
+        636,
+        767,
+        829,
+        732,
+        921,
+        901,
+        1091,
+        1171,
+        1357,
+        1915,
+        3008,
+        3140,
+        2374,
+        2021,
+        2206,
+        1692,
+        1610,
+        1606,
+        1548,
+        1077,
+        1210,
+        1092,
+        997,
+        681,
+        588,
+        522,
+        432,
+        407,
+        293,
+        308,
+        235,
+        197,
+        182,
+        130,
+        134,
+        120,
+        85,
+        79,
+        66,
+        73,
+        65
+      ]
+    },
+    "regions": [
+      [
+        "Hindi Belt North India",
+        48
+      ],
+      [
+        "Maharashtra",
+        17
+      ],
+      [
+        "International",
+        14
+      ],
+      [
+        "South India",
+        12
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Hindi Belt North India",
+          33
+        ],
+        [
+          "Unknown",
+          27
+        ],
+        [
+          "Maharashtra",
+          16
+        ],
+        [
+          "International",
+          9
+        ],
+        [
+          "South India",
+          8
+        ],
+        [
+          "Gujarat",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          34
+        ],
+        [
+          "Media press",
+          24
+        ],
+        [
+          "Fan page",
+          18
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Official studio",
+          7
+        ],
+        [
+          "Bot spam",
+          6
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          41
+        ],
+        [
+          "Fan amplified promo",
+          24
+        ],
+        [
+          "News press coverage",
+          15
+        ],
+        [
+          "Official promo",
+          14
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          1
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          34
+        ],
+        [
+          "Box office commercial",
+          17
+        ],
+        [
+          "Direction technical craft",
+          14
+        ],
+        [
+          "Music",
+          13
+        ],
+        [
+          "Story",
+          10
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

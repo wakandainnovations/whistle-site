@@ -1,0 +1,44 @@
+---
+// YouTube trailer that loads only when played: a thumbnail and play button first,
+// then the privacy-enhanced youtube-nocookie player on click. Keeps pages fast.
+interface Props { youtubeId: string; title: string; channel: string }
+const { youtubeId, title, channel } = Astro.props;
+const watch = `https://www.youtube.com/watch?v=${youtubeId}`;
+---
+<figure class="trailer">
+  <div class="frame" data-yt={youtubeId} data-title={`${title} trailer`}>
+    <img src={`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`} alt="" loading="lazy" />
+    <button type="button" class="play" aria-label={`Play the ${title} trailer`}>
+      <svg viewBox="0 0 68 68" aria-hidden="true"><circle cx="34" cy="34" r="34" fill="var(--gold)" /><path d="M27 21v26l21-13z" fill="var(--gold-ink)" /></svg>
+      <span>Play trailer</span>
+    </button>
+  </div>
+  <figcaption>Official trailer · <a href={watch} target="_blank" rel="noopener">{channel} on YouTube</a></figcaption>
+</figure>
+
+<style>
+  .trailer { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .frame { position: relative; aspect-ratio: 16 / 9; max-width: 100%; border-radius: var(--radius); overflow: hidden; background: #000; border: 1px solid var(--line); }
+  .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: opacity .2s; }
+  .frame:hover img { opacity: 1; }
+  .frame :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .play { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px; background: linear-gradient(transparent 40%, rgba(0,0,0,.55)); border: 0; cursor: pointer; color: #fff; }
+  .play svg { width: 68px; height: 68px; transition: transform .2s; }
+  .play:hover svg { transform: scale(1.06); }
+  .play span { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: 15px; }
+  figcaption { font-size: 13px; color: var(--muted); }
+  figcaption a { color: var(--fg); }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.frame[data-yt]').forEach((frame) => {
+    frame.querySelector('.play')?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${frame.dataset.yt}?autoplay=1&rel=0`;
+      iframe.title = frame.dataset.title ?? 'Trailer';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      frame.replaceChildren(iframe);
+    });
+  });
+</script>

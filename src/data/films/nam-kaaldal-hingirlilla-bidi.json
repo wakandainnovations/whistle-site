@@ -1,0 +1,95 @@
+{
+  "sample": false,
+  "auraId": 90,
+  "auraName": "Nam Kaaldal Hingirlilla Bidi",
+  "title": "Nam Kaaldal Hingirlilla Bidi",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-03",
+  "featured": false,
+  "poster": "/posters/nam-kaaldal-hingirlilla-bidi.avif",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Amoghavarsha, SS Amoghavarsha",
+  "cast": [
+    "SS Amoghavarsha",
+    "Hari Dhananjaya",
+    "Rithya Gowda"
+  ],
+  "genres": [
+    "Comedy",
+    "Romance"
+  ],
+  "runtime": "2h 29m",
+  "tmdbId": null,
+  "watch": [
+    "Sun NXT"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-06-28",
+      "end": "2026-06-30"
+    },
+    "sentiment": {
+      "positive": 1,
+      "neutral": 3,
+      "negative": 0
+    },
+    "netSentiment": null,
+    "awareness": {
+      "level": "Low",
+      "views": 1477
+    },
+    "reach": 20,
+    "mentions": {
+      "total": 4,
+      "daily": [
+        2,
+        1,
+        1
+      ]
+    },
+    "regions": [],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          100
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          75
+        ],
+        [
+          "Official studio",
+          25
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          75
+        ],
+        [
+          "Official promo",
+          25
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          100
+        ]
+      ]
+    }
+  }
+}

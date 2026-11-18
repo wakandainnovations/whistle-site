@@ -1,0 +1,36 @@
+{
+  "sample": false,
+  "auraId": 115,
+  "auraName": "Chargesheet 03-08",
+  "title": "Chargesheet 03-08",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-08-14",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": "Venkat Bharadwaj",
+  "cast": [
+    "Sundar Raj",
+    "Harsh Arjun",
+    "Sathyashree"
+  ],
+  "genres": [
+    "Crime",
+    "Thriller"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [
+    "ZEE5"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": null
+}

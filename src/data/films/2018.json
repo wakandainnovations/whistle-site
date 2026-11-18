@@ -1,0 +1,242 @@
+{
+  "sample": true,
+  "title": "2018 - Everyone Is a Hero",
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2023,
+  "releaseDate": "2023-05-05",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/uz9qc6lNGyqS2xvuXUfpJh2eP6b.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/phHKTgg0D1KcbxCm2MDdHQ3TKqR.jpg",
+  "trailer": {
+    "youtubeId": "Af3cjNPhM4o",
+    "channel": "Think Music India",
+    "kind": "trailer"
+  },
+  "director": "Jude Anthany Joseph",
+  "cast": [
+    "Tovino Thomas",
+    "Kunchacko Boban",
+    "Narain",
+    "Asif Ali"
+  ],
+  "genres": [
+    "Thriller",
+    "Action",
+    "Adventure"
+  ],
+  "runtime": "2h 30m",
+  "tmdbId": 866440,
+  "watch": [
+    "SonyLIV"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-04-05",
+      "end": "2023-06-04"
+    },
+    "sentiment": {
+      "positive": 9926,
+      "neutral": 1209,
+      "negative": 2179
+    },
+    "netSentiment": 4.56,
+    "awareness": {
+      "level": "Medium",
+      "views": 26200000
+    },
+    "reach": 22400,
+    "mentions": {
+      "total": 8894,
+      "daily": [
+        55,
+        64,
+        58,
+        50,
+        55,
+        57,
+        61,
+        125,
+        232,
+        283,
+        213,
+        126,
+        68,
+        69,
+        75,
+        81,
+        72,
+        72,
+        77,
+        88,
+        100,
+        94,
+        104,
+        124,
+        145,
+        146,
+        188,
+        217,
+        204,
+        266,
+        422,
+        354,
+        414,
+        385,
+        364,
+        336,
+        294,
+        282,
+        293,
+        287,
+        256,
+        200,
+        177,
+        182,
+        131,
+        137,
+        123,
+        86,
+        90,
+        76,
+        67,
+        59,
+        52,
+        39,
+        42,
+        41,
+        31,
+        28,
+        28,
+        24,
+        25
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        63
+      ],
+      [
+        "International",
+        18
+      ],
+      [
+        "Tamil Nadu",
+        9
+      ],
+      [
+        "Karnataka",
+        7
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Kerala",
+          45
+        ],
+        [
+          "Unknown",
+          28
+        ],
+        [
+          "International",
+          12
+        ],
+        [
+          "Tamil Nadu",
+          6
+        ],
+        [
+          "Karnataka",
+          6
+        ],
+        [
+          "Andhra Telangana",
+          3
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          50
+        ],
+        [
+          "Media press",
+          15
+        ],
+        [
+          "Verified celebrity",
+          12
+        ],
+        [
+          "Fan page",
+          12
+        ],
+        [
+          "Bot spam",
+          6
+        ],
+        [
+          "Official studio",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          38
+        ],
+        [
+          "Fan amplified promo",
+          24
+        ],
+        [
+          "News press coverage",
+          16
+        ],
+        [
+          "Official promo",
+          13
+        ],
+        [
+          "Trade box office update",
+          7
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          21
+        ],
+        [
+          "Direction technical craft",
+          18
+        ],
+        [
+          "Story",
+          18
+        ],
+        [
+          "Box office commercial",
+          15
+        ],
+        [
+          "Music",
+          13
+        ],
+        [
+          "Official promo",
+          10
+        ]
+      ]
+    }
+  }
+}

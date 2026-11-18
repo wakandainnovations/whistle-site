@@ -1,0 +1,66 @@
+{
+  "sample": false,
+  "auraId": 9000023,
+  "auraName": "Maya Lady",
+  "title": "Maya Lady",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-13",
+  "featured": false,
+  "poster": "/posters/maya-lady.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": null,
+  "cast": [],
+  "genres": [
+    "Romance",
+    "Comedy"
+  ],
+  "runtime": "2h 8m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 439,
+    "trackFrom": "2026-11-06",
+    "trackUntil": "2026-11-20",
+    "popularity": 0.6486
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-11-15",
+      "end": "2026-11-17"
+    },
+    "sentiment": {
+      "positive": 3,
+      "neutral": 0,
+      "negative": 0
+    },
+    "netSentiment": null,
+    "awareness": {
+      "level": "Low",
+      "views": 0
+    },
+    "reach": 159,
+    "mentions": {
+      "total": 3,
+      "daily": [
+        0,
+        3,
+        0
+      ]
+    },
+    "regions": [],
+    "audience": {
+      "where": [],
+      "who": [],
+      "postType": [],
+      "topics": []
+    }
+  }
+}

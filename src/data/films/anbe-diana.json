@@ -1,0 +1,253 @@
+{
+  "sample": false,
+  "auraId": 77,
+  "auraName": "Anbe Diana",
+  "title": "Anbe Diana",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-17",
+  "featured": false,
+  "poster": "/posters/anbe-diana.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Pari Elavazhagan",
+  "cast": [
+    "Pari Elavazhagan",
+    "Ramya Ranganathan",
+    "Roja"
+  ],
+  "genres": [
+    "Comedy",
+    "Romance"
+  ],
+  "runtime": "2h 20m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video",
+    "JioHotstar"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-03-29",
+      "end": "2026-07-17"
+    },
+    "sentiment": {
+      "positive": 864,
+      "neutral": 172,
+      "negative": 5
+    },
+    "netSentiment": 172.8,
+    "awareness": {
+      "level": "High",
+      "views": 382473
+    },
+    "reach": 1558,
+    "mentions": {
+      "total": 1041,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        387,
+        648,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        99
+      ],
+      [
+        "Karnataka",
+        1
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          61
+        ],
+        [
+          "Tamil Nadu",
+          38
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          81
+        ],
+        [
+          "Media press",
+          8
+        ],
+        [
+          "Fan page",
+          6
+        ],
+        [
+          "Official studio",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          71
+        ],
+        [
+          "Organic opinion",
+          20
+        ],
+        [
+          "Official promo",
+          8
+        ],
+        [
+          "News press coverage",
+          1
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          77
+        ],
+        [
+          "Story",
+          6
+        ],
+        [
+          "Acting / cast performance",
+          5
+        ],
+        [
+          "First half",
+          5
+        ],
+        [
+          "Runtime",
+          3
+        ],
+        [
+          "Second half",
+          2
+        ]
+      ]
+    }
+  }
+}

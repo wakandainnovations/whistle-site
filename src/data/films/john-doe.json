@@ -1,0 +1,122 @@
+{
+  "sample": false,
+  "auraId": 9000020,
+  "auraName": "John Doe",
+  "title": "John Doe",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-13",
+  "featured": false,
+  "poster": "/posters/john-doe.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Madhumita",
+  "cast": [],
+  "genres": [
+    "Action",
+    "Mystery",
+    "Thriller"
+  ],
+  "runtime": "2h 29m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 1021,
+    "trackFrom": "2026-11-06",
+    "trackUntil": "2026-11-20",
+    "popularity": 2.5909
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-11-16",
+      "end": "2026-11-17"
+    },
+    "sentiment": {
+      "positive": 28,
+      "neutral": 10,
+      "negative": 1
+    },
+    "netSentiment": 28,
+    "awareness": {
+      "level": "High",
+      "views": 4502
+    },
+    "reach": 419,
+    "mentions": {
+      "total": 39,
+      "daily": [
+        38,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          59
+        ],
+        [
+          "Tamil Nadu",
+          41
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          59
+        ],
+        [
+          "Media press",
+          18
+        ],
+        [
+          "Fan page",
+          9
+        ],
+        [
+          "Verified celebrity influencer",
+          9
+        ],
+        [
+          "Official studio",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          36
+        ],
+        [
+          "Organic opinion",
+          23
+        ],
+        [
+          "Trade box office update",
+          23
+        ],
+        [
+          "News press coverage",
+          9
+        ],
+        [
+          "Official promo",
+          9
+        ]
+      ],
+      "topics": []
+    }
+  }
+}

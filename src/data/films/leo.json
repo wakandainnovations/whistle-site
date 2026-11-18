@@ -1,0 +1,242 @@
+{
+  "sample": true,
+  "title": "Leo",
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2023,
+  "releaseDate": "2023-10-19",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/2XUHC4lp3tDsgfFLFygNZ2x2Um9.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/vBVYYc5PgXCICNlBmS7cCvxOc3H.jpg",
+  "trailer": {
+    "youtubeId": "Po3jStA673E",
+    "channel": "Sun TV",
+    "kind": "trailer"
+  },
+  "director": "Lokesh Kanagaraj",
+  "cast": [
+    "Vijay",
+    "Sanjay Dutt",
+    "Arjun Sarja",
+    "Trisha Krishnan"
+  ],
+  "genres": [
+    "Action",
+    "Crime",
+    "Thriller"
+  ],
+  "runtime": "2h 43m",
+  "tmdbId": 949229,
+  "watch": [
+    "Netflix"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-09-19",
+      "end": "2023-11-18"
+    },
+    "sentiment": {
+      "positive": 38486,
+      "neutral": 4589,
+      "negative": 22603
+    },
+    "netSentiment": 1.7,
+    "awareness": {
+      "level": "Very high",
+      "views": 165700000
+    },
+    "reach": 145100,
+    "mentions": {
+      "total": 49580,
+      "daily": [
+        385,
+        361,
+        344,
+        323,
+        386,
+        389,
+        398,
+        763,
+        1196,
+        1629,
+        1255,
+        711,
+        488,
+        456,
+        382,
+        426,
+        482,
+        482,
+        562,
+        536,
+        553,
+        722,
+        710,
+        820,
+        821,
+        990,
+        1060,
+        1162,
+        1271,
+        1578,
+        2586,
+        2860,
+        2351,
+        1962,
+        1862,
+        1875,
+        1615,
+        1346,
+        1476,
+        1178,
+        1305,
+        1173,
+        994,
+        772,
+        717,
+        520,
+        487,
+        483,
+        374,
+        342,
+        304,
+        202,
+        203,
+        200,
+        139,
+        134,
+        123,
+        107,
+        83,
+        81,
+        85
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        60
+      ],
+      [
+        "International",
+        14
+      ],
+      [
+        "Kerala",
+        9
+      ],
+      [
+        "Karnataka",
+        9
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          52
+        ],
+        [
+          "Unknown",
+          20
+        ],
+        [
+          "International",
+          10
+        ],
+        [
+          "Kerala",
+          7
+        ],
+        [
+          "Andhra Telangana",
+          6
+        ],
+        [
+          "Karnataka",
+          5
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          50
+        ],
+        [
+          "Media press",
+          18
+        ],
+        [
+          "Fan page",
+          14
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Official studio",
+          4
+        ],
+        [
+          "Bot spam",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          46
+        ],
+        [
+          "Fan amplified promo",
+          26
+        ],
+        [
+          "Official promo",
+          12
+        ],
+        [
+          "News press coverage",
+          11
+        ],
+        [
+          "Trade box office update",
+          3
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          28
+        ],
+        [
+          "Box office commercial",
+          19
+        ],
+        [
+          "Story",
+          15
+        ],
+        [
+          "Music",
+          14
+        ],
+        [
+          "Direction technical craft",
+          13
+        ],
+        [
+          "Official promo",
+          6
+        ]
+      ]
+    }
+  }
+}

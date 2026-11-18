@@ -1,0 +1,34 @@
+{
+  "sample": false,
+  "auraId": 9000042,
+  "auraName": "Pei Pidichirukku",
+  "title": "Pei Pidichirukku",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "/posters/pei-pidichirukku.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Ilavarasan V",
+  "cast": [],
+  "genres": [
+    "Horror"
+  ],
+  "runtime": "1h 51m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-11-20",
+    "trackUntil": "2026-12-04",
+    "popularity": 0
+  },
+  "report": null
+}

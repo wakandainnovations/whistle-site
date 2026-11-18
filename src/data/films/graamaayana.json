@@ -1,0 +1,179 @@
+{
+  "sample": false,
+  "auraId": 82,
+  "auraName": "Graamaayana",
+  "title": "Graamaayana",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-03",
+  "featured": false,
+  "poster": "/posters/graamaayana.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Devanuruchandru, Nagesh Hebbur",
+  "cast": [
+    "Vinay Rajkumar",
+    "Megha Shetty"
+  ],
+  "genres": [
+    "Action",
+    "Drama",
+    "Romance"
+  ],
+  "runtime": "2h 6m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-05-29",
+      "end": "2026-07-05"
+    },
+    "sentiment": {
+      "positive": 785,
+      "neutral": 128,
+      "negative": 5
+    },
+    "netSentiment": 157,
+    "awareness": {
+      "level": "High",
+      "views": 285947
+    },
+    "reach": 776,
+    "mentions": {
+      "total": 918,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        20,
+        8,
+        11,
+        11,
+        13,
+        15,
+        52,
+        52,
+        61,
+        243,
+        190,
+        188,
+        40,
+        0,
+        0,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        99
+      ],
+      [
+        "Tamil Nadu",
+        1
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          71
+        ],
+        [
+          "Karnataka",
+          29
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          80
+        ],
+        [
+          "Official studio",
+          11
+        ],
+        [
+          "Fan page",
+          5
+        ],
+        [
+          "Media press",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          82
+        ],
+        [
+          "Official promo",
+          12
+        ],
+        [
+          "Organic opinion",
+          4
+        ],
+        [
+          "News press coverage",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          69
+        ],
+        [
+          "Acting / cast performance",
+          17
+        ],
+        [
+          "Story",
+          4
+        ],
+        [
+          "Music / songs",
+          4
+        ],
+        [
+          "VFX",
+          2
+        ],
+        [
+          "Runtime",
+          2
+        ]
+      ]
+    }
+  }
+}

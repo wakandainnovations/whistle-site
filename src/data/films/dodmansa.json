@@ -1,0 +1,173 @@
+{
+  "sample": false,
+  "auraId": 54,
+  "auraName": "Dodmansa",
+  "title": "Dodmansa",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-06-19",
+  "featured": false,
+  "poster": "/posters/dodmansa.avif",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Shrath Krishna",
+  "cast": [
+    "Sharath Krishna",
+    "Reshmaa Lingrajappa"
+  ],
+  "genres": [
+    "Action",
+    "Drama",
+    "Romantic"
+  ],
+  "runtime": "2h 23m",
+  "tmdbId": null,
+  "watch": [
+    "JioHotstar"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-04-21",
+      "end": "2026-06-19"
+    },
+    "sentiment": {
+      "positive": 5,
+      "neutral": 1,
+      "negative": 8
+    },
+    "netSentiment": 0.63,
+    "awareness": {
+      "level": "Medium",
+      "views": 72
+    },
+    "reach": 487,
+    "mentions": {
+      "total": 13,
+      "daily": [
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        89
+      ],
+      [
+        "Tamil Nadu",
+        11
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          73
+        ],
+        [
+          "Unknown",
+          18
+        ],
+        [
+          "Tamil Nadu",
+          9
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          64
+        ],
+        [
+          "Media press",
+          36
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          64
+        ],
+        [
+          "News press coverage",
+          36
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          93
+        ],
+        [
+          "Acting / cast performance",
+          7
+        ]
+      ]
+    }
+  }
+}

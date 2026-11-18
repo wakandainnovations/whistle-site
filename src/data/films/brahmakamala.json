@@ -1,0 +1,79 @@
+{
+  "sample": false,
+  "auraId": 114,
+  "auraName": "Brahmakamala",
+  "title": "Brahmakamala",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-08-21",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": "Siddu Poornachandra",
+  "cast": [
+    "Adhvithi Shetty",
+    "Ruthu Chaithra",
+    "Siddu Poornachandra"
+  ],
+  "genres": [
+    "Drama",
+    "Social"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [
+    "Sun NXT"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-04-20",
+      "end": "2026-04-29"
+    },
+    "sentiment": {
+      "positive": 0,
+      "neutral": 0,
+      "negative": 3
+    },
+    "netSentiment": 0,
+    "awareness": {
+      "level": "Medium",
+      "views": 8449
+    },
+    "reach": 493,
+    "mentions": {
+      "total": 2,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "regions": [],
+    "audience": {
+      "where": [],
+      "who": [],
+      "postType": [],
+      "topics": [
+        [
+          "General discussion",
+          100
+        ]
+      ]
+    }
+  }
+}

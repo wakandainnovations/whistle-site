@@ -1,0 +1,39 @@
+---
+// A scrolling marquee band. Items repeat twice so the loop is seamless.
+interface Props {
+  items: { text: string; strong?: string }[];
+  variant?: 'gold' | 'ink';
+  reverse?: boolean;
+  tilt?: number;
+  speed?: number; // seconds per loop
+  label: string;
+}
+const { items, variant = 'gold', reverse = false, tilt = 0, speed = 40, label } = Astro.props;
+const loop = [...items, ...items];
+---
+<div class:list={['ticker', variant, { reverse }]} style={`--tilt:${tilt}deg;--speed:${speed}s`} role="marquee" aria-label={label}>
+  <div class="track">
+    {loop.map((it, i) => (
+      <span class="item" aria-hidden={i >= items.length ? 'true' : undefined}>
+        {it.strong && <b>{it.strong}</b>}{it.text}
+        <svg class="sep" viewBox="0 0 34 34" aria-hidden="true"><circle cx="11" cy="17" r="7" /><path d="M20 10.5a9 9 0 0 1 0 13M24.5 6.5a14.5 14.5 0 0 1 0 21" fill="none" stroke-width="3" stroke-linecap="round" /></svg>
+      </span>
+    ))}
+  </div>
+</div>
+<style>
+  .ticker { overflow: hidden; transform: rotate(var(--tilt)); width: 104%; margin-left: -2%; padding-block: 12px; position: relative; }
+  .gold { background: var(--gold); color: var(--gold-ink); }
+  .ink { background: var(--fg); color: var(--bg); }
+  .track { display: flex; width: max-content; animation: run var(--speed) linear infinite; }
+  .reverse .track { animation-direction: reverse; }
+  .ticker:hover .track { animation-play-state: paused; }
+  .item { display: inline-flex; align-items: center; gap: 18px; padding-right: 18px; font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
+  .item b { font-weight: 900; margin-right: .3em; }
+  .sep { width: 22px; height: 22px; flex: none; }
+  .gold .sep { fill: var(--gold-ink); stroke: var(--gold-ink); }
+  .ink .sep { fill: var(--gold); stroke: var(--gold); }
+  @keyframes run { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+  @media (max-width: 720px) { .item { font-size: 18px; } }
+</style>

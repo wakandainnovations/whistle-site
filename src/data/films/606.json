@@ -1,0 +1,36 @@
+{
+  "sample": false,
+  "auraId": 9000036,
+  "auraName": "606",
+  "title": "606",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "/posters/606.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Sathish Sekar",
+  "cast": [],
+  "genres": [
+    "Fantasy",
+    "Mystery",
+    "Thriller"
+  ],
+  "runtime": "1h 59m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-11-20",
+    "trackUntil": "2026-12-04",
+    "popularity": 0.4759
+  },
+  "report": null
+}

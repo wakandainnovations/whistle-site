@@ -1,0 +1,27 @@
+---
+// "Watch on" chips. Each opens the film's where-to-watch page in a new tab.
+import { platformColor, watchUrl } from '../lib/watch';
+
+interface Props { watch: string[]; tmdbId: number | null; title: string; size?: 'sm' | 'md'; label?: boolean }
+const { watch, tmdbId, title, size = 'sm', label = false } = Astro.props;
+const href = watchUrl(tmdbId, title);
+---
+{watch.length > 0 && (
+  <span class:list={['watch', size]}>
+    {label && <span class="watch-label">Watch on</span>}
+    {watch.map((p) => (
+      <a class="chip" href={href} target="_blank" rel="noopener" style={`--c:${platformColor(p)}`} aria-label={`Watch ${title} on ${p}`}>
+        <i></i>{p}
+      </a>
+    ))}
+  </span>
+)}
+<style>
+  .watch { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .watch-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-right: 2px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px 4px 7px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface-2); font-size: 12px; font-weight: 600; text-decoration: none; color: var(--fg); white-space: nowrap; transition: border-color .2s, transform .2s cubic-bezier(.3,1.6,.5,1); }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 25%, transparent); }
+  .chip:hover { border-color: var(--c); transform: translateY(-1px); }
+  .md .chip { padding: 8px 14px 8px 11px; font-size: 14px; }
+  .md .chip i { width: 10px; height: 10px; }
+</style>

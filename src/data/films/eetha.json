@@ -1,0 +1,186 @@
+{
+  "sample": true,
+  "title": "Eetha",
+  "titleConfirmed": true,
+  "language": "Hindi",
+  "industry": "hindi",
+  "year": 2026,
+  "releaseDate": "2026-12-04",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/fWyiD2s9bxwbpEv18FRDNNwStp4.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/oXPQa5s46wjo5kDRt2rQ5Pjev68.jpg",
+  "trailer": null,
+  "director": "Laxman Utekar",
+  "cast": [
+    "Shraddha Kapoor",
+    "Randeep Hooda",
+    "Mohammed Zeeshan Ayyub",
+    "Siddharth Jadhav"
+  ],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": 1489396,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-11-04",
+      "end": "2026-11-16"
+    },
+    "sentiment": {
+      "positive": 1129,
+      "neutral": 188,
+      "negative": 484
+    },
+    "netSentiment": 2.33,
+    "awareness": {
+      "level": "Medium",
+      "views": 4000000
+    },
+    "reach": 3200,
+    "mentions": {
+      "total": 1267,
+      "daily": [
+        58,
+        53,
+        56,
+        55,
+        53,
+        61,
+        54,
+        99,
+        176,
+        221,
+        207,
+        101,
+        73
+      ]
+    },
+    "regions": [
+      [
+        "Hindi Belt North India",
+        52
+      ],
+      [
+        "Maharashtra",
+        17
+      ],
+      [
+        "International",
+        12
+      ],
+      [
+        "South India",
+        11
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Hindi Belt North India",
+          32
+        ],
+        [
+          "Unknown",
+          26
+        ],
+        [
+          "Maharashtra",
+          15
+        ],
+        [
+          "International",
+          10
+        ],
+        [
+          "South India",
+          10
+        ],
+        [
+          "Gujarat",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          49
+        ],
+        [
+          "Media press",
+          24
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Fan page",
+          10
+        ],
+        [
+          "Official studio",
+          3
+        ],
+        [
+          "Bot spam",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          54
+        ],
+        [
+          "Fan amplified promo",
+          19
+        ],
+        [
+          "Official promo",
+          11
+        ],
+        [
+          "News press coverage",
+          9
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          26
+        ],
+        [
+          "Box office commercial",
+          17
+        ],
+        [
+          "Music",
+          17
+        ],
+        [
+          "Story",
+          16
+        ],
+        [
+          "Direction technical craft",
+          13
+        ],
+        [
+          "Official promo",
+          7
+        ]
+      ]
+    }
+  }
+}

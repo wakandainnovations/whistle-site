@@ -1,0 +1,79 @@
+---
+// Daily mentions as a smoothed area chart, drawn at build time. No chart library needed.
+import { formatDate, daysBetween } from '../lib/score';
+
+interface Props { daily: number[]; start: string; end: string }
+const { daily, start, end } = Astro.props;
+
+const days = daysBetween(start, end);
+const series = Array.from({ length: days }, (_, i) => daily[i] ?? 0);
+const W = 820, H = 250, L = 38, R = 14, T = 12, B = 30;
+
+// y axis: round the peak up to a step of 25 (or 5 for small films), five steps
+const peakValue = Math.max(...series, 1);
+const step = peakValue > 50 ? Math.ceil(peakValue / 5 / 25) * 25 : Math.ceil(peakValue / 5 / 5) * 5;
+const yMax = step * 5;
+const yTicks = Array.from({ length: 6 }, (_, i) => i * step);
+
+const x = (i: number) => L + (i * (W - L - R)) / Math.max(days - 1, 1);
+const y = (v: number) => T + (1 - v / yMax) * (H - T - B);
+const dateAt = (i: number) => {
+  const d = new Date(`${start}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + i);
+  return formatDate(d.toISOString().slice(0, 10));
+};
+const xTicks = [0, 0.25, 0.5, 0.75, 1].map((f) => Math.round(f * (days - 1)));
+
+// Monotone cubic interpolation: smooth, never dips below zero between points
+function monotonePath(pts: [number, number][]) {
+  const n = pts.length;
+  if (n < 2) return '';
+  const d: number[] = [], m: number[] = [];
+  for (let i = 0; i < n - 1; i++) d.push((pts[i + 1][1] - pts[i][1]) / (pts[i + 1][0] - pts[i][0]));
+  m[0] = d[0]; m[n - 1] = d[n - 2];
+  for (let i = 1; i < n - 1; i++) m[i] = d[i - 1] * d[i] <= 0 ? 0 : (d[i - 1] + d[i]) / 2;
+  for (let i = 0; i < n - 1; i++) {
+    if (d[i] === 0) { m[i] = 0; m[i + 1] = 0; continue; }
+    const a = m[i] / d[i], b = m[i + 1] / d[i], s = a * a + b * b;
+    if (s > 9) { const t = 3 / Math.sqrt(s); m[i] = t * a * d[i]; m[i + 1] = t * b * d[i]; }
+  }
+  let p = `M${pts[0][0]},${pts[0][1]}`;
+  for (let i = 0; i < n - 1; i++) {
+    const h = (pts[i + 1][0] - pts[i][0]) / 3;
+    p += ` C${pts[i][0] + h},${pts[i][1] + h * m[i]} ${pts[i + 1][0] - h},${pts[i + 1][1] - h * m[i + 1]} ${pts[i + 1][0]},${pts[i + 1][1]}`;
+  }
+  return p;
+}
+const line = monotonePath(series.map((v, i) => [x(i), y(v)]));
+const peak = series.indexOf(Math.max(...series));
+const labelLeft = x(peak) > W * 0.75;
+---
+<svg viewBox={`0 0 ${W} ${H}`} role="img"
+  aria-label={`Daily mentions from ${dateAt(0)} to ${dateAt(days - 1)}, peaking at ${series[peak]} on ${dateAt(peak)}`}>
+  <defs>
+    <linearGradient id="mfill" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="var(--bar)" stop-opacity=".35" />
+      <stop offset="1" stop-color="var(--bar)" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  {yTicks.map((v) => (
+    <>
+      <line x1={L} x2={W - R} y1={y(v)} y2={y(v)} stroke="var(--line)" stroke-width="1" />
+      <text x={L - 8} y={y(v) + 4} text-anchor="end" class="axis">{v}</text>
+    </>
+  ))}
+  {xTicks.map((i, j) => (
+    <text x={x(i)} y={H - 8} class="axis" text-anchor={j === 0 ? 'start' : j === xTicks.length - 1 ? 'end' : 'middle'}>{dateAt(i)}</text>
+  ))}
+  <path d={`${line} L${x(days - 1)},${y(0)} L${x(0)},${y(0)} Z`} fill="url(#mfill)" />
+  <path d={line} fill="none" stroke="var(--bar)" stroke-width="2.4" stroke-linejoin="round" />
+  <circle cx={x(peak)} cy={y(series[peak])} r="5" fill="var(--gold)" stroke="var(--surface)" stroke-width="2.5" />
+  <text x={x(peak) + (labelLeft ? -10 : 10)} y={y(series[peak]) + 4} text-anchor={labelLeft ? 'end' : 'start'} class="peak">
+    {series[peak]} on {dateAt(peak)}
+  </text>
+</svg>
+<style>
+  svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .axis { font: 11px var(--font-mono); fill: var(--faint); }
+  .peak { font: 600 12px var(--font-body); fill: var(--fg); }
+</style>

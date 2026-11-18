@@ -1,0 +1,124 @@
+{
+  "sample": false,
+  "auraId": 93,
+  "auraName": "Sarvantaryami",
+  "title": "Sarvantaryami",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-17",
+  "featured": false,
+  "poster": "/posters/sarvantaryami.avif",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Rangaswamy Kapanipalya",
+  "cast": [
+    "Auto Nagaraj",
+    "Baby Myra",
+    "Amulya Narayan"
+  ],
+  "genres": [
+    "Drama",
+    "Social"
+  ],
+  "runtime": "1h 45m",
+  "tmdbId": null,
+  "watch": [
+    "Sun NXT"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-06-30",
+      "end": "2026-07-18"
+    },
+    "sentiment": {
+      "positive": 3,
+      "neutral": 4,
+      "negative": 0
+    },
+    "netSentiment": null,
+    "awareness": {
+      "level": "Medium",
+      "views": 3015
+    },
+    "reach": 71,
+    "mentions": {
+      "total": 7,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          71
+        ],
+        [
+          "Karnataka",
+          29
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          57
+        ],
+        [
+          "Official studio",
+          43
+        ]
+      ],
+      "postType": [
+        [
+          "Official promo",
+          43
+        ],
+        [
+          "Fan amplified promo",
+          29
+        ],
+        [
+          "Organic opinion",
+          29
+        ]
+      ],
+      "topics": [
+        [
+          "Music / songs",
+          100
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "sample": false,
+  "auraId": 9000022,
+  "auraName": "Lambodhara 2.0",
+  "title": "Lambodhara 2.0",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-13",
+  "featured": false,
+  "poster": "/posters/lambodhara-2-0.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Suni",
+  "cast": [],
+  "genres": [
+    "Drama",
+    "Science Fiction",
+    "Thriller"
+  ],
+  "runtime": "2h 17m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 209,
+    "trackFrom": "2026-11-06",
+    "trackUntil": "2026-11-20",
+    "popularity": 0.8236
+  },
+  "report": null
+}

@@ -1,0 +1,13 @@
+---
+// The whistle mark with 0–3 sound waves: the icon for a band (Full Whistle = 3 … No Whistle = 0).
+// Drawn in currentColor so it sits on any chip.
+interface Props { waves?: number; size?: number; class?: string }
+const { waves = 2, size = 18, class: cls } = Astro.props;
+---
+<svg class:list={['waves', cls]} width={size} height={size} viewBox="0 0 34 34" aria-hidden="true" data-waves={waves}>
+  <circle cx="9" cy="17" r="6.5" fill="currentColor" opacity={waves === 0 ? 0.45 : 1} />
+  {waves === 0 && <path d="M20 12l9 10M29 12l-9 10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".45" />}
+  {waves >= 1 && <path class="w1" d="M18 11.5a8 8 0 0 1 0 11" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" />}
+  {waves >= 2 && <path class="w2" d="M22.5 7.5a13.5 13.5 0 0 1 0 19" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" />}
+  {waves >= 3 && <path class="w3" d="M27 3.5a19 19 0 0 1 0 27" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" />}
+</svg>

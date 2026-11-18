@@ -1,0 +1,236 @@
+{
+  "sample": true,
+  "title": "Street Fighter",
+  "titleConfirmed": true,
+  "language": "English",
+  "industry": "hollywood",
+  "year": 2026,
+  "releaseDate": "2026-10-16",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/8nP4lF51Ea861YfHEEqhZBLYv3e.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/w2Gu916zS11X94CZaSLpzvfgHcG.jpg",
+  "trailer": null,
+  "director": "Kitao Sakurai",
+  "cast": [
+    "Andrew Koji",
+    "Noah Centineo",
+    "Callina Liang",
+    "David Dastmalchian"
+  ],
+  "genres": [
+    "Action",
+    "Comedy",
+    "Fantasy"
+  ],
+  "runtime": "2h",
+  "tmdbId": 1153576,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-09-16",
+      "end": "2026-11-15"
+    },
+    "sentiment": {
+      "positive": 9449,
+      "neutral": 2140,
+      "negative": 8722
+    },
+    "netSentiment": 1.08,
+    "awareness": {
+      "level": "Medium",
+      "views": 40800000
+    },
+    "reach": 46100,
+    "mentions": {
+      "total": 11847,
+      "daily": [
+        89,
+        97,
+        84,
+        90,
+        96,
+        102,
+        120,
+        180,
+        298,
+        384,
+        372,
+        157,
+        111,
+        99,
+        124,
+        107,
+        128,
+        129,
+        113,
+        120,
+        157,
+        152,
+        176,
+        207,
+        201,
+        268,
+        300,
+        297,
+        381,
+        373,
+        743,
+        595,
+        589,
+        533,
+        393,
+        429,
+        384,
+        380,
+        288,
+        296,
+        218,
+        239,
+        213,
+        156,
+        147,
+        105,
+        113,
+        94,
+        74,
+        57,
+        48,
+        40,
+        41,
+        28,
+        30,
+        24,
+        18,
+        19,
+        16,
+        12,
+        13
+      ]
+    },
+    "regions": [
+      [
+        "Maharashtra",
+        26
+      ],
+      [
+        "Karnataka",
+        21
+      ],
+      [
+        "Delhi NCR",
+        18
+      ],
+      [
+        "Tamil Nadu",
+        16
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          28
+        ],
+        [
+          "Maharashtra",
+          20
+        ],
+        [
+          "Karnataka",
+          16
+        ],
+        [
+          "Delhi NCR",
+          12
+        ],
+        [
+          "Tamil Nadu",
+          10
+        ],
+        [
+          "Andhra Telangana",
+          9
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          49
+        ],
+        [
+          "Media press",
+          16
+        ],
+        [
+          "Fan page",
+          15
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Bot spam",
+          5
+        ],
+        [
+          "Official studio",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          39
+        ],
+        [
+          "Fan amplified promo",
+          32
+        ],
+        [
+          "Official promo",
+          11
+        ],
+        [
+          "News press coverage",
+          11
+        ],
+        [
+          "Trade box office update",
+          4
+        ],
+        [
+          "Ticket merch",
+          3
+        ]
+      ],
+      "topics": [
+        [
+          "Box office commercial",
+          24
+        ],
+        [
+          "Cast performance",
+          21
+        ],
+        [
+          "Story",
+          18
+        ],
+        [
+          "Music",
+          16
+        ],
+        [
+          "Direction technical craft",
+          9
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

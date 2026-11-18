@@ -1,0 +1,208 @@
+{
+  "sample": false,
+  "auraId": 88,
+  "auraName": "Love Seasons",
+  "title": "Love Seasons",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-03",
+  "featured": false,
+  "poster": "/posters/love-seasons.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Kruthvik",
+  "cast": [
+    "Mukunda Ramaswami",
+    "Diya Keerthi",
+    "Chandana Gowda"
+  ],
+  "genres": [
+    "Drama",
+    "Romance"
+  ],
+  "runtime": "2h 25m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-05-20",
+      "end": "2026-08-02"
+    },
+    "sentiment": {
+      "positive": 34,
+      "neutral": 9,
+      "negative": 67
+    },
+    "netSentiment": 0.51,
+    "awareness": {
+      "level": "High",
+      "views": 193877
+    },
+    "reach": 314,
+    "mentions": {
+      "total": 110,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        14,
+        0,
+        0,
+        1,
+        2,
+        6,
+        4,
+        1,
+        2,
+        0,
+        0,
+        2,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        67
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        97
+      ],
+      [
+        "Tamil Nadu",
+        3
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          73
+        ],
+        [
+          "Unknown",
+          25
+        ],
+        [
+          "Tamil Nadu",
+          2
+        ]
+      ],
+      "who": [
+        [
+          "Media press",
+          59
+        ],
+        [
+          "General public",
+          34
+        ],
+        [
+          "Official studio",
+          7
+        ]
+      ],
+      "postType": [
+        [
+          "News press coverage",
+          45
+        ],
+        [
+          "Fan amplified promo",
+          25
+        ],
+        [
+          "Official promo",
+          16
+        ],
+        [
+          "Organic opinion",
+          14
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          60
+        ],
+        [
+          "Music / songs",
+          16
+        ],
+        [
+          "Story",
+          16
+        ],
+        [
+          "Acting / cast performance",
+          7
+        ]
+      ]
+    }
+  }
+}

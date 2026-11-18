@@ -1,0 +1,21 @@
+---
+// Framehouse mark + wordmark. The mark is a mask, so it takes the text colour: white on dark, ink on light.
+interface Props { size?: 'sm' | 'md' | 'lg' }
+const { size = 'sm' } = Astro.props;
+---
+<span class:list={['fh', size]}>
+  <span class="fh-mark" aria-hidden="true"></span>
+  <span class="fh-word">Framehouse</span>
+</span>
+<style>
+  .fh { display: inline-flex; align-items: center; gap: .42em; color: var(--fg); line-height: 1; white-space: nowrap; }
+  .fh-mark {
+    width: 1.3em; aspect-ratio: 468 / 390; flex: none; background: currentColor;
+    -webkit-mask: url('/brand/framehouse-mark.png') center / contain no-repeat;
+            mask: url('/brand/framehouse-mark.png') center / contain no-repeat;
+  }
+  .fh-word { font-family: var(--font-body); font-weight: 700; letter-spacing: -.025em; }
+  .sm { font-size: 14px; }
+  .md { font-size: 18px; }
+  .lg { font-size: 24px; }
+</style>

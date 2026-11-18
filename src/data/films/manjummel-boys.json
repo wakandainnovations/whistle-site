@@ -1,0 +1,242 @@
+{
+  "sample": true,
+  "title": "Manjummel Boys",
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2024,
+  "releaseDate": "2024-02-22",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/bswrtewwthpsh6nABiqKevU4UBI.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/zGsHpuMN412VyzJZZnQeq4lMdjF.jpg",
+  "trailer": {
+    "youtubeId": "id848Ww1YLo",
+    "channel": "Think Music India",
+    "kind": "trailer"
+  },
+  "director": "Chidambaram",
+  "cast": [
+    "Soubin Shahir",
+    "Sreenath Bhasi",
+    "Balu Varghese",
+    "Ganapathi S. Poduval"
+  ],
+  "genres": [
+    "Adventure",
+    "Thriller",
+    "Drama"
+  ],
+  "runtime": "2h 15m",
+  "tmdbId": 1069945,
+  "watch": [
+    "JioHotstar"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2024-01-23",
+      "end": "2024-03-23"
+    },
+    "sentiment": {
+      "positive": 21646,
+      "neutral": 2667,
+      "negative": 2141
+    },
+    "netSentiment": 10.11,
+    "awareness": {
+      "level": "Medium",
+      "views": 52900000
+    },
+    "reach": 46300,
+    "mentions": {
+      "total": 21516,
+      "daily": [
+        148,
+        125,
+        146,
+        135,
+        121,
+        141,
+        182,
+        243,
+        538,
+        687,
+        516,
+        254,
+        184,
+        162,
+        148,
+        152,
+        163,
+        204,
+        206,
+        187,
+        238,
+        239,
+        286,
+        305,
+        365,
+        388,
+        349,
+        457,
+        484,
+        511,
+        953,
+        1025,
+        843,
+        886,
+        732,
+        855,
+        846,
+        823,
+        773,
+        600,
+        604,
+        523,
+        424,
+        430,
+        434,
+        352,
+        292,
+        232,
+        230,
+        167,
+        157,
+        160,
+        154,
+        128,
+        119,
+        111,
+        89,
+        81,
+        86,
+        71,
+        72
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        64
+      ],
+      [
+        "International",
+        18
+      ],
+      [
+        "Tamil Nadu",
+        8
+      ],
+      [
+        "Karnataka",
+        6
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Kerala",
+          43
+        ],
+        [
+          "Unknown",
+          25
+        ],
+        [
+          "International",
+          14
+        ],
+        [
+          "Tamil Nadu",
+          8
+        ],
+        [
+          "Karnataka",
+          7
+        ],
+        [
+          "Andhra Telangana",
+          3
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          49
+        ],
+        [
+          "Media press",
+          16
+        ],
+        [
+          "Fan page",
+          14
+        ],
+        [
+          "Verified celebrity",
+          12
+        ],
+        [
+          "Official studio",
+          5
+        ],
+        [
+          "Bot spam",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          46
+        ],
+        [
+          "Fan amplified promo",
+          22
+        ],
+        [
+          "News press coverage",
+          14
+        ],
+        [
+          "Official promo",
+          11
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          26
+        ],
+        [
+          "Story",
+          19
+        ],
+        [
+          "Direction technical craft",
+          17
+        ],
+        [
+          "Music",
+          13
+        ],
+        [
+          "Box office commercial",
+          12
+        ],
+        [
+          "Official promo",
+          8
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "sample": false,
+  "auraId": 31,
+  "auraName": "Dhurandhar The Revenge",
+  "title": "Dhurandhar The Revenge",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Hindi",
+  "industry": "hindi",
+  "year": 2026,
+  "releaseDate": "2026-03-19",
+  "featured": false,
+  "poster": "/posters/dhurandhar-the-revenge.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Aditya Dhar",
+  "cast": [
+    "Madhavan",
+    "Ranveer Singh",
+    "Akshaye Khanna",
+    "Arjun Rampal"
+  ],
+  "genres": [
+    "Action",
+    "Thriller"
+  ],
+  "runtime": "3h 49m",
+  "tmdbId": null,
+  "watch": [
+    "JioHotstar",
+    "ZEE5"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-03-14",
+      "end": "2026-04-24"
+    },
+    "sentiment": {
+      "positive": 0,
+      "neutral": 0,
+      "negative": 409
+    },
+    "netSentiment": 0,
+    "awareness": {
+      "level": "Low",
+      "views": 0
+    },
+    "reach": 3165,
+    "mentions": {
+      "total": 409,
+      "daily": [
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        3,
+        3,
+        1,
+        1,
+        3,
+        5,
+        1,
+        6,
+        27,
+        48,
+        28,
+        30,
+        21,
+        71,
+        31,
+        30,
+        21,
+        9,
+        6,
+        5,
+        12,
+        13,
+        8,
+        10,
+        10,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Hindi Belt North India",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Hindi Belt North India",
+          59
+        ],
+        [
+          "Unknown",
+          41
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          93
+        ],
+        [
+          "Bot spam",
+          4
+        ],
+        [
+          "Official studio",
+          2
+        ],
+        [
+          "Fan page",
+          1
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          72
+        ],
+        [
+          "Fan amplified promo",
+          15
+        ],
+        [
+          "Trade box office update",
+          11
+        ],
+        [
+          "Official promo",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          75
+        ],
+        [
+          "Story",
+          9
+        ],
+        [
+          "Music / songs",
+          7
+        ],
+        [
+          "Acting / cast performance",
+          4
+        ],
+        [
+          "Screenplay",
+          3
+        ],
+        [
+          "Runtime",
+          1
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "sample": false,
+  "auraId": 60,
+  "auraName": "Balan The Boy",
+  "title": "Balan The Boy",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-06-19",
+  "featured": false,
+  "poster": "/posters/balan-the-boy.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Chidambaram",
+  "cast": [
+    "Farzana Palathingal",
+    "Adhisheshan K R"
+  ],
+  "genres": [
+    "Drama",
+    "Mystery",
+    "Psychological",
+    "Thriller"
+  ],
+  "runtime": "2h 30m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-06-06",
+      "end": "2026-06-25"
+    },
+    "sentiment": {
+      "positive": 836,
+      "neutral": 300,
+      "negative": 88
+    },
+    "netSentiment": 9.5,
+    "awareness": {
+      "level": "High",
+      "views": 775461
+    },
+    "reach": 2598,
+    "mentions": {
+      "total": 1224,
+      "daily": [
+        1,
+        5,
+        4,
+        5,
+        2,
+        4,
+        2,
+        268,
+        256,
+        186,
+        136,
+        105,
+        10,
+        17,
+        1,
+        0,
+        0,
+        1,
+        125,
+        96
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        50
+      ],
+      [
+        "Kerala",
+        35
+      ],
+      [
+        "Andhra Telangana",
+        12
+      ],
+      [
+        "Hindi Belt North India",
+        2
+      ],
+      [
+        "International",
+        2
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          79
+        ],
+        [
+          "Tamil Nadu",
+          10
+        ],
+        [
+          "Kerala",
+          7
+        ],
+        [
+          "Andhra Telangana",
+          2
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          63
+        ],
+        [
+          "Official studio",
+          19
+        ],
+        [
+          "Media press",
+          14
+        ],
+        [
+          "Fan page",
+          4
+        ],
+        [
+          "Verified celebrity influencer",
+          1
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          56
+        ],
+        [
+          "Official promo",
+          28
+        ],
+        [
+          "Organic opinion",
+          11
+        ],
+        [
+          "News press coverage",
+          5
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          62
+        ],
+        [
+          "Story",
+          16
+        ],
+        [
+          "Music / songs",
+          9
+        ],
+        [
+          "Acting / cast performance",
+          6
+        ],
+        [
+          "Screenplay",
+          5
+        ],
+        [
+          "Direction",
+          2
+        ]
+      ]
+    }
+  }
+}

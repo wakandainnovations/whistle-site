@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Poster from './Poster.astro';
+import WatchChips from './WatchChips.astro';
+import { whistleScore, tierFor, compact } from '../lib/score';
+import { talkOf, scoreSolid } from '../lib/now';
+
+interface Props { film: CollectionEntry<'films'> }
+const { film } = Astro.props;
+const f = film.data;
+const r = f.report;
+const score = r ? whistleScore(r.sentiment) : null;
+const posts = r ? r.sentiment.positive + r.sentiment.neutral + r.sentiment.negative : 0;
+const searchText = `${f.title} ${f.aka.join(' ')} ${f.language} ${f.director ?? ''} ${f.cast.join(' ')} ${f.genres.join(' ')}`.toLowerCase();
+---
+<article class="card" data-search={searchText} data-lang={f.language} data-score={score ?? -1} data-posts={talkOf(film)}
+  data-solid={String(scoreSolid(film))}
+  data-release={f.releaseDate ?? `${f.year}-01-01`} data-watch={f.watch.join('|')}>
+  <a class="card-link" href={`/films/${film.id}`}>
+    <Poster language={f.language} year={f.year} title={f.title} poster={f.poster} score={score}
+      label={f.titleConfirmed ? f.title : undefined} />
+    <div>
+      <div class="t">{f.title}</div>
+      <div class="m">
+        {score !== null ? `${tierFor(score).name} · ${f.language} · ${f.year}` : `${f.language} · ${f.year} · Score coming soon`}
+      </div>
+      {r && <div class="m num">{compact(posts)} posts{f.sample && <span class="sample-tag">Sample</span>}</div>}
+    </div>
+  </a>
+  <WatchChips watch={f.watch} tmdbId={f.tmdbId} title={f.title} />
+</article>
+<style>
+  .card-link { display: flex; flex-direction: column; gap: 12px; text-decoration: none; }
+  .sample-tag { margin-left: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 1px 6px; border-radius: 4px; border: 1px dashed var(--faint); color: var(--faint); }
+</style>

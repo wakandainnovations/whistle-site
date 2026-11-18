@@ -1,0 +1,99 @@
+---
+// /terms: terms of use for the public site, including the creator badge licence.
+import Legal from '../layouts/Legal.astro';
+import Fill from '../components/Fill.astro';
+import { SITE } from '../site.config';
+const L = SITE.legal;
+
+const sections = [
+  { id: 'agree', title: 'Using this site' },
+  { id: 'scores', title: 'What a Whistle is' },
+  { id: 'preview', title: 'Preview and sample data' },
+  { id: 'badge', title: 'Creator badges' },
+  { id: 'ours', title: 'Our content and brand' },
+  { id: 'others', title: 'Other people’s content' },
+  { id: 'dont', title: 'Things you can’t do' },
+  { id: 'pro', title: 'Whistle Pro' },
+  { id: 'liability', title: 'No warranties, limited liability' },
+  { id: 'law', title: 'Governing law' },
+  { id: 'changes', title: 'Changes and contact' },
+];
+---
+<Legal title="Terms of Use" description={`The terms for using ${SITE.brand}, its scores and the creator badge.`} sections={sections}>
+  <div class="summary">
+    <h2>In short</h2>
+    <ul>
+      <li>A Whistle tells you how the crowd's public posts leaned. It's an opinion measure, not a fact about the film.</li>
+      <li>Creators are welcome to show the badge, unchanged and linked back to us.</li>
+      <li>Please don't scrape the site or pass our scores off as your own.</li>
+    </ul>
+  </div>
+
+  <section id="agree">
+    <h2>Using this site</h2>
+    <p>These terms apply when you use {SITE.brand} (the website and everything on it), run by <b><Fill value={L.entity} label="legal entity name" /></b> ("we", "us"). By using the site you agree to them. If you don't agree, please don't use the site.</p>
+  </section>
+
+  <section id="scores">
+    <h2>What a Whistle is</h2>
+    <p>A Whistle is the share of public posts about a film that cheer it, counted from a month before release to a month after. It reflects what people chose to post, worked out by automated sorting that can get individual posts wrong. It isn't a review, a rating by us, or a prediction of box office.</p>
+    <p>Scores for films still in their window, including everything on The Whistle Race, change as new posts arrive. Streaming availability comes from third parties and changes often, so check with the service before you rely on it.</p>
+  </section>
+
+  <section id="preview">
+    <h2>Preview and sample data</h2>
+    <p>The site is in preview. Films tagged <b>Sample</b> carry made-up numbers for design purposes, and live counters and the Whistle Race's hourly changes are simulated. Don't quote sample numbers as real.</p>
+  </section>
+
+  <section id="badge">
+    <h2>Creator badges</h2>
+    <p>You may show a {SITE.brand} badge for any listed film in your own reviews, videos, thumbnails and posts, free of charge, as long as you:</p>
+    <ul>
+      <li>use the badge as we provide it, without changing the score, band or design;</li>
+      <li>link it to the film's page on {SITE.brand} wherever links are possible;</li>
+      <li>don't suggest that we endorse you, your channel or your opinion.</li>
+    </ul>
+    <p>We can update a badge's score at any time and may withdraw this permission for anyone who misuses it.</p>
+  </section>
+
+  <section id="ours">
+    <h2>Our content and brand</h2>
+    <p>The {SITE.brand} and Framehouse names, logos and whistle mark, the site design, and the scores and statistics we publish belong to us. Apart from the badge permission above and quoting a score with credit ("62% Whistle, via {SITE.brand}"), please ask before reusing them.</p>
+  </section>
+
+  <section id="others">
+    <h2>Other people’s content</h2>
+    <p>Film titles, posters, stills and credits belong to their owners. Posters and stills come from The Movie Database (TMDB); this site uses the TMDB API but is not endorsed or certified by TMDB. Trailers play from YouTube, and "Watch on" links lead to streaming services. Those services have their own terms, and we're not responsible for their content.</p>
+  </section>
+
+  <section id="dont">
+    <h2>Things you can’t do</h2>
+    <ul>
+      <li>Scrape, crawl or bulk-download the site or its scores, or use them to train models, without our written permission.</li>
+      <li>Present our scores as your own data, or alter them.</li>
+      <li>Try to break, overload or get around the security of the site.</li>
+      <li>Use the site in a way that breaks the law.</li>
+    </ul>
+  </section>
+
+  <section id="pro">
+    <h2>Whistle Pro</h2>
+    <p>Whistle Pro isn't on sale yet. If paid features launch, they'll come with their own terms, which you'll see before you pay.</p>
+  </section>
+
+  <section id="liability">
+    <h2>No warranties, limited liability</h2>
+    <p>We work to keep the site accurate and available, but we provide it "as is", without warranties of any kind. As far as the law allows, we're not liable for any loss from using or relying on the site, including decisions about which films to watch, book or invest in.</p>
+  </section>
+
+  <section id="law">
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of India. Disputes will be handled by the courts in <Fill value={L.courts} label="city" />.</p>
+  </section>
+
+  <section id="changes">
+    <h2>Changes and contact</h2>
+    <p>We may update these terms. The date at the top shows when they last changed, and using the site after a change means you accept it. Questions? Use our <a href="/contact">contact form</a>.</p>
+    <p>See also our <a href="/privacy">Privacy Policy</a>.</p>
+  </section>
+</Legal>

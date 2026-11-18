@@ -1,0 +1,145 @@
+---
+// /films: every film, with search and filters. Filters can be preset from the URL,
+// e.g. /films?lang=Tamil, /films?platform=Netflix, /films?band=Full%20Whistle, /films?sort=posts, /films?q=madhavan
+import Layout from '../../layouts/Layout.astro';
+import { getFilms } from '../../lib/films';
+import FilmCard from '../../components/FilmCard.astro';
+import Waves from '../../components/Waves.astro';
+import { LANGUAGES } from '../../site.config';
+import { TIERS, whistleScore } from '../../lib/score';
+import { scoreSolid } from '../../lib/now';
+
+const all = await getFilms();
+const scoreOf = (f: (typeof all)[number]) => (f.data.report ? whistleScore(f.data.report.sentiment) : -1);
+const ordered = [...all].sort((a, b) => scoreOf(b) - scoreOf(a));
+const platforms = [...new Set(all.flatMap((f) => f.data.watch))].sort();
+// A band only holds films whose Whistle % rests on more than MIN_POSTS_SHOWN scored posts (scoreSolid),
+// so a 100% from 3 posts doesn't land in Full Whistle. Keep in step with the client filter below.
+const bandCount = (t: (typeof TIERS)[number]) =>
+  all.filter((f) => scoreSolid(f) && scoreOf(f) >= t.min && scoreOf(f) <= t.max).length;
+---
+<Layout title="Films" description="Every film on Whistle, ranked by how loudly the crowd whistled.">
+  <main>
+    <section class="wrap page-head">
+      <span class="eyebrow">Films</span>
+      <h1>Every film, <em>ranked by the crowd</em></h1>
+      <p>{all.length} films across {LANGUAGES.length} languages. Filter by language, band or where it streams.</p>
+    </section>
+
+    <section class="wrap discover">
+      <div class="filters">
+        <form class="search" id="search-form" role="search">
+          <label for="q" class="sr-only">Search films</label>
+          <input id="q" type="search" placeholder="Search a film, actor or director" autocomplete="off" />
+        </form>
+        <div class="pill-row" role="group" aria-label="Language">
+          <button class="pill" type="button" data-langf="all" aria-pressed="true">All <span class="num">{all.length}</span></button>
+          {LANGUAGES.map((l) => (
+            <button class="pill" type="button" data-langf={l} aria-pressed="false">{l} <span class="num">{all.filter((f) => f.data.language === l).length}</span></button>
+          ))}
+        </div>
+        <div class="pill-row bands" role="group" aria-label="Band">
+          <button class="pill" type="button" data-band="all" aria-pressed="true">Any band</button>
+          {TIERS.map((t) => (
+            <button class="pill band-pill" type="button" data-band={t.name} aria-pressed="false"><Waves waves={t.waves} size={15} />{t.name} <span class="num">{bandCount(t)}</span></button>
+          ))}
+        </div>
+        <div class="filter-controls">
+          <label class="select"><span>Streaming on</span>
+            <select id="f-platform">
+              <option value="all">Any platform</option>
+              {platforms.map((p) => <option value={p}>{p}</option>)}
+            </select>
+          </label>
+          <label class="select"><span>Sort by</span>
+            <select id="f-sort">
+              <option value="score">Highest Whistle</option>
+              <option value="posts">Most talked about</option>
+              <option value="release">Newest</option>
+            </select>
+          </label>
+          <span class="count num" id="count" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="grid" id="grid">
+        {ordered.map((film) => <FilmCard film={film} />)}
+      </div>
+      <p class="empty-note" id="empty-note" hidden>No film matches those filters.</p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .discover { padding-block: 28px 80px; }
+  .filters { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+  .filters .search { max-width: 520px; }
+  .filter-controls { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; }
+  .band-pill { display: inline-flex; align-items: center; gap: 6px; }
+  .band-pill :global(.waves) { color: var(--gold-text); }
+  .band-pill[aria-pressed="true"] :global(.waves) { color: var(--bg); }
+  .count { margin-left: auto; font-size: 13px; color: var(--faint); }
+</style>
+
+<script>
+  import { TIERS } from '../../lib/score';
+  const grid = document.getElementById('grid')!;
+  const cards = [...grid.querySelectorAll<HTMLElement>('.card')];
+  const langButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-langf]')];
+  const bandButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-band]')];
+  const platform = document.getElementById('f-platform') as HTMLSelectElement;
+  const sort = document.getElementById('f-sort') as HTMLSelectElement;
+  const q = document.getElementById('q') as HTMLInputElement;
+  const count = document.getElementById('count')!;
+
+  // Start from the URL, so menu links like /films?lang=Tamil land filtered
+  const params = new URLSearchParams(location.search);
+  let lang = params.get('lang') ?? 'all';
+  let band = params.get('band') ?? 'all';
+  if (params.get('platform')) platform.value = params.get('platform')!;
+  if (params.get('sort')) sort.value = params.get('sort')!;
+  q.value = params.get('q') ?? '';
+
+  const press = (buttons: HTMLButtonElement[], key: string, value: string) =>
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset[key] === value)));
+
+  function apply() {
+    const term = q.value.trim().toLowerCase();
+    const key = sort.value;
+    const tier = TIERS.find((t) => t.name === band);
+    const sorted = [...cards].sort((a, b) =>
+      key === 'release' ? (b.dataset.release ?? '').localeCompare(a.dataset.release ?? '')
+        : Number(b.dataset[key]) - Number(a.dataset[key]));
+    let shown = 0;
+    sorted.forEach((c) => {
+      const s = Number(c.dataset.score);
+      const ok = (lang === 'all' || c.dataset.lang === lang)
+        && (platform.value === 'all' || (c.dataset.watch ?? '').split('|').includes(platform.value))
+        && (!tier || (c.dataset.solid === 'true' && s >= tier.min && s <= tier.max))
+        && (!term || (c.dataset.search ?? '').includes(term));
+      c.hidden = !ok;
+      if (ok) shown++;
+      grid.appendChild(c);
+    });
+    document.getElementById('empty-note')!.hidden = shown > 0;
+    count.textContent = `${shown} ${shown === 1 ? 'film' : 'films'}`;
+    press(langButtons, 'langf', lang);
+    press(bandButtons, 'band', band);
+
+    // Keep the URL shareable
+    const next = new URLSearchParams();
+    if (lang !== 'all') next.set('lang', lang);
+    if (band !== 'all') next.set('band', band);
+    if (platform.value !== 'all') next.set('platform', platform.value);
+    if (sort.value !== 'score') next.set('sort', sort.value);
+    if (term) next.set('q', q.value.trim());
+    const qs = next.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+  }
+
+  langButtons.forEach((b) => b.addEventListener('click', () => { lang = b.dataset.langf!; apply(); }));
+  bandButtons.forEach((b) => b.addEventListener('click', () => { band = b.dataset.band!; apply(); }));
+  [platform, sort].forEach((el) => el.addEventListener('change', apply));
+  q.addEventListener('input', apply);
+  document.getElementById('search-form')!.addEventListener('submit', (e) => { e.preventDefault(); apply(); });
+  apply();
+</script>

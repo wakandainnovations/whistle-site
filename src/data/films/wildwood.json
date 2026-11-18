@@ -1,0 +1,209 @@
+{
+  "sample": true,
+  "title": "Wildwood",
+  "titleConfirmed": true,
+  "language": "English",
+  "industry": "hollywood",
+  "year": 2026,
+  "releaseDate": "2026-11-13",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+  "trailer": null,
+  "director": "Travis Knight",
+  "cast": [
+    "Peyton Elizabeth Lee",
+    "Jacob Tremblay",
+    "Carey Mulligan",
+    "Mahershala Ali"
+  ],
+  "genres": [
+    "Animation",
+    "Fantasy",
+    "Adventure"
+  ],
+  "runtime": "2h 12m",
+  "tmdbId": 791523,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-10-14",
+      "end": "2026-11-16"
+    },
+    "sentiment": {
+      "positive": 4023,
+      "neutral": 321,
+      "negative": 548
+    },
+    "netSentiment": 7.34,
+    "awareness": {
+      "level": "Medium",
+      "views": 10900000
+    },
+    "reach": 7900,
+    "mentions": {
+      "total": 3146,
+      "daily": [
+        38,
+        37,
+        34,
+        37,
+        30,
+        38,
+        40,
+        63,
+        138,
+        176,
+        128,
+        73,
+        45,
+        44,
+        41,
+        39,
+        42,
+        47,
+        48,
+        55,
+        67,
+        73,
+        64,
+        78,
+        93,
+        103,
+        109,
+        119,
+        113,
+        166,
+        279,
+        226,
+        224,
+        239
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        26
+      ],
+      [
+        "Maharashtra",
+        23
+      ],
+      [
+        "Delhi NCR",
+        21
+      ],
+      [
+        "Tamil Nadu",
+        15
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          30
+        ],
+        [
+          "Maharashtra",
+          16
+        ],
+        [
+          "Delhi NCR",
+          16
+        ],
+        [
+          "Karnataka",
+          15
+        ],
+        [
+          "Tamil Nadu",
+          10
+        ],
+        [
+          "Andhra Telangana",
+          9
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          34
+        ],
+        [
+          "Media press",
+          29
+        ],
+        [
+          "Fan page",
+          17
+        ],
+        [
+          "Verified celebrity",
+          10
+        ],
+        [
+          "Official studio",
+          5
+        ],
+        [
+          "Bot spam",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          43
+        ],
+        [
+          "Fan amplified promo",
+          21
+        ],
+        [
+          "Official promo",
+          16
+        ],
+        [
+          "News press coverage",
+          13
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Box office commercial",
+          22
+        ],
+        [
+          "Cast performance",
+          19
+        ],
+        [
+          "Story",
+          19
+        ],
+        [
+          "Music",
+          14
+        ],
+        [
+          "Direction technical craft",
+          13
+        ],
+        [
+          "Official promo",
+          7
+        ]
+      ]
+    }
+  }
+}

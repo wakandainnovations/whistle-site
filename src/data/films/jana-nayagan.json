@@ -1,0 +1,190 @@
+{
+  "sample": false,
+  "auraId": 100,
+  "auraName": "Jana Nayagan",
+  "title": "Jana Nayagan",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-07-23",
+  "featured": false,
+  "poster": "/posters/jana-nayagan.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "H. Vinoth",
+  "cast": [
+    "Vijay",
+    "Pooja Hegde",
+    "Bobby Deol",
+    "Mamitha Baiju"
+  ],
+  "genres": [
+    "Action",
+    "Drama",
+    "Thriller"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [
+    "Sun NXT"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-07-23",
+      "end": "2026-08-02"
+    },
+    "sentiment": {
+      "positive": 134,
+      "neutral": 60,
+      "negative": 6
+    },
+    "netSentiment": 22.33,
+    "awareness": {
+      "level": "High",
+      "views": 263617650
+    },
+    "reach": 5748,
+    "mentions": {
+      "total": 200,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        142,
+        7,
+        42,
+        5,
+        0,
+        2,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        88
+      ],
+      [
+        "International",
+        6
+      ],
+      [
+        "Kerala",
+        3
+      ],
+      [
+        "Hindi Belt North India",
+        2
+      ],
+      [
+        "Karnataka",
+        1
+      ],
+      [
+        "Andhra Telangana",
+        1
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          52
+        ],
+        [
+          "Unknown",
+          41
+        ],
+        [
+          "International",
+          4
+        ],
+        [
+          "Kerala",
+          2
+        ],
+        [
+          "Hindi Belt North India",
+          1
+        ],
+        [
+          "Karnataka",
+          1
+        ],
+        [
+          "Andhra Telangana",
+          1
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          88
+        ],
+        [
+          "Fan page",
+          11
+        ],
+        [
+          "Verified celebrity influencer",
+          2
+        ],
+        [
+          "Media press",
+          1
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          83
+        ],
+        [
+          "Organic opinion",
+          13
+        ],
+        [
+          "Trade box office update",
+          3
+        ],
+        [
+          "News press coverage",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          74
+        ],
+        [
+          "Acting / cast performance",
+          10
+        ],
+        [
+          "Music / songs",
+          4
+        ],
+        [
+          "VFX",
+          4
+        ],
+        [
+          "Direction",
+          3
+        ],
+        [
+          "Story",
+          3
+        ]
+      ]
+    }
+  }
+}

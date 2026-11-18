@@ -1,0 +1,179 @@
+{
+  "sample": false,
+  "auraId": 80,
+  "auraName": "Ayogya 2",
+  "title": "Ayogya 2",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-08-07",
+  "featured": false,
+  "poster": "/posters/ayogya-2.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Mahesh Kumar",
+  "cast": [
+    "Rachita Ram",
+    "Sathish Neenasam",
+    "Sadhu Kokila"
+  ],
+  "genres": [
+    "Action",
+    "Drama",
+    "Romance"
+  ],
+  "runtime": "2h 37m",
+  "tmdbId": null,
+  "watch": [
+    "Prime Video"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-06-11",
+      "end": "2026-08-02"
+    },
+    "sentiment": {
+      "positive": 27,
+      "neutral": 26,
+      "negative": 3
+    },
+    "netSentiment": 9,
+    "awareness": {
+      "level": "High",
+      "views": 1925631
+    },
+    "reach": 767,
+    "mentions": {
+      "total": 56,
+      "daily": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        3,
+        6,
+        2,
+        16,
+        3,
+        2,
+        1,
+        0,
+        3,
+        7,
+        0,
+        0,
+        2,
+        0,
+        0,
+        1,
+        6
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          89
+        ],
+        [
+          "Unknown",
+          11
+        ]
+      ],
+      "who": [
+        [
+          "Media press",
+          54
+        ],
+        [
+          "General public",
+          32
+        ],
+        [
+          "Fan page",
+          7
+        ],
+        [
+          "Official studio",
+          7
+        ]
+      ],
+      "postType": [
+        [
+          "News press coverage",
+          46
+        ],
+        [
+          "Fan amplified promo",
+          23
+        ],
+        [
+          "Official promo",
+          18
+        ],
+        [
+          "Organic opinion",
+          13
+        ]
+      ],
+      "topics": [
+        [
+          "Music / songs",
+          46
+        ],
+        [
+          "Acting / cast performance",
+          13
+        ],
+        [
+          "Direction",
+          3
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,148 @@
+---
+// /contact: a message form, so the contact address never appears on the page.
+// With SITE.legal.formEndpoint set, the form posts there. Without it, "Send" opens the visitor's
+// email app with the message filled in; the address is assembled in the browser from an encoded copy.
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../site.config';
+const L = SITE.legal;
+
+const topics = [
+  { id: 'general', label: 'A general question' },
+  { id: 'score', label: 'Something looks wrong with a score' },
+  { id: 'posts', label: 'Leave my posts out of the counts' },
+  { id: 'privacy', label: 'A privacy request or complaint' },
+  { id: 'creators', label: 'Creators and badges' },
+  { id: 'partners', label: 'Press, studios and partnerships' },
+];
+// Reversed, then base64: enough to keep the address out of scrapers' reach without a server.
+const key = Buffer.from([...L.contactEmail].reverse().join('')).toString('base64');
+const endpoint = L.formEndpoint;
+---
+<Layout title="Contact us" description={`Get in touch with the ${SITE.brand} team.`}>
+  <main class="contact-page">
+    <section class="wrap page-head">
+      <span class="eyebrow">Contact</span>
+      <h1>Talk to us</h1>
+      <p>Questions about a score, a privacy request, or an idea for working together. Send us a note and a person on the team will reply.</p>
+    </section>
+
+    <div class="wrap contact-grid">
+      <form id="contact-form" class="contact-form" action={endpoint || undefined} method="post" novalidate>
+        <label class="field">
+          <span>What's it about?</span>
+          <select name="topic" id="c-topic">
+            {topics.map((t) => <option value={t.id}>{t.label}</option>)}
+          </select>
+        </label>
+        <div class="row2">
+          <label class="field">
+            <span>Your name</span>
+            <input name="name" id="c-name" autocomplete="name" required maxlength="80" />
+          </label>
+          <label class="field">
+            <span>Your email <em>so we can reply</em></span>
+            <input name="email" id="c-email" type="email" autocomplete="email" required maxlength="120" />
+          </label>
+        </div>
+        <label class="field">
+          <span>Message</span>
+          <textarea name="message" id="c-msg" rows="7" required maxlength="4000" placeholder="Tell us what's on your mind. For a score, include the film's name."></textarea>
+        </label>
+        <!-- Spam trap: people don't see this field, bots fill it in. -->
+        <input type="text" name="_gotcha" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <p class="consent">We only use what you send to reply to you. See our <a href="/privacy">Privacy Policy</a>.</p>
+        <div class="actions">
+          <button type="submit" class="btn primary" id="c-send">Send message</button>
+          <span class="status" id="c-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <aside class="contact-side">
+        <div class="side-card">
+          <h2>Before you write</h2>
+          <ul>
+            <li><b>Scores</b> are worked out from public posts. <a href="/how">How it's scored</a> explains what moves them.</li>
+            <li><b>Badges</b> for your videos and posts are free. Make one on <a href="/creators">For creators</a>.</li>
+            <li><b>Privacy requests</b> go to our Grievance Officer. Choose "A privacy request" above.</li>
+          </ul>
+        </div>
+        <p class="reply-note">We usually reply within 3 working days.</p>
+      </aside>
+    </div>
+  </main>
+</Layout>
+
+<script define:vars={{ key, endpoint, topics }}>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('c-status');
+  const send = document.getElementById('c-send');
+  const topicSel = document.getElementById('c-topic');
+
+  // ?topic=privacy preselects the subject (used by links from the legal pages).
+  const want = new URLSearchParams(location.search).get('topic');
+  if (want && topics.some((t) => t.id === want)) topicSel.value = want;
+
+  const say = (msg, kind) => { status.textContent = msg; status.dataset.kind = kind || ''; };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (form._gotcha.value) return; // bot
+    if (!form.checkValidity()) {
+      const bad = form.querySelector(':invalid');
+      bad.focus();
+      say(bad.type === 'email' && bad.value ? 'That email address doesn’t look right.' : 'Please fill in every field.', 'err');
+      return;
+    }
+    const topic = topics.find((t) => t.id === topicSel.value).label;
+    const data = { topic, name: form.name.value.trim(), email: form.email.value.trim(), message: form.message.value.trim() };
+
+    if (endpoint) {
+      send.disabled = true; say('Sending…');
+      try {
+        const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ ...data, _subject: `Whistle: ${topic}` }) });
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset(); say('Thanks, your message is on its way. We’ll reply to your email.', 'ok');
+      } catch {
+        say('That didn’t send. Please try again in a minute.', 'err');
+      } finally { send.disabled = false; }
+      return;
+    }
+
+    // No form service yet: hand the message to the visitor's email app.
+    const to = [...atob(key)].reverse().join('');
+    const body = `${data.message}\n\n—\n${data.name}\n${data.email}`;
+    location.href = `mailto:${to}?subject=${encodeURIComponent(`Whistle: ${topic}`)}&body=${encodeURIComponent(body)}`;
+    say('Your email app should open with the message ready. Press send there to finish.', 'ok');
+  });
+</script>
+
+<style>
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 48px; align-items: start; padding-bottom: 80px; }
+  .contact-form { display: flex; flex-direction: column; gap: 18px; padding: 28px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field { display: flex; flex-direction: column; gap: 7px; }
+  .field > span { font-size: 14px; font-weight: 600; color: var(--fg); }
+  .field em { font-style: normal; font-weight: 400; color: var(--faint); margin-left: 4px; }
+  .field input, .field select, .field textarea { font: inherit; font-size: 15.5px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; width: 100%; transition: border-color .15s, box-shadow .15s; }
+  .field textarea { resize: vertical; min-height: 150px; line-height: 1.55; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold-text); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 22%, transparent); }
+  .field input:user-invalid, .field textarea:user-invalid { border-color: #e0605a; }
+  .trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .consent { font-size: 13.5px; color: var(--faint); }
+  .consent a, .contact-side a { color: var(--gold-text); }
+  .actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .btn.primary { font: inherit; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 999px; border: 0; cursor: pointer; background: var(--gold); color: #1a1406; }
+  .btn.primary:hover { filter: brightness(1.07); }
+  .btn.primary:disabled { opacity: .6; cursor: wait; }
+  .status { font-size: 14px; color: var(--muted); }
+  .status[data-kind="ok"] { color: #5fc48a; }
+  .status[data-kind="err"] { color: #e0605a; }
+  .side-card { padding: 22px; border-radius: var(--radius); border: 1px solid var(--line); }
+  .side-card h2 { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 20px; margin-bottom: 12px; }
+  .side-card ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .side-card li { font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+  .side-card b { color: var(--fg); font-weight: 600; }
+  .reply-note { margin-top: 14px; font-family: var(--font-mono); font-size: 12.5px; color: var(--faint); }
+  @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: 24px; } }
+  @media (max-width: 560px) { .row2 { grid-template-columns: 1fr; } .contact-form { padding: 20px; } .btn.primary { width: 100%; } }
+</style>

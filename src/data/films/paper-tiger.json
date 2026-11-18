@@ -1,0 +1,195 @@
+{
+  "sample": true,
+  "title": "Paper Tiger",
+  "titleConfirmed": true,
+  "language": "English",
+  "industry": "hollywood",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/p6oLmq5KmuWY6uRXBQBL2q30jia.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/6S41dEoKH2cxw20QgLxhnsQoLQF.jpg",
+  "trailer": null,
+  "director": "James Gray",
+  "cast": [
+    "Miles Teller",
+    "Adam Driver",
+    "Scarlett Johansson",
+    "Gavin Goudey"
+  ],
+  "genres": [
+    "Crime",
+    "Drama",
+    "Thriller"
+  ],
+  "runtime": "1h 55m",
+  "tmdbId": 1381273,
+  "watch": [],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2026-10-28",
+      "end": "2026-11-16"
+    },
+    "sentiment": {
+      "positive": 991,
+      "neutral": 147,
+      "negative": 385
+    },
+    "netSentiment": 2.57,
+    "awareness": {
+      "level": "Medium",
+      "views": 3500000
+    },
+    "reach": 2800,
+    "mentions": {
+      "total": 1043,
+      "daily": [
+        27,
+        26,
+        34,
+        34,
+        35,
+        35,
+        35,
+        65,
+        97,
+        158,
+        105,
+        60,
+        43,
+        32,
+        38,
+        40,
+        38,
+        41,
+        51,
+        49
+      ]
+    },
+    "regions": [
+      [
+        "Maharashtra",
+        28
+      ],
+      [
+        "Delhi NCR",
+        23
+      ],
+      [
+        "Karnataka",
+        20
+      ],
+      [
+        "Andhra Telangana",
+        13
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          32
+        ],
+        [
+          "Maharashtra",
+          19
+        ],
+        [
+          "Karnataka",
+          15
+        ],
+        [
+          "Delhi NCR",
+          15
+        ],
+        [
+          "Tamil Nadu",
+          8
+        ],
+        [
+          "Andhra Telangana",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          39
+        ],
+        [
+          "Media press",
+          27
+        ],
+        [
+          "Verified celebrity",
+          13
+        ],
+        [
+          "Fan page",
+          10
+        ],
+        [
+          "Official studio",
+          6
+        ],
+        [
+          "Bot spam",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          36
+        ],
+        [
+          "Fan amplified promo",
+          22
+        ],
+        [
+          "Official promo",
+          18
+        ],
+        [
+          "News press coverage",
+          15
+        ],
+        [
+          "Trade box office update",
+          7
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Box office commercial",
+          24
+        ],
+        [
+          "Cast performance",
+          19
+        ],
+        [
+          "Music",
+          19
+        ],
+        [
+          "Story",
+          17
+        ],
+        [
+          "Direction technical craft",
+          10
+        ],
+        [
+          "Official promo",
+          6
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,543 @@
+---
+// /race: The Whistle Race. Every movie tracked in AuraService is pinned to its release date as a small
+// poster with its Whistle (positive sentiment %), once it has enough talk (hasEnoughTalk in src/lib/now.ts); films with no posts yet show "Soon". Stretches of the
+// timeline with no releases collapse into a labelled break. Hovering a poster shows the details. The
+// leaderboard below ranks them and shows what changed in the last hourly update.
+//
+// Scores update once an hour. PREVIEW: each hour's change is simulated in the browser (seeded by the hour,
+// so a reload within the same hour shows the same numbers). Before launch, replace `hourly()` in the
+// script with the previous-hour snapshot from the Framehouse feed.
+import Layout from '../layouts/Layout.astro';
+import { getFilms } from '../lib/films';
+import { whistleScore, TIERS } from '../lib/score';
+import { inRace, MIN_COLLECTED_SHOWN, MIN_POSTS_SHOWN } from '../lib/now';
+
+// AuraService movies with a release date and enough talk (hasEnoughTalk; upcoming ones too).
+// Sample films (made-up scores) stay out of the race.
+const films = (await getFilms())
+  .filter(inRace)
+  .map((f) => {
+    const s = f.data.report?.sentiment;
+    return {
+      id: f.id,
+      title: f.data.title,
+      language: f.data.language,
+      release: f.data.releaseDate!,
+      poster: f.data.poster ? f.data.poster.replace('/w500/', '/w185/') : null,
+      score: s ? whistleScore(s) : null,
+      posts: s ? s.positive + s.neutral + s.negative : 0,
+    };
+  });
+const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t.waves }));
+---
+<Layout title="The Whistle Race" description="Every film we track, pinned to its release date with its Whistle, ranked and updated every hour.">
+  <main class="race-page">
+    <section class="wrap page-head race-head">
+      <div class="head-row">
+        <div>
+          <span class="eyebrow">The Whistle Race</span>
+          <h1>Who's winning <em>the crowd</em> right now</h1>
+          <p>Every film we track with more than {MIN_COLLECTED_SHOWN.toLocaleString('en-US')} posts ({MIN_POSTS_SHOWN} scored posts for films we don't collect), pinned to its release date. Scores refresh every hour as new posts are counted. Films still to release show their pre-release buzz.</p>
+        </div>
+        <div class="today-badge">
+          <span class="live-pill"><i></i>Updated hourly</span>
+          <span class="today-date" id="today-label"></span>
+          <span class="today-sub"><span id="upd-last"></span><br /><span id="upd-next"></span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-wrap" aria-label="Release timeline">
+      <div class="timeline-scroll" id="tl-scroll">
+        <div class="timeline" id="timeline">
+          <div class="past-shade" id="past-shade" aria-hidden="true"></div>
+          <div class="tl-track" id="track" aria-hidden="true"></div>
+          <div class="today" id="today-marker" aria-hidden="true"><span>Today</span></div>
+          {films.map((f) => (
+            <a class="pin" href={`/films/${f.id}`} data-id={f.id} hidden aria-label={f.title}>
+              <span class="stem" aria-hidden="true"></span>
+              <span class="dot" aria-hidden="true"></span>
+              <span class="chip">
+                {f.poster ? <img src={f.poster} alt="" loading="lazy" width="56" height="84" /> : <span class="noposter">{f.title}</span>}
+                {f.score !== null
+                  ? <span class="chip-score num"><b data-live>{f.score}</b><small>%</small></span>
+                  : <span class="chip-score soon">Soon</span>}
+                <span class="pop" aria-hidden="true">
+                  <b class="pop-title">{f.title}</b>
+                  <span class="pop-when" data-when></span>
+                  <span class="pop-row"><span class="pop-tier" data-tier></span><span class="pop-chg" data-chg></span></span>
+                </span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+      <p class="wrap tl-hint">← Swipe the timeline to see every release →</p>
+      <div class="wrap tl-legend">
+        <span><i class="lg released"></i>In theatres: Whistle from the crowd</span>
+        <span><i class="lg upcoming"></i>Coming soon: pre-release buzz</span>
+        <span class="lg-tip">Point at a poster for details</span>
+      </div>
+    </section>
+
+    <!-- Leaderboard -->
+    <section class="section board-section">
+      <div class="wrap">
+        <div class="row-head">
+          <div class="section-head" style="margin-bottom:0">
+            <span class="eyebrow">Leaderboard</span>
+            <h2>The race, ranked</h2>
+            <p class="board-note">Films releasing within two weeks either side of today.</p>
+          </div>
+          <div class="board-tools">
+            <button class="replay" type="button" id="replay"><span aria-hidden="true">↻</span> Replay the last hour</button>
+            <div class="pill-row" role="group" aria-label="Show">
+              <button class="pill" type="button" data-show="all" aria-pressed="true">All</button>
+              <button class="pill" type="button" data-show="released" aria-pressed="false">In theatres</button>
+              <button class="pill" type="button" data-show="upcoming" aria-pressed="false">Coming soon</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="race-grid">
+          <div>
+            <div class="lb-head" aria-hidden="true"><span>#</span><span></span><span>Film</span><span class="h-bar"></span><span class="h-sc">Whistle</span><span class="h-chg">Last hour</span></div>
+            <ol class="lb" id="lb" aria-live="off"></ol>
+            <p class="lb-empty" id="lb-empty" hidden>No films releasing within two weeks of today.</p>
+          </div>
+          <aside class="movers">
+            <div class="mover up"><span class="mono">Biggest climber</span><b id="m-up">–</b><span id="m-up-d" class="num"></span></div>
+            <div class="mover down"><span class="mono">Losing steam</span><b id="m-down">–</b><span id="m-down-d" class="num"></span></div>
+            <div class="mover hot"><span class="mono">Loudest this hour</span><b id="m-hot">–</b><span id="m-hot-d" class="num"></span></div>
+            <p class="movers-note">Changes since the previous hourly update. Preview: hourly changes are simulated until the live feed is connected.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script is:inline define:vars={{ films, tiers }}>
+  window.__RACE = { films, tiers };
+</script>
+
+<style is:global>
+  .race-page .race-head { padding-bottom: 28px; }
+  .race-page .head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 40px; flex-wrap: wrap; }
+  .race-page .today-badge { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding: 18px 22px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); min-width: 240px; }
+  .race-page .live-pill { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pos); }
+  .race-page .live-pill i { width: 9px; height: 9px; border-radius: 50%; background: var(--pos); }
+  .race-page .today-date { font-family: var(--font-display); font-weight: 900; font-size: 34px; text-transform: uppercase; line-height: 1; }
+  .race-page .today-sub { font-size: 12.5px; color: var(--faint); line-height: 1.5; }
+
+  /* ---------- timeline ---------- */
+  .race-page .timeline-wrap { padding-bottom: 24px; }
+  .race-page .timeline-scroll { overflow-x: auto; scrollbar-width: none; padding-inline: max(16px, calc((100vw - 1240px) / 2)); }
+  .race-page .timeline-scroll::-webkit-scrollbar { display: none; }
+  .race-page .timeline { position: relative; min-width: 1100px; height: var(--h, 420px); }
+  .race-page .past-shade { position: absolute; top: 0; bottom: 0; left: 0; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface) 55%, transparent)); border-radius: 18px 0 0 18px; }
+  .race-page .tl-track { position: absolute; left: 0; right: 0; top: var(--mid, 50%); height: 2px; transform: translateY(-50%); background: var(--line); border-radius: 2px; }
+  .race-page .tl-track .tick { position: absolute; top: 50%; width: 1px; height: 6px; background: var(--faint); transform: translate(-50%, -50%); opacity: .35; }
+  .race-page .tl-track .tick.week { height: 14px; opacity: .8; }
+  .race-page .tl-track .tick b { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 10.5px; font-weight: 400; color: var(--faint); white-space: nowrap; }
+  .race-page .tl-track .month { position: absolute; top: calc(14px - var(--mid)); transform: translateX(-50%); font-family: var(--font-display); font-weight: 900; font-size: 20px; text-transform: uppercase; color: var(--muted); opacity: .45; }
+  .race-page .today { position: absolute; top: 0; bottom: 0; width: 2px; transform: translateX(-50%); background: linear-gradient(180deg, transparent, var(--gold) 12%, var(--gold) 88%, transparent); z-index: 3; pointer-events: none; }
+  .race-page .today::after { content: ""; position: absolute; left: 50%; top: var(--mid, 50%); width: 14px; height: 14px; border-radius: 50%; transform: translate(-50%, -50%); background: var(--gold); box-shadow: 0 0 0 5px color-mix(in srgb, var(--gold) 25%, transparent), 0 0 24px var(--gold); }
+  .race-page .today span { position: absolute; top: 4px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--gold-ink); font-family: var(--font-display); font-weight: 900; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px 3px; border-radius: 6px; white-space: nowrap; }
+
+  .race-page .pin { position: absolute; left: 0; top: 0; width: 0; height: 0; text-decoration: none; color: inherit; z-index: 2; }
+  .race-page .pin .dot { position: absolute; left: 0; top: var(--mid); width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%, -50%); background: var(--bg); border: 2px solid var(--gold); }
+  .race-page .pin.upcoming .dot { border-color: var(--bar); }
+  .race-page .pin .stem { position: absolute; left: 0; width: 1px; transform: translateX(-50%); background: color-mix(in srgb, var(--gold) 45%, transparent); }
+  .race-page .pin.upcoming .stem { background: repeating-linear-gradient(180deg, color-mix(in srgb, var(--bar) 80%, transparent) 0 3px, transparent 3px 6px); }
+  .race-page .chip { position: absolute; left: 0; width: 56px; transform: translateX(-50%); transition: transform .25s cubic-bezier(.3,1.4,.5,1); }
+  .race-page .chip img { display: block; width: 56px; height: 84px; border-radius: 8px; object-fit: cover; border: 2px solid color-mix(in srgb, var(--gold) 55%, var(--line)); box-shadow: 0 12px 24px -14px rgba(0,0,0,.9); background: var(--surface-2); transition: border-color .2s; }
+  .race-page .pin.upcoming .chip img { border: 2px dashed color-mix(in srgb, var(--bar) 75%, var(--line)); }
+  .race-page .chip-score { position: absolute; left: 50%; bottom: -9px; transform: translateX(-50%); padding: 2px 7px 1px; border-radius: 7px; background: var(--bg); border: 1px solid var(--line); font-family: var(--font-display); font-weight: 900; font-size: 16px; line-height: 1.1; white-space: nowrap; }
+  .race-page .chip-score small { font-size: .6em; }
+  .race-page .chip-score.soon { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 3px 6px 2px; }
+  .race-page .noposter { display: grid; place-items: center; width: 56px; height: 84px; padding: 4px; border-radius: 8px; border: 2px dashed var(--line); background: var(--surface-2); font-size: 9px; line-height: 1.15; text-align: center; overflow: hidden; color: var(--muted); }
+  .race-page .tl-track .gap { position: absolute; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; z-index: 1; }
+  .race-page .tl-track .gap i { display: block; width: 26px; height: 18px; background: repeating-linear-gradient(110deg, transparent 0 6px, var(--faint) 6px 8px, transparent 8px 12px), var(--bg); }
+  .race-page .tl-track .gap b { position: absolute; top: 22px; font-family: var(--font-mono); font-size: 10px; font-weight: 400; color: var(--faint); white-space: nowrap; }
+  .race-page .lb .ph { width: 34px; height: 48px; border-radius: 5px; border: 1px dashed var(--line); background: var(--surface-2); }
+  .race-page .lb li.unscored .chg { color: var(--faint); white-space: nowrap; font-size: 11px; }
+  .race-page .chip-score b { font-weight: 900; }
+  .race-page .chip-score[data-band="3"] { color: var(--pos); }
+  .race-page .chip-score[data-band="2"] { color: var(--gold-text); }
+  .race-page .chip-score[data-band="1"] { color: var(--fg); }
+  .race-page .chip-score[data-band="0"] { color: var(--neg); }
+  .race-page .pin:hover, .race-page .pin:focus-visible { z-index: 8; outline: none; }
+  .race-page .pin:hover .chip, .race-page .pin:focus-visible .chip { transform: translateX(-50%) scale(1.12); }
+  .race-page .pin:hover .chip img, .race-page .pin:focus-visible .chip img { border-color: var(--gold); border-style: solid; }
+  .race-page .pop { position: absolute; top: 4px; left: calc(100% + 12px); width: 190px; display: flex; flex-direction: column; gap: 4px; padding: 11px 13px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 20px 40px -18px rgba(0,0,0,.9); opacity: 0; visibility: hidden; transform: translateX(-6px); transition: opacity .15s, transform .2s, visibility 0s .2s; pointer-events: none; }
+  .race-page .pin.flip .pop { left: auto; right: calc(100% + 12px); transform: translateX(6px); }
+  .race-page .pin:hover .pop, .race-page .pin:focus-visible .pop { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  .race-page .pop-title { font-size: 14px; font-weight: 700; line-height: 1.2; }
+  .race-page .pop-when { font-size: 12px; color: var(--muted); }
+  .race-page .pop-row { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; margin-top: 2px; }
+  .race-page .pop-tier { color: var(--gold-text); font-weight: 600; }
+  .race-page .pop-chg { font-family: var(--font-mono); color: var(--faint); }
+  .race-page .pop-chg.up { color: var(--pos); }
+  .race-page .pop-chg.down { color: var(--neg); }
+
+  .race-page .tl-hint { display: none; font-size: 12.5px; color: var(--faint); text-align: center; margin-top: 4px; }
+  @media (max-width: 1240px) { .race-page .tl-hint { display: block; } .race-page .timeline-scroll { -webkit-mask: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); mask: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); } }
+  .race-page .tl-legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .race-page .tl-legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .race-page .tl-legend .lg-tip { color: var(--faint); }
+  @media (hover: none) { .race-page .tl-legend .lg-tip { display: none; } }
+  .race-page .lg { width: 14px; height: 20px; border-radius: 3px; border: 2px solid var(--gold); }
+  .race-page .lg.upcoming { border: 2px dashed var(--bar); }
+
+  /* ---------- leaderboard ---------- */
+  .race-page .board-section { padding-top: 48px; }
+  .race-page .board-tools { display: flex; align-items: center; gap: 10px 16px; flex-wrap: wrap; }
+  .race-page .replay { font: inherit; font-size: 13.5px; font-weight: 600; color: var(--gold-text); background: none; border: 1px solid color-mix(in srgb, var(--gold) 45%, var(--line)); border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+  .race-page .replay:hover { background: color-mix(in srgb, var(--gold) 12%, transparent); }
+  .race-page .replay:disabled { opacity: .5; cursor: default; }
+  .race-page .race-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
+  .race-page .lb-head, .race-page .lb a { display: grid; grid-template-columns: 40px 34px minmax(0, 1.1fr) minmax(80px, 1.4fr) 64px 70px; gap: 14px; align-items: center; padding: 0 14px 0 8px; }
+  .race-page .lb-head { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+  .race-page .lb-head span:first-child { text-align: center; }
+  .race-page .lb-head .h-sc, .race-page .lb-head .h-chg { text-align: right; }
+  .race-page .lb { list-style: none; margin: 0; padding: 0; position: relative; }
+  .race-page .lb-empty { margin: 0; padding: 28px 0; color: var(--muted); }
+  .race-page .lb li { position: absolute; left: 0; right: 0; top: 0; height: 64px; transition: transform .9s cubic-bezier(.3,1.2,.4,1), opacity .3s; }
+  .race-page .lb a { height: 56px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; transition: border-color .2s, background .2s; }
+  .race-page .lb a:hover { border-color: var(--gold); }
+  .race-page .lb li.lead a { background: linear-gradient(90deg, color-mix(in srgb, var(--gold) 16%, var(--surface)), var(--surface) 60%); border-color: color-mix(in srgb, var(--gold) 50%, var(--line)); }
+  .race-page .lb .rk { font-family: var(--font-display); font-weight: 900; font-size: 28px; text-align: center; color: var(--muted); }
+  .race-page .lb li.lead .rk { color: var(--gold-text); }
+  .race-page .lb img { width: 34px; height: 48px; object-fit: cover; border-radius: 5px; }
+  .race-page .lb .nm { display: flex; flex-direction: column; min-width: 0; gap: 2px; }
+  .race-page .lb .nm b { font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .race-page .lb .nm span { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .race-page .lb .bar { height: 12px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+  .race-page .lb .bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--bar), var(--gold)); transition: width .9s cubic-bezier(.3,1,.4,1); }
+  .race-page .lb li.upcoming .bar i { background: repeating-linear-gradient(135deg, var(--bar) 0 8px, color-mix(in srgb, var(--bar) 70%, transparent) 8px 16px); }
+  .race-page .lb .sc { font-family: var(--font-display); font-weight: 900; font-size: 26px; text-align: right; }
+  .race-page .lb .sc small { font-size: .5em; }
+  .race-page .lb .chg { font-family: var(--font-mono); font-size: 12px; text-align: right; color: var(--faint); }
+  .race-page .lb .chg.up { color: var(--pos); }
+  .race-page .lb .chg.down { color: var(--neg); }
+  .race-page .lb li.flash a { animation: flash 1.1s ease; }
+  @keyframes flash { 30% { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 30%, transparent); } }
+  .race-page .movers { display: flex; flex-direction: column; gap: 12px; position: sticky; top: 90px; margin-top: 26px; }
+  .race-page .mover { padding: 16px 18px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
+  .race-page .mover b { font-family: var(--font-display); font-weight: 800; font-size: 22px; text-transform: uppercase; line-height: 1.05; }
+  .race-page .mover span.num { font-size: 13px; color: var(--muted); }
+  .race-page .mover.up { border-left: 4px solid var(--pos); }
+  .race-page .mover.down { border-left: 4px solid var(--neg); }
+  .race-page .mover.hot { border-left: 4px solid var(--gold); }
+  .race-page .movers-note { font-size: 12px; color: var(--faint); line-height: 1.5; }
+  @media (max-width: 900px) { .race-page .race-grid { grid-template-columns: 1fr; } .race-page .movers { position: static; margin-top: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); } .race-page .movers-note { grid-column: 1 / -1; } }
+  @media (max-width: 600px) {
+    .race-page .lb-head, .race-page .lb a { grid-template-columns: 30px 30px minmax(0, 1fr) 52px 44px; gap: 10px; }
+    .race-page .lb .bar, .race-page .lb-head .h-bar { display: none; }
+    .race-page .lb-head .h-chg { font-size: 0; } .race-page .lb-head .h-chg::after { content: '1h'; font-size: 11px; }
+    .race-page .lb img { width: 30px; height: 44px; }
+    .race-page .movers { grid-template-columns: 1fr; }
+    .race-page .replay { order: 2; }
+  }
+</style>
+
+<script>
+  type Film = { id: string; title: string; language: string; release: string; poster: string | null; score: number | null; posts: number };
+  type Tier = { name: string; min: number; max: number; waves: number };
+  const { films, tiers } = (window as any).__RACE as { films: Film[]; tiers: Tier[] };
+
+  const DAY = 864e5, HOUR = 36e5;
+  const utc = (iso: string) => Date.parse(`${iso}T00:00:00Z`);
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  const fmt = (t: number, o: Intl.DateTimeFormatOptions) => new Date(t).toLocaleDateString('en-US', { timeZone: 'UTC', ...o });
+  const clock = (t: number) => new Date(t).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  document.getElementById('today-label')!.textContent = fmt(today, { weekday: 'short', month: 'short', day: 'numeric' });
+
+  const inWindow = films;
+  const scored = (f: Film) => f.score !== null;
+  const tierFor = (s: number) => tiers.find((t) => s >= t.min && s <= t.max) ?? tiers[tiers.length - 1];
+  const days = (f: Film) => Math.round((utc(f.release) - today) / DAY);
+  // the leaderboard only ranks films releasing within BOARD_DAYS of today (either side); the timeline keeps them all
+  const BOARD_DAYS = 14;
+  const onBoard = inWindow.filter((f) => Math.abs(days(f)) <= BOARD_DAYS);
+  const when = (f: Film) => {
+    const d = days(f);
+    if (d > 1) return `Releases in ${d} days`;
+    if (d === 1) return 'Releases tomorrow';
+    if (d === 0) return 'Releases today';
+    return `Day ${-d + 1} in theatres`;
+  };
+
+  // ---------- hourly data ----------
+  // PREVIEW: simulated. Each film's change over the last hour is seeded by film and hour, so it's stable
+  // within an hour. Before launch, return the real current and previous-hour scores from the feed.
+  const seeded = (key: string) => {
+    let h = 2166136261;
+    for (const c of key) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
+    return () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; };
+  };
+  type Snap = { now: number; prev: number; postsHour: number };
+  function hourly(hour: number): Map<string, Snap> {
+    return new Map(inWindow.filter(scored).map((f) => {
+      const r = seeded(`${f.id}:${Math.round(hour / HOUR)}`);
+      const change = Math.round((r() + r() - 1) * 4); // mostly small, now and then ±3–4
+      const activeDays = Math.max(1, Math.min(62, -days(f) + 31));
+      const postsHour = Math.round((f.posts / (activeDays * 24)) * (0.5 + r()));
+      return [f.id, { now: f.score!, prev: Math.max(0, Math.min(100, f.score! - change)), postsHour }];
+    }));
+  }
+  // the start of the current hour on the visitor's clock (works for half-hour time zones like IST)
+  const hourStart = () => { const d = new Date(); d.setMinutes(0, 0, 0); return d.getTime(); };
+  let hour = hourStart();
+  let snap = hourly(hour);
+
+  function stamp() {
+    document.getElementById('upd-last')!.textContent = `Last update ${clock(hour)}`;
+    document.getElementById('upd-next')!.textContent = `Next update ${clock(hour + HOUR)}`;
+  }
+
+  // ---------- timeline ----------
+  const tl = document.getElementById('timeline')!;
+  const track = document.getElementById('track')!;
+  const pins = [...tl.querySelectorAll<HTMLElement>('.pin')];
+  const CHIP = 56, CHIP_H = 84, LANE = 112, GAP = 10;
+
+  // The timeline covers every release plus today. Runs of more than MAX_GAP_DAYS with no release are
+  // collapsed into a fixed-width break, so one film from years ago doesn't leave a mile of empty track.
+  const PX_PER_DAY = 9, PAD_DAYS = 6, MAX_GAP_DAYS = 45, BREAK_PX = 90;
+  type Seg = { start: number; end: number; px: number };
+  const segs: Seg[] = [];
+  {
+    const points = [...new Set([today, ...inWindow.map((f) => utc(f.release))])].sort((a, b) => a - b);
+    let px = 0;
+    for (const t of points) {
+      const last = segs[segs.length - 1];
+      if (last && t - last.end <= (MAX_GAP_DAYS - PAD_DAYS) * DAY) { last.end = t + PAD_DAYS * DAY; continue; }
+      if (last) px += ((last.end - last.start) / DAY) * PX_PER_DAY + BREAK_PX;
+      segs.push({ start: t - PAD_DAYS * DAY, end: t + PAD_DAYS * DAY, px });
+    }
+  }
+  const lastSeg = segs[segs.length - 1];
+  const totalPx = lastSeg.px + ((lastSeg.end - lastSeg.start) / DAY) * PX_PER_DAY;
+  const span = (ms: number) => { const m = Math.round(ms / (30.4 * DAY)); return m >= 2 ? `${m} months` : `${Math.round(ms / (7 * DAY))} weeks`; };
+
+  function layout() {
+    // at least as wide as the screen; wider (and scrollable) when there are many releases
+    const W = Math.max(tl.parentElement!.clientWidth - 32, 1100, totalPx);
+    tl.style.width = `${W}px`;
+    const k = W / totalPx;
+    const x = (t: number) => {
+      const g = segs.find((s) => t <= s.end) ?? lastSeg;
+      return (g.px + ((t - g.start) / DAY) * PX_PER_DAY) * k;
+    };
+
+    // a faint tick every day, a label every Monday, the month names, and a break between far-apart runs
+    track.replaceChildren();
+    segs.forEach((g, gi) => {
+      for (let t = g.start; t <= g.end; t += DAY) {
+        const d = new Date(t);
+        const tick = document.createElement('span');
+        const isWeek = d.getUTCDay() === 1;
+        tick.className = `tick${isWeek ? ' week' : ''}`;
+        tick.style.left = `${x(t)}px`;
+        if (isWeek) { const b = document.createElement('b'); b.textContent = fmt(t, { month: 'short', day: 'numeric' }); tick.append(b); }
+        track.append(tick);
+        if (d.getUTCDate() === 1 || t === g.start) {
+          const m = document.createElement('span');
+          m.className = 'month';
+          const withYear = d.getUTCMonth() === 0 || t === g.start;
+          m.textContent = fmt(t, withYear ? { month: 'long', year: 'numeric' } : { month: 'long' });
+          m.style.left = `${x(t) + (t === g.start ? 70 : 50)}px`;
+          track.append(m);
+        }
+      }
+      const next = segs[gi + 1];
+      if (next) {
+        const br = document.createElement('span');
+        br.className = 'gap';
+        br.style.left = `${x(g.end) + (BREAK_PX * k) / 2}px`;
+        br.innerHTML = '<i></i><b></b>';
+        br.querySelector('b')!.textContent = `${span(next.start - g.end)} later`;
+        track.append(br);
+      }
+    });
+
+    // posters go in lanes, nearest the line first, alternating above and below. A poster may slide
+    // right of its date (up to MAX_SHIFT, with an angled stem back to the date) before taking a new
+    // lane, so a week with ten releases fans out sideways instead of stacking into one tall column.
+    const MAX_SHIFT = 4 * (CHIP + GAP);
+    const lanes: number[] = []; // right edge of the last poster in each lane (even = above, odd = below)
+    const placed = inWindow
+      .slice()
+      .sort((a, b) => utc(a.release) - utc(b.release))
+      .map((f) => {
+        const px = x(utc(f.release));
+        let lane = 0, cx = px;
+        for (;; lane++) {
+          cx = Math.max(px, (lanes[lane] ?? -Infinity) + GAP + CHIP / 2);
+          if (cx - px <= MAX_SHIFT) break;
+        }
+        lanes[lane] = cx + CHIP / 2;
+        return { f, px, cx, lane };
+      });
+    const rowsAbove = Math.max(1, ...placed.filter((p) => p.lane % 2 === 0).map((p) => p.lane / 2 + 1));
+    const rowsBelow = Math.max(1, ...placed.filter((p) => p.lane % 2 === 1).map((p) => (p.lane + 1) / 2));
+    const mid = 56 + rowsAbove * LANE + 10;
+    tl.style.setProperty('--h', `${mid + 34 + rowsBelow * LANE}px`);
+    tl.style.setProperty('--mid', `${mid}px`);
+    document.getElementById('past-shade')!.style.width = `${x(today)}px`;
+    document.getElementById('today-marker')!.style.left = `${x(today)}px`;
+
+    for (const { f, px, cx, lane } of placed) {
+      const pin = pins.find((p) => p.dataset.id === f.id)!;
+      pin.hidden = false;
+      pin.classList.toggle('upcoming', days(f) > 0);
+      pin.classList.toggle('flip', cx > W - 260);
+      pin.style.left = `${px}px`;
+      pin.style.setProperty('--mid', `${mid}px`);
+      const up = lane % 2 === 0, row = Math.floor(lane / 2);
+      const top = up ? mid - 24 - CHIP_H - row * LANE : mid + 34 + row * LANE;
+      const chip = pin.querySelector<HTMLElement>('.chip')!;
+      chip.style.top = `${top}px`;
+      chip.style.left = `${cx - px}px`;
+      const edge = up ? top + CHIP_H + 10 : top; // +10 clears the score tag under the poster
+      // stem from the dot on the line to the poster, angled when the poster slid sideways
+      const dx = cx - px, dy = edge - mid, len = Math.hypot(dx, dy);
+      const stem = pin.querySelector<HTMLElement>('.stem')!;
+      stem.style.top = `${mid}px`;
+      stem.style.height = `${len}px`;
+      stem.style.transformOrigin = '50% 0';
+      stem.style.transform = `translateX(-50%) rotate(${(Math.atan2(-dx, dy) * 180) / Math.PI}deg)`;
+      pin.querySelector('[data-when]')!.textContent = when(f);
+    }
+    return x(today);
+  }
+  const todayX = layout();
+  addEventListener('resize', layout);
+  // open with today in the middle of the view
+  const sc = document.getElementById('tl-scroll')!;
+  sc.scrollLeft = Math.max(0, todayX - sc.clientWidth / 2);
+
+  // ---------- leaderboard ----------
+  const lb = document.getElementById('lb')!;
+  let show = 'all';
+  const ROW = 64;
+  const rows = new Map<string, HTMLLIElement>();
+  for (const f of onBoard) {
+    const li = document.createElement('li');
+    li.innerHTML = `<a href="/films/${f.id}">
+      <span class="rk num"></span>
+      ${f.poster ? `<img src="${f.poster}" alt="" loading="lazy" />` : '<span class="ph"></span>'}
+      <span class="nm"><b></b><span></span></span>
+      <span class="bar"><i></i></span>
+      <span class="sc num"><b></b><small>%</small></span>
+      <span class="chg num"></span></a>`;
+    li.querySelector('.nm b')!.textContent = f.title;
+    li.querySelector('.nm span')!.textContent = `${f.language} · ${when(f)}`;
+    li.classList.toggle('upcoming', days(f) > 0);
+    lb.append(li);
+    rows.set(f.id, li);
+  }
+
+  const change = (id: string) => snap.get(id)!.now - snap.get(id)!.prev;
+  const chgText = (d: number) => (d > 0 ? `▲ ${d}` : d < 0 ? `▼ ${-d}` : 'no change');
+
+  // phase 'prev' draws the board as it stood an hour ago; 'now' moves it to the latest update
+  let lastOrder: string[] = [];
+  function render(phase: 'prev' | 'now' = 'now') {
+    // films with no posts yet have no snapshot: they rank last, soonest release first
+    const val = (id: string) => { const st = snap.get(id); return st ? (phase === 'prev' ? st.prev : st.now) : -1; };
+    const visible = onBoard.filter((f) => show === 'all' || (show === 'released' ? days(f) <= 0 : days(f) > 0));
+    const ranked = visible.slice().sort((a, b) => val(b.id) - val(a.id) || (val(a.id) < 0 ? utc(a.release) - utc(b.release) : 0) || a.title.localeCompare(b.title));
+    lb.style.height = `${ranked.length * ROW}px`;
+    document.getElementById('lb-empty')!.hidden = ranked.length > 0;
+    rows.forEach((li, id) => {
+      const on = visible.some((f) => f.id === id);
+      li.style.opacity = on ? '1' : '0';
+      li.style.pointerEvents = on ? '' : 'none';
+    });
+    ranked.forEach((f, i) => {
+      const li = rows.get(f.id)!;
+      const s = val(f.id);
+      li.style.transform = `translateY(${i * ROW}px)`;
+      li.classList.toggle('lead', i === 0);
+      li.querySelector('.rk')!.textContent = String(i + 1);
+      li.querySelector<HTMLElement>('.bar i')!.style.width = `${Math.max(0, s)}%`;
+      li.querySelector('.sc b')!.textContent = s < 0 ? '–' : String(s);
+      li.classList.toggle('unscored', s < 0);
+      const d = phase === 'prev' || s < 0 ? 0 : change(f.id);
+      const chg = li.querySelector('.chg')!;
+      chg.textContent = s < 0 ? 'no posts yet' : phase === 'prev' ? '' : d > 0 ? `▲${d}` : d < 0 ? `▼${-d}` : '–';
+      chg.className = `chg num ${d > 0 ? 'up' : d < 0 ? 'down' : ''}`;
+      if (phase === 'now' && lastOrder.length && lastOrder.indexOf(f.id) > i) { li.classList.remove('flash'); void li.offsetWidth; li.classList.add('flash'); }
+    });
+    lastOrder = ranked.map((f) => f.id);
+  }
+
+  function renderPins() {
+    for (const pin of pins) {
+      const st = snap.get(pin.dataset.id!);
+      if (!st) { pin.querySelector('[data-tier]')!.textContent = 'Score coming soon'; continue; }
+      const tier = tierFor(st.now);
+      pin.querySelector('[data-live]')!.textContent = String(st.now);
+      pin.querySelector<HTMLElement>('.chip-score')!.dataset.band = String(tier.waves);
+      pin.querySelector('[data-tier]')!.textContent = tier.name;
+      const d = st.now - st.prev;
+      const c = pin.querySelector<HTMLElement>('[data-chg]')!;
+      c.textContent = `${chgText(d)} in 1h`;
+      c.className = `pop-chg ${d > 0 ? 'up' : d < 0 ? 'down' : ''}`;
+    }
+  }
+
+  function renderMovers() {
+    const all = onBoard.filter(scored).map((f) => ({ f, st: snap.get(f.id)! }));
+    const d = (x: (typeof all)[number]) => x.st.now - x.st.prev;
+    const upM = all.slice().sort((a, b) => d(b) - d(a))[0];
+    const downM = all.slice().sort((a, b) => d(a) - d(b))[0];
+    const hot = all.slice().sort((a, b) => b.st.postsHour - a.st.postsHour)[0];
+    const setM = (k: string, x: (typeof all)[number] | undefined, text: string) => {
+      document.getElementById(`m-${k}`)!.textContent = x ? x.f.title : '–';
+      document.getElementById(`m-${k}-d`)!.textContent = x ? text : '';
+    };
+    setM('up', upM, upM && d(upM) > 0 ? `▲ ${d(upM)} points · now ${upM.st.now}% (${tierFor(upM.st.now).name})` : 'Holding steady');
+    setM('down', downM, downM && d(downM) < 0 ? `▼ ${-d(downM)} points · now ${downM.st.now}%` : 'Nobody slipped this hour');
+    setM('hot', hot, hot ? `${hot.st.postsHour.toLocaleString('en-IN')} posts in the last hour` : '');
+  }
+
+  // Board opens as it stood an hour ago, then rolls into the latest update.
+  const motion = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const replayBtn = document.getElementById('replay') as HTMLButtonElement;
+  function playHour() {
+    if (!motion) { render('now'); return; }
+    replayBtn.disabled = true;
+    render('prev');
+    setTimeout(() => { render('now'); replayBtn.disabled = false; }, 900);
+  }
+
+  function refresh() {
+    stamp();
+    renderPins();
+    renderMovers();
+    playHour();
+  }
+  refresh();
+  replayBtn.addEventListener('click', playHour);
+
+  // Next update on the hour, then every hour after.
+  const untilNext = () => hourStart() + HOUR - Date.now() + 500;
+  setTimeout(function next() {
+    hour = hourStart();
+    snap = hourly(hour);
+    refresh();
+    setTimeout(next, untilNext());
+  }, untilNext());
+
+  document.querySelectorAll<HTMLButtonElement>('[data-show]').forEach((b) => b.addEventListener('click', () => {
+    show = b.dataset.show!;
+    document.querySelectorAll('[data-show]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    render('now');
+  }));
+</script>

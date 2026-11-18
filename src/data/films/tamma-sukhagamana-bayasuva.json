@@ -1,0 +1,35 @@
+{
+  "sample": false,
+  "auraId": 96,
+  "auraName": "Tamma Sukhagamana Bayasuva",
+  "title": "Tamma Sukhagamana Bayasuva",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-12-25",
+  "featured": false,
+  "poster": "/posters/tamma-sukhagamana-bayasuva.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Ramenahalli Jagannatha",
+  "cast": [
+    "Ganesh",
+    "Achyuth Kumar",
+    "Rangayana Raghu"
+  ],
+  "genres": [
+    "Drama",
+    "Romance",
+    "Family"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": null
+}

@@ -1,0 +1,237 @@
+{
+  "sample": true,
+  "title": "Agent",
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2023,
+  "releaseDate": "2023-04-28",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/rTC4LQ7KYRoX5J7hLZ08lDRPWvX.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/dUg2WN7CPE5noL3mbFXWcC6IAIU.jpg",
+  "trailer": null,
+  "director": "Surender Reddy",
+  "cast": [
+    "Mammootty",
+    "Akhil Akkineni",
+    "Dino Morea",
+    "Sakshi Vaidya"
+  ],
+  "genres": [
+    "Action",
+    "Thriller"
+  ],
+  "runtime": "2h 35m",
+  "tmdbId": 886436,
+  "watch": [
+    "SonyLIV"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-03-29",
+      "end": "2023-05-28"
+    },
+    "sentiment": {
+      "positive": 3144,
+      "neutral": 1141,
+      "negative": 10527
+    },
+    "netSentiment": 0.3,
+    "awareness": {
+      "level": "Medium",
+      "views": 33700000
+    },
+    "reach": 33900,
+    "mentions": {
+      "total": 7318,
+      "daily": [
+        63,
+        58,
+        61,
+        72,
+        64,
+        77,
+        90,
+        118,
+        272,
+        296,
+        282,
+        143,
+        98,
+        87,
+        71,
+        85,
+        90,
+        94,
+        91,
+        93,
+        128,
+        131,
+        120,
+        142,
+        166,
+        164,
+        229,
+        235,
+        269,
+        292,
+        609,
+        384,
+        323,
+        308,
+        268,
+        207,
+        175,
+        127,
+        128,
+        106,
+        98,
+        81,
+        72,
+        46,
+        45,
+        38,
+        25,
+        23,
+        17,
+        14,
+        9,
+        7,
+        6,
+        5,
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Andhra Telangana",
+        64
+      ],
+      [
+        "International",
+        11
+      ],
+      [
+        "Hindi Belt North India",
+        10
+      ],
+      [
+        "Karnataka",
+        9
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Andhra Telangana",
+          49
+        ],
+        [
+          "Unknown",
+          23
+        ],
+        [
+          "International",
+          9
+        ],
+        [
+          "Karnataka",
+          7
+        ],
+        [
+          "Hindi Belt North India",
+          7
+        ],
+        [
+          "Tamil Nadu",
+          5
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          46
+        ],
+        [
+          "Media press",
+          20
+        ],
+        [
+          "Fan page",
+          16
+        ],
+        [
+          "Verified celebrity",
+          9
+        ],
+        [
+          "Official studio",
+          5
+        ],
+        [
+          "Bot spam",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          50
+        ],
+        [
+          "Fan amplified promo",
+          21
+        ],
+        [
+          "Official promo",
+          15
+        ],
+        [
+          "News press coverage",
+          7
+        ],
+        [
+          "Trade box office update",
+          5
+        ],
+        [
+          "Ticket merch",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          23
+        ],
+        [
+          "Direction technical craft",
+          18
+        ],
+        [
+          "Music",
+          17
+        ],
+        [
+          "Story",
+          16
+        ],
+        [
+          "Box office commercial",
+          14
+        ],
+        [
+          "Official promo",
+          6
+        ]
+      ]
+    }
+  }
+}

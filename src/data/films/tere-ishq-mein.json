@@ -1,0 +1,242 @@
+{
+  "sample": false,
+  "auraId": 7,
+  "auraName": "Tere Ishq Mein",
+  "title": "Tere Ishq Mein",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Hindi",
+  "industry": "hindi",
+  "year": 2025,
+  "releaseDate": "2025-11-28",
+  "featured": false,
+  "poster": "/posters/tere-ishq-mein.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Aanand L Rai",
+  "cast": [
+    "Dhanush",
+    "Kriti Sanon",
+    "Prakash Raj",
+    "Priyanshu Painyuli"
+  ],
+  "genres": [
+    "Drama",
+    "Romantic"
+  ],
+  "runtime": "2h 49m",
+  "tmdbId": null,
+  "watch": [
+    "SonyLIV"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-01-17",
+      "end": "2026-04-30"
+    },
+    "sentiment": {
+      "positive": 5,
+      "neutral": 1,
+      "negative": 133
+    },
+    "netSentiment": 0.04,
+    "awareness": {
+      "level": "Medium",
+      "views": 2457
+    },
+    "reach": 2647,
+    "mentions": {
+      "total": 138,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        18,
+        0,
+        4,
+        0,
+        3,
+        0,
+        4,
+        3,
+        6,
+        1,
+        4,
+        4,
+        1,
+        4,
+        1,
+        1,
+        1,
+        6,
+        1,
+        2,
+        1,
+        2,
+        0,
+        2,
+        1,
+        1,
+        0,
+        3,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        2,
+        1,
+        0,
+        3,
+        0,
+        3,
+        2,
+        1,
+        1,
+        0,
+        3,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        6,
+        12,
+        9,
+        6,
+        2
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        58
+      ],
+      [
+        "Hindi Belt North India",
+        38
+      ],
+      [
+        "Andhra Telangana",
+        4
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          49
+        ],
+        [
+          "Tamil Nadu",
+          30
+        ],
+        [
+          "Hindi Belt North India",
+          19
+        ],
+        [
+          "Andhra Telangana",
+          2
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          96
+        ],
+        [
+          "Fan page",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          81
+        ],
+        [
+          "Fan amplified promo",
+          19
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          56
+        ],
+        [
+          "Music / songs",
+          17
+        ],
+        [
+          "Acting / cast performance",
+          12
+        ],
+        [
+          "Story",
+          9
+        ],
+        [
+          "Direction",
+          2
+        ],
+        [
+          "Climax",
+          1
+        ]
+      ]
+    }
+  }
+}

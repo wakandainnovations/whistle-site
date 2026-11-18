@@ -1,0 +1,240 @@
+{
+  "sample": true,
+  "title": "12th Fail",
+  "titleConfirmed": true,
+  "language": "Hindi",
+  "industry": "hindi",
+  "year": 2023,
+  "releaseDate": "2023-10-27",
+  "featured": false,
+  "poster": "https://image.tmdb.org/t/p/w500/eebUPRI4Z5e1Z7Hev4JZAwMIFkX.jpg",
+  "backdrop": "https://image.tmdb.org/t/p/w1280/6RV2o8PBCEyw9ylOWViV1CtULIF.jpg",
+  "trailer": {
+    "youtubeId": "KjbtuqENvVE",
+    "channel": "Zee Studios",
+    "kind": "trailer"
+  },
+  "director": "Vidhu Vinod Chopra",
+  "cast": [
+    "Vikrant Massey",
+    "Medha Shankr",
+    "Anant Joshi",
+    "Anshumaan Pushkar"
+  ],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": "2h 26m",
+  "tmdbId": 1163258,
+  "watch": [
+    "JioHotstar"
+  ],
+  "watchCheckedOn": "2026-11-16",
+  "report": {
+    "tracking": {
+      "start": "2023-09-27",
+      "end": "2023-11-26"
+    },
+    "sentiment": {
+      "positive": 20085,
+      "neutral": 2376,
+      "negative": 1512
+    },
+    "netSentiment": 13.28,
+    "awareness": {
+      "level": "Medium",
+      "views": 49100000
+    },
+    "reach": 54500,
+    "mentions": {
+      "total": 16997,
+      "daily": [
+        108,
+        101,
+        120,
+        118,
+        121,
+        105,
+        130,
+        239,
+        365,
+        533,
+        342,
+        228,
+        154,
+        111,
+        129,
+        127,
+        140,
+        166,
+        146,
+        185,
+        170,
+        181,
+        196,
+        267,
+        226,
+        269,
+        327,
+        353,
+        429,
+        391,
+        959,
+        794,
+        692,
+        624,
+        629,
+        611,
+        564,
+        568,
+        488,
+        498,
+        470,
+        456,
+        442,
+        383,
+        348,
+        253,
+        247,
+        190,
+        159,
+        162,
+        150,
+        123,
+        111,
+        105,
+        83,
+        82,
+        86,
+        66,
+        70,
+        58,
+        49
+      ]
+    },
+    "regions": [
+      [
+        "Hindi Belt North India",
+        45
+      ],
+      [
+        "Maharashtra",
+        21
+      ],
+      [
+        "International",
+        15
+      ],
+      [
+        "South India",
+        11
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Hindi Belt North India",
+          33
+        ],
+        [
+          "Unknown",
+          27
+        ],
+        [
+          "Maharashtra",
+          14
+        ],
+        [
+          "International",
+          10
+        ],
+        [
+          "South India",
+          9
+        ],
+        [
+          "Gujarat",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          51
+        ],
+        [
+          "Media press",
+          17
+        ],
+        [
+          "Fan page",
+          14
+        ],
+        [
+          "Verified celebrity",
+          11
+        ],
+        [
+          "Official studio",
+          4
+        ],
+        [
+          "Bot spam",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          43
+        ],
+        [
+          "Fan amplified promo",
+          23
+        ],
+        [
+          "News press coverage",
+          14
+        ],
+        [
+          "Official promo",
+          10
+        ],
+        [
+          "Trade box office update",
+          7
+        ],
+        [
+          "Ticket merch",
+          3
+        ]
+      ],
+      "topics": [
+        [
+          "Cast performance",
+          31
+        ],
+        [
+          "Music",
+          18
+        ],
+        [
+          "Direction technical craft",
+          15
+        ],
+        [
+          "Box office commercial",
+          13
+        ],
+        [
+          "Story",
+          12
+        ],
+        [
+          "Official promo",
+          7
+        ]
+      ]
+    }
+  }
+}

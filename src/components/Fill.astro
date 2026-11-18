@@ -1,0 +1,8 @@
+---
+// A legal detail from SITE.legal, or a visible placeholder when it hasn't been filled in yet.
+interface Props { value?: string; label: string; email?: boolean }
+const { value, label, email = false } = Astro.props;
+---
+{value
+  ? (email ? <a href={`mailto:${value}`}>{value}</a> : <>{value}</>)
+  : <span class="fill">[{label}]</span>}

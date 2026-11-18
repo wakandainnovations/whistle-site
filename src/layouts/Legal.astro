@@ -1,0 +1,61 @@
+---
+// Shared layout for /privacy and /terms: a readable column with a sticky table of contents.
+import Layout from './Layout.astro';
+import { SITE } from '../site.config';
+import { formatDate } from '../lib/score';
+
+interface Props { title: string; description: string; sections: { id: string; title: string }[] }
+const { title, description, sections } = Astro.props;
+const L = SITE.legal;
+---
+<Layout title={title} description={description}>
+  <main class="legal-page">
+    <section class="wrap page-head legal-head">
+      <span class="eyebrow">Legal</span>
+      <h1>{title}</h1>
+      <p class="legal-meta">Last updated {formatDate(L.updated, { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+      {L.draft && <p class="legal-draft">Draft for the preview site. To be reviewed by a lawyer before launch.</p>}
+    </section>
+    <div class="wrap legal-grid">
+      <nav class="legal-toc" aria-label="On this page">
+        <span class="mono">On this page</span>
+        <ol>{sections.map((s) => <li><a href={`#${s.id}`}>{s.title}</a></li>)}</ol>
+        <a class="legal-other" href={title === 'Privacy Policy' ? '/terms' : '/privacy'}>{title === 'Privacy Policy' ? 'Terms of Use →' : 'Privacy Policy →'}</a>
+      </nav>
+      <article class="legal-body"><slot /></article>
+    </div>
+  </main>
+</Layout>
+
+<style is:global>
+  .legal-page .legal-head { padding-bottom: 20px; }
+  .legal-page .legal-meta { font-family: var(--font-mono); font-size: 13px !important; color: var(--faint) !important; margin-top: 14px !important; }
+  .legal-page .legal-draft { display: inline-block; margin-top: 12px !important; font-size: 13.5px !important; color: var(--gold-text) !important; border: 1px dashed var(--gold-text); border-radius: 8px; padding: 6px 12px; }
+  .legal-page .legal-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; align-items: start; padding-bottom: 80px; }
+  .legal-page .legal-toc { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 12px; }
+  .legal-page .legal-toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; counter-reset: toc; }
+  .legal-page .legal-toc li { counter-increment: toc; }
+  .legal-page .legal-toc a { display: flex; gap: 10px; padding: 6px 10px; margin-inline: -10px; border-radius: 8px; text-decoration: none; color: var(--muted); font-size: 14px; }
+  .legal-page .legal-toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-mono); font-size: 11px; color: var(--faint); padding-top: 2px; }
+  .legal-page .legal-toc a:hover { background: var(--surface); color: var(--fg); }
+  .legal-page .legal-other { margin-top: 8px; color: var(--gold-text) !important; font-weight: 600; }
+  .legal-page .legal-body { max-width: 70ch; }
+  .legal-page .legal-body section { padding-block: 8px 26px; scroll-margin-top: 96px; }
+  .legal-page .legal-body section + section { border-top: 1px solid var(--line); padding-top: 26px; }
+  .legal-page .legal-body h2 { font-family: var(--font-display); font-weight: 800; font-size: 28px; text-transform: uppercase; line-height: 1.05; margin-bottom: 12px; }
+  .legal-page .legal-body h3 { font-size: 16px; font-weight: 700; margin: 18px 0 6px; }
+  .legal-page .legal-body p, .legal-page .legal-body li { color: var(--muted); font-size: 16px; line-height: 1.65; }
+  .legal-page .legal-body p + p { margin-top: 10px; }
+  .legal-page .legal-body ul { margin: 10px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .legal-page .legal-body b, .legal-page .legal-body strong { color: var(--fg); font-weight: 600; }
+  .legal-page .legal-body a { color: var(--gold-text); }
+  .legal-page .summary { padding: 20px 22px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); margin-bottom: 26px; }
+  .legal-page .summary h2 { font-size: 20px; margin-bottom: 8px; }
+  .legal-page .fill { color: var(--gold-text); background: color-mix(in srgb, var(--gold) 12%, transparent); border-radius: 4px; padding: 0 4px; font-family: var(--font-mono); font-size: .88em; }
+  @media (max-width: 860px) {
+    .legal-page .legal-grid { grid-template-columns: 1fr; gap: 24px; }
+    .legal-page .legal-toc ol { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+    .legal-page .legal-toc { position: static; padding: 16px 18px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+  }
+  @media (max-width: 520px) { .legal-page .legal-toc ol { grid-template-columns: 1fr; } }
+</style>

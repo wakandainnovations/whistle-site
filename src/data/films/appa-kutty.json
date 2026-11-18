@@ -1,0 +1,111 @@
+{
+  "sample": false,
+  "auraId": 9000030,
+  "auraName": "Appa Kutty",
+  "title": "Appa Kutty",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-20",
+  "featured": false,
+  "poster": "/posters/appa-kutty.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Mu. Maran",
+  "cast": [],
+  "genres": [
+    "Crime",
+    "Thriller",
+    "Drama"
+  ],
+  "runtime": "2h 14m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-17",
+  "buzz": {
+    "collected": 800,
+    "trackFrom": "2026-11-13",
+    "trackUntil": "2026-11-27",
+    "popularity": 1.6021
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-11-15",
+      "end": "2026-11-17"
+    },
+    "sentiment": {
+      "positive": 41,
+      "neutral": 49,
+      "negative": 5
+    },
+    "netSentiment": 8.2,
+    "awareness": {
+      "level": "High",
+      "views": 30367
+    },
+    "reach": 222,
+    "mentions": {
+      "total": 95,
+      "daily": [
+        0,
+        95,
+        0
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          53
+        ],
+        [
+          "Tamil Nadu",
+          47
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          59
+        ],
+        [
+          "Media press",
+          31
+        ],
+        [
+          "Verified celebrity influencer",
+          6
+        ],
+        [
+          "Fan page",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "News press coverage",
+          59
+        ],
+        [
+          "Fan amplified promo",
+          38
+        ],
+        [
+          "Organic opinion",
+          3
+        ]
+      ],
+      "topics": []
+    }
+  }
+}

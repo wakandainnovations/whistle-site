@@ -1,0 +1,37 @@
+{
+  "sample": false,
+  "auraId": 44,
+  "auraName": "Blast",
+  "title": "Blast",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-05-28",
+  "featured": false,
+  "poster": "/posters/blast.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Subash K. Raj",
+  "cast": [
+    "Arjun Sarja",
+    "Preity Mukundan",
+    "Abirami"
+  ],
+  "genres": [
+    "Action",
+    "Thriller"
+  ],
+  "runtime": "2h 23m",
+  "tmdbId": null,
+  "watch": [
+    "ZEE5",
+    "Netflix"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": null
+}

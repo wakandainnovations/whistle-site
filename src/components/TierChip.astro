@@ -1,0 +1,9 @@
+---
+// A band chip: whistle icon with the band's wave count, then its name.
+import Waves from './Waves.astro';
+import { tierFor } from '../lib/score';
+interface Props { score: number; size?: 'sm' | 'md' }
+const { score, size = 'md' } = Astro.props;
+const t = tierFor(score);
+---
+<span class:list={['tier', size]} data-waves={t.waves}><Waves waves={t.waves} size={size === 'sm' ? 15 : 19} />{t.name}</span>

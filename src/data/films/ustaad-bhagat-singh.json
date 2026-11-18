@@ -1,0 +1,131 @@
+{
+  "sample": false,
+  "auraId": 98,
+  "auraName": "Ustaad Bhagat Singh",
+  "title": "Ustaad Bhagat Singh",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-03-19",
+  "featured": false,
+  "poster": "/posters/ustaad-bhagat-singh.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Harish Shankar",
+  "cast": [
+    "Pawan Kalyan",
+    "Sriram Reddy Polasane",
+    "Raashi Khanna"
+  ],
+  "genres": [
+    "Action",
+    "Comedy",
+    "Drama"
+  ],
+  "runtime": "2h 34m",
+  "tmdbId": null,
+  "watch": [
+    "aha"
+  ],
+  "watchCheckedOn": null,
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-17",
+  "buzz": null,
+  "report": {
+    "tracking": {
+      "start": "2026-03-14",
+      "end": "2026-04-03"
+    },
+    "sentiment": {
+      "positive": 0,
+      "neutral": 0,
+      "negative": 11
+    },
+    "netSentiment": 0,
+    "awareness": {
+      "level": "Low",
+      "views": 0
+    },
+    "reach": 198,
+    "mentions": {
+      "total": 11,
+      "daily": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        3,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Andhra Telangana",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          86
+        ],
+        [
+          "Andhra Telangana",
+          14
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          100
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          86
+        ],
+        [
+          "Fan amplified promo",
+          14
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          64
+        ],
+        [
+          "Music / songs",
+          18
+        ],
+        [
+          "Acting / cast performance",
+          9
+        ],
+        [
+          "Screenplay",
+          9
+        ]
+      ]
+    }
+  }
+}
