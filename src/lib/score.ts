@@ -14,12 +14,52 @@ export const TIERS: Tier[] = [
 /** 62 -> "62% Whistle" */
 export const scoreLabel = (score: number) => `${score}% Whistle`;
 
-type Sentiment = { positive: number; neutral: number; negative: number };
+export type Sentiment = { positive: number; neutral: number; negative: number };
 
-/** The Whistle: the share of all posts that are positive (AuraService's positive sentiment %), rounded. */
+// ---------- the formula ----------
+//
+//              positive + m·μ
+//   Whistle = ───────────────────────── × 100
+//             positive + negative + m
+//
+// 1. Neutral posts are left out. On social media they are mostly news ("trailer at 6pm", "tickets
+//    booked"), not verdicts, so counting them as non-cheers marked films down for being talked about.
+//    The question the Whistle answers: of the people who took a side, how many cheered?
+// 2. Bayesian average. Every film starts from the catalog's typical cheer share μ, worth m posts. A
+//    film with 20 opinionated posts sits near μ; one with 2,000 is almost entirely its own ratio. So
+//    the more posts we read, the more the score is the film's own.
+
+/** Posts that took a side: the evidence behind a Whistle. */
+export const opinionated = (s: Sentiment) => s.positive + s.negative;
+
+/** m: how many opinionated posts the catalog prior is worth. Past this, a film's own posts outweigh it. */
+export const PRIOR_WEIGHT = 50;
+
+// μ: the typical film's cheer share, each real film counted once (so blockbusters don't set it), worked
+// out from the film files at build time. Sample films (invented numbers) and films with no opinionated
+// posts are left out. Falls back to 0.7 before there are any real films.
+const filmFiles = import.meta.glob<{ sample?: boolean; report?: { sentiment: Sentiment } | null }>(
+  '../data/films/*.json',
+  { eager: true, import: 'default' },
+);
+const ratios = Object.values(filmFiles)
+  .filter((f) => !f.sample && f.report && opinionated(f.report.sentiment) > 0)
+  .map((f) => f.report!.sentiment.positive / opinionated(f.report!.sentiment));
+export const PRIOR_MEAN = ratios.length ? ratios.reduce((a, b) => a + b, 0) / ratios.length : 0.7;
+
+/** The Whistle as a 0-1 share, unrounded. */
+export const whistleShare = (s: Sentiment, mean = PRIOR_MEAN) =>
+  (s.positive + PRIOR_WEIGHT * mean) / (opinionated(s) + PRIOR_WEIGHT);
+
+/** The Whistle, 0-100. See the formula above. */
 export function whistleScore(s: Sentiment): number {
-  const total = s.positive + s.neutral + s.negative;
-  return total === 0 ? 0 : Math.round((s.positive / total) * 100);
+  return Math.round(whistleShare(s) * 100);
+}
+
+/** ± points around the Whistle (95% interval): about ±11 from 20 opinionated posts, ±2 from 1,000. */
+export function whistleMargin(s: Sentiment): number {
+  const p = whistleShare(s);
+  return Math.round(196 * Math.sqrt((p * (1 - p)) / (opinionated(s) + PRIOR_WEIGHT)));
 }
 
 export function tierFor(score: number): Tier {

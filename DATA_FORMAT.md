@@ -6,7 +6,7 @@ Use lowercase words and hyphens, e.g. `kantara-chapter-1.json`.
 
 The build checks every file against the schema in `src/content.config.ts` and stops with a clear error if a field is missing or has the wrong type.
 
-The Whistle Score itself is **not** in the file. The site works it out from the sentiment counts (positive ÷ all posts, the same as AuraService's positive sentiment %), so the formula lives in one place (`src/lib/score.ts`).
+The Whistle Score itself is **not** in the file. The site works it out from the sentiment counts, so the formula lives in one place (`src/lib/score.ts`): positive ÷ (positive + negative), averaged toward the typical film's share by 50 posts' worth, so films with few posts sit near the middle. Neutral posts don't count toward the score.
 
 Files with an `auraId` are written by `npm run sync` (`scripts/sync-aura.mjs`) from AuraService; edit the curated fields only (title, aka, trailer, backdrop, tmdbId, featured, watch), the rest is overwritten on the next sync.
 

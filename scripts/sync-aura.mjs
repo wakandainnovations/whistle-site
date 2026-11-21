@@ -12,7 +12,8 @@
 //   AURA_BASE_URL=http://localhost:8080   (optional, this is the default)
 //
 // What comes from where (the same endpoints aura-radix's New UI panels use):
-//   Whistle %                    /dashboard/{id}/platform-mentions  positive ÷ all posts (= positiveRatio)
+//   Whistle %                    /dashboard/{id}/platform-mentions  positive / negative counts; the site
+//                                works out the score from them (src/lib/score.ts)
 //   "5x more cheers"             /dashboard/{id}/stats/avg          netSentimentScore (positive ÷ negative)
 //   Trailer and clip views       /dashboard/{id}/awareness
 //   Different people posted      /dashboard/{id}/reach-direct
@@ -367,7 +368,10 @@ async function syncFilm({ movie, slug, stats, release }) {
   };
 
   await writeFile(path.join(FILMS_DIR, `${slug}.json`), `${JSON.stringify(film, null, 2)}\n`);
-  return { slug, title: film.title, posts, score: posts ? Math.round((sentiment.positive / posts) * 100) : null, warnings, poster: !!poster };
+  // For the log only: cheers among posts that took a side, before the site's averaging (src/lib/score.ts)
+  const sided = sentiment.positive + sentiment.negative;
+  const score = posts ? (sided ? Math.round((sentiment.positive / sided) * 100) : 0) : null;
+  return { slug, title: film.title, posts, score, warnings, poster: !!poster };
 }
 
 // ---------- main ----------
@@ -413,7 +417,7 @@ async function main() {
 
   const results = await pool(targets, CONCURRENCY, async (t) => {
     const r = await syncFilm(t);
-    const score = r.score === null ? 'score coming soon' : `${r.score}% Whistle from ${r.posts} posts`;
+    const score = r.score === null ? 'score coming soon' : `${r.score}% cheers (raw) from ${r.posts} posts`;
     console.log(`  ${r.slug.padEnd(34)} ${score}${r.poster ? '' : ' · no poster'}`);
     r.warnings.forEach((w) => console.log(`      ! ${w}`));
     return r;

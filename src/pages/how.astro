@@ -8,7 +8,7 @@
 import Layout from '../layouts/Layout.astro';
 import { getFilms } from '../lib/films';
 import Waves from '../components/Waves.astro';
-import { TIERS, whistleScore, scoreLabel, compact } from '../lib/score';
+import { TIERS, whistleScore, scoreLabel, compact, PRIOR_MEAN, PRIOR_WEIGHT } from '../lib/score';
 
 const all = await getFilms();
 const scored = all.filter((f) => f.data.report);
@@ -43,7 +43,7 @@ const TRACKED = [
   ['Who and what', 'Fans, media, celebrities. Story, music, acting.', 'M21 12a9 9 0 1 1-4-7.5L21 3v6h-6'],
 ];
 ---
-<Layout title="How it's scored" description="The Whistle is the share of public posts that cheer a film, from the month before release to the month after.">
+<Layout title="How it's scored" description="The Whistle is the share of public posts taking a side that cheer a film, from the month before release to the month after.">
   <main class="how-page">
     <!-- 1. hero: the machine -->
     <section class="wrap machine-hero">
@@ -67,7 +67,7 @@ const TRACKED = [
           <div class="bucket neg"><span class="b-n num" data-b="neg">0</span><span class="b-l">complaints</span><span class="b-fill"><i data-f="neg"></i></span></div>
         </div>
         <div class="out">
-          <span class="out-eq mono">cheers ÷ all posts</span>
+          <span class="out-eq mono">cheers ÷ (cheers + complaints)</span>
           <span class="out-score num"><b id="m-score">–</b><small>%</small></span>
           <span class="out-unit"><Waves waves={2} size={18} />Whistle</span>
         </div>
@@ -80,7 +80,8 @@ const TRACKED = [
         <div class="try-copy">
           <span class="eyebrow">Try it</span>
           <h2>Move the crowd</h2>
-          <p>Drag the sliders. The Whistle is the share of all posts that cheer, so complaints and posts on the fence both pull it down.</p>
+          <p>Drag the sliders. The Whistle is the share of cheers among the posts that took a side. Posts on the fence are mostly news and questions, so they don't move it.</p>
+          <p>Every film starts at the typical film's {Math.round(PRIOR_MEAN * 100)}%, worth {PRIOR_WEIGHT} posts. A handful of posts barely moves it; thousands make the score the film's own. Try it with small numbers.</p>
           <p class="real">The real thing: <b>{featured.data.title}</b> had {compact(fr.sentiment.positive)} cheers, {compact(fr.sentiment.negative)} complaints and {compact(fr.sentiment.neutral)} on the fence, which is a <b>{scoreLabel(fScore)}</b>.</p>
           <button class="btn" type="button" id="try-real" data-pos={fr.sentiment.positive} data-neg={fr.sentiment.negative} data-neu={fr.sentiment.neutral}>Load {featured.data.title}'s numbers</button>
         </div>
@@ -179,7 +180,7 @@ const TRACKED = [
           </div>
           <div class="cmp us">
             <span class="cmp-badge wh"><Waves waves={2} size={24} /><b>{fScore}</b><small>%</small></span>
-            <h3>Whistle</h3><p>The share of public posts that cheer it, a month either side of release.</p><span class="cmp-who mono">Everyone posting</span>
+            <h3>Whistle</h3><p>Of the public posts that take a side, the share that cheer it, a month either side of release.</p><span class="cmp-who mono">Everyone posting</span>
           </div>
         </div>
         <p class="cmp-note">IMDb and Rotten Tomatoes figures above are illustrative.</p>
@@ -188,8 +189,8 @@ const TRACKED = [
   </main>
 </Layout>
 
-<script is:inline define:vars={{ POSTS, tiers: TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t.waves })) }}>
-  window.__HOW = { POSTS, tiers };
+<script is:inline define:vars={{ POSTS, tiers: TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t.waves })), mean: PRIOR_MEAN, weight: PRIOR_WEIGHT }}>
+  window.__HOW = { POSTS, tiers, mean, weight };
 </script>
 
 <style is:global>
@@ -345,7 +346,9 @@ const TRACKED = [
 </style>
 
 <script>
-  const { POSTS, tiers } = (window as any).__HOW as { POSTS: [string, string][]; tiers: { name: string; min: number; max: number }[] };
+  const { POSTS, tiers, mean, weight } = (window as any).__HOW as { POSTS: [string, string][]; tiers: { name: string; min: number; max: number }[]; mean: number; weight: number };
+  // Same formula as whistleScore in src/lib/score.ts
+  const whistle = (p: number, n: number) => Math.round(((p + weight * mean) / (p + n + weight)) * 100);
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const tierOf = (s: number) => tiers.find((t) => s >= t.min && s <= t.max) ?? tiers[tiers.length - 1];
   const fmt = (n: number) => n.toLocaleString('en-IN');
@@ -372,8 +375,8 @@ const TRACKED = [
         document.querySelector(`[data-b="${k}"]`)!.textContent = String(counts[k]);
         document.querySelector<HTMLElement>(`[data-f="${k}"]`)!.style.width = `${(counts[k] / total) * 100}%`;
       });
-      if (total) {
-        scoreEl.textContent = String(Math.round((counts.pos / total) * 100));
+      if (counts.pos + counts.neg) {
+        scoreEl.textContent = String(Math.round((counts.pos / (counts.pos + counts.neg)) * 100));
         scoreEl.classList.remove('bump'); void scoreEl.offsetWidth; scoreEl.classList.add('bump');
       }
     }, 4300);
@@ -383,7 +386,7 @@ const TRACKED = [
   let running = true;
   io.observe(document.getElementById('machine')!);
   if (!still) { dropPost(); setInterval(() => { if (running && !document.hidden) dropPost(); }, 1050); }
-  else { counts.pos = 7; counts.neg = 1; counts.neu = 2; scoreEl.textContent = '70'; }
+  else { counts.pos = 7; counts.neg = 1; counts.neu = 2; scoreEl.textContent = '88'; }
 
   // ---------- try it ----------
   const sPos = document.getElementById('s-pos') as HTMLInputElement;
@@ -396,15 +399,15 @@ const TRACKED = [
     document.getElementById('o-pos')!.textContent = fmt(p);
     document.getElementById('o-neg')!.textContent = fmt(n);
     document.getElementById('o-neu')!.textContent = fmt(u);
-    const s = p + n + u ? Math.round((p / (p + n + u)) * 100) : 0;
+    const s = whistle(p, n);
     tScore.textContent = String(s);
     const band = tierOf(s).name;
     if (band !== lastBand) {
       document.querySelectorAll<HTMLElement>('.tb').forEach((b) => (b.hidden = b.dataset.band !== band));
       lastBand = band;
     }
-    document.getElementById('tug-pos')!.style.width = `${p + n + u ? (p / (p + n + u)) * 100 : 50}%`;
-    document.getElementById('tug-neg')!.style.width = `${p + n + u ? ((n + u) / (p + n + u)) * 100 : 50}%`;
+    document.getElementById('tug-pos')!.style.width = `${s}%`;
+    document.getElementById('tug-neg')!.style.width = `${100 - s}%`;
   }
   [sPos, sNeg, sNeu].forEach((el) => el.addEventListener('input', calc));
   const real = document.getElementById('try-real') as HTMLButtonElement;
