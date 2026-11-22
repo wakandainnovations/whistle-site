@@ -100,9 +100,12 @@ export function mostTalked(films: Film[], n = 5, today = Date.now()): Film[] {
  * Enough talk to be on the site: a film the collector tracks (buzz set) needs more than
  * MIN_COLLECTED_SHOWN posts by its count (talkOf); one it doesn't track is judged on its sentiment-scored
  * posts instead (all of them, neutral included), more than MIN_POSTS_SHOWN. Applies to upcoming films too.
+ * Either way a film needs at least one sentiment-scored post: one whose collected posts were all judged
+ * irrelevant (e.g. Black Gold, whose name is mostly oil and pepper-futures talk) has no Whistle to show.
  */
 export function hasEnoughTalk(f: Film) {
-  return f.data.buzz ? talkOf(f) > MIN_COLLECTED_SHOWN : !!f.data.report && posts(f) > MIN_POSTS_SHOWN;
+  if (posts(f) === 0) return false;
+  return f.data.buzz ? talkOf(f) > MIN_COLLECTED_SHOWN : posts(f) > MIN_POSTS_SHOWN;
 }
 
 /** In the Whistle Race: a real AuraService film with a release date and enough talk (hasEnoughTalk). */
