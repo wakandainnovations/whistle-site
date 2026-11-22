@@ -1,7 +1,8 @@
 #!/bin/zsh
-# Installs (or reinstalls) a macOS launchd job that runs scripts/sync-scheduled.sh every hour, at
-# minute 15, so new AuraService movies and fresh numbers reach the site without anyone running
-# `npm run sync`. The copier and the auto-add each run hourly, so an hourly sync keeps up with them.
+# Installs (or reinstalls) a macOS launchd job that runs scripts/sync-scheduled.sh every 10 minutes
+# (and once at load), so new AuraService movies and fresh numbers reach the site without anyone running
+# `npm run sync`. WHISTLE_BUILD=1 makes each run also rebuild dist/, so `astro preview` (and anything
+# else serving the build) stays current, not just the dev server. A sync + build takes ~5 seconds.
 #
 #   scripts/install-sync-schedule.sh             # install and start
 #   scripts/install-sync-schedule.sh --uninstall # stop and remove
@@ -38,9 +39,10 @@ cat >"$PLIST" <<EOF
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key><string>$NODE_DIR:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>WHISTLE_BUILD</key><string>1</string>
   </dict>
-  <key>StartCalendarInterval</key>
-  <dict><key>Minute</key><integer>15</integer></dict>
+  <key>StartInterval</key><integer>600</integer>
+  <key>RunAtLoad</key><true/>
   <key>StandardOutPath</key><string>$HOME/Library/Logs/whistle-sync.launchd.log</string>
   <key>StandardErrorPath</key><string>$HOME/Library/Logs/whistle-sync.launchd.log</string>
 </dict>
@@ -48,5 +50,5 @@ cat >"$PLIST" <<EOF
 EOF
 
 launchctl bootstrap "$DOMAIN" "$PLIST"
-echo "Installed $LABEL: syncs every hour at :15. Log: ~/Library/Logs/whistle-sync.log"
+echo "Installed $LABEL: syncs and rebuilds every 10 minutes. Log: ~/Library/Logs/whistle-sync.log"
 [[ -f "$REPO/.env" ]] || echo "Note: $REPO/.env is missing. Add AURA_USERNAME/AURA_PASSWORD (an admin) or every run will fail."
