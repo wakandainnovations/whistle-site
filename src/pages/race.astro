@@ -73,7 +73,7 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
           ))}
         </div>
       </div>
-      <p class="wrap tl-hint">← Swipe the timeline to see every release →</p>
+      <p class="wrap tl-hint">← Scroll for earlier and later months →</p>
       <div class="wrap tl-legend">
         <span><i class="lg released"></i>In theatres: Whistle from the crowd</span>
         <span><i class="lg upcoming"></i>Coming soon: pre-release buzz</span>
@@ -133,9 +133,9 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
 
   /* ---------- timeline ---------- */
   .race-page .timeline-wrap { padding-bottom: 24px; }
-  .race-page .timeline-scroll { overflow-x: auto; scrollbar-width: none; padding-inline: max(16px, calc((100vw - 1240px) / 2)); }
+  .race-page .timeline-scroll { overflow-x: auto; scrollbar-width: none; padding-inline: 16px; }
   .race-page .timeline-scroll::-webkit-scrollbar { display: none; }
-  .race-page .timeline { position: relative; min-width: 1100px; height: var(--h, 420px); }
+  .race-page .timeline { position: relative; height: var(--h, 420px); }
   .race-page .past-shade { position: absolute; top: 0; bottom: 0; left: 0; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface) 55%, transparent)); border-radius: 18px 0 0 18px; }
   .race-page .tl-track { position: absolute; left: 0; right: 0; top: var(--mid, 50%); height: 2px; transform: translateY(-50%); background: var(--line); border-radius: 2px; }
   .race-page .tl-track .tick { position: absolute; top: 50%; width: 1px; height: 6px; background: var(--faint); transform: translate(-50%, -50%); opacity: .35; }
@@ -183,7 +183,8 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   .race-page .pop-chg.down { color: var(--neg); }
 
   .race-page .tl-hint { display: none; font-size: 12.5px; color: var(--faint); text-align: center; margin-top: 4px; }
-  @media (max-width: 1240px) { .race-page .tl-hint { display: block; } .race-page .timeline-scroll { -webkit-mask: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); mask: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); } }
+  .race-page .tl-hint { display: block; }
+  .race-page .timeline-scroll { -webkit-mask: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); mask: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); }
   .race-page .tl-legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; color: var(--muted); margin-top: 6px; }
   .race-page .tl-legend span { display: inline-flex; align-items: center; gap: 8px; }
   .race-page .tl-legend .lg-tip { color: var(--faint); }
@@ -308,10 +309,18 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   // The timeline covers every release plus today. Runs of more than MAX_GAP_DAYS with no release are
   // collapsed into a fixed-width break, so one film from years ago doesn't leave a mile of empty track.
   const PX_PER_DAY = 9, PAD_DAYS = 6, MAX_GAP_DAYS = 45, BREAK_PX = 90;
+  // It opens on last month, this month and next month (Oct-Dec in November), scaled to fill the screen;
+  // the rest is a scroll away. Those three months are always drawn in full, releases or not.
+  const now0 = new Date(today);
+  const VIEW_START = Date.UTC(now0.getUTCFullYear(), now0.getUTCMonth() - 1, 1);
+  const VIEW_END = Date.UTC(now0.getUTCFullYear(), now0.getUTCMonth() + 2, 1); // first day after the view
+  const MIN_PX_PER_DAY = 9; // on a phone the three months don't fit; keep posters readable and swipe instead
   type Seg = { start: number; end: number; px: number };
   const segs: Seg[] = [];
   {
-    const points = [...new Set([today, ...inWindow.map((f) => utc(f.release))])].sort((a, b) => a - b);
+    const viewDays: number[] = [VIEW_END];
+    for (let t = VIEW_START; t < VIEW_END; t += 7 * DAY) viewDays.push(t);
+    const points = [...new Set([today, ...viewDays, ...inWindow.map((f) => utc(f.release))])].sort((a, b) => a - b);
     let px = 0;
     for (const t of points) {
       const last = segs[segs.length - 1];
@@ -324,15 +333,21 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   const totalPx = lastSeg.px + ((lastSeg.end - lastSeg.start) / DAY) * PX_PER_DAY;
   const span = (ms: number) => { const m = Math.round(ms / (30.4 * DAY)); return m >= 2 ? `${m} months` : `${Math.round(ms / (7 * DAY))} weeks`; };
 
+  const daysIn = (t: number) => { const d = new Date(t); return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate(); };
+  // position on the unscaled track (PX_PER_DAY per day, breaks BREAK_PX wide)
+  const x0 = (t: number) => {
+    const g = segs.find((s) => t <= s.end) ?? lastSeg;
+    return g.px + ((t - g.start) / DAY) * PX_PER_DAY;
+  };
+  const sc = document.getElementById('tl-scroll')!;
+  const viewW = () => sc.clientWidth - 32; // minus the scroller's 16px side padding
+
   function layout() {
-    // at least as wide as the screen; wider (and scrollable) when there are many releases
-    const W = Math.max(tl.parentElement!.clientWidth - 32, 1100, totalPx);
+    // scale so the three-month view fills the screen; the whole track is then wider and scrolls
+    const k = Math.max(viewW() / (x0(VIEW_END) - x0(VIEW_START)), MIN_PX_PER_DAY / PX_PER_DAY);
+    const W = Math.max(viewW(), totalPx * k);
     tl.style.width = `${W}px`;
-    const k = W / totalPx;
-    const x = (t: number) => {
-      const g = segs.find((s) => t <= s.end) ?? lastSeg;
-      return (g.px + ((t - g.start) / DAY) * PX_PER_DAY) * k;
-    };
+    const x = (t: number) => x0(t) * k;
 
     // a faint tick every day, a label every Monday, the month names, and a break between far-apart runs
     track.replaceChildren();
@@ -345,12 +360,16 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
         tick.style.left = `${x(t)}px`;
         if (isWeek) { const b = document.createElement('b'); b.textContent = fmt(t, { month: 'short', day: 'numeric' }); tick.append(b); }
         track.append(tick);
-        if (d.getUTCDate() === 1 || t === g.start) {
+        // a run's first day gets a month label too, unless a new month starts within 12 days (labels
+        // would overlap); then that month's label carries the year instead
+        const startLabel = t === g.start && new Date(g.start).getUTCDate() < daysIn(g.start) - 12;
+        const soonAfterStart = t - g.start <= 12 * DAY && !(g.start === t) && new Date(g.start).getUTCDate() >= daysIn(g.start) - 12;
+        if (d.getUTCDate() === 1 || startLabel) {
           const m = document.createElement('span');
           m.className = 'month';
-          const withYear = d.getUTCMonth() === 0 || t === g.start;
+          const withYear = d.getUTCMonth() === 0 || startLabel || soonAfterStart;
           m.textContent = fmt(t, withYear ? { month: 'long', year: 'numeric' } : { month: 'long' });
-          m.style.left = `${x(t) + (t === g.start ? 70 : 50)}px`;
+          m.style.left = `${x(t) + (startLabel ? 70 : 50)}px`;
           track.append(m);
         }
       }
@@ -413,13 +432,18 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
       stem.style.transform = `translateX(-50%) rotate(${(Math.atan2(-dx, dy) * 180) / Math.PI}deg)`;
       pin.querySelector('[data-when]')!.textContent = when(f);
     }
-    return x(today);
+    return x;
   }
-  const todayX = layout();
-  addEventListener('resize', layout);
-  // open with today in the middle of the view
-  const sc = document.getElementById('tl-scroll')!;
-  sc.scrollLeft = Math.max(0, todayX - sc.clientWidth / 2);
+  // open on the three-month view; if it doesn't fit (phones), centre today instead
+  function openView() {
+    const x = layout();
+    const fits = x(VIEW_END) - x(VIEW_START) <= viewW() + 1;
+    sc.scrollLeft = Math.max(0, fits ? x(VIEW_START) : x(today) - viewW() / 2);
+  }
+  openView();
+  // re-open the view only when the width changes: phones fire resize while scrolling (address bar)
+  let lastW = sc.clientWidth;
+  addEventListener('resize', () => { if (sc.clientWidth !== lastW) { lastW = sc.clientWidth; openView(); } });
 
   // ---------- leaderboard ----------
   const lb = document.getElementById('lb')!;
