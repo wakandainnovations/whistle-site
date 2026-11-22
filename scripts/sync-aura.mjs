@@ -50,6 +50,22 @@ const only = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
 
 const slugify = (name) =>
   name.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+// A movie's page address. A name with no Latin letters or digits (e.g. one in Malayalam script) slugifies
+// to "", which would write a hidden src/data/films/.json that the site never loads, so it gets
+// film-<entity id> instead. Give it an English name in AuraService for a readable address.
+const movieSlug = (movie) => slugify(movie.name ?? '') || `film-${movie.id}`;
+
+// What a poster file really is, from its first bytes. AuraService has served non-images (a macOS
+// .DS_Store) from the image endpoint, so the content-type header alone isn't trusted.
+function imageExt(buf) {
+  const b = (i) => buf[i], str = (i, n) => buf.subarray(i, i + n).toString('latin1');
+  if (b(0) === 0xff && b(1) === 0xd8 && b(2) === 0xff) return 'jpg';
+  if (str(1, 3) === 'PNG') return 'png';
+  if (str(0, 4) === 'GIF8') return 'gif';
+  if (str(0, 4) === 'RIFF' && str(8, 4) === 'WEBP') return 'webp';
+  if (str(4, 4) === 'ftyp' && /^avi[fs]$/.test(str(8, 4))) return 'avif';
+  return null;
+}
 
 const isoDay = (d) => d.toISOString().slice(0, 10);
 const addDays = (iso, n) => { const d = new Date(`${iso}T00:00:00Z`); d.setUTCDate(d.getUTCDate() + n); return isoDay(d); };
@@ -255,12 +271,16 @@ const authorTypes = (b) =>
 async function savePoster(id, slug, warnings) {
   try {
     const res = await request(`/entities/movie/${id}/image`, { raw: true });
-    const type = res.headers.get('content-type') ?? 'image/jpeg';
-    const ext = { 'image/png': 'png', 'image/avif': 'avif', 'image/webp': 'webp', 'image/gif': 'gif' }[type] ?? 'jpg';
+    const buf = Buffer.from(await res.arrayBuffer());
+    const ext = imageExt(buf);
+    if (!ext) {
+      warnings.push(`poster: AuraService returned something that isn't an image (${res.headers.get('content-type') ?? 'no type'}, ${buf.length} bytes); upload a new one`);
+      return null;
+    }
     const file = `${slug}.${ext}`;
     // drop an older copy saved with a different extension
     for (const f of await readdir(POSTERS_DIR)) if (f.startsWith(`${slug}.`) && f !== file) await rm(path.join(POSTERS_DIR, f));
-    await writeFile(path.join(POSTERS_DIR, file), Buffer.from(await res.arrayBuffer()));
+    await writeFile(path.join(POSTERS_DIR, file), buf);
     return `/posters/${file}`;
   } catch (e) {
     if (e.status !== 404) warnings.push(`poster: ${e.message}`);
@@ -386,7 +406,7 @@ async function main() {
   // Keep the copy with the most mentions.
   const withStats = await pool(movies, 8, async (movie) => ({
     movie,
-    slug: slugify(movie.name),
+    slug: movieSlug(movie),
     stats: await request(`/dashboard/${movie.id}/stats/avg`).catch(() => null),
   }));
   const bySlug = new Map();
