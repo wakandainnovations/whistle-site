@@ -113,7 +113,7 @@ const whyLine = (f: Film) => {
                   <span class="float-text">
                     <TierChip score={s} size="sm" />
                     <span class="float-title">{d.title}</span>
-                    <span class="float-sub num">{compact(r.sentiment.positive + r.sentiment.neutral + r.sentiment.negative)} posts · {d.language} · {runLabel(film) || d.year}{d.sample && <span class="float-sample">Sample</span>}</span>
+                    <span class="float-sub num">{compact(talkOf(film))} posts · {d.language} · {runLabel(film) || d.year}{d.sample && <span class="float-sample">Sample</span>}</span>
                     <span class="meter" aria-hidden="true"><i style={`--w:${s}%`}></i></span>
                   </span>
                 </a>

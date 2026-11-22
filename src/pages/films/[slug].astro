@@ -17,6 +17,7 @@ import LiveCounter from '../../components/LiveCounter.astro';
 import Locked from '../../components/Locked.astro';
 import { plain, plainDriver, inTen, buzzWord, cheersPerBoo } from '../../lib/plain';
 import { TIERS, whistleScore, tierFor, scoreLabel, compact, formatDate, daysBetween } from '../../lib/score';
+import { talkOf } from '../../lib/now';
 
 export async function getStaticPaths() {
   const films = await getFilms();
@@ -46,7 +47,7 @@ const topTopic = r ? plainRows(r.audience.topics).find(([k]) => k !== 'The film 
 const topRegion = r ? plain(r.regions[0]?.[0] ?? '') : '';
 
 const description = r && score !== null && tier
-  ? `${f.title}: ${scoreLabel(score)} (${tier.name}), from ${compact(posts)} public posts.`
+  ? `${f.title}: ${scoreLabel(score)} (${tier.name}), from ${compact(talkOf(film))} public posts.`
   : `${f.title} (${f.language}, ${f.year}): trailer and Whistle Score, coming soon.`;
 
 // "If you liked the buzz on this": well-scored films sharing a genre, same language first
@@ -94,7 +95,7 @@ if (r && score !== null) {
               {f.runtime && <span class="num">{f.runtime}</span>}
               {f.genres.length > 0 && <span>{f.genres.join(', ')}</span>}
               {r && <span class="num">Tracked {formatDate(r.tracking.start)} – {formatDate(r.tracking.end, longDate)}</span>}
-              {r && <span class="num">{compact(posts)} posts read</span>}
+              {r && <span class="num">{compact(talkOf(film))} posts read</span>}
             </div>
             {(f.director || f.cast.length > 0) && (
               <dl class="credits">

@@ -181,6 +181,16 @@ async function pool(items, size, fn) {
 
 // ---------- shaping AuraService answers into the film file ----------
 
+// Posts the collector gathered for a film: its rows in x_posts, instagram_posts, reddit_posts and
+// youtube_comments (Tracked Releases' per-table counts), leaving out youtube_videos. Falls back to the
+// release's total when the per-table counts are missing.
+const POST_TABLES = ['x', 'instagram', 'reddit', 'youtubeComments'];
+function collectedPosts(release) {
+  const c = release.collected;
+  if (!c || typeof c !== 'object') return release.collectedTotal ?? 0;
+  return POST_TABLES.reduce((sum, k) => sum + (Number(c[k]) || 0), 0);
+}
+
 function sentimentCounts(platformMentions) {
   const s = { positive: 0, neutral: 0, negative: 0 };
   for (const counts of Object.values(platformMentions ?? {})) {
@@ -377,9 +387,11 @@ async function syncFilm({ movie, slug, stats, release }) {
     watchPlaceholder: !hasRealWatch && watch.length > 0,
     syncedOn: today,
     // What the collector has gathered for this film (Tracked Releases admin page): every post collected,
-    // scored for sentiment yet or not. Drives "Most talked about". null for films the collector doesn't track.
+    // scored for sentiment yet or not, summed over x_posts, instagram_posts, reddit_posts and
+    // youtube_comments (not youtube_videos). It is the post count the site shows. Drives "Most talked
+    // about". null for films the collector doesn't track.
     buzz: release ? {
-      collected: release.collectedTotal ?? 0,
+      collected: collectedPosts(release),
       trackFrom: release.trackFrom ?? null,
       trackUntil: release.trackUntil ?? null,
       popularity: release.popularity ?? null,

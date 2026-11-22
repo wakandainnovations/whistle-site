@@ -10,7 +10,6 @@ const { film } = Astro.props;
 const f = film.data;
 const r = f.report;
 const score = r ? whistleScore(r.sentiment) : null;
-const posts = r ? r.sentiment.positive + r.sentiment.neutral + r.sentiment.negative : 0;
 const searchText = `${f.title} ${f.aka.join(' ')} ${f.language} ${f.director ?? ''} ${f.cast.join(' ')} ${f.genres.join(' ')}`.toLowerCase();
 ---
 <article class="card" data-search={searchText} data-lang={f.language} data-score={score ?? -1} data-posts={talkOf(film)}
@@ -24,7 +23,7 @@ const searchText = `${f.title} ${f.aka.join(' ')} ${f.language} ${f.director ?? 
       <div class="m">
         {score !== null ? `${tierFor(score).name} · ${f.language} · ${f.year}` : `${f.language} · ${f.year} · Score coming soon`}
       </div>
-      {r && <div class="m num">{compact(posts)} posts{f.sample && <span class="sample-tag">Sample</span>}</div>}
+      {r && <div class="m num">{compact(talkOf(film))} posts{f.sample && <span class="sample-tag">Sample</span>}</div>}
     </div>
   </a>
   <WatchChips watch={f.watch} tmdbId={f.tmdbId} title={f.title} />
