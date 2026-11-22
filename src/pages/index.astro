@@ -11,7 +11,7 @@ import Sparkline from '../components/Sparkline.astro';
 import { SITE, LANGUAGES } from '../site.config';
 import { TIERS, whistleScore, tierFor, scoreLabel, compact } from '../lib/score';
 import { plain } from '../lib/plain';
-import { nowShowing, runLabel, mostTalked, talkOf, inRace, scoreSolid } from '../lib/now';
+import { nowShowing, runLabel, mostTalked, talkOf, inRace, scoreSolid, daysToRelease } from '../lib/now';
 
 type Film = CollectionEntry<'films'>;
 const all = await getFilms();
@@ -36,9 +36,14 @@ const platformCounts = new Map<string, number>();
 picks.forEach((f) => f.data.watch.forEach((p) => platformCounts.set(p, (platformCounts.get(p) ?? 0) + 1)));
 const platforms = [...platformCounts.entries()].sort((a, b) => b[1] - a[1]).map(([p]) => p);
 
-// The Whistle Race teaser: AuraService films with enough talk (hasEnoughTalk) are in the race; the top three scored ones with a poster lead
+// The Whistle Race teaser: AuraService films with enough talk (hasEnoughTalk) are in the race. It ranks
+// the ones running now, released in the last RUNNING_DAYS days (today is day 1), by Whistle; the top
+// three with a poster show. The site rebuilds with every sync, so "today" stays current.
+const RUNNING_DAYS = 7;
 const raceFilms = all.filter(inRace);
-const raceTop = topScores.filter((f) => inRace(f) && f.data.poster).slice(0, 3);
+const isRunning = (f: Film) => { const d = daysToRelease(f); return d !== null && d <= 0 && d > -RUNNING_DAYS; };
+const running = topScores.filter((f) => inRace(f) && isRunning(f));
+const raceTop = running.filter((f) => f.data.poster).slice(0, 3);
 
 // In theatres or out within a week, most posts first (src/lib/now.ts). Real films only.
 const talked = mostTalked(all, 5);
@@ -124,16 +129,18 @@ const whyLine = (f: Film) => {
       </div>
     </section>
 
-    {raceTop.length > 0 && (
+    {raceFilms.length > 0 && (
       <section class="wrap race-teaser">
         <a class="rt-card" href="/race">
           <span class="rt-live"><i></i>Updated hourly</span>
-          <span class="rt-copy"><b>The Whistle Race</b><span>{raceFilms.length} films we track, pinned to their release dates and ranked as the crowd posts.</span></span>
-          <span class="rt-top">
+          <span class="rt-copy"><b>The Whistle Race</b><span>{running.length > 0
+            ? `${running.length} ${running.length === 1 ? 'film' : 'films'} released in the last ${RUNNING_DAYS} days, ranked by Whistle.`
+            : `${raceFilms.length} films we track, pinned to their release dates. Nothing released in the last ${RUNNING_DAYS} days.`}</span></span>
+          {raceTop.length > 0 && <span class="rt-top">
             {raceTop.map((f, i) => (
               <span class="rt-f"><span class="rt-rank num">{i + 1}</span><img src={f.data.poster!.replace('/w500/', '/w185/')} alt="" loading="lazy" /><span class="rt-t">{f.data.title}</span><span class="rt-s num">{scoreOf(f)}%</span></span>
             ))}
-          </span>
+          </span>}
           <span class="rt-go">Watch the race →</span>
         </a>
       </section>
