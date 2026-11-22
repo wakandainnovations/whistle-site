@@ -1,6 +1,7 @@
 ---
 // /films: every film, with search and filters. Filters can be preset from the URL,
-// e.g. /films?lang=Tamil, /films?platform=Netflix, /films?band=Full%20Whistle, /films?sort=posts, /films?q=madhavan
+// e.g. /films?lang=Tamil, /films?platform=Netflix, /films?band=Full%20Whistle, /films?sort=score, /films?q=madhavan
+// Sorted newest first unless the URL says otherwise.
 import Layout from '../../layouts/Layout.astro';
 import { getFilms } from '../../lib/films';
 import FilmCard from '../../components/FilmCard.astro';
@@ -11,7 +12,9 @@ import { scoreSolid } from '../../lib/now';
 
 const all = await getFilms();
 const scoreOf = (f: (typeof all)[number]) => (f.data.report ? whistleScore(f.data.report.sentiment) : -1);
-const ordered = [...all].sort((a, b) => scoreOf(b) - scoreOf(a));
+// newest first, the default sort, so the page reads right before the script runs
+const released = (f: (typeof all)[number]) => f.data.releaseDate ?? `${f.data.year}-01-01`; // as FilmCard's data-release
+const ordered = [...all].sort((a, b) => released(b).localeCompare(released(a)));
 const platforms = [...new Set(all.flatMap((f) => f.data.watch))].sort();
 // A band only holds films whose Whistle % rests on more than MIN_POSTS_SHOWN scored posts (scoreSolid),
 // so a 100% from 3 posts doesn't land in Full Whistle. Keep in step with the client filter below.
@@ -55,7 +58,7 @@ const bandCount = (t: (typeof TIERS)[number]) =>
             <select id="f-sort">
               <option value="score">Highest Whistle</option>
               <option value="posts">Most talked about</option>
-              <option value="release">Newest</option>
+              <option value="release" selected>Newest</option>
             </select>
           </label>
           <span class="count num" id="count" aria-live="polite"></span>
@@ -130,7 +133,7 @@ const bandCount = (t: (typeof TIERS)[number]) =>
     if (lang !== 'all') next.set('lang', lang);
     if (band !== 'all') next.set('band', band);
     if (platform.value !== 'all') next.set('platform', platform.value);
-    if (sort.value !== 'score') next.set('sort', sort.value);
+    if (sort.value !== 'release') next.set('sort', sort.value);
     if (term) next.set('q', q.value.trim());
     const qs = next.toString();
     history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
