@@ -1,7 +1,7 @@
 // What the homepage leads with: films in theatres now or releasing soon, ranked by traction and by how
 // positive the talk is. Used by the homepage carousel and the "Featured" spot in the Films menu.
 import type { CollectionEntry } from 'astro:content';
-import { whistleScore, opinionated } from './score';
+import { whistleScore } from './score';
 
 type Film = CollectionEntry<'films'>;
 
@@ -11,7 +11,7 @@ export const COMING_SOON_DAYS = 30; // and as "coming soon" this long before it
 // A film the collector tracks is on the site (and in the Whistle Race) with more collected posts than this
 // (talkOf). See hasEnoughTalk.
 export const MIN_COLLECTED_SHOWN = 1000;
-// A Whistle % is promoted or banded only with more opinionated posts than this (scoreSolid). It is
+// A Whistle % is promoted or banded only with more sentiment-scored posts than this (scoreSolid). It is
 // also the bar for being on the site at all for a film the collector doesn't track (no buzz).
 export const MIN_POSTS_SHOWN = 100;
 export const TALKED_SOON_DAYS = 7; // "Most talked about" also takes films releasing within a week
@@ -112,10 +112,9 @@ export function inRace(f: Film) {
 
 /**
  * A film's Whistle % can be promoted (carousel, "Top scores" ticker, Picks, the Race teaser's leaders)
- * only when more than MIN_POSTS_SHOWN opinionated (positive + negative) posts are behind it: the posts
- * the Whistle is worked out from. A film with plenty of posts but few that took a side stays on the
- * site, just not up front.
+ * only when more than MIN_POSTS_SHOWN sentiment-scored posts are behind it. A film with plenty of
+ * collected posts but few scored ones (100% from 3 posts) stays on the site, just not up front.
  */
 export function scoreSolid(f: Film) {
-  return !!f.data.report && opinionated(f.data.report.sentiment) > MIN_POSTS_SHOWN;
+  return !!f.data.report && posts(f) > MIN_POSTS_SHOWN;
 }
