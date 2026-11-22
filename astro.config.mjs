@@ -6,6 +6,9 @@ export default defineConfig({
   // Replace with the real domain before launch. Badge links and share links are built from it.
   site: 'https://whistle.example',
   trailingSlash: 'ignore',
+  // Hide Astro's dev toolbar (Menu / Inspect / Audit / Settings). The dev server is
+  // exposed publicly via the Cloudflare Tunnel, so visitors would otherwise see it.
+  devToolbar: { enabled: false },
   server: {
     // Bind to all interfaces (IPv4 + IPv6) so localhost/127.0.0.1 both work —
     // cloudflared's `http://localhost:PORT` ingress resolves to either.
