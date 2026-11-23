@@ -11,12 +11,28 @@ import { PLATFORMS } from '../lib/watch';
 
 interface Props {
   title?: string;
+  // Use exactly this <title> instead of "<title> · Whistle" (film pages build their own, with the brand at the end)
+  fullTitle?: string;
   description?: string;
   image?: string;
+  // Keep the page out of search results (films with sample data)
+  noindex?: boolean;
+  // schema.org JSON-LD for this page, added after the site-wide WebSite/Organization block
+  jsonLd?: Record<string, unknown>[];
+  ogType?: string;
 }
-const { title, description = SITE.description, image } = Astro.props;
-const pageTitle = title ? `${title} · ${SITE.brand}` : `${SITE.brand} Score`;
+const { title, fullTitle, description = SITE.description, image, noindex = false, jsonLd = [], ogType = 'website' } = Astro.props;
+const pageTitle = fullTitle ?? (title ? `${title} · ${SITE.brand}` : `${SITE.brand} Score: Tamil, Telugu, Malayalam & Kannada Movie Audience Reviews`);
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const siteLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE.brand, description: SITE.description, inLanguage: 'en-IN' },
+    { '@type': 'Organization', '@id': new URL('/#org', Astro.site).href, name: SITE.brand, url: new URL('/', Astro.site).href, logo: new URL('/favicon.svg', Astro.site).href, parentOrganization: { '@type': 'Organization', name: SITE.company } },
+  ],
+};
+// JSON inside <script> must not be able to close the tag
+const ld = (o: unknown) => JSON.stringify(o).replace(/</g, '\\u003c');
 const home = import.meta.env.BASE_URL;
 
 // Data for the header menus
@@ -40,14 +56,23 @@ const here = Astro.url.pathname.replace(/\/$/, '');
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta property="og:type" content="website" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE.brand} />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={new URL(image, Astro.site)} />}
+    <script type="application/ld+json" set:html={ld(siteLd)} />
+    {jsonLd.map((o) => <script type="application/ld+json" set:html={ld(o)} />)}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />

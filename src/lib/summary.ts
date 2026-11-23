@@ -1,5 +1,5 @@
-// The plain-English summary at the top of a film page: which way the crowd leaned, then what people
-// actually said. The "what they said" part is written by aura-llm from a sample of the film's posts
+// The plain-English summary at the top of a film page: what people actually said. It is written by
+// aura-llm from a sample of the film's posts
 // (scripts/summarise-crowd.mjs -> src/data/crowd-summaries.json); without one, it falls back to the
 // per-aspect moods, leading with whichever side the crowd was on.
 import type { FilmReport } from '../content.config';
@@ -35,13 +35,9 @@ function fromAspects(r: FilmReport, negative: boolean, upcoming: boolean): strin
   return gripe ? [`${gripe.charAt(0).toUpperCase()}${gripe.slice(1)}.`] : [];
 }
 
+// No opening "The crowd leaned positive, and most of the talk came from <region>." sentence: the score box
+// already shows the leaning, and the summary should only say what people said.
 export function filmSummary(slug: string, r: FilmReport, score: number, upcoming: boolean): string {
-  const leaning = upcoming
-    ? (score >= 60 ? 'is excited so far' : score >= 40 ? 'is split so far' : 'is cold so far')
-    : score >= 60 ? 'leaned positive' : score >= 40 ? 'was split' : 'leaned negative';
-  const region = r.regions[0] ? `, and most of the talk came from ${plain(r.regions[0][0])}` : '';
-  const out = [`The crowd ${leaning}${region}.`];
   const said = crowd[slug]?.text;
-  out.push(...(said ? [said] : fromAspects(r, score < 40, upcoming)));
-  return out.join(' ');
+  return (said ? [said] : fromAspects(r, score < 40, upcoming)).join(' ');
 }

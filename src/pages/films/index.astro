@@ -21,7 +21,7 @@ const platforms = [...new Set(all.flatMap((f) => f.data.watch))].sort();
 const bandCount = (t: (typeof TIERS)[number]) =>
   all.filter((f) => scoreSolid(f) && scoreOf(f) >= t.min && scoreOf(f) <= t.max).length;
 ---
-<Layout title="Films" description="Every film on Whistle, ranked by how loudly the crowd whistled.">
+<Layout fullTitle="Tamil, Telugu, Malayalam & Kannada Movie Reviews & Audience Ratings | Whistle" description="Audience reviews and ratings for the latest Tamil, Telugu, Malayalam and Kannada movies, measured from thousands of public posts. Ranked by how loudly the crowd whistled.">
   <main>
     <section class="wrap page-head">
       <span class="eyebrow">Films</span>

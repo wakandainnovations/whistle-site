@@ -47,9 +47,82 @@ const posShare = r && posts ? Math.round((r.sentiment.positive / posts) * 100) :
 const topTopic = r ? plainRows(r.audience.topics).find(([k]) => k !== 'The film overall' && k !== 'Promos and posters')?.[0] : undefined;
 const topRegion = r ? plain(r.regions[0]?.[0] ?? '') : '';
 
-const description = r && score !== null && tier
-  ? `${f.title}: ${scoreLabel(score)} (${tier.name}), from ${compact(talkOf(film))} public posts.`
-  : `${f.title} (${f.language}, ${f.year}): trailer and Whistle Score, coming soon.`;
+// ---------- search: title, description, structured data ----------
+// Written for what people type: "<film> review", "<film> rating", "<film> public talk"
+const site = Astro.site!;
+const pageUrl = new URL(`/films/${film.id}/`, site).href;
+const lead = f.cast[0] ? `${f.cast[0]}'s ` : 'the ';
+const kind = f.genres.length ? `${f.genres.slice(0, 2).join(' ').toLowerCase()} film` : 'film';
+const streaming = f.watch.length && !f.watchPlaceholder ? ` Streaming on ${f.watch.slice(0, 2).join(' and ')}.` : '';
+const fullTitle = score !== null
+  ? upcoming
+    ? `${f.title} Pre-release Buzz & Early Audience Reactions | Whistle`
+    : `${f.title} Review: ${score}% Audience Rating${f.title.length <= 18 ? " & Public Talk" : ""} | Whistle`
+  : `${f.title} (${f.language}, ${f.year}) Trailer, Release Date & Buzz | Whistle`;
+const h1Sub = score !== null ? (upcoming ? 'Pre-release buzz' : 'Review & audience rating') : 'Trailer & audience buzz';
+const description = r && score !== null
+  ? upcoming
+    ? `${f.title} (${f.language}, ${f.year}) pre-release buzz: ${score}% of ${compact(posts)} posts so far are positive about ${lead}${kind}. See what fans are saying before release.${streaming}`
+    : `${f.title} (${f.language}, ${f.year}) audience review: ${score}% of ${compact(posts)} public posts were positive about ${lead}${kind}. What fans loved, what they didn't, and whether it's worth watching.${streaming}`
+  : `${f.title} (${f.language}, ${f.year}): trailer, release date, cast and audience buzz. Audience rating coming soon.${streaming}`;
+
+// "2h 36m" -> "PT2H36M"
+const isoRuntime = f.runtime ? (() => { const m = f.runtime!.match(/(?:(\d+)\s*h)?\s*(?:(\d+)\s*m)?/i); return m && (m[1] || m[2]) ? `PT${m[1] ? `${m[1]}H` : ''}${m[2] ? `${m[2]}M` : ''}` : undefined; })() : undefined;
+const LANG_CODE: Record<string, string> = { Tamil: 'ta', Telugu: 'te', Malayalam: 'ml', Kannada: 'kn', Hindi: 'hi', English: 'en' };
+const absolute = (u: string | null) => (u ? new URL(u, site).href : undefined);
+const shareImage = f.backdrop ?? (f.poster && !f.poster.endsWith('.avif') ? f.poster : null);
+// No aggregateRating: Google only allows it for ratings people gave on this site, and the Whistle is
+// read from social posts. Marking it up as stars risks a manual action.
+const movieLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Movie',
+  '@id': `${pageUrl}#movie`,
+  name: f.title,
+  ...(f.aka.length && { alternateName: f.aka }),
+  url: pageUrl,
+  description,
+  ...(absolute(f.poster) && { image: absolute(f.poster) }),
+  ...(f.releaseDate ? { datePublished: f.releaseDate } : { dateCreated: String(f.year) }),
+  inLanguage: LANG_CODE[f.language] ?? f.language,
+  ...(f.industry !== 'hollywood' && { countryOfOrigin: { '@type': 'Country', name: 'India' } }),
+  ...(f.genres.length && { genre: f.genres }),
+  ...(isoRuntime && { duration: isoRuntime }),
+  ...(f.director && { director: { '@type': 'Person', name: f.director } }),
+  ...(f.cast.length && { actor: f.cast.map((name) => ({ '@type': 'Person', name })) }),
+  ...(f.tmdbId && { sameAs: [`https://www.themoviedb.org/movie/${f.tmdbId}`] }),
+  ...(f.trailer && {
+    trailer: {
+      '@type': 'VideoObject',
+      name: `${f.title} official ${f.trailer.kind}`,
+      description: `Official ${f.trailer.kind} for ${f.title} (${f.language}, ${f.year}), from ${f.trailer.channel}.`,
+      thumbnailUrl: `https://i.ytimg.com/vi/${f.trailer.youtubeId}/hqdefault.jpg`,
+      embedUrl: `https://www.youtube.com/embed/${f.trailer.youtubeId}`,
+      contentUrl: `https://www.youtube.com/watch?v=${f.trailer.youtubeId}`,
+    },
+  }),
+};
+const webPageLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': pageUrl,
+  url: pageUrl,
+  name: fullTitle,
+  description,
+  inLanguage: 'en-IN',
+  isPartOf: { '@id': new URL('/#website', site).href },
+  about: { '@id': `${pageUrl}#movie` },
+  ...(f.syncedOn && { dateModified: f.syncedOn }),
+};
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', site).href },
+    { '@type': 'ListItem', position: 2, name: 'Films', item: new URL('/films/', site).href },
+    { '@type': 'ListItem', position: 3, name: `${f.language} films`, item: new URL(`/films?lang=${encodeURIComponent(f.language)}`, site).href },
+    { '@type': 'ListItem', position: 4, name: f.title, item: pageUrl },
+  ],
+};
 
 // "If you liked the buzz on this": well-scored films sharing a genre, same language first
 const shared = (x: CollectionEntry<'films'>) => x.data.genres.filter((g) => f.genres.includes(g)).length;
@@ -65,7 +138,7 @@ const recommendation = score === null ? '' : upcoming ? (score >= 60 ? 'One to w
 
 const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) : '';
 ---
-<Layout title={f.title} description={description} image={score !== null ? `/badge/${film.id}.svg` : f.backdrop ?? undefined}>
+<Layout fullTitle={fullTitle} description={description} image={shareImage ?? undefined} ogType="video.movie" noindex={f.sample} jsonLd={[webPageLd, movieLd, breadcrumbLd]}>
   <main>
     <section class:list={['film-top', { 'has-backdrop': !!f.backdrop }]}>
       {f.backdrop && <div class="backdrop" style={`background-image:url('${f.backdrop}')`} aria-hidden="true"></div>}
@@ -76,7 +149,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
           <Poster language={f.language} year={f.year} title={f.title} poster={f.poster} label={f.titleConfirmed ? f.title : undefined} eager />
           <div style="min-width:0">
             <span class="eyebrow">Whistle report</span>
-            <h1>{f.title}</h1>
+            <h1>{f.title}<span class="h1-sub"> {h1Sub}</span></h1>
             {f.aka.length > 0 && <p class="aka">Also known as {f.aka[0]}</p>}
             <div class="facts">
               {f.sample && <span class="sample-chip">Sample data</span>}
@@ -93,7 +166,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
                 {f.cast.length > 0 && <div><dt>Starring</dt><dd>{f.cast.join(', ')}</dd></div>}
               </dl>
             )}
-            {verdict && <p class="verdict">{verdict} {recommendation && <b class="rec">{recommendation}</b>}</p>}
+            {(verdict || recommendation) && <p class="verdict">{verdict} {recommendation && <b class="rec">{recommendation}</b>}</p>}
             {f.watch.length > 0 && (
               <div class="where">
                 <WatchChips watch={f.watch} tmdbId={f.tmdbId} title={f.title} size="md" label />
@@ -149,7 +222,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
           <>
             <div class="section-head verdict-head">
               <span class="eyebrow">{upcoming ? 'Pre-release buzz' : "The crowd's verdict"}</span>
-              <h2>{upcoming ? 'What people are saying so far' : 'What people really thought'}</h2>
+              <h2>{upcoming ? `What people are saying about ${f.title} so far` : `${f.title} public talk: what people really thought`}</h2>
             </div>
 
             <div class="headline">
@@ -290,6 +363,8 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
   .where-note { font-size: 12px; color: var(--faint); }
   .similar { margin-top: 40px; }
   .aka { margin-top: 8px; font-size: 15px; color: var(--muted); }
+  /* "Review & audience rating" under the title: part of the h1 for search, styled like the eyebrow */
+  .h1-sub { display: block; margin-top: 10px; font-family: var(--font-mono); font-weight: 500; font-size: 13px; line-height: 1.3; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
   .empty { font-size: 14px; color: var(--faint); }
 
   /* plain-language report */
