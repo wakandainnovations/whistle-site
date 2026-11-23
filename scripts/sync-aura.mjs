@@ -267,6 +267,20 @@ function topics(aspectBreakdown) {
     .filter(([, v]) => v > 0);
 }
 
+// How people felt about each aspect, so the page can say what they liked or complained about.
+// `other` is the classifier's catch-all, so it never counts as an aspect here.
+function aspectMoods(aspectBreakdown) {
+  return (aspectBreakdown?.aspects ?? [])
+    .filter((a) => a.category && a.category !== 'other' && a.totalPosts > 0 && ['positive', 'neutral', 'negative'].includes(a.majoritySentiment))
+    .sort((a, b) => b.totalPosts - a.totalPosts)
+    .map((a) => ({
+      label: ASPECT_LABELS[a.category] ?? sentenceCase(a.category),
+      posts: a.totalPosts,
+      score: Math.round(a.averageSentimentScore ?? 0),
+      mood: a.majoritySentiment,
+    }));
+}
+
 const intents = (b) =>
   (b?.intents ?? []).filter((i) => i.contentIntent).sort((a, b) => b.sharePct - a.sharePct).slice(0, 6)
     .map((i) => [INTENT_LABELS[i.contentIntent] ?? sentenceCase(i.contentIntent), pct(i.sharePct)])
@@ -348,6 +362,7 @@ async function syncFilm({ movie, slug, stats, release }) {
       mentions: { total: tracking.daily.reduce((s, v) => s + v, 0), daily: tracking.daily },
       regions: top,
       audience: { where, who: authorTypes(authorB), postType: intents(intentB), topics: topics(aspects) },
+      aspects: aspectMoods(aspects),
     };
   }
 

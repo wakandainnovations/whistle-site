@@ -16,6 +16,8 @@ mkdir -p "${LOG:h}"
   echo "=== $(date '+%Y-%m-%d %H:%M:%S') sync start"
   if npm run --silent sync; then
     result=ok
+    # what the crowd said, by aura-llm; only stale films are redone, and a failure keeps the old text
+    node scripts/summarise-crowd.mjs || echo "crowd summaries failed, keeping the old ones"
     if [[ "${WHISTLE_BUILD:-0}" == 1 ]]; then
       npm run --silent build || result="build failed"
     fi

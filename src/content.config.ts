@@ -32,6 +32,14 @@ const report = z.object({
     postType: z.array(share),
     topics: z.array(share),
   }),
+  // How the crowd felt about each aspect (story, acting, songs...): posts about it, their average
+  // sentiment score (0-100) and the majority mood. Most-discussed first.
+  aspects: z.array(z.object({
+    label: z.string(),
+    posts: z.number().int().min(0),
+    score: z.number().min(0).max(100),
+    mood: z.enum(['positive', 'neutral', 'negative']),
+  })).default([]),
 });
 
 const films = defineCollection({

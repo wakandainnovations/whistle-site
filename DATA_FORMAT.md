@@ -54,6 +54,7 @@ A film needs both `backdrop` and `trailer` to appear in the homepage's "Now on W
 | `report.mentions.daily` | list of numbers | One value per day from `tracking.start`. Trailing days can be left off and count as zero | Total mentions chart |
 | `report.regions` | list of `["Name", percent]` | Top regions, share of posts with a known location | Top regions by buzz |
 | `report.audience.where` / `who` / `postType` / `topics` | lists of `["Name", percent]` | Where they are, who is posting, what they post, what they talk about | Audience report |
+| `report.aspects` | list of `{label, posts, score, mood}` | How the crowd felt about each aspect (story, acting, songs...): post count, average sentiment 0-100, majority mood. Optional | Summary: what viewers liked and complained about |
 
 Percentages are whole numbers from 0 to 100. Put the largest first; the first row is highlighted.
 

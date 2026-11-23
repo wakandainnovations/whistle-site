@@ -18,6 +18,7 @@ import Locked from '../../components/Locked.astro';
 import { plain, plainDriver, inTen, buzzWord, cheersPerBoo } from '../../lib/plain';
 import { TIERS, whistleScore, tierFor, scoreLabel, compact, formatDate, daysBetween } from '../../lib/score';
 import { talkOf } from '../../lib/now';
+import { filmSummary } from '../../lib/summary';
 
 export async function getStaticPaths() {
   const films = await getFilms();
@@ -62,18 +63,7 @@ const similar = films
 
 const recommendation = score === null ? '' : upcoming ? (score >= 60 ? 'One to watch for.' : 'The buzz is mixed so far.') : score >= 75 ? 'Worth your night.' : score >= 60 ? 'A safe pick.' : score >= 40 ? 'Watch the trailer first.' : 'The crowd says skip.';
 
-let verdict = '';
-if (r && score !== null) {
-  const leaning = upcoming ? (score >= 60 ? 'is excited so far' : score >= 40 ? 'is split so far' : 'is cold so far') : score >= 60 ? 'leaned positive' : score >= 40 ? 'was split' : 'leaned negative';
-  const ratio = r.netSentiment === null
-    ? 'Nobody posted a complaint'
-    : r.netSentiment === 0
-      ? 'Nobody has cheered it yet'
-      : r.netSentiment >= 1
-        ? `For every negative post there were ${r.netSentiment.toFixed(1)} positive ones`
-        : `For every positive post there were ${(1 / r.netSentiment).toFixed(1)} negative ones`;
-  verdict = `The crowd ${leaning}. ${ratio}${r.regions[0] ? `, and most of the noise came from ${plain(r.regions[0][0])}` : ''}.`;
-}
+const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) : '';
 ---
 <Layout title={f.title} description={description} image={score !== null ? `/badge/${film.id}.svg` : f.backdrop ?? undefined}>
   <main>

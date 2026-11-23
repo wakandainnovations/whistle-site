@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "sync": "node --env-file-if-exists=.env scripts/sync-aura.mjs"
+    "sync": "node --env-file-if-exists=.env scripts/sync-aura.mjs",
+    "summaries": "node scripts/summarise-crowd.mjs"
   },
   "dependencies": {
     "astro": "^7.4.12"
