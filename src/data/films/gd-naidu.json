@@ -37,26 +37,26 @@
   ],
   "watchCheckedOn": "2026-11-16",
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
       "start": "2026-03-14",
-      "end": "2026-08-13"
+      "end": "2026-08-07"
     },
     "sentiment": {
-      "positive": 494,
-      "neutral": 860,
-      "negative": 145
+      "positive": 488,
+      "neutral": 859,
+      "negative": 31
     },
-    "netSentiment": 3.41,
+    "netSentiment": 15.74,
     "awareness": {
       "level": "High",
-      "views": 7211843
+      "views": 4170045
     },
-    "reach": 11331,
+    "reach": 10791,
     "mentions": {
-      "total": 1496,
+      "total": 1377,
       "daily": [
         1,
         0,
@@ -94,7 +94,7 @@
         0,
         0,
         0,
-        1,
+        0,
         0,
         0,
         0,
@@ -132,25 +132,25 @@
         0,
         1,
         1,
+        0,
         1,
-        1,
-        1,
+        0,
         2,
         0,
         44,
         31,
-        4,
-        2,
-        0,
-        2,
-        0,
         3,
+        2,
+        0,
+        2,
+        0,
+        2,
         1,
         0,
         3,
         10,
         4,
-        4,
+        3,
         2,
         4,
         0,
@@ -159,7 +159,7 @@
         0,
         0,
         1,
-        2,
+        1,
         2,
         2,
         1,
@@ -168,13 +168,13 @@
         2,
         2,
         2,
+        1,
         2,
-        2,
-        149,
-        603,
-        140,
-        70,
-        38,
+        123,
+        534,
+        133,
+        68,
+        36,
         20,
         1,
         1,
@@ -182,7 +182,7 @@
         0,
         27,
         55,
-        64,
+        63,
         5,
         3,
         7,
@@ -203,101 +203,99 @@
         27,
         8,
         7,
-        4,
-        1,
-        0,
-        0,
-        1,
-        1,
-        0,
+        3,
         1
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        80
-      ],
-      [
-        "International",
-        9
+        89
       ],
       [
         "Hindi Belt North India",
-        8
+        5
+      ],
+      [
+        "International",
+        4
       ],
       [
         "Andhra Telangana",
-        3
+        2
+      ],
+      [
+        "Karnataka",
+        1
       ]
     ],
     "audience": {
       "where": [
         [
           "Unknown",
-          47
+          53
         ],
         [
           "Tamil Nadu",
           42
         ],
         [
-          "International",
-          5
+          "Hindi Belt North India",
+          2
         ],
         [
-          "Hindi Belt North India",
-          4
+          "International",
+          2
         ],
         [
           "Andhra Telangana",
-          2
+          1
         ]
       ],
       "who": [
         [
           "General public",
-          54
+          63
         ],
         [
           "Media press",
-          32
+          24
+        ],
+        [
+          "Official studio",
+          6
         ],
         [
           "Verified celebrity influencer",
-          7
+          4
         ],
         [
           "Fan page",
           4
-        ],
-        [
-          "Official studio",
-          3
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          60
+          65
         ],
         [
           "Official promo",
-          19
+          16
         ],
         [
           "News press coverage",
-          14
+          13
         ],
         [
           "Organic opinion",
-          7
+          6
         ]
       ],
       "topics": [
         [
           "General discussion",
-          81
+          83
         ],
         [
           "Music / songs",
@@ -305,17 +303,57 @@
         ],
         [
           "Acting / cast performance",
-          6
+          7
         ],
         [
           "Story",
-          4
-        ],
-        [
-          "Runtime",
-          1
+          3
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 99,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 92,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 39,
+        "score": 80,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 2,
+        "score": 86,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 2,
+        "score": 62,
+        "mood": "neutral"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 1,
+        "score": 92,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 1,
+        "score": 82,
+        "mood": "positive"
+      }
+    ]
   }
 }

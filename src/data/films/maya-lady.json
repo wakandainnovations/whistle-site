@@ -24,68 +24,169 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 443,
+    "collected": 445,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 0.6403
+    "popularity": 0.7185
   },
   "report": {
     "tracking": {
-      "start": "2026-11-15",
-      "end": "2026-11-17"
+      "start": "2026-11-12",
+      "end": "2026-11-19"
     },
     "sentiment": {
-      "positive": 3,
-      "neutral": 0,
-      "negative": 0
+      "positive": 62,
+      "neutral": 66,
+      "negative": 17
     },
-    "netSentiment": null,
+    "netSentiment": 3.65,
     "awareness": {
-      "level": "Low",
-      "views": 0
+      "level": "Medium",
+      "views": 9244559
     },
-    "reach": 161,
+    "reach": 162,
     "mentions": {
-      "total": 3,
+      "total": 145,
       "daily": [
-        0,
+        30,
+        23,
+        5,
+        78,
+        4,
         3,
-        0
+        1,
+        1
       ]
     },
     "regions": [
       [
         "Andhra Telangana",
-        100
+        97
+      ],
+      [
+        "Karnataka",
+        3
       ]
     ],
     "audience": {
       "where": [
         [
           "Andhra Telangana",
-          100
+          72
+        ],
+        [
+          "Unknown",
+          26
+        ],
+        [
+          "Karnataka",
+          2
         ]
       ],
       "who": [
         [
           "General public",
-          100
+          79
+        ],
+        [
+          "Official studio",
+          12
+        ],
+        [
+          "Media press",
+          6
+        ],
+        [
+          "Verified celebrity influencer",
+          2
+        ],
+        [
+          "Fan page",
+          1
         ]
       ],
       "postType": [
         [
+          "Fan amplified promo",
+          50
+        ],
+        [
           "Organic opinion",
-          100
+          30
+        ],
+        [
+          "Official promo",
+          15
+        ],
+        [
+          "News press coverage",
+          2
+        ],
+        [
+          "Trade box office update",
+          2
         ]
       ],
       "topics": [
         [
           "General discussion",
-          100
+          74
+        ],
+        [
+          "Acting / cast performance",
+          11
+        ],
+        [
+          "Story",
+          11
+        ],
+        [
+          "Lead pair",
+          1
+        ],
+        [
+          "Music / songs",
+          1
+        ],
+        [
+          "Screenplay",
+          1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 16,
+        "score": 75,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 16,
+        "score": 83,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 2,
+        "score": 85,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 2,
+        "score": 69,
+        "mood": "negative"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 1,
+        "score": 35,
+        "mood": "negative"
+      }
+    ]
   }
 }

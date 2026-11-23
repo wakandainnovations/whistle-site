@@ -31,7 +31,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
@@ -41,20 +41,20 @@
     "sentiment": {
       "positive": 883,
       "neutral": 579,
-      "negative": 7
+      "negative": 0
     },
-    "netSentiment": 126.14,
+    "netSentiment": null,
     "awareness": {
-      "level": "High",
-      "views": 717662
+      "level": "Medium",
+      "views": 714124
     },
-    "reach": 577,
+    "reach": 576,
     "mentions": {
-      "total": 1469,
+      "total": 1462,
       "daily": [
-        30,
+        28,
         9,
-        4,
+        2,
         12,
         16,
         11,
@@ -63,7 +63,7 @@
         104,
         17,
         8,
-        9,
+        8,
         3,
         2,
         0,
@@ -73,8 +73,8 @@
         0,
         0,
         0,
-        153,
-        68,
+        152,
+        67,
         9,
         156,
         62,
@@ -95,78 +95,58 @@
     "regions": [
       [
         "Tamil Nadu",
-        98
-      ],
-      [
-        "Kannada Speaking South India",
-        1
-      ],
-      [
-        "Karnataka",
-        1
+        100
       ]
     ],
     "audience": {
       "where": [
         [
           "Unknown",
-          51
+          67
         ],
         [
           "Tamil Nadu",
-          47
-        ],
-        [
-          "Kannada Speaking South India",
-          1
-        ],
-        [
-          "Karnataka",
-          1
+          32
         ]
       ],
       "who": [
         [
           "General public",
-          41
+          56
         ],
         [
           "Media press",
-          36
+          23
         ],
         [
           "Official studio",
-          12
-        ],
-        [
-          "Verified celebrity influencer",
-          7
+          13
         ],
         [
           "Fan page",
-          4
+          6
+        ],
+        [
+          "Verified celebrity influencer",
+          2
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          43
+          59
         ],
         [
           "Official promo",
-          41
+          29
         ],
         [
           "News press coverage",
-          12
+          10
         ],
         [
           "Organic opinion",
-          3
-        ],
-        [
-          "Trade box office update",
-          1
+          2
         ]
       ],
       "topics": [
@@ -195,6 +175,50 @@
           1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 420,
+        "score": 79,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 101,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 45,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 40,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 8,
+        "score": 79,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 7,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 1,
+        "score": 90,
+        "mood": "positive"
+      }
+    ]
   }
 }

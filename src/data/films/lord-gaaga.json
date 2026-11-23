@@ -22,10 +22,89 @@
   ],
   "runtime": null,
   "tmdbId": null,
-  "watch": [],
+  "watch": [
+    "Prime Video"
+  ],
   "watchCheckedOn": null,
-  "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "watchPlaceholder": true,
+  "syncedOn": "2026-11-23",
   "buzz": null,
-  "report": null
+  "report": {
+    "tracking": {
+      "start": "2026-11-12",
+      "end": "2026-11-13"
+    },
+    "sentiment": {
+      "positive": 3,
+      "neutral": 0,
+      "negative": 0
+    },
+    "netSentiment": null,
+    "awareness": {
+      "level": "High",
+      "views": 403946
+    },
+    "reach": 61,
+    "mentions": {
+      "total": 3,
+      "daily": [
+        2,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          100
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          100
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          67
+        ],
+        [
+          "Organic opinion",
+          33
+        ]
+      ],
+      "topics": [
+        [
+          "Acting / cast performance",
+          33
+        ],
+        [
+          "VFX",
+          33
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 1,
+        "score": 92,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      }
+    ]
+  }
 }

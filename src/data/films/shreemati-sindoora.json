@@ -30,78 +30,67 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-07-29",
+      "start": "2026-07-28",
       "end": "2026-07-30"
     },
     "sentiment": {
-      "positive": 1,
+      "positive": 0,
       "neutral": 4,
       "negative": 0
     },
     "netSentiment": null,
     "awareness": {
-      "level": "High",
-      "views": 155442
+      "level": "Medium",
+      "views": 2097
     },
-    "reach": 180,
+    "reach": 182,
     "mentions": {
-      "total": 5,
+      "total": 4,
       "daily": [
+        0,
         4,
-        1
+        0
       ]
     },
-    "regions": [
-      [
-        "Karnataka",
-        100
-      ]
-    ],
+    "regions": [],
     "audience": {
       "where": [
         [
           "Unknown",
-          80
-        ],
-        [
-          "Karnataka",
-          20
+          100
         ]
       ],
       "who": [
         [
           "General public",
-          80
+          75
         ],
         [
           "Official studio",
-          20
+          25
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          80
+          75
         ],
         [
           "Official promo",
-          20
+          25
         ]
       ],
       "topics": [
         [
           "General discussion",
-          80
-        ],
-        [
-          "Screenplay",
-          20
+          100
         ]
       ]
-    }
+    },
+    "aspects": []
   }
 }

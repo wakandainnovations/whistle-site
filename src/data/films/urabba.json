@@ -31,7 +31,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
@@ -48,7 +48,7 @@
       "level": "Low",
       "views": 21
     },
-    "reach": 162,
+    "reach": 154,
     "mentions": {
       "total": 2,
       "daily": [
@@ -91,6 +91,7 @@
           100
         ]
       ]
-    }
+    },
+    "aspects": []
   }
 }

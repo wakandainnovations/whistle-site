@@ -24,144 +24,40 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 590,
+    "collected": 654,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 0.1987
+    "popularity": 0.1708
   },
   "report": {
     "tracking": {
-      "start": "2026-06-15",
-      "end": "2026-10-05"
+      "start": "2026-11-12",
+      "end": "2026-11-20"
     },
     "sentiment": {
-      "positive": 2,
-      "neutral": 0,
-      "negative": 0
+      "positive": 63,
+      "neutral": 8,
+      "negative": 12
     },
-    "netSentiment": null,
+    "netSentiment": 5.25,
     "awareness": {
-      "level": "High",
-      "views": 573832
+      "level": "Medium",
+      "views": 28045436
     },
-    "reach": 473,
+    "reach": 488,
     "mentions": {
-      "total": 2,
+      "total": 83,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        4,
+        8,
+        4,
+        6,
+        2,
+        6,
+        23,
+        29,
         1
       ]
     },
@@ -175,35 +71,117 @@
       "where": [
         [
           "Karnataka",
-          50
+          87
         ],
         [
           "Unknown",
-          50
+          13
         ]
       ],
       "who": [
         [
+          "Fan page",
+          30
+        ],
+        [
           "General public",
-          100
+          24
+        ],
+        [
+          "Official studio",
+          23
+        ],
+        [
+          "Media press",
+          20
+        ],
+        [
+          "Verified celebrity influencer",
+          2
         ]
       ],
       "postType": [
         [
+          "Official promo",
+          45
+        ],
+        [
           "Fan amplified promo",
-          50
+          27
         ],
         [
           "Organic opinion",
-          50
+          19
+        ],
+        [
+          "News press coverage",
+          10
         ]
       ],
       "topics": [
         [
+          "General discussion",
+          81
+        ],
+        [
+          "Story",
+          7
+        ],
+        [
           "Music / songs",
-          50
+          4
+        ],
+        [
+          "Lead pair",
+          3
+        ],
+        [
+          "Acting / cast performance",
+          1
+        ],
+        [
+          "Direction",
+          1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 5,
+        "score": 53,
+        "mood": "negative"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 3,
+        "score": 77,
+        "mood": "neutral"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 2,
+        "score": 65,
+        "mood": "negative"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 1,
+        "score": 92,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      }
+    ]
   }
 }

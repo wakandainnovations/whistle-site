@@ -30,7 +30,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
@@ -71,32 +71,48 @@
     "audience": {
       "where": [
         [
-          "Tamil Nadu",
-          50
+          "Unknown",
+          75
         ],
         [
-          "Unknown",
-          50
+          "Tamil Nadu",
+          25
         ]
       ],
       "who": [
         [
+          "General public",
+          56
+        ],
+        [
           "Media press",
-          75
+          32
+        ],
+        [
+          "Fan page",
+          6
+        ],
+        [
+          "Official studio",
+          5
         ],
         [
           "Verified celebrity influencer",
-          25
+          1
         ]
       ],
       "postType": [
         [
-          "Official promo",
-          75
+          "Fan amplified promo",
+          63
         ],
         [
-          "Fan amplified promo",
-          25
+          "News press coverage",
+          21
+        ],
+        [
+          "Official promo",
+          16
         ]
       ],
       "topics": [
@@ -121,6 +137,38 @@
           1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 47,
+        "score": 70,
+        "mood": "neutral"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 4,
+        "score": 74,
+        "mood": "neutral"
+      },
+      {
+        "label": "Direction",
+        "posts": 1,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 1,
+        "score": 70,
+        "mood": "neutral"
+      }
+    ]
   }
 }

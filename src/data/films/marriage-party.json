@@ -1,0 +1,35 @@
+{
+  "sample": false,
+  "auraId": 9000058,
+  "auraName": "Marriage Party",
+  "title": "Marriage Party",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-12-04",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": "Chayan Shetty",
+  "cast": [],
+  "genres": [
+    "Comedy",
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-23",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-12-02",
+    "trackUntil": "2026-12-06",
+    "popularity": 0.1996
+  },
+  "report": null
+}

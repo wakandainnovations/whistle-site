@@ -29,36 +29,30 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-06-14",
-      "end": "2026-06-22"
+      "start": "2026-06-13",
+      "end": "2026-06-15"
     },
     "sentiment": {
-      "positive": 2,
+      "positive": 0,
       "neutral": 1,
       "negative": 0
     },
     "netSentiment": null,
     "awareness": {
-      "level": "Low",
+      "level": "Medium",
       "views": 37
     },
-    "reach": 258,
+    "reach": 257,
     "mentions": {
-      "total": 3,
+      "total": 1,
       "daily": [
-        2,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
+        1,
+        0
       ]
     },
     "regions": [
@@ -76,22 +70,14 @@
       ],
       "who": [
         [
-          "General public",
-          67
-        ],
-        [
           "Media press",
-          33
+          100
         ]
       ],
       "postType": [
         [
-          "Organic opinion",
-          67
-        ],
-        [
           "News press coverage",
-          33
+          100
         ]
       ],
       "topics": [
@@ -100,6 +86,7 @@
           100
         ]
       ]
-    }
+    },
+    "aspects": []
   }
 }

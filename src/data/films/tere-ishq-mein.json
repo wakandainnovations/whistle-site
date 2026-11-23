@@ -1,6 +1,6 @@
 {
   "sample": false,
-  "auraId": 7,
+  "auraId": 71,
   "auraName": "Tere Ishq Mein",
   "title": "Tere Ishq Mein",
   "aka": [],
@@ -13,12 +13,10 @@
   "poster": "/posters/tere-ishq-mein.jpg",
   "backdrop": null,
   "trailer": null,
-  "director": "Aanand L Rai",
+  "director": "Aanand L. Rai",
   "cast": [
     "Dhanush",
-    "Kriti Sanon",
-    "Prakash Raj",
-    "Priyanshu Painyuli"
+    "Kriti Sanon"
   ],
   "genres": [
     "Drama",
@@ -31,199 +29,103 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-01-25",
-      "end": "2026-04-29"
+      "start": "2026-01-24",
+      "end": "2026-01-26"
     },
     "sentiment": {
-      "positive": 11,
+      "positive": 5,
       "neutral": 1,
-      "negative": 65
+      "negative": 1
     },
-    "netSentiment": 0.17,
+    "netSentiment": 5,
     "awareness": {
-      "level": "Medium",
-      "views": 1291
+      "level": "Low",
+      "views": 0
     },
-    "reach": 2648,
+    "reach": 1200,
     "mentions": {
-      "total": 75,
+      "total": 7,
       "daily": [
-        17,
         0,
-        2,
-        1,
-        0,
-        1,
-        1,
-        3,
-        2,
-        2,
-        2,
-        5,
-        1,
-        1,
-        3,
-        0,
-        0,
-        3,
-        5,
-        0,
-        1,
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        1,
-        1,
-        0,
-        0,
-        0,
-        2,
-        1,
-        0,
-        0,
-        1,
-        1,
-        1,
-        0,
-        0,
-        1,
-        2,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        4,
-        2,
-        1
+        7,
+        0
       ]
     },
     "regions": [
       [
         "Hindi Belt North India",
-        75
-      ],
-      [
-        "Tamil Nadu",
-        25
+        100
       ]
     ],
     "audience": {
       "where": [
         [
           "Unknown",
-          67
+          83
         ],
         [
           "Hindi Belt North India",
-          25
-        ],
-        [
-          "Tamil Nadu",
-          8
+          17
         ]
       ],
       "who": [
         [
           "General public",
-          75
+          83
         ],
         [
           "Fan page",
           17
-        ],
-        [
-          "Verified celebrity influencer",
-          8
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          75
+          67
         ],
         [
           "Fan amplified promo",
-          25
+          33
         ]
       ],
       "topics": [
         [
-          "Music / songs",
-          22
-        ],
-        [
           "Acting / cast performance",
-          14
-        ],
-        [
-          "Story",
-          12
+          29
         ],
         [
           "Lead pair",
-          3
+          14
         ],
         [
-          "Climax",
-          1
-        ],
-        [
-          "Direction",
-          1
+          "Music / songs",
+          14
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 2,
+        "score": 76,
+        "mood": "neutral"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 1,
+        "score": 90,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 1,
+        "score": 90,
+        "mood": "positive"
+      }
+    ]
   }
 }

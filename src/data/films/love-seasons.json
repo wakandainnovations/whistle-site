@@ -30,49 +30,31 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-06-01",
+      "start": "2026-06-19",
       "end": "2026-08-01"
     },
     "sentiment": {
-      "positive": 33,
+      "positive": 31,
       "neutral": 9,
-      "negative": 10
+      "negative": 1
     },
-    "netSentiment": 3.3,
+    "netSentiment": 31,
     "awareness": {
       "level": "High",
       "views": 192860
     },
-    "reach": 315,
+    "reach": 316,
     "mentions": {
-      "total": 52,
+      "total": 41,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         2,
         14,
         0,
-        1,
+        0,
         1,
         6,
         3,
@@ -112,7 +94,7 @@
         0,
         0,
         0,
-        10
+        1
       ]
     },
     "regions": [
@@ -125,21 +107,21 @@
       "where": [
         [
           "Karnataka",
-          79
+          78
         ],
         [
           "Unknown",
-          21
+          22
         ]
       ],
       "who": [
         [
           "Media press",
-          62
+          66
         ],
         [
           "General public",
-          31
+          27
         ],
         [
           "Official studio",
@@ -149,11 +131,11 @@
       "postType": [
         [
           "News press coverage",
-          48
+          51
         ],
         [
           "Fan amplified promo",
-          29
+          24
         ],
         [
           "Official promo",
@@ -167,25 +149,41 @@
       "topics": [
         [
           "General discussion",
-          65
+          61
         ],
         [
           "Story",
-          15
+          17
         ],
         [
           "Music / songs",
-          12
+          15
         ],
         [
           "Acting / cast performance",
-          6
-        ],
-        [
-          "Screenplay",
-          2
+          7
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 7,
+        "score": 86,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 6,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 3,
+        "score": 73,
+        "mood": "positive"
+      }
+    ]
   }
 }

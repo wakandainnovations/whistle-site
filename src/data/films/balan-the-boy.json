@@ -31,91 +31,54 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
       "start": "2026-06-12",
-      "end": "2026-07-31"
+      "end": "2026-06-24"
     },
     "sentiment": {
-      "positive": 835,
-      "neutral": 302,
-      "negative": 10
+      "positive": 829,
+      "neutral": 300,
+      "negative": 0
     },
-    "netSentiment": 83.5,
+    "netSentiment": null,
     "awareness": {
       "level": "High",
-      "views": 775461
+      "views": 771625
     },
-    "reach": 2605,
+    "reach": 2634,
     "mentions": {
-      "total": 1147,
+      "total": 1129,
       "daily": [
-        81,
-        316,
+        80,
+        314,
         137,
-        172,
+        170,
         212,
         0,
-        1,
-        5,
-        0,
-        0,
-        0,
-        72,
-        149,
         0,
         0,
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
+        69,
+        147
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        58
+        61
       ],
       [
         "Kerala",
-        25
+        23
       ],
       [
         "Andhra Telangana",
-        13
+        12
       ],
       [
         "International",
@@ -130,7 +93,7 @@
       "where": [
         [
           "Unknown",
-          83
+          84
         ],
         [
           "Tamil Nadu",
@@ -170,29 +133,29 @@
       "postType": [
         [
           "Fan amplified promo",
-          59
+          60
         ],
         [
           "Official promo",
           29
         ],
         [
-          "Organic opinion",
+          "News press coverage",
           6
         ],
         [
-          "News press coverage",
-          6
+          "Organic opinion",
+          5
         ]
       ],
       "topics": [
         [
           "General discussion",
-          62
+          61
         ],
         [
           "Story",
-          16
+          17
         ],
         [
           "Music / songs",
@@ -211,6 +174,50 @@
           2
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 188,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 98,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 68,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 56,
+        "score": 79,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 26,
+        "score": 80,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 1,
+        "score": 90,
+        "mood": "positive"
+      },
+      {
+        "label": "Second half",
+        "posts": 1,
+        "score": 63,
+        "mood": "neutral"
+      }
+    ]
   }
 }

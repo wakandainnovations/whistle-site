@@ -31,26 +31,26 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2025-11-29",
+      "start": "2026-01-05",
       "end": "2026-07-24"
     },
     "sentiment": {
-      "positive": 516,
+      "positive": 515,
       "neutral": 205,
-      "negative": 34
+      "negative": 19
     },
-    "netSentiment": 15.18,
+    "netSentiment": 27.11,
     "awareness": {
       "level": "High",
       "views": 436136
     },
-    "reach": 1176,
+    "reach": 1188,
     "mentions": {
-      "total": 748,
+      "total": 735,
       "daily": [
         1,
         0,
@@ -69,43 +69,6 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         1,
         0,
         0,
@@ -154,7 +117,6 @@
         0,
         0,
         0,
-        1,
         0,
         0,
         0,
@@ -189,13 +151,10 @@
         0,
         0,
         0,
-        1,
         0,
-        1,
         0,
         0,
         0,
-        1,
         0,
         0,
         0,
@@ -232,7 +191,11 @@
         0,
         0,
         0,
-        2,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -272,9 +235,9 @@
         0,
         0,
         0,
-        13,
+        10,
         3,
-        2,
+        1,
         2,
         0,
         0,
@@ -342,7 +305,7 @@
         ],
         [
           "News press coverage",
-          7
+          6
         ]
       ],
       "topics": [
@@ -367,6 +330,50 @@
           1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 94,
+        "score": 79,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 71,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 41,
+        "score": 83,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 8,
+        "score": 89,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 3,
+        "score": 76,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 2,
+        "score": 62,
+        "mood": "neutral"
+      },
+      {
+        "label": "VFX",
+        "posts": 1,
+        "score": 84,
+        "mood": "positive"
+      }
+    ]
   }
 }

@@ -1,0 +1,35 @@
+{
+  "sample": false,
+  "auraId": 9000057,
+  "auraName": "Many Many Happy Returns",
+  "title": "Many Many Happy Returns",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Malayalam",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-12-04",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": "Ahammed Khabeer",
+  "cast": [],
+  "genres": [
+    "Romance",
+    "Comedy"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-23",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-12-02",
+    "trackUntil": "2026-12-06",
+    "popularity": 0.5918
+  },
+  "report": null
+}

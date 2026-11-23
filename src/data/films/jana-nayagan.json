@@ -32,40 +32,37 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
       "start": "2026-07-26",
-      "end": "2026-08-01"
+      "end": "2026-07-29"
     },
     "sentiment": {
-      "positive": 125,
+      "positive": 123,
       "neutral": 59,
-      "negative": 5
+      "negative": 0
     },
-    "netSentiment": 25,
+    "netSentiment": null,
     "awareness": {
-      "level": "High",
-      "views": 190130164
+      "level": "Medium",
+      "views": 649
     },
     "reach": 5748,
     "mentions": {
-      "total": 189,
+      "total": 182,
       "daily": [
         53,
         88,
-        39,
-        7,
-        0,
-        0,
-        2
+        38,
+        3
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        89
+        90
       ],
       [
         "International",
@@ -73,7 +70,7 @@
       ],
       [
         "Kerala",
-        3
+        2
       ],
       [
         "Karnataka",
@@ -84,11 +81,11 @@
       "where": [
         [
           "Tamil Nadu",
-          52
+          51
         ],
         [
           "Unknown",
-          42
+          43
         ],
         [
           "International",
@@ -96,7 +93,7 @@
         ],
         [
           "Kerala",
-          2
+          1
         ],
         [
           "Karnataka",
@@ -106,11 +103,11 @@
       "who": [
         [
           "General public",
-          87
+          86
         ],
         [
           "Fan page",
-          11
+          12
         ],
         [
           "Verified celebrity influencer",
@@ -124,11 +121,11 @@
       "postType": [
         [
           "Fan amplified promo",
-          86
+          88
         ],
         [
           "Organic opinion",
-          10
+          8
         ],
         [
           "Trade box office update",
@@ -142,7 +139,7 @@
       "topics": [
         [
           "General discussion",
-          84
+          83
         ],
         [
           "Acting / cast performance",
@@ -165,6 +162,44 @@
           2
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 10,
+        "score": 89,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 6,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 5,
+        "score": 84,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 5,
+        "score": 86,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 3,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 2,
+        "score": 88,
+        "mood": "positive"
+      }
+    ]
   }
 }

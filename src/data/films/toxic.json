@@ -31,26 +31,26 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-07-08",
+      "start": "2026-07-31",
       "end": "2026-09-06"
     },
     "sentiment": {
-      "positive": 4,
+      "positive": 1,
       "neutral": 1,
-      "negative": 5
+      "negative": 3
     },
-    "netSentiment": 0.8,
+    "netSentiment": 0.33,
     "awareness": {
       "level": "High",
-      "views": 118243542
+      "views": 40008
     },
-    "reach": 2348,
+    "reach": 2372,
     "mentions": {
-      "total": 10,
+      "total": 5,
       "daily": [
         1,
         0,
@@ -69,29 +69,6 @@
         0,
         0,
         0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0,
         0,
@@ -112,7 +89,7 @@
         0,
         0,
         1,
-        3
+        2
       ]
     },
     "regions": [
@@ -125,31 +102,27 @@
       "where": [
         [
           "Unknown",
-          67
+          75
         ],
         [
           "Hindi Belt North India",
-          33
+          25
         ]
       ],
       "who": [
         [
           "General public",
-          89
-        ],
-        [
-          "Media press",
-          11
+          100
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          78
+          75
         ],
         [
           "News press coverage",
-          22
+          25
         ]
       ],
       "topics": [
@@ -158,6 +131,7 @@
           100
         ]
       ]
-    }
+    },
+    "aspects": []
   }
 }

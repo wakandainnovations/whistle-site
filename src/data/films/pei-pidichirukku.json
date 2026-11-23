@@ -23,12 +23,249 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 0,
-    "trackFrom": "2026-11-20",
-    "trackUntil": "2026-12-04",
-    "popularity": 3.6681
+    "collected": 48,
+    "trackFrom": "2026-11-25",
+    "trackUntil": "2026-11-29",
+    "popularity": 3.4686
   },
-  "report": null
+  "report": {
+    "tracking": {
+      "start": "2026-06-23",
+      "end": "2026-11-20"
+    },
+    "sentiment": {
+      "positive": 20,
+      "neutral": 2,
+      "negative": 6
+    },
+    "netSentiment": 3.33,
+    "awareness": {
+      "level": "High",
+      "views": 493986598
+    },
+    "reach": 34,
+    "mentions": {
+      "total": 28,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        2,
+        2
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        92
+      ],
+      [
+        "International",
+        8
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          73
+        ],
+        [
+          "Unknown",
+          20
+        ],
+        [
+          "International",
+          7
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          87
+        ],
+        [
+          "Media press",
+          9
+        ],
+        [
+          "Verified celebrity influencer",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          50
+        ],
+        [
+          "Fan amplified promo",
+          41
+        ],
+        [
+          "News press coverage",
+          5
+        ],
+        [
+          "Official promo",
+          5
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          100
+        ]
+      ]
+    },
+    "aspects": []
+  }
 }

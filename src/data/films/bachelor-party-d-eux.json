@@ -25,94 +25,273 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 1235,
-    "trackFrom": "2026-11-12",
-    "trackUntil": "2026-11-26",
-    "popularity": 3.3643
+    "collected": 3610,
+    "trackFrom": "2026-11-17",
+    "trackUntil": "2026-11-21",
+    "popularity": 6.8839
   },
   "report": {
     "tracking": {
-      "start": "2026-11-14",
-      "end": "2026-11-18"
+      "start": "2026-09-19",
+      "end": "2026-11-21"
     },
     "sentiment": {
-      "positive": 8,
-      "neutral": 27,
-      "negative": 7
+      "positive": 653,
+      "neutral": 311,
+      "negative": 1641
     },
-    "netSentiment": 1.14,
+    "netSentiment": 0.4,
     "awareness": {
       "level": "High",
-      "views": 1975669
+      "views": 30976228
     },
-    "reach": 965,
+    "reach": 2559,
     "mentions": {
-      "total": 42,
+      "total": 2604,
       "daily": [
+        2,
         1,
         0,
-        40,
         0,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        3,
+        3,
+        0,
+        1,
+        0,
+        1,
+        14,
+        8,
+        2,
+        4,
+        0,
+        3,
+        3,
+        6,
+        4,
+        72,
+        86,
+        214,
+        189,
+        103,
+        906,
+        701,
+        257,
+        13
       ]
     },
     "regions": [
       [
         "Kerala",
-        100
+        93
+      ],
+      [
+        "Andhra Telangana",
+        3
+      ],
+      [
+        "Tamil Nadu",
+        3
+      ],
+      [
+        "International",
+        1
       ]
     ],
     "audience": {
       "where": [
         [
           "Kerala",
-          73
+          66
         ],
         [
           "Unknown",
-          27
+          29
+        ],
+        [
+          "Andhra Telangana",
+          2
+        ],
+        [
+          "Tamil Nadu",
+          2
+        ],
+        [
+          "International",
+          1
         ]
       ],
       "who": [
         [
           "General public",
-          82
-        ],
-        [
-          "Fan page",
-          14
+          86
         ],
         [
           "Media press",
-          5
+          9
+        ],
+        [
+          "Official studio",
+          2
+        ],
+        [
+          "Fan page",
+          1
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          73
+          80
         ],
         [
           "Fan amplified promo",
-          27
+          11
+        ],
+        [
+          "Official promo",
+          4
+        ],
+        [
+          "News press coverage",
+          3
+        ],
+        [
+          "Trade box office update",
+          2
         ]
       ],
       "topics": [
         [
           "General discussion",
-          90
-        ],
-        [
-          "Music / songs",
-          7
+          70
         ],
         [
           "Acting / cast performance",
-          2
+          12
+        ],
+        [
+          "Music / songs",
+          6
+        ],
+        [
+          "Direction",
+          6
+        ],
+        [
+          "Story",
+          3
+        ],
+        [
+          "First half",
+          1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 227,
+        "score": 52,
+        "mood": "negative"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 110,
+        "score": 46,
+        "mood": "negative"
+      },
+      {
+        "label": "Direction",
+        "posts": 103,
+        "score": 45,
+        "mood": "negative"
+      },
+      {
+        "label": "Story",
+        "posts": 55,
+        "score": 38,
+        "mood": "negative"
+      },
+      {
+        "label": "First half",
+        "posts": 25,
+        "score": 52,
+        "mood": "negative"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 22,
+        "score": 32,
+        "mood": "negative"
+      },
+      {
+        "label": "Runtime",
+        "posts": 7,
+        "score": 45,
+        "mood": "negative"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 5,
+        "score": 77,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 5,
+        "score": 47,
+        "mood": "negative"
+      },
+      {
+        "label": "Second half",
+        "posts": 4,
+        "score": 57,
+        "mood": "negative"
+      },
+      {
+        "label": "VFX",
+        "posts": 3,
+        "score": 54,
+        "mood": "negative"
+      }
+    ]
   }
 }

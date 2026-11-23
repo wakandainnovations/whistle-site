@@ -25,35 +25,45 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 212,
+    "collected": 269,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 0.5568
+    "popularity": 0.6922
   },
   "report": {
     "tracking": {
-      "start": "2026-11-17",
-      "end": "2026-11-19"
+      "start": "2026-11-05",
+      "end": "2026-11-17"
     },
     "sentiment": {
-      "positive": 1,
+      "positive": 8,
       "neutral": 0,
-      "negative": 0
+      "negative": 5
     },
-    "netSentiment": null,
+    "netSentiment": 1.6,
     "awareness": {
       "level": "Medium",
-      "views": 27
+      "views": 897254
     },
-    "reach": 9,
+    "reach": 10,
     "mentions": {
-      "total": 1,
+      "total": 13,
       "daily": [
+        2,
+        0,
+        0,
+        0,
         0,
         1,
-        0
+        0,
+        2,
+        3,
+        3,
+        0,
+        1,
+        1
       ]
     },
     "regions": [
@@ -66,27 +76,81 @@
       "where": [
         [
           "Karnataka",
-          100
+          92
+        ],
+        [
+          "Unknown",
+          8
         ]
       ],
       "who": [
         [
           "General public",
-          100
+          85
+        ],
+        [
+          "Media press",
+          15
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          100
+          77
+        ],
+        [
+          "News press coverage",
+          15
+        ],
+        [
+          "Fan amplified promo",
+          8
         ]
       ],
       "topics": [
         [
+          "Music / songs",
+          23
+        ],
+        [
+          "Direction",
+          15
+        ],
+        [
+          "Story",
+          15
+        ],
+        [
           "Acting / cast performance",
-          100
+          8
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 3,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 2,
+        "score": 58,
+        "mood": "negative"
+      },
+      {
+        "label": "Story",
+        "posts": 2,
+        "score": 69,
+        "mood": "negative"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 1,
+        "score": 28,
+        "mood": "negative"
+      }
+    ]
   }
 }

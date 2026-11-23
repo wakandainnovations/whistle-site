@@ -1,0 +1,292 @@
+{
+  "sample": false,
+  "auraId": 9000048,
+  "auraName": "Signal at 11:30",
+  "title": "Signal at 11:30",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": "Malarvizhi Natesan",
+  "cast": [],
+  "genres": [
+    "Mystery",
+    "Thriller"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-23",
+  "buzz": {
+    "collected": 961,
+    "trackFrom": "2026-11-25",
+    "trackUntil": "2026-11-29",
+    "popularity": 0.5476
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-07-31",
+      "end": "2026-11-21"
+    },
+    "sentiment": {
+      "positive": 62,
+      "neutral": 90,
+      "negative": 8
+    },
+    "netSentiment": 7.75,
+    "awareness": {
+      "level": "Medium",
+      "views": 1807968
+    },
+    "reach": 72,
+    "mentions": {
+      "total": 160,
+      "daily": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        6,
+        0,
+        0,
+        6,
+        14,
+        2,
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        7,
+        19,
+        4,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        21,
+        28,
+        35,
+        1
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        98
+      ],
+      [
+        "Andhra Telangana",
+        1
+      ],
+      [
+        "International",
+        1
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          80
+        ],
+        [
+          "Unknown",
+          18
+        ],
+        [
+          "Andhra Telangana",
+          1
+        ],
+        [
+          "International",
+          1
+        ]
+      ],
+      "who": [
+        [
+          "Fan page",
+          53
+        ],
+        [
+          "General public",
+          44
+        ],
+        [
+          "Media press",
+          2
+        ],
+        [
+          "Verified celebrity influencer",
+          1
+        ],
+        [
+          "Official studio",
+          1
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          73
+        ],
+        [
+          "Organic opinion",
+          24
+        ],
+        [
+          "News press coverage",
+          2
+        ],
+        [
+          "Official promo",
+          2
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          79
+        ],
+        [
+          "Story",
+          10
+        ],
+        [
+          "Music / songs",
+          5
+        ],
+        [
+          "Acting / cast performance",
+          4
+        ],
+        [
+          "Direction",
+          1
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 10,
+        "score": 66,
+        "mood": "neutral"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 5,
+        "score": 94,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 4,
+        "score": 47,
+        "mood": "negative"
+      },
+      {
+        "label": "Direction",
+        "posts": 1,
+        "score": 96,
+        "mood": "positive"
+      }
+    ]
+  }
+}

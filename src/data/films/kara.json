@@ -33,212 +33,75 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-04-08",
-      "end": "2026-08-01"
+      "start": "2026-05-31",
+      "end": "2026-06-07"
     },
     "sentiment": {
-      "positive": 2,
-      "neutral": 1,
-      "negative": 62
+      "positive": 0,
+      "neutral": 0,
+      "negative": 6
     },
-    "netSentiment": 0.03,
+    "netSentiment": 0,
     "awareness": {
-      "level": "Medium",
-      "views": 1803
+      "level": "Low",
+      "views": 14
     },
-    "reach": 3075,
+    "reach": 3071,
     "mentions": {
-      "total": 65,
+      "total": 6,
       "daily": [
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        3,
-        19,
-        16,
-        15,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
         1,
         1,
         0,
         1,
+        0,
         1,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
         1
       ]
     },
-    "regions": [
-      [
-        "Tamil Nadu",
-        100
-      ]
-    ],
+    "regions": [],
     "audience": {
       "where": [
         [
-          "Tamil Nadu",
-          50
-        ],
-        [
           "Unknown",
-          50
+          100
         ]
       ],
       "who": [
         [
-          "General public",
-          50
+          "Media press",
+          83
         ],
         [
           "Bot spam",
-          25
-        ],
-        [
-          "Media press",
-          25
+          17
         ]
       ],
       "postType": [
         [
           "News press coverage",
-          50
-        ],
-        [
-          "Organic opinion",
-          50
+          100
         ]
       ],
       "topics": [
         [
-          "General discussion",
-          80
-        ],
-        [
           "Story",
-          9
-        ],
-        [
-          "Music / songs",
-          5
-        ],
-        [
-          "Acting / cast performance",
-          2
-        ],
-        [
-          "Direction",
-          2
-        ],
-        [
-          "Screenplay",
-          2
+          83
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 5,
+        "score": 25,
+        "mood": "negative"
+      }
+    ]
   }
 }

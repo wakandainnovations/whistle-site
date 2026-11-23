@@ -30,39 +30,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
-  "report": {
-    "tracking": {
-      "start": "2026-08-21",
-      "end": "2026-11-18"
-    },
-    "sentiment": {
-      "positive": 0,
-      "neutral": 0,
-      "negative": 1
-    },
-    "netSentiment": 0,
-    "awareness": {
-      "level": "Medium",
-      "views": 8449
-    },
-    "reach": 492,
-    "mentions": {
-      "total": 0,
-      "daily": []
-    },
-    "regions": [],
-    "audience": {
-      "where": [],
-      "who": [],
-      "postType": [],
-      "topics": [
-        [
-          "General discussion",
-          100
-        ]
-      ]
-    }
-  }
+  "report": null
 }

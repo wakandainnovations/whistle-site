@@ -31,7 +31,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
@@ -41,37 +41,77 @@
     "sentiment": {
       "positive": 10,
       "neutral": 4,
-      "negative": 1
+      "negative": 0
     },
-    "netSentiment": 10,
+    "netSentiment": null,
     "awareness": {
-      "level": "Low",
-      "views": 953
+      "level": "Medium",
+      "views": 814
     },
     "reach": 756,
     "mentions": {
-      "total": 15,
+      "total": 14,
       "daily": [
         3,
-        10,
+        9,
         2
       ]
     },
-    "regions": [],
+    "regions": [
+      [
+        "Andhra Telangana",
+        100
+      ]
+    ],
     "audience": {
-      "where": [],
-      "who": [],
-      "postType": [],
+      "where": [
+        [
+          "Andhra Telangana",
+          71
+        ],
+        [
+          "Unknown",
+          29
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          79
+        ],
+        [
+          "Media press",
+          21
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          43
+        ],
+        [
+          "Fan amplified promo",
+          36
+        ],
+        [
+          "News press coverage",
+          21
+        ]
+      ],
       "topics": [
         [
           "Acting / cast performance",
-          47
-        ],
-        [
-          "Direction",
-          7
+          50
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 7,
+        "score": 93,
+        "mood": "positive"
+      }
+    ]
   }
 }

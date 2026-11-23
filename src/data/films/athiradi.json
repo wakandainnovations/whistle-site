@@ -30,108 +30,76 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-13",
-      "end": "2026-05-20"
+      "start": "2026-05-19",
+      "end": "2026-05-21"
     },
     "sentiment": {
-      "positive": 17,
-      "neutral": 2,
-      "negative": 191
+      "positive": 13,
+      "neutral": 0,
+      "negative": 0
     },
-    "netSentiment": 0.09,
+    "netSentiment": null,
     "awareness": {
-      "level": "High",
-      "views": 78183
+      "level": "Medium",
+      "views": 233
     },
     "reach": 2507,
     "mentions": {
-      "total": 210,
+      "total": 13,
       "daily": [
-        4,
-        75,
-        57,
-        30,
-        22,
         0,
-        3,
-        19
+        13,
+        0
       ]
     },
     "regions": [
       [
-        "Kerala",
-        86
-      ],
-      [
-        "Hindi Belt North India",
-        14
+        "Tamil Nadu",
+        100
       ]
     ],
     "audience": {
       "where": [
         [
-          "Kerala",
-          75
-        ],
-        [
-          "Hindi Belt North India",
-          13
-        ],
-        [
           "Unknown",
-          13
+          85
+        ],
+        [
+          "Tamil Nadu",
+          15
         ]
       ],
       "who": [
         [
           "General public",
-          88
+          92
         ],
         [
-          "Fan page",
-          13
+          "Media press",
+          8
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          75
+          92
         ],
         [
-          "Trade box office update",
-          25
+          "Fan amplified promo",
+          8
         ]
       ],
       "topics": [
         [
           "General discussion",
-          69
-        ],
-        [
-          "Acting / cast performance",
-          15
-        ],
-        [
-          "First half",
-          4
-        ],
-        [
-          "Story",
-          4
-        ],
-        [
-          "Screenplay",
-          2
-        ],
-        [
-          "Music / songs",
-          2
+          100
         ]
       ]
-    }
+    },
+    "aspects": []
   }
 }

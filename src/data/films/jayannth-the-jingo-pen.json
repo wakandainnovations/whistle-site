@@ -24,12 +24,241 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 218,
-    "trackFrom": "2026-11-07",
-    "trackUntil": "2026-11-21",
-    "popularity": 0.3516
+    "collected": 382,
+    "trackFrom": "2026-11-12",
+    "trackUntil": "2026-11-16",
+    "popularity": 0.6451
   },
-  "report": null
+  "report": {
+    "tracking": {
+      "start": "2026-08-31",
+      "end": "2026-11-20"
+    },
+    "sentiment": {
+      "positive": 38,
+      "neutral": 3,
+      "negative": 80
+    },
+    "netSentiment": 0.47,
+    "awareness": {
+      "level": "High",
+      "views": 389229629
+    },
+    "reach": 304,
+    "mentions": {
+      "total": 121,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        9,
+        1,
+        3,
+        14,
+        11,
+        5,
+        5,
+        4,
+        25,
+        20,
+        7
+      ]
+    },
+    "regions": [
+      [
+        "Andhra Telangana",
+        97
+      ],
+      [
+        "Karnataka",
+        2
+      ],
+      [
+        "Kerala",
+        2
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Andhra Telangana",
+          77
+        ],
+        [
+          "Unknown",
+          21
+        ],
+        [
+          "Karnataka",
+          1
+        ],
+        [
+          "Kerala",
+          1
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          62
+        ],
+        [
+          "Official studio",
+          22
+        ],
+        [
+          "Media press",
+          9
+        ],
+        [
+          "Fan page",
+          3
+        ],
+        [
+          "Verified celebrity influencer",
+          2
+        ],
+        [
+          "Bot spam",
+          1
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          38
+        ],
+        [
+          "Official promo",
+          33
+        ],
+        [
+          "Organic opinion",
+          26
+        ],
+        [
+          "News press coverage",
+          3
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          85
+        ],
+        [
+          "Story",
+          7
+        ],
+        [
+          "Music / songs",
+          4
+        ],
+        [
+          "Acting / cast performance",
+          2
+        ],
+        [
+          "Runtime",
+          2
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 7,
+        "score": 80,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 4,
+        "score": 79,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 2,
+        "score": 54,
+        "mood": "negative"
+      },
+      {
+        "label": "Runtime",
+        "posts": 2,
+        "score": 35,
+        "mood": "negative"
+      }
+    ]
+  }
 }

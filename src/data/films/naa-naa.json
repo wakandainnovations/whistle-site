@@ -31,145 +31,46 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-12",
-      "end": "2026-08-01"
+      "start": "2026-07-26",
+      "end": "2026-07-30"
     },
     "sentiment": {
-      "positive": 1,
+      "positive": 0,
       "neutral": 0,
-      "negative": 108
+      "negative": 2
     },
-    "netSentiment": 0.01,
+    "netSentiment": 0,
     "awareness": {
-      "level": "Medium",
-      "views": 64215
+      "level": "Low",
+      "views": 0
     },
-    "reach": 1524,
+    "reach": 1494,
     "mentions": {
-      "total": 109,
+      "total": 2,
       "daily": [
         1,
         0,
-        1,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        5,
-        2,
-        7,
-        3,
-        3,
-        8,
-        20,
-        53
+        1
       ]
     },
     "regions": [],
     "audience": {
-      "where": [
-        [
-          "Unknown",
-          100
-        ]
-      ],
-      "who": [
-        [
-          "General public",
-          100
-        ]
-      ],
-      "postType": [
-        [
-          "Organic opinion",
-          100
-        ]
-      ],
+      "where": [],
+      "who": [],
+      "postType": [],
       "topics": [
         [
           "General discussion",
-          98
-        ],
-        [
-          "Acting / cast performance",
-          1
-        ],
-        [
-          "Music / songs",
-          1
+          100
         ]
       ]
-    }
+    },
+    "aspects": []
   }
 }

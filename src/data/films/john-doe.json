@@ -25,119 +25,210 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 1535,
+    "collected": 2176,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 2.4559
+    "popularity": 2.8092
   },
   "report": {
     "tracking": {
-      "start": "2026-11-15",
-      "end": "2026-11-16"
+      "start": "2026-11-11",
+      "end": "2026-11-19"
     },
     "sentiment": {
-      "positive": 28,
-      "neutral": 10,
-      "negative": 1
+      "positive": 129,
+      "neutral": 60,
+      "negative": 124
     },
-    "netSentiment": 28,
+    "netSentiment": 1.04,
     "awareness": {
-      "level": "High",
-      "views": 4502
+      "level": "Medium",
+      "views": 6090640
     },
-    "reach": 464,
+    "reach": 429,
     "mentions": {
-      "total": 39,
+      "total": 313,
       "daily": [
-        2,
-        37
+        1,
+        16,
+        52,
+        32,
+        29,
+        61,
+        70,
+        44,
+        8
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        100
+        84
+      ],
+      [
+        "Kerala",
+        11
+      ],
+      [
+        "International",
+        4
+      ],
+      [
+        "Hindi Belt North India",
+        1
+      ],
+      [
+        "Karnataka",
+        1
       ]
     ],
     "audience": {
       "where": [
         [
-          "Unknown",
-          63
+          "Tamil Nadu",
+          48
         ],
         [
-          "Tamil Nadu",
-          38
+          "Unknown",
+          43
+        ],
+        [
+          "Kerala",
+          6
+        ],
+        [
+          "International",
+          2
         ]
       ],
       "who": [
         [
           "General public",
-          63
+          84
         ],
         [
           "Media press",
-          17
-        ],
-        [
-          "Fan page",
-          8
-        ],
-        [
-          "Verified celebrity influencer",
-          8
+          5
         ],
         [
           "Official studio",
-          4
+          5
+        ],
+        [
+          "Fan page",
+          3
+        ],
+        [
+          "Verified celebrity influencer",
+          2
         ]
       ],
       "postType": [
         [
-          "Fan amplified promo",
-          38
-        ],
-        [
           "Organic opinion",
-          25
+          76
         ],
         [
-          "Trade box office update",
-          21
-        ],
-        [
-          "News press coverage",
-          8
+          "Fan amplified promo",
+          13
         ],
         [
           "Official promo",
-          8
+          7
+        ],
+        [
+          "News press coverage",
+          3
+        ],
+        [
+          "Trade box office update",
+          2
         ]
       ],
       "topics": [
         [
           "General discussion",
-          85
+          72
+        ],
+        [
+          "Acting / cast performance",
+          11
         ],
         [
           "Story",
           8
         ],
         [
-          "Climax",
-          3
-        ],
-        [
           "Direction",
           3
         ],
         [
+          "Music / songs",
+          1
+        ],
+        [
           "Screenplay",
-          3
+          1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 35,
+        "score": 59,
+        "mood": "negative"
+      },
+      {
+        "label": "Story",
+        "posts": 25,
+        "score": 58,
+        "mood": "negative"
+      },
+      {
+        "label": "Direction",
+        "posts": 8,
+        "score": 77,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 4,
+        "score": 58,
+        "mood": "negative"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 4,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 3,
+        "score": 67,
+        "mood": "negative"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 3,
+        "score": 92,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 2,
+        "score": 66,
+        "mood": "neutral"
+      },
+      {
+        "label": "Second half",
+        "posts": 1,
+        "score": 82,
+        "mood": "positive"
+      }
+    ]
   }
 }

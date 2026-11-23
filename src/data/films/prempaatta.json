@@ -24,12 +24,389 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 0,
-    "trackFrom": "2026-11-20",
-    "trackUntil": "2026-12-04",
-    "popularity": 1.0556
+    "collected": 411,
+    "trackFrom": "2026-11-25",
+    "trackUntil": "2026-11-29",
+    "popularity": 1.6792
   },
-  "report": null
+  "report": {
+    "tracking": {
+      "start": "2026-03-25",
+      "end": "2026-11-21"
+    },
+    "sentiment": {
+      "positive": 90,
+      "neutral": 159,
+      "negative": 51
+    },
+    "netSentiment": 1.76,
+    "awareness": {
+      "level": "Medium",
+      "views": 6646045
+    },
+    "reach": 329,
+    "mentions": {
+      "total": 282,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        23,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        3,
+        2,
+        0,
+        0,
+        2,
+        2,
+        6,
+        26,
+        12,
+        10,
+        1,
+        2,
+        7,
+        11,
+        25,
+        101,
+        22
+      ]
+    },
+    "regions": [
+      [
+        "Kerala",
+        99
+      ],
+      [
+        "Tamil Nadu",
+        1
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Kerala",
+          75
+        ],
+        [
+          "Unknown",
+          24
+        ],
+        [
+          "Tamil Nadu",
+          1
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          41
+        ],
+        [
+          "Fan page",
+          35
+        ],
+        [
+          "Official studio",
+          12
+        ],
+        [
+          "Media press",
+          10
+        ],
+        [
+          "Verified celebrity influencer",
+          2
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          50
+        ],
+        [
+          "Organic opinion",
+          25
+        ],
+        [
+          "Official promo",
+          20
+        ],
+        [
+          "News press coverage",
+          4
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          71
+        ],
+        [
+          "Music / songs",
+          16
+        ],
+        [
+          "Acting / cast performance",
+          10
+        ],
+        [
+          "Story",
+          3
+        ],
+        [
+          "Direction",
+          1
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 26,
+        "score": 64,
+        "mood": "neutral"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 16,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 5,
+        "score": 45,
+        "mood": "negative"
+      },
+      {
+        "label": "Direction",
+        "posts": 1,
+        "score": 42,
+        "mood": "negative"
+      }
+    ]
+  }
 }

@@ -1,6 +1,9 @@
 {
-  "sample": true,
+  "sample": false,
+  "auraId": 9000060,
+  "auraName": "Train",
   "title": "Train",
+  "aka": [],
   "titleConfirmed": true,
   "language": "Tamil",
   "industry": "south",
@@ -24,164 +27,14 @@
   "runtime": null,
   "tmdbId": 1213227,
   "watch": [],
-  "watchCheckedOn": "2026-11-16",
-  "report": {
-    "tracking": {
-      "start": "2026-11-04",
-      "end": "2026-11-16"
-    },
-    "sentiment": {
-      "positive": 1815,
-      "neutral": 206,
-      "negative": 454
-    },
-    "netSentiment": 4,
-    "awareness": {
-      "level": "Medium",
-      "views": 5100000
-    },
-    "reach": 5700,
-    "mentions": {
-      "total": 1863,
-      "daily": [
-        63,
-        79,
-        72,
-        79,
-        67,
-        80,
-        102,
-        139,
-        279,
-        340,
-        312,
-        142,
-        109
-      ]
-    },
-    "regions": [
-      [
-        "Tamil Nadu",
-        62
-      ],
-      [
-        "Kerala",
-        11
-      ],
-      [
-        "International",
-        11
-      ],
-      [
-        "Andhra Telangana",
-        9
-      ]
-    ],
-    "audience": {
-      "where": [
-        [
-          "Tamil Nadu",
-          41
-        ],
-        [
-          "Unknown",
-          32
-        ],
-        [
-          "International",
-          8
-        ],
-        [
-          "Kerala",
-          7
-        ],
-        [
-          "Andhra Telangana",
-          6
-        ],
-        [
-          "Karnataka",
-          6
-        ]
-      ],
-      "who": [
-        [
-          "General public",
-          42
-        ],
-        [
-          "Media press",
-          19
-        ],
-        [
-          "Verified celebrity",
-          15
-        ],
-        [
-          "Fan page",
-          15
-        ],
-        [
-          "Official studio",
-          6
-        ],
-        [
-          "Bot spam",
-          3
-        ]
-      ],
-      "postType": [
-        [
-          "Organic opinion",
-          50
-        ],
-        [
-          "Fan amplified promo",
-          22
-        ],
-        [
-          "News press coverage",
-          12
-        ],
-        [
-          "Official promo",
-          9
-        ],
-        [
-          "Trade box office update",
-          5
-        ],
-        [
-          "Ticket merch",
-          2
-        ]
-      ],
-      "topics": [
-        [
-          "Cast performance",
-          27
-        ],
-        [
-          "Box office commercial",
-          19
-        ],
-        [
-          "Story",
-          17
-        ],
-        [
-          "Music",
-          15
-        ],
-        [
-          "Direction technical craft",
-          12
-        ],
-        [
-          "Official promo",
-          6
-        ]
-      ]
-    }
-  }
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-23",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-12-02",
+    "trackUntil": "2026-12-06",
+    "popularity": 1.2864
+  },
+  "report": null
 }

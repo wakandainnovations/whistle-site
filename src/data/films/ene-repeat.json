@@ -24,109 +24,195 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 2470,
-    "trackFrom": "2026-11-12",
-    "trackUntil": "2026-11-26",
-    "popularity": 2.8823
+    "collected": 7991,
+    "trackFrom": "2026-11-17",
+    "trackUntil": "2026-11-21",
+    "popularity": 4.1731
   },
   "report": {
     "tracking": {
-      "start": "2026-11-15",
-      "end": "2026-11-18"
+      "start": "2026-09-05",
+      "end": "2026-11-21"
     },
     "sentiment": {
-      "positive": 62,
-      "neutral": 77,
-      "negative": 5
+      "positive": 3657,
+      "neutral": 992,
+      "negative": 1553
     },
-    "netSentiment": 12.4,
+    "netSentiment": 2.35,
     "awareness": {
       "level": "High",
-      "views": 20158
+      "views": 34029005
     },
-    "reach": 1048,
+    "reach": 3273,
     "mentions": {
-      "total": 144,
+      "total": 6202,
       "daily": [
-        20,
-        90,
+        1,
         0,
-        34
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        2,
+        26,
+        11,
+        32,
+        135,
+        207,
+        669,
+        2824,
+        1564,
+        714,
+        14
       ]
     },
     "regions": [
       [
         "Andhra Telangana",
-        92
-      ],
-      [
-        "International",
-        6
+        95
       ],
       [
         "Tamil Nadu",
-        3
+        2
+      ],
+      [
+        "International",
+        2
+      ],
+      [
+        "Karnataka",
+        1
       ]
     ],
     "audience": {
       "where": [
         [
           "Andhra Telangana",
-          48
+          54
         ],
         [
           "Unknown",
-          48
-        ],
-        [
-          "International",
-          3
+          43
         ],
         [
           "Tamil Nadu",
+          1
+        ],
+        [
+          "International",
           1
         ]
       ],
       "who": [
         [
           "General public",
-          78
-        ],
-        [
-          "Fan page",
-          12
-        ],
-        [
-          "Official studio",
-          6
+          84
         ],
         [
           "Media press",
+          9
+        ],
+        [
+          "Official studio",
           4
+        ],
+        [
+          "Fan page",
+          2
+        ],
+        [
+          "Verified celebrity influencer",
+          1
         ]
       ],
       "postType": [
         [
-          "Fan amplified promo",
-          45
-        ],
-        [
           "Organic opinion",
-          41
+          74
         ],
         [
-          "News press coverage",
-          6
+          "Fan amplified promo",
+          10
         ],
         [
           "Official promo",
           6
         ],
         [
+          "News press coverage",
+          5
+        ],
+        [
           "Trade box office update",
           3
+        ],
+        [
+          "Ticket merch marketplace",
+          2
         ]
       ],
       "topics": [
@@ -135,26 +221,94 @@
           78
         ],
         [
-          "Music / songs",
-          13
-        ],
-        [
           "Acting / cast performance",
-          5
+          9
         ],
         [
-          "Direction",
+          "Music / songs",
           3
         ],
         [
-          "Story",
-          1
+          "Direction",
+          2
         ],
         [
-          "VFX",
-          1
+          "Story",
+          2
+        ],
+        [
+          "Screenplay",
+          2
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 406,
+        "score": 80,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 128,
+        "score": 80,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 107,
+        "score": 83,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 102,
+        "score": 68,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 97,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 53,
+        "score": 84,
+        "mood": "positive"
+      },
+      {
+        "label": "Second half",
+        "posts": 32,
+        "score": 66,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 27,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 14,
+        "score": 68,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 12,
+        "score": 84,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 11,
+        "score": 74,
+        "mood": "positive"
+      }
+    ]
   }
 }

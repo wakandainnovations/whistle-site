@@ -36,111 +36,131 @@
   ],
   "watchCheckedOn": "2026-11-16",
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-14",
+      "start": "2026-05-16",
       "end": "2026-05-20"
     },
     "sentiment": {
-      "positive": 60,
-      "neutral": 9,
-      "negative": 672
+      "positive": 54,
+      "neutral": 6,
+      "negative": 0
     },
-    "netSentiment": 0.09,
+    "netSentiment": null,
     "awareness": {
-      "level": "High",
-      "views": 625681
+      "level": "Medium",
+      "views": 168210
     },
     "reach": 6826,
     "mentions": {
-      "total": 741,
+      "total": 60,
       "daily": [
-        233,
-        184,
-        111,
-        116,
         1,
-        1,
-        95
+        0,
+        0,
+        0,
+        59
       ]
     },
     "regions": [
       [
-        "Kerala",
-        67
-      ],
-      [
         "Tamil Nadu",
-        33
+        100
       ]
     ],
     "audience": {
       "where": [
         [
           "Unknown",
-          45
-        ],
-        [
-          "Kerala",
-          36
+          65
         ],
         [
           "Tamil Nadu",
-          18
+          35
         ]
       ],
       "who": [
         [
           "General public",
-          83
+          77
         ],
         [
           "Fan page",
-          8
+          15
         ],
         [
-          "Verified celebrity influencer",
+          "Media press",
           8
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          83
+          73
         ],
         [
           "Fan amplified promo",
-          17
+          18
+        ],
+        [
+          "News press coverage",
+          7
+        ],
+        [
+          "Official promo",
+          2
         ]
       ],
       "topics": [
         [
           "General discussion",
-          70
-        ],
-        [
-          "Acting / cast performance",
-          6
-        ],
-        [
-          "Screenplay",
-          6
-        ],
-        [
-          "Story",
-          5
+          73
         ],
         [
           "Music / songs",
-          5
+          13
+        ],
+        [
+          "Acting / cast performance",
+          8
+        ],
+        [
+          "Story",
+          3
         ],
         [
           "First half",
-          3
+          2
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 8,
+        "score": 89,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 5,
+        "score": 83,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 2,
+        "score": 90,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 1,
+        "score": 92,
+        "mood": "positive"
+      }
+    ]
   }
 }

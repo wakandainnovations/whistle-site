@@ -30,109 +30,195 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 1789,
+    "collected": 2054,
     "trackFrom": "2026-11-06",
     "trackUntil": "2026-11-20",
-    "popularity": 4.0049
+    "popularity": 3.5516
   },
   "report": {
     "tracking": {
-      "start": "2026-11-15",
-      "end": "2026-11-18"
+      "start": "2026-11-12",
+      "end": "2026-11-19"
     },
     "sentiment": {
-      "positive": 70,
-      "neutral": 179,
-      "negative": 27
+      "positive": 578,
+      "neutral": 642,
+      "negative": 125
     },
-    "netSentiment": 2.59,
+    "netSentiment": 4.62,
     "awareness": {
       "level": "High",
-      "views": 5906
+      "views": 57632893
     },
-    "reach": 746,
+    "reach": 769,
     "mentions": {
-      "total": 276,
+      "total": 1345,
       "daily": [
-        16,
-        256,
-        0,
-        4
+        22,
+        10,
+        13,
+        129,
+        377,
+        660,
+        116,
+        18
       ]
     },
     "regions": [
       [
         "Andhra Telangana",
-        100
+        99
+      ],
+      [
+        "Tamil Nadu",
+        1
       ]
     ],
     "audience": {
       "where": [
         [
           "Andhra Telangana",
-          59
+          69
         ],
         [
           "Unknown",
-          41
+          30
         ]
       ],
       "who": [
         [
           "General public",
-          83
+          64
         ],
         [
           "Media press",
-          12
+          20
         ],
         [
           "Fan page",
-          2
+          8
+        ],
+        [
+          "Official studio",
+          6
         ],
         [
           "Verified celebrity influencer",
           2
-        ],
-        [
-          "Official studio",
-          1
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          44
+          45
         ],
         [
           "Fan amplified promo",
-          37
+          27
         ],
         [
           "News press coverage",
-          16
+          18
         ],
         [
           "Official promo",
-          3
+          10
+        ],
+        [
+          "Trade box office update",
+          1
         ]
       ],
       "topics": [
         [
           "General discussion",
-          95
+          83
+        ],
+        [
+          "Acting / cast performance",
+          6
         ],
         [
           "Music / songs",
+          5
+        ],
+        [
+          "Lead pair",
           3
         ],
         [
           "Story",
           2
+        ],
+        [
+          "Direction",
+          1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 86,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 64,
+        "score": 80,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 40,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 22,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 9,
+        "score": 91,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 4,
+        "score": 91,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 3,
+        "score": 73,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 2,
+        "score": 14,
+        "mood": "negative"
+      },
+      {
+        "label": "VFX",
+        "posts": 2,
+        "score": 92,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      }
+    ]
   }
 }

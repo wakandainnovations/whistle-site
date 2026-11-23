@@ -1,0 +1,452 @@
+{
+  "sample": false,
+  "auraId": 9000047,
+  "auraName": "Maarige Daari",
+  "title": "Maarige Daari",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-20",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": null,
+  "cast": [],
+  "genres": [
+    "Action",
+    "Thriller",
+    "Drama"
+  ],
+  "runtime": "2h 4m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-23",
+  "buzz": {
+    "collected": 553,
+    "trackFrom": "2026-11-18",
+    "trackUntil": "2026-11-22",
+    "popularity": 0.1821
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-03-11",
+      "end": "2026-11-22"
+    },
+    "sentiment": {
+      "positive": 151,
+      "neutral": 19,
+      "negative": 106
+    },
+    "netSentiment": 1.42,
+    "awareness": {
+      "level": "Medium",
+      "views": 6408888
+    },
+    "reach": 415,
+    "mentions": {
+      "total": 252,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        3,
+        2,
+        1,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        3,
+        1,
+        1,
+        7,
+        6,
+        1,
+        2,
+        5,
+        55,
+        15,
+        18,
+        34,
+        78,
+        3
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        95
+      ],
+      [
+        "Kannataka",
+        2
+      ],
+      [
+        "Kannada",
+        2
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          89
+        ],
+        [
+          "Unknown",
+          7
+        ],
+        [
+          "Kannataka",
+          2
+        ],
+        [
+          "Kannada",
+          2
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          53
+        ],
+        [
+          "Media press",
+          22
+        ],
+        [
+          "Official studio",
+          13
+        ],
+        [
+          "Fan page",
+          8
+        ],
+        [
+          "Verified celebrity influencer",
+          4
+        ]
+      ],
+      "postType": [
+        [
+          "Official promo",
+          34
+        ],
+        [
+          "Organic opinion",
+          34
+        ],
+        [
+          "Fan amplified promo",
+          27
+        ],
+        [
+          "News press coverage",
+          5
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          75
+        ],
+        [
+          "Acting / cast performance",
+          8
+        ],
+        [
+          "Direction",
+          8
+        ],
+        [
+          "Music / songs",
+          8
+        ],
+        [
+          "VFX",
+          1
+        ],
+        [
+          "First half",
+          1
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 11,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 11,
+        "score": 72,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 11,
+        "score": 75,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 2,
+        "score": 58,
+        "mood": "negative"
+      },
+      {
+        "label": "First half",
+        "posts": 1,
+        "score": 20,
+        "mood": "negative"
+      },
+      {
+        "label": "Story",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      }
+    ]
+  }
+}

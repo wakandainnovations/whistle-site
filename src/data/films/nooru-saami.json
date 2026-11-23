@@ -28,7 +28,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
@@ -36,18 +36,18 @@
       "end": "2026-07-27"
     },
     "sentiment": {
-      "positive": 713,
+      "positive": 710,
       "neutral": 214,
-      "negative": 13
+      "negative": 0
     },
-    "netSentiment": 54.85,
+    "netSentiment": null,
     "awareness": {
       "level": "High",
-      "views": 818209
+      "views": 817900
     },
-    "reach": 1734,
+    "reach": 1735,
     "mentions": {
-      "total": 940,
+      "total": 924,
       "daily": [
         44,
         55,
@@ -56,18 +56,18 @@
         11,
         42,
         97,
-        138,
-        67,
+        131,
+        65,
         40,
-        60,
-        0,
-        1,
-        1,
+        58,
         0,
         0,
-        1,
+        0,
+        0,
+        0,
+        0,
         16,
-        35,
+        34,
         0,
         0,
         0,
@@ -77,7 +77,7 @@
         0,
         0,
         0,
-        1,
+        0,
         0,
         0,
         0,
@@ -106,78 +106,62 @@
     "regions": [
       [
         "Tamil Nadu",
-        92
+        98
       ],
       [
-        "International",
-        4
-      ],
-      [
-        "Hindi Belt North India",
-        4
+        "Andhra Telangana",
+        1
       ]
     ],
     "audience": {
       "where": [
         [
-          "Tamil Nadu",
-          67
-        ],
-        [
           "Unknown",
-          27
+          62
         ],
         [
-          "International",
-          3
-        ],
-        [
-          "Hindi Belt North India",
-          3
+          "Tamil Nadu",
+          37
         ]
       ],
       "who": [
         [
-          "Media press",
-          54
-        ],
-        [
-          "Verified celebrity influencer",
-          21
-        ],
-        [
           "General public",
-          12
+          70
+        ],
+        [
+          "Media press",
+          22
         ],
         [
           "Fan page",
-          7
+          3
+        ],
+        [
+          "Verified celebrity influencer",
+          3
         ],
         [
           "Official studio",
-          6
+          2
         ]
       ],
       "postType": [
         [
-          "Official promo",
-          39
-        ],
-        [
           "Fan amplified promo",
-          23
+          68
         ],
         [
           "News press coverage",
-          20
+          16
         ],
         [
           "Organic opinion",
-          18
+          8
         ],
         [
-          "Trade box office update",
-          1
+          "Official promo",
+          7
         ]
       ],
       "topics": [
@@ -195,13 +179,63 @@
         ],
         [
           "Direction",
-          9
+          10
         ],
         [
           "Screenplay",
           1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 184,
+        "score": 84,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 149,
+        "score": 79,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 88,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 8,
+        "score": 89,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 4,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 2,
+        "score": 85,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 2,
+        "score": 83,
+        "mood": "positive"
+      },
+      {
+        "label": "Second half",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      }
+    ]
   }
 }

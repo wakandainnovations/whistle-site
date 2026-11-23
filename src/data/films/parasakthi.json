@@ -37,174 +37,131 @@
   ],
   "watchCheckedOn": "2026-11-16",
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
       "start": "2026-01-17",
-      "end": "2026-03-15"
+      "end": "2026-01-29"
     },
     "sentiment": {
       "positive": 6,
       "neutral": 4,
-      "negative": 332
+      "negative": 9
     },
-    "netSentiment": 0.02,
+    "netSentiment": 0.67,
     "awareness": {
       "level": "Low",
       "views": 0
     },
     "reach": 1729,
     "mentions": {
-      "total": 342,
+      "total": 19,
       "daily": [
-        2,
-        6,
-        2,
-        0,
-        0,
         1,
-        0,
-        0,
-        9,
-        10,
-        0,
-        0,
-        2,
-        4,
-        0,
-        0,
-        14,
-        0,
-        9,
-        1,
-        0,
-        4,
-        2,
-        0,
         5,
-        4,
-        2,
-        1,
-        2,
-        4,
-        3,
-        2,
-        13,
-        12,
-        14,
-        17,
-        17,
-        7,
-        18,
-        25,
-        1,
         1,
         0,
         0,
-        18,
-        7,
-        32,
-        0,
-        15,
-        31,
-        0,
-        10,
-        0,
-        4,
         1,
-        2,
-        4,
-        4
+        0,
+        0,
+        9,
+        1,
+        0,
+        0,
+        1
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        73
+        83
       ],
       [
         "International",
-        13
-      ],
-      [
-        "Andhra Telangana",
-        7
-      ],
-      [
-        "Hindi Belt North India",
-        7
+        17
       ]
     ],
     "audience": {
       "where": [
         [
           "Tamil Nadu",
-          65
-        ],
-        [
-          "International",
-          12
+          67
         ],
         [
           "Unknown",
-          12
+          20
         ],
         [
-          "Andhra Telangana",
-          6
-        ],
-        [
-          "Hindi Belt North India",
-          6
+          "International",
+          13
         ]
       ],
       "who": [
         [
           "General public",
-          95
-        ],
-        [
-          "Verified celebrity influencer",
-          5
+          100
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          89
+          88
         ],
         [
           "Fan amplified promo",
-          11
+          13
         ]
       ],
       "topics": [
         [
           "General discussion",
-          90
-        ],
-        [
-          "Acting / cast performance",
-          4
-        ],
-        [
-          "Story",
-          3
-        ],
-        [
-          "Screenplay",
-          1
-        ],
-        [
-          "Music / songs",
-          1
+          59
         ],
         [
           "Lead pair",
-          1
+          12
+        ],
+        [
+          "Music / songs",
+          12
+        ],
+        [
+          "Story",
+          12
+        ],
+        [
+          "Acting / cast performance",
+          6
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Lead pair",
+        "posts": 2,
+        "score": 57,
+        "mood": "negative"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 2,
+        "score": 83,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 2,
+        "score": 52,
+        "mood": "negative"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 1,
+        "score": 92,
+        "mood": "positive"
+      }
+    ]
   }
 }

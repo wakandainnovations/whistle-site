@@ -1,6 +1,9 @@
 {
-  "sample": true,
+  "sample": false,
+  "auraId": 9000061,
+  "auraName": "Vrushakarma",
   "title": "Vrushakarma",
+  "aka": [],
   "titleConfirmed": true,
   "language": "Telugu",
   "industry": "south",
@@ -26,164 +29,14 @@
   "runtime": null,
   "tmdbId": 1395627,
   "watch": [],
-  "watchCheckedOn": "2026-11-16",
-  "report": {
-    "tracking": {
-      "start": "2026-11-04",
-      "end": "2026-11-16"
-    },
-    "sentiment": {
-      "positive": 1299,
-      "neutral": 164,
-      "negative": 763
-    },
-    "netSentiment": 1.7,
-    "awareness": {
-      "level": "Medium",
-      "views": 5000000
-    },
-    "reach": 4900,
-    "mentions": {
-      "total": 1428,
-      "daily": [
-        64,
-        63,
-        57,
-        66,
-        51,
-        61,
-        60,
-        112,
-        195,
-        302,
-        203,
-        122,
-        72
-      ]
-    },
-    "regions": [
-      [
-        "Andhra Telangana",
-        65
-      ],
-      [
-        "International",
-        12
-      ],
-      [
-        "Hindi Belt North India",
-        9
-      ],
-      [
-        "Karnataka",
-        7
-      ]
-    ],
-    "audience": {
-      "where": [
-        [
-          "Andhra Telangana",
-          50
-        ],
-        [
-          "Unknown",
-          26
-        ],
-        [
-          "International",
-          8
-        ],
-        [
-          "Hindi Belt North India",
-          6
-        ],
-        [
-          "Karnataka",
-          5
-        ],
-        [
-          "Tamil Nadu",
-          5
-        ]
-      ],
-      "who": [
-        [
-          "General public",
-          33
-        ],
-        [
-          "Media press",
-          32
-        ],
-        [
-          "Fan page",
-          12
-        ],
-        [
-          "Verified celebrity",
-          11
-        ],
-        [
-          "Official studio",
-          6
-        ],
-        [
-          "Bot spam",
-          6
-        ]
-      ],
-      "postType": [
-        [
-          "Organic opinion",
-          40
-        ],
-        [
-          "Fan amplified promo",
-          25
-        ],
-        [
-          "Official promo",
-          16
-        ],
-        [
-          "News press coverage",
-          11
-        ],
-        [
-          "Trade box office update",
-          6
-        ],
-        [
-          "Ticket merch",
-          2
-        ]
-      ],
-      "topics": [
-        [
-          "Cast performance",
-          29
-        ],
-        [
-          "Story",
-          19
-        ],
-        [
-          "Box office commercial",
-          16
-        ],
-        [
-          "Direction technical craft",
-          15
-        ],
-        [
-          "Music",
-          9
-        ],
-        [
-          "Official promo",
-          7
-        ]
-      ]
-    }
-  }
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-23",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-12-02",
+    "trackUntil": "2026-12-06",
+    "popularity": 1.1482
+  },
+  "report": null
 }

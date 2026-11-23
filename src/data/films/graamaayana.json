@@ -30,7 +30,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
@@ -40,16 +40,16 @@
     "sentiment": {
       "positive": 782,
       "neutral": 128,
-      "negative": 3
+      "negative": 2
     },
-    "netSentiment": 260.67,
+    "netSentiment": 391,
     "awareness": {
       "level": "High",
-      "views": 285947
+      "views": 285352
     },
-    "reach": 777,
+    "reach": 790,
     "mentions": {
-      "total": 913,
+      "total": 912,
       "daily": [
         1,
         0,
@@ -67,7 +67,7 @@
         14,
         2,
         20,
-        6,
+        5,
         17,
         26,
         61,
@@ -165,6 +165,50 @@
           2
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 152,
+        "score": 83,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 39,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 37,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 19,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 17,
+        "score": 71,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 10,
+        "score": 84,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 8,
+        "score": 76,
+        "mood": "positive"
+      }
+    ]
   }
 }

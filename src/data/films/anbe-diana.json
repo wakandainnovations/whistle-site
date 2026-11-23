@@ -31,77 +31,29 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-27",
+      "start": "2026-07-14",
       "end": "2026-07-16"
     },
     "sentiment": {
-      "positive": 865,
+      "positive": 863,
       "neutral": 172,
-      "negative": 1
+      "negative": 0
     },
-    "netSentiment": 865,
+    "netSentiment": null,
     "awareness": {
       "level": "High",
       "views": 382473
     },
     "reach": 1558,
     "mentions": {
-      "total": 1038,
+      "total": 1035,
       "daily": [
-        1,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         77,
-        769,
+        768,
         190
       ]
     },
@@ -119,7 +71,7 @@
       "where": [
         [
           "Unknown",
-          61
+          62
         ],
         [
           "Tamil Nadu",
@@ -188,6 +140,56 @@
           2
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 58,
+        "score": 84,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 48,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 44,
+        "score": 86,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 28,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Second half",
+        "posts": 20,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 17,
+        "score": 75,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 3,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 3,
+        "score": 92,
+        "mood": "positive"
+      }
+    ]
   }
 }

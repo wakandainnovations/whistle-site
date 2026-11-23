@@ -30,7 +30,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
@@ -40,36 +40,77 @@
     "sentiment": {
       "positive": 3,
       "neutral": 1,
-      "negative": 1
+      "negative": 0
     },
-    "netSentiment": 3,
+    "netSentiment": null,
     "awareness": {
       "level": "Medium",
-      "views": 2215
+      "views": 2119
     },
     "reach": 223,
     "mentions": {
-      "total": 5,
+      "total": 4,
       "daily": [
         2,
-        3
+        2
       ]
     },
-    "regions": [],
+    "regions": [
+      [
+        "Andhra Telangana",
+        50
+      ],
+      [
+        "Hindi Belt North India",
+        50
+      ]
+    ],
     "audience": {
-      "where": [],
-      "who": [],
-      "postType": [],
+      "where": [
+        [
+          "Unknown",
+          50
+        ],
+        [
+          "Andhra Telangana",
+          25
+        ],
+        [
+          "Hindi Belt North India",
+          25
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          50
+        ],
+        [
+          "Media press",
+          50
+        ]
+      ],
+      "postType": [
+        [
+          "News press coverage",
+          50
+        ],
+        [
+          "Fan amplified promo",
+          25
+        ],
+        [
+          "Organic opinion",
+          25
+        ]
+      ],
       "topics": [
         [
           "General discussion",
-          80
-        ],
-        [
-          "Direction",
-          20
+          100
         ]
       ]
-    }
+    },
+    "aspects": []
   }
 }

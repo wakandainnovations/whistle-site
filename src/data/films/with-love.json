@@ -29,117 +29,43 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
       "start": "2026-02-10",
-      "end": "2026-03-14"
+      "end": "2026-02-11"
     },
     "sentiment": {
-      "positive": 3,
-      "neutral": 1,
-      "negative": 14
+      "positive": 2,
+      "neutral": 0,
+      "negative": 0
     },
-    "netSentiment": 0.21,
+    "netSentiment": null,
     "awareness": {
       "level": "Low",
       "views": 0
     },
     "reach": 1312,
     "mentions": {
-      "total": 18,
+      "total": 2,
       "daily": [
         1,
-        2,
-        1,
-        0,
-        2,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        2,
-        1,
-        1,
-        1,
-        0,
-        1,
-        0,
-        1,
-        3
+        1
       ]
     },
-    "regions": [
-      [
-        "Tamil Nadu",
-        100
-      ]
-    ],
+    "regions": [],
     "audience": {
-      "where": [
-        [
-          "Tamil Nadu",
-          50
-        ],
-        [
-          "Unknown",
-          50
-        ]
-      ],
-      "who": [
-        [
-          "General public",
-          67
-        ],
-        [
-          "Verified celebrity influencer",
-          33
-        ]
-      ],
-      "postType": [
-        [
-          "Organic opinion",
-          67
-        ],
-        [
-          "Official promo",
-          33
-        ]
-      ],
+      "where": [],
+      "who": [],
+      "postType": [],
       "topics": [
         [
           "General discussion",
-          67
-        ],
-        [
-          "Acting / cast performance",
-          17
-        ],
-        [
-          "Story",
-          11
-        ],
-        [
-          "Direction",
-          6
+          100
         ]
       ]
-    }
+    },
+    "aspects": []
   }
 }

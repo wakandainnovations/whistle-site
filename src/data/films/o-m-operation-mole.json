@@ -25,69 +25,95 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": {
-    "collected": 1080,
-    "trackFrom": "2026-11-13",
-    "trackUntil": "2026-11-27",
-    "popularity": 8.2553
+    "collected": 4336,
+    "trackFrom": "2026-11-18",
+    "trackUntil": "2026-11-22",
+    "popularity": 40.8047
   },
   "report": {
     "tracking": {
-      "start": "2026-11-15",
-      "end": "2026-11-18"
+      "start": "2026-11-13",
+      "end": "2026-11-22"
     },
     "sentiment": {
-      "positive": 5,
-      "neutral": 21,
-      "negative": 0
+      "positive": 697,
+      "neutral": 471,
+      "negative": 427
     },
-    "netSentiment": null,
+    "netSentiment": 1.63,
     "awareness": {
-      "level": "Medium",
-      "views": 1332
+      "level": "High",
+      "views": 110946988
     },
-    "reach": 148,
+    "reach": 448,
     "mentions": {
-      "total": 26,
+      "total": 1595,
       "daily": [
-        3,
-        19,
-        0,
-        4
+        7,
+        60,
+        141,
+        161,
+        157,
+        115,
+        362,
+        455,
+        123,
+        14
       ]
     },
     "regions": [
       [
-        "Andhra Telangana",
-        33
+        "Tamil Nadu",
+        64
       ],
       [
         "Kerala",
-        33
+        25
       ],
       [
-        "Tamil Nadu",
-        33
+        "Andhra Telangana",
+        7
+      ],
+      [
+        "Hindi Belt North India",
+        3
+      ],
+      [
+        "International",
+        1
+      ],
+      [
+        "Karnataka",
+        1
       ]
     ],
     "audience": {
       "where": [
         [
-          "Unknown",
-          75
+          "Tamil Nadu",
+          47
         ],
         [
-          "Andhra Telangana",
-          8
+          "Unknown",
+          28
         ],
         [
           "Kerala",
-          8
+          18
         ],
         [
-          "Tamil Nadu",
-          8
+          "Andhra Telangana",
+          5
+        ],
+        [
+          "Hindi Belt North India",
+          2
+        ],
+        [
+          "International",
+          1
         ]
       ],
       "who": [
@@ -97,37 +123,125 @@
         ],
         [
           "Fan page",
-          17
+          16
         ],
         [
           "Media press",
-          17
+          11
+        ],
+        [
+          "Official studio",
+          3
+        ],
+        [
+          "Verified celebrity influencer",
+          2
         ]
       ],
       "postType": [
         [
-          "Fan amplified promo",
-          58
+          "Organic opinion",
+          54
         ],
         [
-          "Organic opinion",
-          25
+          "Fan amplified promo",
+          29
+        ],
+        [
+          "Official promo",
+          9
         ],
         [
           "News press coverage",
-          17
+          6
+        ],
+        [
+          "Trade box office update",
+          1
         ]
       ],
       "topics": [
         [
           "General discussion",
-          92
+          66
+        ],
+        [
+          "Acting / cast performance",
+          21
         ],
         [
           "Music / songs",
-          8
+          7
+        ],
+        [
+          "Story",
+          3
+        ],
+        [
+          "Runtime",
+          1
+        ],
+        [
+          "Lead pair",
+          1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 170,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 53,
+        "score": 79,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 24,
+        "score": 53,
+        "mood": "negative"
+      },
+      {
+        "label": "Runtime",
+        "posts": 7,
+        "score": 59,
+        "mood": "neutral"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 6,
+        "score": 65,
+        "mood": "negative"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 5,
+        "score": 64,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 3,
+        "score": 60,
+        "mood": "negative"
+      },
+      {
+        "label": "Direction",
+        "posts": 2,
+        "score": 47,
+        "mood": "negative"
+      },
+      {
+        "label": "Second half",
+        "posts": 1,
+        "score": 42,
+        "mood": "negative"
+      }
+    ]
   }
 }

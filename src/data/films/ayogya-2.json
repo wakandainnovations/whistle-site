@@ -31,26 +31,26 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
       "start": "2026-06-24",
-      "end": "2026-07-29"
+      "end": "2026-07-28"
     },
     "sentiment": {
       "positive": 18,
       "neutral": 26,
-      "negative": 2
+      "negative": 1
     },
-    "netSentiment": 9,
+    "netSentiment": 18,
     "awareness": {
-      "level": "Medium",
-      "views": 31441
+      "level": "High",
+      "views": 31331
     },
-    "reach": 767,
+    "reach": 773,
     "mentions": {
-      "total": 46,
+      "total": 45,
       "daily": [
         1,
         0,
@@ -86,7 +86,6 @@
         10,
         0,
         0,
-        1,
         1
       ]
     },
@@ -110,11 +109,11 @@
       "who": [
         [
           "Media press",
-          65
+          67
         ],
         [
           "General public",
-          17
+          16
         ],
         [
           "Fan page",
@@ -128,7 +127,7 @@
       "postType": [
         [
           "News press coverage",
-          57
+          58
         ],
         [
           "Official promo",
@@ -136,17 +135,17 @@
         ],
         [
           "Fan amplified promo",
-          15
+          16
         ],
         [
           "Organic opinion",
-          7
+          4
         ]
       ],
       "topics": [
         [
           "Music / songs",
-          54
+          56
         ],
         [
           "Acting / cast performance",
@@ -157,6 +156,26 @@
           2
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 25,
+        "score": 70,
+        "mood": "neutral"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 5,
+        "score": 65,
+        "mood": "neutral"
+      },
+      {
+        "label": "Direction",
+        "posts": 1,
+        "score": 60,
+        "mood": "neutral"
+      }
+    ]
   }
 }

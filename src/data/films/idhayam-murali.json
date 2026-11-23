@@ -32,83 +32,40 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
-      "start": "2026-05-19",
+      "start": "2026-07-01",
       "end": "2026-07-16"
     },
     "sentiment": {
-      "positive": 2228,
-      "neutral": 554,
-      "negative": 43
+      "positive": 2226,
+      "neutral": 553,
+      "negative": 4
     },
-    "netSentiment": 51.81,
+    "netSentiment": 556.5,
     "awareness": {
       "level": "High",
-      "views": 1334300
+      "views": 1296848
     },
-    "reach": 3835,
+    "reach": 3833,
     "mentions": {
-      "total": 2825,
+      "total": 2783,
       "daily": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         90,
         324,
-        295,
-        518,
+        294,
+        514,
         829,
-        318,
-        162,
+        303,
+        145,
         8,
-        256,
+        255,
         16,
         1,
-        2,
-        2,
+        0,
+        1,
         0,
         2,
         1
@@ -117,82 +74,82 @@
     "regions": [
       [
         "Tamil Nadu",
-        81
+        89
       ],
       [
-        "Kerala",
-        14
+        "International",
+        4
       ],
       [
         "Andhra Telangana",
         4
       ],
       [
-        "International",
-        1
+        "Kerala",
+        2
       ]
     ],
     "audience": {
       "where": [
         [
           "Unknown",
-          53
+          65
         ],
         [
           "Tamil Nadu",
-          38
-        ],
-        [
-          "Kerala",
-          7
-        ],
-        [
-          "Andhra Telangana",
-          2
+          31
         ],
         [
           "International",
+          1
+        ],
+        [
+          "Andhra Telangana",
+          1
+        ],
+        [
+          "Kerala",
           1
         ]
       ],
       "who": [
         [
           "General public",
-          69
+          81
         ],
         [
           "Media press",
-          19
-        ],
-        [
-          "Verified celebrity influencer",
-          6
+          8
         ],
         [
           "Official studio",
-          4
+          6
         ],
         [
           "Fan page",
-          2
+          4
+        ],
+        [
+          "Verified celebrity influencer",
+          1
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          72
+          80
         ],
         [
           "Official promo",
-          19
+          11
         ],
         [
           "Organic opinion",
-          4
+          7
         ],
         [
           "News press coverage",
-          4
+          3
         ]
       ],
       "topics": [
@@ -221,6 +178,62 @@
           1
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 337,
+        "score": 80,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 310,
+        "score": 86,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 139,
+        "score": 84,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 48,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 37,
+        "score": 86,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 35,
+        "score": 91,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 20,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 13,
+        "score": 67,
+        "mood": "neutral"
+      },
+      {
+        "label": "Climax",
+        "posts": 1,
+        "score": 30,
+        "mood": "negative"
+      }
+    ]
   }
 }

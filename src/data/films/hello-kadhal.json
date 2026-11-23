@@ -1,0 +1,36 @@
+{
+  "sample": false,
+  "auraId": 9000054,
+  "auraName": "Hello Kadhal",
+  "title": "Hello Kadhal",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-12-04",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": "Nikhil Muraly",
+  "cast": [],
+  "genres": [
+    "Romance",
+    "Comedy",
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-23",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-12-02",
+    "trackUntil": "2026-12-06",
+    "popularity": 1.2915
+  },
+  "report": null
+}

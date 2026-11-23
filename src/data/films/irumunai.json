@@ -29,7 +29,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-18",
+  "syncedOn": "2026-11-23",
   "buzz": null,
   "report": {
     "tracking": {
@@ -43,10 +43,10 @@
     },
     "netSentiment": null,
     "awareness": {
-      "level": "Medium",
+      "level": "High",
       "views": 6098
     },
-    "reach": 157,
+    "reach": 156,
     "mentions": {
       "total": 16,
       "daily": [
@@ -71,35 +71,43 @@
       "where": [
         [
           "Tamil Nadu",
-          100
+          92
+        ],
+        [
+          "Unknown",
+          8
         ]
       ],
       "who": [
+        [
+          "Media press",
+          44
+        ],
         [
           "Fan page",
           38
         ],
         [
-          "Media press",
-          38
+          "Official studio",
+          13
         ],
         [
           "General public",
-          13
-        ],
-        [
-          "Official studio",
-          13
+          6
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          50
+          44
         ],
         [
           "Official promo",
-          50
+          31
+        ],
+        [
+          "News press coverage",
+          25
         ]
       ],
       "topics": [
@@ -112,6 +120,14 @@
           6
         ]
       ]
-    }
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      }
+    ]
   }
 }
