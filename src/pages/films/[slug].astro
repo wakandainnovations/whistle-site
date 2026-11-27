@@ -254,7 +254,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
                 <div><h3>When people were talking</h3><p>{peakDate ? `Talk peaked on ${formatDate(peakDate, longDate)}.` : 'Posts per day.'} Higher means more people posting that day.</p></div>
                 <div style="text-align:right"><span class="big num">{r.mentions.total.toLocaleString('en-US')}</span><p class="num">mentions in {daysBetween(r.tracking.start, r.tracking.end)} days</p></div>
               </div>
-              {r.mentions.daily.length > 1 ? <MentionsChart daily={r.mentions.daily} start={r.tracking.start} end={r.tracking.end} /> : <p class="empty">No day-by-day counts for this film yet.</p>}
+              {r.mentions.daily.length > 1 ? <MentionsChart daily={r.mentions.daily} start={r.tracking.start} end={r.tracking.end} releaseDate={f.releaseDate} /> : <p class="empty">No day-by-day counts for this film yet.</p>}
             </div>
 
             <div class="two">

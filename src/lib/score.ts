@@ -104,3 +104,38 @@ export function formatDate(iso: string, opts: Intl.DateTimeFormatOptions = { mon
 export function daysBetween(start: string, end: string) {
   return Math.round((Date.parse(`${end}T00:00:00Z`) - Date.parse(`${start}T00:00:00Z`)) / 86400000) + 1;
 }
+
+export const RELEASE_WINDOW_DAYS = 7; // timelines open on the week either side of release
+
+function shiftIso(iso: string, n: number) {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+
+/**
+ * Daily mentions laid out on a calendar that always covers release ± RELEASE_WINDOW_DAYS, plus any tracked
+ * days outside it. Days the collector never tracked are null (drawn as no data, not as zero). Without a
+ * release date the window is the last 15 tracked days.
+ */
+export function releaseTimeline(daily: number[], start: string, end: string, releaseDate: string | null) {
+  const anchor = releaseDate ?? shiftIso(end, -RELEASE_WINDOW_DAYS);
+  const winFrom = shiftIso(anchor, -RELEASE_WINDOW_DAYS);
+  const winTo = shiftIso(anchor, RELEASE_WINDOW_DAYS);
+  const from = winFrom < start ? winFrom : start;
+  const to = winTo > end ? winTo : end;
+  const days = daysBetween(from, to);
+  const lead = daysBetween(from, start) - 1; // calendar index of tracking.start
+  const tracked = daysBetween(start, end);
+  const values: (number | null)[] = Array.from({ length: days }, (_, i) => {
+    const t = i - lead;
+    return t >= 0 && t < tracked ? daily[t] ?? 0 : null;
+  });
+  const winStart = daysBetween(from, winFrom) - 1;
+  return {
+    from, values, days,
+    dateAt: (i: number) => shiftIso(from, i),
+    winStart, winEnd: winStart + 2 * RELEASE_WINDOW_DAYS,
+    release: releaseDate ? winStart + RELEASE_WINDOW_DAYS : null,
+  };
+}

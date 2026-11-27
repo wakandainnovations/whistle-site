@@ -9,7 +9,7 @@ import TierChip from '../components/TierChip.astro';
 import WatchChips from '../components/WatchChips.astro';
 import Sparkline from '../components/Sparkline.astro';
 import { SITE, LANGUAGES } from '../site.config';
-import { TIERS, whistleScore, tierFor, scoreLabel, compact } from '../lib/score';
+import { TIERS, whistleScore, tierFor, scoreLabel, compact, releaseTimeline } from '../lib/score';
 import { plain } from '../lib/plain';
 import { nowShowing, runLabel, mostTalked, talkOf, inRace, scoreSolid, daysToRelease } from '../lib/now';
 
@@ -216,7 +216,7 @@ const whyLine = (f: Film) => {
                       <span class="board-title">{d.title}</span>
                       <span class="board-meta num">{compact(talkOf(film))} posts · {d.language}{when && ` · ${when}`}</span>
                     </span>
-                    <span class="board-spark">{d.report && <Sparkline values={d.report.mentions.daily} />}</span>
+                    <span class="board-spark">{d.report && (() => { const t = releaseTimeline(d.report.mentions.daily, d.report.tracking.start, d.report.tracking.end, d.releaseDate); return <Sparkline values={t.values.slice(t.winStart, t.winEnd + 1)} mark={t.release === null ? null : t.release - t.winStart} />; })()}</span>
                     {s >= 0
                       ? <span class="board-score num" data-waves={tierFor(s).waves}>{s}%<small>Whistle</small></span>
                       : <span class="board-score num">Soon<small>Whistle</small></span>}
