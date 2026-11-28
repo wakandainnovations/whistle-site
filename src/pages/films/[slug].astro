@@ -15,7 +15,8 @@ import Waves from '../../components/Waves.astro';
 import CrowdMood from '../../components/CrowdMood.astro';
 import Locked from '../../components/Locked.astro';
 import { plain, plainDriver, inTen, buzzWord, cheersPerBoo } from '../../lib/plain';
-import { TIERS, whistleScore, tierFor, scoreLabel, compact, formatDate, daysBetween } from '../../lib/score';
+import { TIERS, whistleScore, tierFor, scoreLabel, compact, formatDate, daysBetween, sentimentShares } from '../../lib/score';
+import { dailyBuzz } from '../../lib/buzz';
 import { filmSummary, isAiSummary } from '../../lib/summary';
 
 export async function getStaticPaths() {
@@ -30,8 +31,10 @@ const r = f.report;
 const upcoming = !!f.releaseDate && Date.parse(`${f.releaseDate}T00:00:00Z`) > Date.now();
 const score = r ? whistleScore(r.sentiment) : null;
 const tier = score !== null ? tierFor(score) : null;
-const sided = r ? r.sentiment.positive + r.sentiment.negative : 0;
-const posts = r ? sided + r.sentiment.neutral : 0;
+// The site never shows post or poster counts: shares and buzz (lib/buzz.ts) only
+const shares = r ? sentimentShares(r.sentiment) : null;
+const buzz = r ? dailyBuzz(film, films) : [];
+const peakBuzz = buzz.length ? Math.round(Math.max(...buzz)) : 0;
 const longDate = { month: 'short', day: 'numeric', year: 'numeric' } as const;
 
 // Plain-language numbers for the report
@@ -59,8 +62,8 @@ const fullTitle = score !== null
 const h1Sub = score !== null ? (upcoming ? 'Pre-release buzz' : 'Review & audience rating') : 'Trailer & audience buzz';
 const description = r && score !== null
   ? upcoming
-    ? `${f.title} (${f.language}, ${f.year}) pre-release buzz: ${score}% of ${compact(posts)} posts so far are positive about ${lead}${kind}. See what fans are saying before release.${streaming}`
-    : `${f.title} (${f.language}, ${f.year}) audience review: ${score}% of ${compact(posts)} public posts were positive about ${lead}${kind}. What fans loved, what they didn't, and whether it's worth watching.${streaming}`
+    ? `${f.title} (${f.language}, ${f.year}) pre-release buzz: ${score}% Whistle from public posts so far about ${lead}${kind}. See what fans are saying before release.${streaming}`
+    : `${f.title} (${f.language}, ${f.year}) audience review: ${score}% Whistle from public posts about ${lead}${kind}. What fans loved, what they didn't, and whether it's worth watching.${streaming}`
   : `${f.title} (${f.language}, ${f.year}): trailer, release date, cast and audience buzz. Audience rating coming soon.${streaming}`;
 
 // "2h 36m" -> "PT2H36M"
@@ -179,7 +182,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
               <Dial score={score} size={190} />
               <div class="score-meta">
                 <TierChip score={score} />
-                <span class="basis num">Positive share of {compact(posts)} posts</span>
+                <span class="basis">How much of the public talk cheered it</span>
               </div>
               <div class="perf" aria-hidden="true"></div>
               <div class="actions">
@@ -234,8 +237,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
 
             <div class="quick">
               {net && <div class="q"><span class="q-v num">{net.value}</span><span class="q-l">{net.label}</span></div>}
-              {r.awareness.views > 0 && <div class="q"><span class="q-v num">{compact(r.awareness.views)}</span><span class="q-l">trailer and clip views. <b>{buzzWord(r.awareness.level)} buzz.</b></span></div>}
-              {r.reach > 0 && <div class="q"><span class="q-v num">{compact(r.reach)}</span><span class="q-l">different people posted about it</span></div>}
+              {r.awareness.views > 0 && <div class="q"><span class="q-v num">{compact(r.awareness.views)}</span><span class="q-l">user views. <b>{buzzWord(r.awareness.level)} buzz.</b></span></div>}
               {peakDate && <div class="q"><span class="q-v">{formatDate(peakDate)}</span><span class="q-l">the loudest day{peakAfterRelease !== null && peakAfterRelease >= 0 ? `, ${peakAfterRelease} days after release` : ''}</span></div>}
             </div>
 
@@ -246,10 +248,10 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
 
             <div class="panel">
               <div class="panel-head">
-                <div><h3>When people were talking</h3><p>{peakDate ? `Talk peaked on ${formatDate(peakDate, longDate)}.` : 'Posts per day.'} Higher means more people posting that day.</p></div>
-                <div style="text-align:right"><span class="big num">{r.mentions.total.toLocaleString('en-US')}</span><p class="num">mentions in {daysBetween(r.tracking.start, r.tracking.end)} days</p></div>
+                <div><h3>When people were talking</h3><p>Buzz is {f.title}'s share of the day's talk about {f.language} films, from 0 to 100.</p></div>
+                {peakBuzz > 0 && <div style="text-align:right"><span class="big num">{peakBuzz}</span><p>peak buzz</p></div>}
               </div>
-              {r.mentions.daily.length > 1 ? <MentionsChart daily={r.mentions.daily} start={r.tracking.start} end={r.tracking.end} releaseDate={f.releaseDate} /> : <p class="empty">No day-by-day counts for this film yet.</p>}
+              {r.mentions.daily.length > 1 ? <MentionsChart buzz={buzz} start={r.tracking.start} end={r.tracking.end} releaseDate={f.releaseDate} /> : <p class="empty">No day-by-day counts for this film yet.</p>}
             </div>
 
             <div class="two">
@@ -297,8 +299,8 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
             <div class="panel method">
               <div>
                 <div class="panel-head" style="margin-bottom:10px"><div><h3>How we got {score}%</h3></div></div>
-                <p>We read <b>{posts.toLocaleString('en-US')}</b> public posts. <b>{r.sentiment.positive.toLocaleString('en-US')}</b> cheered the film, <b>{r.sentiment.negative.toLocaleString('en-US')}</b> complained, and {r.sentiment.neutral.toLocaleString('en-US')} didn't take a side.</p>
-                <p>{r.sentiment.positive.toLocaleString('en-US')} cheers out of {posts.toLocaleString('en-US')} posts is <b>{scoreLabel(score)}</b>.</p>
+                <p>We read the public posts about {f.title}. <b>{shares!.positive}%</b> cheered the film, <b>{shares!.negative}%</b> complained, and {shares!.neutral}% didn't take a side.</p>
+                <p>Counting the on-the-fence posts as part of a cheer, that is <b>{scoreLabel(score)}</b>.</p>
               </div>
               <div>
                 <div class="panel-head" style="margin-bottom:10px"><div><h3>What the whistles mean</h3></div></div>
@@ -315,7 +317,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
             <div class="panel-head"><div><h3>What the report will show</h3><p>Once the score is ready, this page fills in with:</p></div></div>
             <ul class="list-plain coming-list">
               <li>The Whistle, and how many in 10 people loved it</li>
-              <li>How many people are talking about it right now</li>
+              <li>How much of the buzz it's getting among {f.language} films</li>
               <li>The loudest day, and how the talk rose and fell</li>
               <li>What people talked about, and where</li>
             </ul>
@@ -372,7 +374,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
   .big-say em { font-style: normal; color: var(--pos); }
   .small-say { color: var(--muted); font-size: 16px; }
   .small-say b { color: var(--fg); font-weight: 600; }
-  .quick { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .quick { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
   .q { padding: 20px 22px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; transition: transform .35s cubic-bezier(.3,1.5,.5,1), border-color .2s; }
   .q:hover { transform: translateY(-4px) rotate(-.6deg); border-color: var(--gold); }
   .q-v { font-family: var(--font-display); font-weight: 900; font-size: 46px; line-height: .95; text-transform: uppercase; }

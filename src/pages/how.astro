@@ -8,13 +8,14 @@
 import Layout from '../layouts/Layout.astro';
 import { getFilms } from '../lib/films';
 import Waves from '../components/Waves.astro';
-import { TIERS, whistleScore, scoreLabel, compact, PRIOR_MEAN, PRIOR_WEIGHT, NEUTRAL_LOW, NEUTRAL_HIGH } from '../lib/score';
+import { TIERS, whistleScore, scoreLabel, sentimentShares, PRIOR_MEAN, PRIOR_WEIGHT, NEUTRAL_LOW, NEUTRAL_HIGH } from '../lib/score';
 
 const all = await getFilms();
 const scored = all.filter((f) => f.data.report);
 const featured = scored.find((f) => f.data.featured) ?? scored[0];
 const fr = featured.data.report!;
 const fScore = whistleScore(fr.sentiment);
+const fShares = sentimentShares(fr.sentiment);
 const scoreOf = (f: (typeof all)[number]) => whistleScore(f.data.report!.sentiment);
 const bandFilms = (t: (typeof TIERS)[number]) => scored.filter((f) => scoreOf(f) >= t.min && scoreOf(f) <= t.max && f.data.poster);
 
@@ -36,9 +37,8 @@ const POSTS = [
 
 const TRACKED = [
   ['Sentiment', 'Cheers, complaints and on-the-fence posts.', 'M4 12h4l3-8 4 16 3-8h2'],
-  ['Mentions per day', 'How the talk rose and fell across the two months.', 'M3 20V10M9 20V4M15 20v-8M21 20v-5'],
-  ['Views', 'Trailer and clip views across platforms.', 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'],
-  ['Reach', 'How many different people posted.', 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21a7 7 0 0 1 14 0M17 3.5a4 4 0 0 1 0 7.5M22 21a7 7 0 0 0-4-6.3'],
+  ['Buzz per day', 'Each film’s share of the day’s talk among films in its language, 0 to 100.', 'M3 20V10M9 20V4M15 20v-8M21 20v-5'],
+  ['Views', 'User views across platforms.', 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'],
   ['Where', 'The states and cities the noise came from.', 'M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z'],
   ['Who and what', 'Fans, media, celebrities. Story, music, acting.', 'M21 12a9 9 0 1 1-4-7.5L21 3v6h-6'],
 ];
@@ -82,7 +82,7 @@ const TRACKED = [
           <h2>Move the crowd</h2>
           <p>Drag the sliders. Cheers push the Whistle up and complaints pull it down. A post on the fence counts as part of a cheer: a third for a film with up to {NEUTRAL_LOW.posts.toLocaleString('en-US')} posts, rising to half from {NEUTRAL_HIGH.posts.toLocaleString('en-US')} posts. Some are lukewarm verdicts, many are just news, and a film with little talk has to earn its Whistle with outright cheers.</p>
           <p>Every film starts at the typical film's {Math.round(PRIOR_MEAN * 100)}%, worth {PRIOR_WEIGHT} posts. A handful of posts barely moves it; thousands make the score the film's own. Try it with small numbers.</p>
-          <p class="real">The real thing: <b>{featured.data.title}</b> had {compact(fr.sentiment.positive)} cheers, {compact(fr.sentiment.negative)} complaints and {compact(fr.sentiment.neutral)} on the fence, which is a <b>{scoreLabel(fScore)}</b>.</p>
+          <p class="real">The real thing: <b>{featured.data.title}</b>'s talk was {fShares.positive}% cheers, {fShares.negative}% complaints and {fShares.neutral}% on the fence, which is a <b>{scoreLabel(fScore)}</b>.</p>
           <button class="btn" type="button" id="try-real" data-pos={fr.sentiment.positive} data-neg={fr.sentiment.negative} data-neu={fr.sentiment.neutral}>Load {featured.data.title}'s numbers</button>
         </div>
         <div class="try-box">

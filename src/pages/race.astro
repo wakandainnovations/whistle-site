@@ -10,7 +10,7 @@ import Layout from '../layouts/Layout.astro';
 import { getFilms } from '../lib/films';
 import { whistleScore, TIERS } from '../lib/score';
 import { LANGUAGES } from '../site.config';
-import { inRace, MIN_COLLECTED_SHOWN } from '../lib/now';
+import { inRace } from '../lib/now';
 import { scoreChanges } from '../lib/history';
 
 // AuraService movies with a release date and enough talk (hasEnoughTalk; upcoming ones too).
@@ -42,7 +42,7 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
         <div>
           <span class="eyebrow">The Whistle Race</span>
           <h1>Who's winning <em>the crowd</em> right now</h1>
-          <p>Every film we track with more than {MIN_COLLECTED_SHOWN.toLocaleString('en-US')} genuine user review posts (excluding promotion, news and media review, film's own team and box office tracker posts), pinned to its release date. Scores refresh through the day as new posts are counted. Films still to release show their pre-release buzz.</p>
+          <p>Every film we track with enough genuine user review posts (excluding promotion, news and media review, film's own team and box office tracker posts), pinned to its release date. Scores refresh through the day as new posts are counted. Films still to release show their pre-release buzz.</p>
         </div>
         <div class="today-badge">
           <span class="live-pill"><i></i>Live scores</span>
@@ -121,7 +121,7 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
             <div class="mover up"><span class="mono">Biggest climber</span><b id="m-up">–</b><span id="m-up-d" class="num"></span></div>
             <div class="mover down"><span class="mono">Losing steam</span><b id="m-down">–</b><span id="m-down-d" class="num"></span></div>
             <div class="mover hot"><span class="mono">Loudest today</span><b id="m-hot">–</b><span id="m-hot-d" class="num"></span></div>
-            <p class="movers-note">Each film's change since its previous update, the last time its Whistle moved. Loudest today counts new posts in the last 24 hours.</p>
+            <p class="movers-note">Each film's change since its previous update, the last time its Whistle moved. Loudest today is the film with the most new talk in the last 24 hours.</p>
           </aside>
         </div>
       </div>
@@ -527,7 +527,7 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
     };
     setM('up', upM, upM && d(upM) > 0 ? `▲ ${d(upM)} points · now ${upM.st.now}% (${tierFor(upM.st.now).name})` : 'Holding steady');
     setM('down', downM, downM && d(downM) < 0 ? `▼ ${-d(downM)} points · now ${downM.st.now}%` : 'Nobody slipped');
-    setM('hot', hot, hot ? `${hot.st.postsDay.toLocaleString('en-IN')} new posts in the last 24 hours` : '');
+    setM('hot', hot, hot ? 'Most new talk in the last 24 hours' : '');
   }
 
   // Board opens as it stood before the latest updates, then rolls into the current scores.

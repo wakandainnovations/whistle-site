@@ -1,22 +1,22 @@
 ---
-// Daily mentions as a smoothed area chart, drawn at build time. No chart library needed.
+// Daily buzz (0-100, see lib/buzz.ts) as a smoothed area chart, drawn at build time. No chart library needed.
 // The view shows 15 days (release ± 1 week); earlier or later tracked days sit off to the sides and scroll in.
 // The curve is a stretched SVG (non-scaling strokes); labels are HTML placed by percentage so text never distorts.
 import { formatDate, releaseTimeline, RELEASE_WINDOW_DAYS } from '../lib/score';
 
-interface Props { daily: number[]; start: string; end: string; releaseDate: string | null }
-const { daily, start, end, releaseDate } = Astro.props;
+// buzz: one value (0-100) per tracked day starting at `start`
+interface Props { buzz: number[]; start: string; end: string; releaseDate: string | null }
+const { buzz, start, end, releaseDate } = Astro.props;
 
-const t = releaseTimeline(daily, start, end, releaseDate);
+const t = releaseTimeline(buzz, start, end, releaseDate);
 const { values, days } = t;
 const span = Math.max(days - 1, 1);
 const VIEW = 2 * RELEASE_WINDOW_DAYS; // day-intervals visible at once
 
-// y axis: round the peak up to a step of 25 (or 5 for small films), five steps
-const peakValue = Math.max(...values.map((v) => v ?? 0), 1);
-const step = peakValue > 50 ? Math.ceil(peakValue / 5 / 25) * 25 : Math.ceil(peakValue / 5 / 5) * 5;
-const yMax = step * 5;
-const yTicks = Array.from({ length: 6 }, (_, i) => i * step);
+// y axis: buzz always runs 0 to 100
+const peakValue = Math.max(...values.map((v) => v ?? 0));
+const yMax = 100;
+const yTicks = [0, 25, 50, 75, 100];
 const y = (v: number) => 100 * (1 - v / yMax); // 0..100, top to bottom
 const pct = (i: number) => `${(100 * i) / span}%`;
 
@@ -55,13 +55,14 @@ const more = [first < t.winStart && 'earlier', last > t.winEnd && 'later'].filte
 const dateAt = (i: number) => formatDate(t.dateAt(i));
 ---
 <figure class="mchart"
-  aria-label={`Daily mentions from ${dateAt(first)} to ${dateAt(last)}, peaking at ${peakValue} on ${dateAt(peak)}`}>
+  aria-label={`Daily buzz from ${dateAt(first)} to ${dateAt(last)}, peaking at ${Math.round(peakValue)} out of 100 on ${dateAt(peak)}`}>
+  <span class="ytitle" aria-hidden="true">Buzz</span>
   <div class="yaxis" aria-hidden="true">
     {yTicks.map((v) => <span style={`top:${y(v)}%`}>{v}</span>)}
   </div>
   <div class="scroll" tabindex="0" data-start={t.winStart} data-span={span}>
     <div class="plot" style={`--k:${span / VIEW}`}>
-      <div class="area">
+      <div class="area" data-values={JSON.stringify(values.map((v) => (v === null ? null : Math.round(v))))} data-from={t.from} data-span={span}>
         <svg viewBox={`0 0 ${span} 100`} preserveAspectRatio="none" aria-hidden="true">
           <defs>
             <linearGradient id="mfill" x1="0" x2="0" y1="0" y2="1">
@@ -74,13 +75,16 @@ const dateAt = (i: number) => formatDate(t.dateAt(i));
           {line && <path d={`${line} L${last},100 L${first},100 Z`} fill="url(#mfill)" />}
           {line && <path d={line} fill="none" stroke="var(--bar)" stroke-width="2.4" stroke-linejoin="round" vector-effect="non-scaling-stroke" />}
         </svg>
-        {peak >= 0 && values[peak] !== null && (
+        {peak >= 0 && values[peak] !== null && peakValue > 0 && (
           <>
             <span class="dot" style={`left:${pct(peak)};top:${y(peakValue)}%`}></span>
-            <span class:list={['peak', { left: labelLeft }]} style={`left:${pct(peak)};top:${y(peakValue)}%`}>{peakValue} on {dateAt(peak)}</span>
+            <span class:list={['peak', { left: labelLeft }]} style={`left:${pct(peak)};top:${y(peakValue)}%`}>Buzz {Math.round(peakValue)} on {dateAt(peak)}</span>
           </>
         )}
-        {windowEmpty && <span class="nodata" style={`left:${pct(t.winStart + RELEASE_WINDOW_DAYS)}`}>No posts tracked around release</span>}
+        <span class="hguide" hidden></span>
+        <span class="hdot" hidden></span>
+        <span class="htip" hidden></span>
+        {windowEmpty && <span class="nodata" style={`left:${pct(t.winStart + RELEASE_WINDOW_DAYS)}`}>No talk tracked around release</span>}
       </div>
       <div class="xaxis" aria-hidden="true">
         {xTicks.map((i) => <span class:list={{ rel: i === t.release, sparse: (i - anchor) % 4 !== 0 }} style={`left:${pct(i)}`}>{dateAt(i)}{i === t.release && ' · Release'}</span>)}
@@ -96,10 +100,55 @@ const dateAt = (i: number) => formatDate(t.dateAt(i));
     const inner = plot.clientWidth - 2 * 22; // .plot padding-inline
     el.scrollLeft = (Number(el.dataset.start) / Number(el.dataset.span)) * inner;
   }
+
+  // hover (or tap) the timeline: the dot slides along the curve under the pointer and the label reads
+  // the nearest day's buzz. Past the last tracked day it rests on that day.
+  for (const area of document.querySelectorAll<HTMLElement>('.mchart .area')) {
+    const values: (number | null)[] = JSON.parse(area.dataset.values!);
+    const span = Number(area.dataset.span);
+    const from = Date.parse(`${area.dataset.from}T00:00:00Z`);
+    const firstDay = values.findIndex((v) => v !== null);
+    const lastDay = values.length - 1 - [...values].reverse().findIndex((v) => v !== null);
+    const curve = area.querySelector<SVGPathElement>('svg path[fill="none"]');
+    const total = curve?.getTotalLength() ?? 0;
+    const fig = area.closest('.mchart')!;
+    const guide = area.querySelector<HTMLElement>('.hguide')!;
+    const dot = area.querySelector<HTMLElement>('.hdot')!;
+    const tip = area.querySelector<HTMLElement>('.htip')!;
+    // the curve's height (0-100, top to bottom) at day position x; it only moves rightwards, so bisect its length
+    const curveY = (x: number) => {
+      if (!curve) return 100 - (values[Math.round(x)] ?? 0);
+      let lo = 0, hi = total;
+      for (let k = 0; k < 24; k++) { const mid = (lo + hi) / 2; if (curve.getPointAtLength(mid).x < x) lo = mid; else hi = mid; }
+      return curve.getPointAtLength((lo + hi) / 2).y;
+    };
+    const hide = () => { guide.hidden = dot.hidden = tip.hidden = true; fig.classList.remove('hovering'); };
+    const show = (e: PointerEvent) => {
+      if (firstDay < 0) return;
+      const box = area.getBoundingClientRect();
+      const x = Math.min(lastDay, Math.max(firstDay, ((e.clientX - box.left) / box.width) * span));
+      const day = Math.round(x);
+      const v = values[day] ?? 0;
+      const left = `${(100 * x) / span}%`, top = `${curveY(x)}%`;
+      guide.style.left = dot.style.left = tip.style.left = left;
+      dot.style.top = tip.style.top = top;
+      const date = new Date(from + day * 864e5).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric' });
+      tip.textContent = `Buzz ${v} · ${date}`;
+      guide.hidden = dot.hidden = tip.hidden = false;
+      // left of the line on the right half, below the dot near the top so it never leaves the chart
+      const flip = x / span > 0.5 && (x / span) * box.width > tip.offsetWidth + 20;
+      tip.style.transform = `translate(${flip ? 'calc(-100% - 12px)' : '12px'}, ${parseFloat(top) < 20 ? '30%' : '-130%'})`;
+      fig.classList.add('hovering');
+    };
+    area.addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse' || e.pointerType === 'pen') show(e); });
+    area.addEventListener('pointerdown', show);
+    area.addEventListener('pointerleave', (e) => { if (e.pointerType !== 'touch') hide(); });
+  }
 </script>
 <style>
-  .mchart { position: relative; margin: 0; padding-left: 38px; }
-  .yaxis { position: absolute; left: 0; top: 12px; width: 30px; height: 208px; }
+  .mchart { position: relative; margin: 0; padding-left: 52px; }
+  .ytitle { position: absolute; left: 7px; top: 116px; transform: translate(-50%, -50%) rotate(-90deg); font: 600 11px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .yaxis { position: absolute; left: 14px; top: 12px; width: 30px; height: 208px; }
   .yaxis span { position: absolute; right: 0; transform: translateY(-50%); font: 11px var(--font-mono); color: var(--faint); }
   .scroll { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; }
   .scroll:focus-visible { outline: 2px solid var(--bar); outline-offset: 2px; }
@@ -110,6 +159,11 @@ const dateAt = (i: number) => formatDate(t.dateAt(i));
   .dot { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 2.5px var(--surface); transform: translate(-50%, -50%); }
   .peak { position: absolute; transform: translate(12px, -50%); white-space: nowrap; font: 600 12px var(--font-body); color: var(--fg); }
   .peak.left { transform: translate(calc(-100% - 12px), -50%); }
+  .area { cursor: crosshair; }
+  .hguide { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--muted); pointer-events: none; }
+  .hdot { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--bar); box-shadow: 0 0 0 2.5px var(--surface); transform: translate(-50%, -50%); pointer-events: none; }
+  .htip { position: absolute; transform: translate(12px, -130%); white-space: nowrap; padding: 4px 8px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--line); font: 600 12px var(--font-body); color: var(--fg); pointer-events: none; z-index: 2; }
+  .hovering .peak { opacity: .25; }
   .nodata { position: absolute; top: 45%; transform: translateX(-50%); font: 13px var(--font-body); color: var(--faint); white-space: nowrap; }
   .xaxis { position: relative; height: 30px; }
   .xaxis span { position: absolute; top: 10px; transform: translateX(-50%); white-space: nowrap; font: 11px var(--font-mono); color: var(--faint); }

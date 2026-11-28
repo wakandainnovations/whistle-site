@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import Poster from './Poster.astro';
 import WatchChips from './WatchChips.astro';
-import { whistleScore, tierFor, compact } from '../lib/score';
+import { whistleScore, tierFor } from '../lib/score';
 import { talkOf, scoreSolid } from '../lib/now';
 
 interface Props { film: CollectionEntry<'films'> }
@@ -23,7 +23,7 @@ const searchText = `${f.title} ${f.aka.join(' ')} ${f.language} ${f.director ?? 
       <div class="m">
         {score !== null ? `${tierFor(score).name} · ${f.language} · ${f.year}` : `${f.language} · ${f.year} · Score coming soon`}
       </div>
-      {r && <div class="m num">{compact(talkOf(film))} posts{f.sample && <span class="sample-tag">Sample</span>}</div>}
+      {f.sample && <div class="m"><span class="sample-tag">Sample</span></div>}
     </div>
   </a>
   <WatchChips watch={f.watch} tmdbId={f.tmdbId} title={f.title} />

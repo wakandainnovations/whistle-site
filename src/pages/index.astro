@@ -9,9 +9,9 @@ import TierChip from '../components/TierChip.astro';
 import WatchChips from '../components/WatchChips.astro';
 import Sparkline from '../components/Sparkline.astro';
 import { SITE, LANGUAGES } from '../site.config';
-import { TIERS, whistleScore, tierFor, scoreLabel, compact, releaseTimeline } from '../lib/score';
+import { TIERS, whistleScore, tierFor, scoreLabel, sentimentShares, releaseTimeline } from '../lib/score';
 import { plain } from '../lib/plain';
-import { recentByScore, RECENT_DAYS, runLabel, mostTalked, talkOf, inRace, scoreSolid, daysToRelease } from '../lib/now';
+import { recentByScore, RECENT_DAYS, runLabel, mostTalked, inRace, scoreSolid, daysToRelease } from '../lib/now';
 
 type Film = CollectionEntry<'films'>;
 const all = await getFilms();
@@ -79,7 +79,7 @@ const bandCount = (t: (typeof TIERS)[number]) => byScore.filter((f) => scoreOf(f
 const whyLine = (f: Film) => {
   const r = f.data.report!;
   const topic = r.audience.topics.find(([n]) => !['General', 'General discussion', 'Official promo'].includes(n))?.[0];
-  return `${compact(r.sentiment.positive)} positive posts${topic ? ` · buzz led by ${plain(topic).replace(/^The /, '').toLowerCase()}` : ''}`;
+  return `${sentimentShares(r.sentiment).positive}% positive${topic ? ` · buzz led by ${plain(topic).replace(/^The /, '').toLowerCase()}` : ''}`;
 };
 
 ---
@@ -128,7 +128,7 @@ const whyLine = (f: Film) => {
                   <span class="float-text">
                     <TierChip score={s} size="sm" />
                     <span class="float-title">{d.title}</span>
-                    <span class="float-sub num">{compact(talkOf(film))} posts · {d.language} · {runLabel(film) || d.year}{d.sample && <span class="float-sample">Sample</span>}</span>
+                    <span class="float-sub num">{d.language} · {runLabel(film) || d.year}{d.sample && <span class="float-sample">Sample</span>}</span>
                     <span class="meter" aria-hidden="true"><i style={`--w:${s}%`}></i></span>
                   </span>
                 </a>
@@ -239,7 +239,7 @@ const whyLine = (f: Film) => {
                     <img src={d.poster!} alt="" loading="lazy" />
                     <span class="board-main">
                       <span class="board-title">{d.title}</span>
-                      <span class="board-meta num">{compact(talkOf(film))} posts · {d.language}{when && ` · ${when}`}</span>
+                      <span class="board-meta num">{d.language}{when && ` · ${when}`}</span>
                     </span>
                     <span class="board-spark">{d.report && (() => { const t = releaseTimeline(d.report.mentions.daily, d.report.tracking.start, d.report.tracking.end, d.releaseDate); return <Sparkline values={t.values.slice(t.winStart, t.winEnd + 1)} mark={t.release === null ? null : t.release - t.winStart} />; })()}</span>
                     {s >= 0
