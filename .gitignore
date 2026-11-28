@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# poster images live only on the server (not in the repo)
+public/posters/
