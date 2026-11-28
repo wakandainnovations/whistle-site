@@ -28,12 +28,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 1105,
     "trackFrom": "2026-11-24",
     "trackUntil": "2026-11-28",
-    "popularity": 1.0178
+    "popularity": 2.0177
   },
   "report": {
     "tracking": {
@@ -48,7 +48,7 @@
     "netSentiment": 0,
     "awareness": {
       "level": "High",
-      "views": 40165294
+      "views": 40167629
     },
     "reach": 737,
     "mentions": {

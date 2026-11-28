@@ -1,0 +1,185 @@
+{
+  "sample": false,
+  "auraId": 9000069,
+  "auraName": "Relax",
+  "title": "Relax",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Kannada",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": "Srinivasa C. Mandya",
+  "cast": [],
+  "genres": [
+    "Comedy",
+    "Thriller"
+  ],
+  "runtime": "2h 25m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-28",
+  "buzz": {
+    "collected": 1724,
+    "trackFrom": "2026-11-25",
+    "trackUntil": "2026-11-29",
+    "popularity": 0.0582
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-11-16",
+      "end": "2026-11-26"
+    },
+    "sentiment": {
+      "positive": 58,
+      "neutral": 6,
+      "negative": 19
+    },
+    "netSentiment": 3.05,
+    "awareness": {
+      "level": "Medium",
+      "views": 4641411
+    },
+    "reach": 1581,
+    "mentions": {
+      "total": 83,
+      "daily": [
+        1,
+        0,
+        0,
+        3,
+        3,
+        19,
+        6,
+        11,
+        8,
+        5,
+        27
+      ]
+    },
+    "regions": [
+      [
+        "Karnataka",
+        95
+      ],
+      [
+        "Hindi Belt North India",
+        2
+      ],
+      [
+        "Tamil Nadu",
+        2
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Karnataka",
+          59
+        ],
+        [
+          "Unknown",
+          38
+        ],
+        [
+          "Hindi Belt North India",
+          1
+        ],
+        [
+          "Tamil Nadu",
+          1
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          94
+        ],
+        [
+          "Fan page",
+          6
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          74
+        ],
+        [
+          "Fan amplified promo",
+          26
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          76
+        ],
+        [
+          "Music / songs",
+          11
+        ],
+        [
+          "Story",
+          5
+        ],
+        [
+          "Acting / cast performance",
+          2
+        ],
+        [
+          "Direction",
+          2
+        ],
+        [
+          "VFX",
+          2
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 9,
+        "score": 89,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 4,
+        "score": 38,
+        "mood": "negative"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 2,
+        "score": 78,
+        "mood": "neutral"
+      },
+      {
+        "label": "Direction",
+        "posts": 2,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 2,
+        "score": 52,
+        "mood": "negative"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 1,
+        "score": 12,
+        "mood": "negative"
+      }
+    ]
+  }
+}

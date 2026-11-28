@@ -37,7 +37,7 @@
   ],
   "watchCheckedOn": "2026-11-16",
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": null,
   "report": {
     "tracking": {
@@ -331,16 +331,16 @@
         "mood": "positive"
       },
       {
-        "label": "Direction",
-        "posts": 2,
-        "score": 86,
-        "mood": "positive"
-      },
-      {
         "label": "Runtime",
         "posts": 2,
         "score": 62,
         "mood": "neutral"
+      },
+      {
+        "label": "Direction",
+        "posts": 2,
+        "score": 86,
+        "mood": "positive"
       },
       {
         "label": "Lead pair",

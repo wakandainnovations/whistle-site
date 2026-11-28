@@ -10,7 +10,7 @@
   "year": 2026,
   "releaseDate": "2026-12-03",
   "featured": false,
-  "poster": null,
+  "poster": "/posters/mayan-chapter-1.jpg",
   "backdrop": null,
   "trailer": null,
   "director": "Jithin K Jose",
@@ -24,12 +24,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 0,
     "trackFrom": "2026-12-01",
     "trackUntil": "2026-12-05",
-    "popularity": 0.9863
+    "popularity": 1.3579
   },
   "report": null
 }

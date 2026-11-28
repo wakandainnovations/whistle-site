@@ -14,7 +14,8 @@ export const MIN_COLLECTED_SHOWN = 1000;
 // A Whistle % is promoted or banded only with more sentiment-scored posts than this (scoreSolid). It is
 // also the bar for being on the site at all for a film the collector doesn't track (no buzz).
 export const MIN_POSTS_SHOWN = 100;
-export const TALKED_SOON_DAYS = 7; // "Most talked about" also takes films releasing within a week
+export const TALKED_SOON_DAYS = 7;
+export const RECENT_DAYS = 60; // the homepage leads with films released in the last two months // "Most talked about" also takes films releasing within a week
 
 const posts = (f: Film) => {
   const s = f.data.report?.sentiment;
@@ -68,6 +69,31 @@ export function nowShowing(films: Film[], n = 6, today = Date.now()): Film[] {
   ];
   const rest = eligible.filter((f) => !picks.includes(f));
   picks.push(...rest.filter((f) => !f.data.sample).sort(byRank), ...rest.filter((f) => f.data.sample).sort(byRank));
+  return picks.slice(0, n);
+}
+
+/** Released in the last RECENT_DAYS days (today counts). */
+export function isRecent(f: Film, today = Date.now()) {
+  const d = daysToRelease(f, today);
+  return d !== null && d <= 0 && d > -RECENT_DAYS;
+}
+
+/**
+ * The homepage's films: released in the last RECENT_DAYS days with a solid score (scoreSolid), highest
+ * Whistle first. Real AuraService films come before sample films. With `fill`, if there still aren't `n`,
+ * the most recently released older films with a solid score top it up, so a slot is never empty.
+ */
+export function recentByScore(films: Film[], n = Infinity, { fill = false, today = Date.now() } = {}): Film[] {
+  const eligible = films.filter((f) => f.data.report && f.data.poster && scoreSolid(f));
+  const score = (f: Film) => whistleScore(f.data.report!.sentiment);
+  const byScore = (a: Film, b: Film) => score(b) - score(a);
+  const recent = eligible.filter((f) => isRecent(f, today));
+  const picks = [...recent.filter((f) => !f.data.sample).sort(byScore), ...recent.filter((f) => f.data.sample).sort(byScore)];
+  if (fill && picks.length < n) {
+    const released = eligible.filter((f) => !picks.includes(f) && (daysToRelease(f, today) ?? 1) <= 0);
+    const newest = (a: Film, b: Film) => (b.data.releaseDate ?? '').localeCompare(a.data.releaseDate ?? '');
+    picks.push(...released.filter((f) => !f.data.sample).sort(newest), ...released.filter((f) => f.data.sample).sort(newest));
+  }
   return picks.slice(0, n);
 }
 

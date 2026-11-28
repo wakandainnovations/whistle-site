@@ -1,0 +1,310 @@
+{
+  "sample": false,
+  "auraId": 9000081,
+  "auraName": "Jedusi",
+  "title": "Jedusi",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "/posters/jedusi.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Nataraj Ekambaram",
+  "cast": [],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": "1h 54m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-28",
+  "buzz": {
+    "collected": 303,
+    "trackFrom": "2026-11-25",
+    "trackUntil": "2026-11-29",
+    "popularity": 0.1922
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-06-30",
+      "end": "2026-11-27"
+    },
+    "sentiment": {
+      "positive": 85,
+      "neutral": 16,
+      "negative": 21
+    },
+    "netSentiment": 4.05,
+    "awareness": {
+      "level": "Medium",
+      "views": 869956
+    },
+    "reach": 182,
+    "mentions": {
+      "total": 122,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        13,
+        14,
+        5,
+        1,
+        8,
+        3,
+        3,
+        0,
+        4,
+        6,
+        30,
+        10
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        98
+      ],
+      [
+        "International",
+        2
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Tamil Nadu",
+          50
+        ],
+        [
+          "Unknown",
+          49
+        ],
+        [
+          "International",
+          1
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          69
+        ],
+        [
+          "Media press",
+          19
+        ],
+        [
+          "Official studio",
+          6
+        ],
+        [
+          "Verified celebrity influencer",
+          6
+        ],
+        [
+          "Fan page",
+          1
+        ]
+      ],
+      "postType": [
+        [
+          "Fan amplified promo",
+          43
+        ],
+        [
+          "Organic opinion",
+          24
+        ],
+        [
+          "News press coverage",
+          16
+        ],
+        [
+          "Official promo",
+          16
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          82
+        ],
+        [
+          "Acting / cast performance",
+          8
+        ],
+        [
+          "Music / songs",
+          7
+        ],
+        [
+          "Story",
+          4
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 8,
+        "score": 71,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 7,
+        "score": 91,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 4,
+        "score": 69,
+        "mood": "positive"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "sample": false,
+  "auraId": 9000064,
+  "auraName": "Mahaveer Karna",
+  "title": "Mahaveer Karna",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-12-04",
+  "featured": false,
+  "poster": "/posters/mahaveer-karna.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Ramesh Varma",
+  "cast": [],
+  "genres": [
+    "Action",
+    "Drama",
+    "Adventure"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-28",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-12-02",
+    "trackUntil": "2026-12-06",
+    "popularity": 0.299
+  },
+  "report": null
+}

@@ -10,7 +10,7 @@
   "year": 2026,
   "releaseDate": "2026-11-27",
   "featured": false,
-  "poster": null,
+  "poster": "/posters/signal-at-11-30.jpg",
   "backdrop": null,
   "trailer": null,
   "director": "Malarvizhi Natesan",
@@ -24,31 +24,31 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
-    "collected": 961,
+    "collected": 2545,
     "trackFrom": "2026-11-25",
     "trackUntil": "2026-11-29",
-    "popularity": 0.5476
+    "popularity": 1.3545
   },
   "report": {
     "tracking": {
       "start": "2026-07-31",
-      "end": "2026-11-21"
+      "end": "2026-11-27"
     },
     "sentiment": {
-      "positive": 62,
-      "neutral": 90,
-      "negative": 8
+      "positive": 174,
+      "neutral": 102,
+      "negative": 102
     },
-    "netSentiment": 7.75,
+    "netSentiment": 1.71,
     "awareness": {
       "level": "Medium",
-      "views": 1807968
+      "views": 2843861
     },
-    "reach": 72,
+    "reach": 126,
     "mentions": {
-      "total": 160,
+      "total": 378,
       "daily": [
         1,
         0,
@@ -160,10 +160,16 @@
         0,
         0,
         0,
-        21,
-        28,
-        35,
-        1
+        22,
+        47,
+        102,
+        25,
+        31,
+        8,
+        14,
+        16,
+        36,
+        2
       ]
     },
     "regions": [
@@ -172,11 +178,7 @@
         98
       ],
       [
-        "Andhra Telangana",
-        1
-      ],
-      [
-        "International",
+        "Hindi Belt North India",
         1
       ]
     ],
@@ -184,107 +186,111 @@
       "where": [
         [
           "Tamil Nadu",
-          80
+          77
         ],
         [
           "Unknown",
-          18
+          22
         ],
         [
-          "Andhra Telangana",
-          1
-        ],
-        [
-          "International",
+          "Hindi Belt North India",
           1
         ]
       ],
       "who": [
         [
-          "Fan page",
-          53
+          "General public",
+          45
         ],
         [
-          "General public",
-          44
+          "Fan page",
+          38
         ],
         [
           "Media press",
-          2
-        ],
-        [
-          "Verified celebrity influencer",
-          1
+          13
         ],
         [
           "Official studio",
+          3
+        ],
+        [
+          "Verified celebrity influencer",
           1
         ]
       ],
       "postType": [
         [
           "Fan amplified promo",
-          73
+          52
         ],
         [
           "Organic opinion",
-          24
+          32
         ],
         [
           "News press coverage",
-          2
+          9
         ],
         [
           "Official promo",
-          2
+          6
         ]
       ],
       "topics": [
         [
           "General discussion",
-          79
-        ],
-        [
-          "Story",
-          10
+          67
         ],
         [
           "Music / songs",
-          5
+          22
+        ],
+        [
+          "Story",
+          6
         ],
         [
           "Acting / cast performance",
-          4
-        ],
-        [
-          "Direction",
-          1
+          5
         ]
       ]
     },
     "aspects": [
       {
-        "label": "Story",
-        "posts": 10,
-        "score": 66,
+        "label": "Music / songs",
+        "posts": 77,
+        "score": 75,
         "mood": "neutral"
       },
       {
-        "label": "Music / songs",
-        "posts": 5,
-        "score": 94,
-        "mood": "positive"
+        "label": "Story",
+        "posts": 20,
+        "score": 71,
+        "mood": "neutral"
       },
       {
         "label": "Acting / cast performance",
-        "posts": 4,
-        "score": 47,
-        "mood": "negative"
+        "posts": 17,
+        "score": 61,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 1,
+        "score": 92,
+        "mood": "positive"
       },
       {
         "label": "Direction",
         "posts": 1,
         "score": 96,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 1,
+        "score": 88,
         "mood": "positive"
       }
     ]

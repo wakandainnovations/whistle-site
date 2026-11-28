@@ -2,19 +2,20 @@
 // /race: The Whistle Race. Every movie tracked in AuraService is pinned to its release date as a small
 // poster with its Whistle (positive sentiment %), once it has enough talk (hasEnoughTalk in src/lib/now.ts), which includes at least one scored post. Stretches of the
 // timeline with no releases collapse into a labelled break. Hovering a poster shows the details. The
-// leaderboard below ranks them and shows what changed in the last hourly update.
+// leaderboard below ranks them and shows each film's change since its previous update.
 //
-// Scores update once an hour. PREVIEW: each hour's change is simulated in the browser (seeded by the hour,
-// so a reload within the same hour shows the same numbers). Before launch, replace `hourly()` in the
-// script with the previous-hour snapshot from the Framehouse feed.
+// The page is rebuilt after every sync. A film's "update" is a build in which its Whistle moved; the score
+// before that move comes from src/data/score-history.json (see src/lib/history.ts).
 import Layout from '../layouts/Layout.astro';
 import { getFilms } from '../lib/films';
 import { whistleScore, TIERS } from '../lib/score';
-import { inRace, MIN_COLLECTED_SHOWN, MIN_POSTS_SHOWN } from '../lib/now';
+import { LANGUAGES } from '../site.config';
+import { inRace, MIN_COLLECTED_SHOWN } from '../lib/now';
+import { scoreChanges } from '../lib/history';
 
 // AuraService movies with a release date and enough talk (hasEnoughTalk; upcoming ones too).
 // Sample films (made-up scores) stay out of the race.
-const films = (await getFilms())
+const raceFilms = (await getFilms())
   .filter(inRace)
   .map((f) => {
     const s = f.data.report?.sentiment;
@@ -28,21 +29,25 @@ const films = (await getFilms())
       posts: s ? s.positive + s.neutral + s.negative : 0,
     };
   });
+const { changes, builtAt } = scoreChanges(raceFilms.filter((f) => f.score !== null).map((f) => ({ id: f.id, score: f.score!, posts: f.posts })));
+const films = raceFilms.map((f) => ({ ...f, prev: changes[f.id]?.prev ?? null, changedAt: changes[f.id]?.changedAt ?? null, postsDay: changes[f.id]?.postsDay ?? 0 }));
+// languages with a film in the race, for the language filter
+const raceLangs = LANGUAGES.filter((l) => films.some((f) => f.language === l));
 const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t.waves }));
 ---
-<Layout title="The Whistle Race" description="Every film we track, pinned to its release date with its Whistle, ranked and updated every hour.">
+<Layout title="The Whistle Race" description="Every film we track, pinned to its release date with its Whistle, ranked and updated through the day.">
   <main class="race-page">
     <section class="wrap page-head race-head">
       <div class="head-row">
         <div>
           <span class="eyebrow">The Whistle Race</span>
           <h1>Who's winning <em>the crowd</em> right now</h1>
-          <p>Every film we track with more than {MIN_COLLECTED_SHOWN.toLocaleString('en-US')} posts ({MIN_POSTS_SHOWN} scored posts for films we don't collect), pinned to its release date. Scores refresh every hour as new posts are counted. Films still to release show their pre-release buzz.</p>
+          <p>Every film we track with more than {MIN_COLLECTED_SHOWN.toLocaleString('en-US')} genuine user review posts (excluding promotion, news and media review, film's own team and box office tracker posts), pinned to its release date. Scores refresh through the day as new posts are counted. Films still to release show their pre-release buzz.</p>
         </div>
         <div class="today-badge">
-          <span class="live-pill"><i></i>Updated hourly</span>
+          <span class="live-pill"><i></i>Live scores</span>
           <span class="today-date" id="today-label"></span>
-          <span class="today-sub"><span id="upd-last"></span><br /><span id="upd-next"></span></span>
+          <span class="today-sub"><span id="upd-last"></span></span>
         </div>
       </div>
     </section>
@@ -55,7 +60,7 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
           <div class="tl-track" id="track" aria-hidden="true"></div>
           <div class="today" id="today-marker" aria-hidden="true"><span>Today</span></div>
           {films.map((f) => (
-            <a class="pin" href={`/films/${f.id}`} data-id={f.id} hidden aria-label={f.title}>
+            <a class="pin" href={`/films/${f.id}`} data-id={f.id} data-lang={f.language} hidden aria-label={f.title}>
               <span class="stem" aria-hidden="true"></span>
               <span class="dot" aria-hidden="true"></span>
               <span class="chip">
@@ -91,26 +96,32 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
             <p class="board-note">Films releasing within two weeks either side of today.</p>
           </div>
           <div class="board-tools">
-            <button class="replay" type="button" id="replay"><span aria-hidden="true">↻</span> Replay the last hour</button>
+            <button class="replay" type="button" id="replay"><span aria-hidden="true">↻</span> Replay the last update</button>
             <div class="pill-row" role="group" aria-label="Show">
               <button class="pill" type="button" data-show="all" aria-pressed="true">All</button>
               <button class="pill" type="button" data-show="released" aria-pressed="false">In theatres</button>
               <button class="pill" type="button" data-show="upcoming" aria-pressed="false">Coming soon</button>
             </div>
+            {raceLangs.length > 1 && (
+              <div class="pill-row" role="group" aria-label="Filter by language">
+                <button class="pill" type="button" data-rlang="all" aria-pressed="true">All languages</button>
+                {raceLangs.map((l) => <button class="pill" type="button" data-rlang={l} aria-pressed="false">{l}</button>)}
+              </div>
+            )}
           </div>
         </div>
 
         <div class="race-grid">
           <div>
-            <div class="lb-head" aria-hidden="true"><span>#</span><span></span><span>Film</span><span class="h-bar"></span><span class="h-sc">Whistle</span><span class="h-chg">Last hour</span></div>
+            <div class="lb-head" aria-hidden="true"><span>#</span><span></span><span>Film</span><span class="h-bar"></span><span class="h-sc">Whistle</span><span class="h-chg">Change since last update</span></div>
             <ol class="lb" id="lb" aria-live="off"></ol>
-            <p class="lb-empty" id="lb-empty" hidden>No films releasing within two weeks of today.</p>
+            <p class="lb-empty" id="lb-empty" hidden>No films match within two weeks of today.</p>
           </div>
           <aside class="movers">
             <div class="mover up"><span class="mono">Biggest climber</span><b id="m-up">–</b><span id="m-up-d" class="num"></span></div>
             <div class="mover down"><span class="mono">Losing steam</span><b id="m-down">–</b><span id="m-down-d" class="num"></span></div>
-            <div class="mover hot"><span class="mono">Loudest this hour</span><b id="m-hot">–</b><span id="m-hot-d" class="num"></span></div>
-            <p class="movers-note">Changes since the previous hourly update. Preview: hourly changes are simulated until the live feed is connected.</p>
+            <div class="mover hot"><span class="mono">Loudest today</span><b id="m-hot">–</b><span id="m-hot-d" class="num"></span></div>
+            <p class="movers-note">Each film's change since its previous update, the last time its Whistle moved. Loudest today counts new posts in the last 24 hours.</p>
           </aside>
         </div>
       </div>
@@ -118,8 +129,8 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   </main>
 </Layout>
 
-<script is:inline define:vars={{ films, tiers }}>
-  window.__RACE = { films, tiers };
+<script is:inline define:vars={{ films, tiers, builtAt }}>
+  window.__RACE = { films, tiers, builtAt };
 </script>
 
 <style is:global>
@@ -168,6 +179,8 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   .race-page .chip-score[data-band="2"] { color: var(--gold-text); }
   .race-page .chip-score[data-band="1"] { color: var(--fg); }
   .race-page .chip-score[data-band="0"] { color: var(--neg); }
+  .race-page .pin.faded { opacity: .18; filter: grayscale(1); transition: opacity .3s, filter .3s; }
+  .race-page .pin.faded:hover, .race-page .pin.faded:focus-visible { opacity: 1; filter: none; }
   .race-page .pin:hover, .race-page .pin:focus-visible { z-index: 8; outline: none; }
   .race-page .pin:hover .chip, .race-page .pin:focus-visible .chip { transform: translateX(-50%) scale(1.12); }
   .race-page .pin:hover .chip img, .race-page .pin:focus-visible .chip img { border-color: var(--gold); border-style: solid; }
@@ -199,10 +212,11 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   .race-page .replay:hover { background: color-mix(in srgb, var(--gold) 12%, transparent); }
   .race-page .replay:disabled { opacity: .5; cursor: default; }
   .race-page .race-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
-  .race-page .lb-head, .race-page .lb a { display: grid; grid-template-columns: 40px 34px minmax(0, 1.1fr) minmax(80px, 1.4fr) 64px 70px; gap: 14px; align-items: center; padding: 0 14px 0 8px; }
+  .race-page .lb-head, .race-page .lb a { display: grid; grid-template-columns: 40px 34px minmax(0, 1.1fr) minmax(80px, 1.4fr) 64px 96px; gap: 14px; align-items: center; padding: 0 14px 0 8px; }
   .race-page .lb-head { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
   .race-page .lb-head span:first-child { text-align: center; }
   .race-page .lb-head .h-sc, .race-page .lb-head .h-chg { text-align: right; }
+  .race-page .lb-head .h-chg { line-height: 1.25; }
   .race-page .lb { list-style: none; margin: 0; padding: 0; position: relative; }
   .race-page .lb-empty { margin: 0; padding: 28px 0; color: var(--muted); }
   .race-page .lb li { position: absolute; left: 0; right: 0; top: 0; height: 64px; transition: transform .9s cubic-bezier(.3,1.2,.4,1), opacity .3s; }
@@ -235,9 +249,9 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   .race-page .movers-note { font-size: 12px; color: var(--faint); line-height: 1.5; }
   @media (max-width: 900px) { .race-page .race-grid { grid-template-columns: 1fr; } .race-page .movers { position: static; margin-top: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); } .race-page .movers-note { grid-column: 1 / -1; } }
   @media (max-width: 600px) {
-    .race-page .lb-head, .race-page .lb a { grid-template-columns: 30px 30px minmax(0, 1fr) 52px 44px; gap: 10px; }
+    .race-page .lb-head, .race-page .lb a { grid-template-columns: 30px 30px minmax(0, 1fr) 52px 56px; gap: 10px; }
     .race-page .lb .bar, .race-page .lb-head .h-bar { display: none; }
-    .race-page .lb-head .h-chg { font-size: 0; } .race-page .lb-head .h-chg::after { content: '1h'; font-size: 11px; }
+    .race-page .lb-head .h-chg { font-size: 0; } .race-page .lb-head .h-chg::after { content: 'Change'; font-size: 11px; }
     .race-page .lb img { width: 30px; height: 44px; }
     .race-page .movers { grid-template-columns: 1fr; }
     .race-page .replay { order: 2; }
@@ -245,11 +259,11 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
 </style>
 
 <script>
-  type Film = { id: string; title: string; language: string; release: string; poster: string | null; score: number | null; posts: number };
+  type Film = { id: string; title: string; language: string; release: string; poster: string | null; score: number | null; posts: number; prev: number | null; changedAt: string | null; postsDay: number };
   type Tier = { name: string; min: number; max: number; waves: number };
-  const { films, tiers } = (window as any).__RACE as { films: Film[]; tiers: Tier[] };
+  const { films, tiers, builtAt } = (window as any).__RACE as { films: Film[]; tiers: Tier[]; builtAt: string };
 
-  const DAY = 864e5, HOUR = 36e5;
+  const DAY = 864e5;
   const utc = (iso: string) => Date.parse(`${iso}T00:00:00Z`);
   const now = new Date();
   const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
@@ -272,32 +286,15 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
     return `Day ${-d + 1} in theatres`;
   };
 
-  // ---------- hourly data ----------
-  // PREVIEW: simulated. Each film's change over the last hour is seeded by film and hour, so it's stable
-  // within an hour. Before launch, return the real current and previous-hour scores from the feed.
-  const seeded = (key: string) => {
-    let h = 2166136261;
-    for (const c of key) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
-    return () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; };
-  };
-  type Snap = { now: number; prev: number; postsHour: number };
-  function hourly(hour: number): Map<string, Snap> {
-    return new Map(inWindow.filter(scored).map((f) => {
-      const r = seeded(`${f.id}:${Math.round(hour / HOUR)}`);
-      const change = Math.round((r() + r() - 1) * 4); // mostly small, now and then ±3–4
-      const activeDays = Math.max(1, Math.min(62, -days(f) + 31));
-      const postsHour = Math.round((f.posts / (activeDays * 24)) * (0.5 + r()));
-      return [f.id, { now: f.score!, prev: Math.max(0, Math.min(100, f.score! - change)), postsHour }];
-    }));
-  }
-  // the start of the current hour on the visitor's clock (works for half-hour time zones like IST)
-  const hourStart = () => { const d = new Date(); d.setMinutes(0, 0, 0); return d.getTime(); };
-  let hour = hourStart();
-  let snap = hourly(hour);
+  // ---------- change since the previous update ----------
+  // prev is the Whistle before the film's latest move (null until it has moved once); postsDay is posts in the last 24 hours
+  type Snap = { now: number; prev: number; postsDay: number; changedAt: string | null };
+  const snap = new Map<string, Snap>(inWindow.filter(scored).map((f) => [f.id, { now: f.score!, prev: f.prev ?? f.score!, postsDay: f.postsDay, changedAt: f.changedAt }]));
+  // a time on the visitor's own clock, e.g. "Nov 26, 9:40 AM"
+  const at = (iso: string) => { const d = new Date(iso); return `${d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}, ${clock(d.getTime())}`; };
 
   function stamp() {
-    document.getElementById('upd-last')!.textContent = `Last update ${clock(hour)}`;
-    document.getElementById('upd-next')!.textContent = `Next update ${clock(hour + HOUR)}`;
+    document.getElementById('upd-last')!.textContent = `Last update ${at(builtAt)}`;
   }
 
   // ---------- timeline ----------
@@ -448,6 +445,8 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   // ---------- leaderboard ----------
   const lb = document.getElementById('lb')!;
   let show = 'all';
+  let lang = 'all';
+  const langOk = (f: Film) => lang === 'all' || f.language === lang;
   const ROW = 64;
   const rows = new Map<string, HTMLLIElement>();
   for (const f of onBoard) {
@@ -469,12 +468,12 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   const change = (id: string) => snap.get(id)!.now - snap.get(id)!.prev;
   const chgText = (d: number) => (d > 0 ? `▲ ${d}` : d < 0 ? `▼ ${-d}` : 'no change');
 
-  // phase 'prev' draws the board as it stood an hour ago; 'now' moves it to the latest update
+  // phase 'prev' draws the board as it stood before each film's latest update; 'now' moves it to the current scores
   let lastOrder: string[] = [];
   function render(phase: 'prev' | 'now' = 'now') {
     // films with no posts yet have no snapshot: they rank last, soonest release first
     const val = (id: string) => { const st = snap.get(id); return st ? (phase === 'prev' ? st.prev : st.now) : -1; };
-    const visible = onBoard.filter((f) => show === 'all' || (show === 'released' ? days(f) <= 0 : days(f) > 0));
+    const visible = onBoard.filter((f) => langOk(f) && (show === 'all' || (show === 'released' ? days(f) <= 0 : days(f) > 0)));
     const ranked = visible.slice().sort((a, b) => val(b.id) - val(a.id) || (val(a.id) < 0 ? utc(a.release) - utc(b.release) : 0) || a.title.localeCompare(b.title));
     lb.style.height = `${ranked.length * ROW}px`;
     document.getElementById('lb-empty')!.hidden = ranked.length > 0;
@@ -511,27 +510,27 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
       pin.querySelector('[data-tier]')!.textContent = tier.name;
       const d = st.now - st.prev;
       const c = pin.querySelector<HTMLElement>('[data-chg]')!;
-      c.textContent = `${chgText(d)} in 1h`;
+      c.textContent = st.changedAt && d !== 0 ? `${chgText(d)} since ${at(st.changedAt)}` : chgText(d);
       c.className = `pop-chg ${d > 0 ? 'up' : d < 0 ? 'down' : ''}`;
     }
   }
 
   function renderMovers() {
-    const all = onBoard.filter(scored).map((f) => ({ f, st: snap.get(f.id)! }));
+    const all = onBoard.filter((f) => scored(f) && langOk(f)).map((f) => ({ f, st: snap.get(f.id)! }));
     const d = (x: (typeof all)[number]) => x.st.now - x.st.prev;
     const upM = all.slice().sort((a, b) => d(b) - d(a))[0];
     const downM = all.slice().sort((a, b) => d(a) - d(b))[0];
-    const hot = all.slice().sort((a, b) => b.st.postsHour - a.st.postsHour)[0];
+    const hot = all.filter((x) => x.st.postsDay > 0).sort((a, b) => b.st.postsDay - a.st.postsDay)[0];
     const setM = (k: string, x: (typeof all)[number] | undefined, text: string) => {
       document.getElementById(`m-${k}`)!.textContent = x ? x.f.title : '–';
       document.getElementById(`m-${k}-d`)!.textContent = x ? text : '';
     };
     setM('up', upM, upM && d(upM) > 0 ? `▲ ${d(upM)} points · now ${upM.st.now}% (${tierFor(upM.st.now).name})` : 'Holding steady');
-    setM('down', downM, downM && d(downM) < 0 ? `▼ ${-d(downM)} points · now ${downM.st.now}%` : 'Nobody slipped this hour');
-    setM('hot', hot, hot ? `${hot.st.postsHour.toLocaleString('en-IN')} posts in the last hour` : '');
+    setM('down', downM, downM && d(downM) < 0 ? `▼ ${-d(downM)} points · now ${downM.st.now}%` : 'Nobody slipped');
+    setM('hot', hot, hot ? `${hot.st.postsDay.toLocaleString('en-IN')} new posts in the last 24 hours` : '');
   }
 
-  // Board opens as it stood an hour ago, then rolls into the latest update.
+  // Board opens as it stood before the latest updates, then rolls into the current scores.
   const motion = !matchMedia('(prefers-reduced-motion: reduce)').matches;
   const replayBtn = document.getElementById('replay') as HTMLButtonElement;
   function playHour() {
@@ -550,18 +549,19 @@ const tiers = TIERS.map((t) => ({ name: t.name, min: t.min, max: t.max, waves: t
   refresh();
   replayBtn.addEventListener('click', playHour);
 
-  // Next update on the hour, then every hour after.
-  const untilNext = () => hourStart() + HOUR - Date.now() + 500;
-  setTimeout(function next() {
-    hour = hourStart();
-    snap = hourly(hour);
-    refresh();
-    setTimeout(next, untilNext());
-  }, untilNext());
 
   document.querySelectorAll<HTMLButtonElement>('[data-show]').forEach((b) => b.addEventListener('click', () => {
     show = b.dataset.show!;
     document.querySelectorAll('[data-show]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    render('now');
+  }));
+
+  // language: filters the leaderboard and movers, and fades the other languages' posters on the timeline
+  document.querySelectorAll<HTMLButtonElement>('[data-rlang]').forEach((b) => b.addEventListener('click', () => {
+    lang = b.dataset.rlang!;
+    document.querySelectorAll('[data-rlang]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    pins.forEach((p) => p.classList.toggle('faded', lang !== 'all' && p.dataset.lang !== lang));
+    renderMovers();
     render('now');
   }));
 </script>

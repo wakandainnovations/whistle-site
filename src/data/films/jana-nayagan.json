@@ -32,7 +32,7 @@
   ],
   "watchCheckedOn": null,
   "watchPlaceholder": true,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": null,
   "report": {
     "tracking": {
@@ -40,21 +40,21 @@
       "end": "2026-07-29"
     },
     "sentiment": {
-      "positive": 123,
+      "positive": 124,
       "neutral": 59,
       "negative": 0
     },
     "netSentiment": null,
     "awareness": {
       "level": "Medium",
-      "views": 649
+      "views": 653
     },
     "reach": 5748,
     "mentions": {
-      "total": 182,
+      "total": 183,
       "daily": [
         53,
-        88,
+        89,
         38,
         3
       ]
@@ -85,7 +85,7 @@
         ],
         [
           "Unknown",
-          43
+          44
         ],
         [
           "International",
@@ -107,7 +107,7 @@
         ],
         [
           "Fan page",
-          12
+          11
         ],
         [
           "Verified celebrity influencer",

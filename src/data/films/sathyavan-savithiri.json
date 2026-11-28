@@ -24,7 +24,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 2157,
     "trackFrom": "2026-11-18",
@@ -37,18 +37,18 @@
       "end": "2026-11-22"
     },
     "sentiment": {
-      "positive": 417,
-      "neutral": 57,
-      "negative": 225
+      "positive": 451,
+      "neutral": 70,
+      "negative": 233
     },
-    "netSentiment": 1.85,
+    "netSentiment": 1.94,
     "awareness": {
       "level": "Medium",
-      "views": 10812984
+      "views": 10882316
     },
     "reach": 539,
     "mentions": {
-      "total": 699,
+      "total": 754,
       "daily": [
         1,
         7,
@@ -81,11 +81,11 @@
         5,
         19,
         7,
-        14,
+        15,
         61,
-        44,
-        105,
-        134,
+        65,
+        127,
+        145,
         151,
         127,
         10
@@ -105,11 +105,11 @@
         1
       ],
       [
-        "Kerala",
+        "Karnataka",
         1
       ],
       [
-        "Karnataka",
+        "Kerala",
         1
       ]
     ],
@@ -117,11 +117,11 @@
       "where": [
         [
           "Tamil Nadu",
-          65
+          61
         ],
         [
           "Unknown",
-          31
+          34
         ],
         [
           "Andhra Telangana",
@@ -129,6 +129,10 @@
         ],
         [
           "Hindi Belt North India",
+          1
+        ],
+        [
+          "Karnataka",
           1
         ],
         [
@@ -161,7 +165,7 @@
       "postType": [
         [
           "Organic opinion",
-          48
+          47
         ],
         [
           "News press coverage",
@@ -183,83 +187,83 @@
       "topics": [
         [
           "General discussion",
-          63
+          64
         ],
         [
           "Acting / cast performance",
-          13
+          15
         ],
         [
           "Music / songs",
-          7
+          6
         ],
         [
           "Story",
-          5
+          6
+        ],
+        [
+          "Climax",
+          3
         ],
         [
           "Direction",
-          2
-        ],
-        [
-          "First half",
-          2
+          1
         ]
       ]
     },
     "aspects": [
       {
         "label": "Acting / cast performance",
-        "posts": 42,
+        "posts": 113,
         "score": 76,
         "mood": "positive"
       },
       {
         "label": "Music / songs",
-        "posts": 21,
-        "score": 82,
-        "mood": "positive"
-      },
-      {
-        "label": "Story",
-        "posts": 17,
-        "score": 85,
-        "mood": "positive"
-      },
-      {
-        "label": "Direction",
-        "posts": 7,
-        "score": 71,
-        "mood": "positive"
-      },
-      {
-        "label": "First half",
-        "posts": 7,
-        "score": 87,
-        "mood": "positive"
-      },
-      {
-        "label": "Lead pair",
-        "posts": 7,
-        "score": 57,
-        "mood": "negative"
-      },
-      {
-        "label": "Screenplay",
-        "posts": 5,
+        "posts": 43,
         "score": 80,
         "mood": "positive"
       },
       {
-        "label": "Second half",
-        "posts": 5,
-        "score": 91,
+        "label": "Story",
+        "posts": 43,
+        "score": 82,
         "mood": "positive"
       },
       {
         "label": "Climax",
-        "posts": 4,
-        "score": 89,
+        "posts": 26,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 10,
+        "score": 77,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 10,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 10,
+        "score": 77,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 8,
+        "score": 61,
+        "mood": "negative"
+      },
+      {
+        "label": "Second half",
+        "posts": 8,
+        "score": 91,
         "mood": "positive"
       }
     ]

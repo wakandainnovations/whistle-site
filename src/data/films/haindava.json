@@ -29,44 +29,38 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
-    "collected": 1296,
+    "collected": 1501,
     "trackFrom": "2026-11-25",
     "trackUntil": "2026-11-29",
-    "popularity": 0.6931
+    "popularity": 0.6804
   },
   "report": {
     "tracking": {
-      "start": "2025-11-24",
-      "end": "2026-11-20"
+      "start": "2025-11-30",
+      "end": "2026-11-26"
     },
     "sentiment": {
-      "positive": 262,
-      "neutral": 538,
-      "negative": 128
+      "positive": 336,
+      "neutral": 547,
+      "negative": 163
     },
-    "netSentiment": 2.05,
+    "netSentiment": 2.06,
     "awareness": {
       "level": "High",
-      "views": 341502427
+      "views": 350263479
     },
-    "reach": 708,
+    "reach": 881,
     "mentions": {
-      "total": 783,
+      "total": 874,
       "daily": [
+        1,
         1,
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
         0,
         0,
         0,
@@ -95,7 +89,7 @@
         20,
         4,
         169,
-        1,
+        2,
         12,
         1,
         0,
@@ -110,7 +104,7 @@
         0,
         0,
         0,
-        0,
+        2,
         0,
         1,
         0,
@@ -378,7 +372,7 @@
         0,
         15,
         17,
-        28,
+        29,
         25,
         11,
         12,
@@ -395,7 +389,7 @@
         11,
         0,
         0,
-        0,
+        1,
         2,
         0,
         0,
@@ -404,7 +398,7 @@
         2,
         10,
         20,
-        12,
+        13,
         17,
         26,
         77,
@@ -416,25 +410,31 @@
         6,
         7,
         18,
-        14
+        17,
+        7,
+        2,
+        0,
+        1,
+        2,
+        68
       ]
     },
     "regions": [
       [
         "Andhra Telangana",
-        82
+        81
       ],
       [
         "Hindi Belt North India",
-        11
+        12
       ],
       [
         "International",
-        5
+        4
       ],
       [
         "Tamil Nadu",
-        1
+        2
       ],
       [
         "Karnataka",
@@ -445,11 +445,11 @@
       "where": [
         [
           "Unknown",
-          63
+          62
         ],
         [
           "Andhra Telangana",
-          30
+          31
         ],
         [
           "Hindi Belt North India",
@@ -458,60 +458,60 @@
         [
           "International",
           2
+        ],
+        [
+          "Tamil Nadu",
+          1
         ]
       ],
       "who": [
         [
           "General public",
-          40
+          46
         ],
         [
           "Media press",
-          27
-        ],
-        [
-          "Official studio",
           24
         ],
         [
-          "Fan page",
-          8
+          "Official studio",
+          22
         ],
         [
-          "Verified celebrity influencer",
-          1
+          "Fan page",
+          7
         ]
       ],
       "postType": [
         [
           "Official promo",
-          37
+          33
         ],
         [
           "Fan amplified promo",
-          30
+          32
         ],
         [
           "Organic opinion",
-          20
+          23
         ],
         [
           "News press coverage",
-          13
+          12
         ]
       ],
       "topics": [
         [
           "General discussion",
-          61
+          63
         ],
         [
           "Music / songs",
-          18
+          16
         ],
         [
           "Story",
-          11
+          10
         ],
         [
           "Acting / cast performance",
@@ -519,10 +519,10 @@
         ],
         [
           "VFX",
-          1
+          2
         ],
         [
-          "Screenplay",
+          "Direction",
           1
         ]
       ]
@@ -530,26 +530,32 @@
     "aspects": [
       {
         "label": "Music / songs",
-        "posts": 158,
-        "score": 70,
+        "posts": 163,
+        "score": 71,
         "mood": "neutral"
       },
       {
         "label": "Story",
-        "posts": 95,
-        "score": 79,
+        "posts": 107,
+        "score": 77,
         "mood": "positive"
       },
       {
         "label": "Acting / cast performance",
-        "posts": 72,
+        "posts": 79,
         "score": 74,
         "mood": "positive"
       },
       {
         "label": "VFX",
+        "posts": 19,
+        "score": 65,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
         "posts": 9,
-        "score": 83,
+        "score": 68,
         "mood": "positive"
       },
       {
@@ -559,15 +565,9 @@
         "mood": "negative"
       },
       {
-        "label": "Direction",
-        "posts": 3,
-        "score": 78,
-        "mood": "positive"
-      },
-      {
         "label": "Climax",
-        "posts": 2,
-        "score": 61,
+        "posts": 3,
+        "score": 60,
         "mood": "negative"
       },
       {
@@ -578,8 +578,8 @@
       },
       {
         "label": "Runtime",
-        "posts": 1,
-        "score": 25,
+        "posts": 2,
+        "score": 58,
         "mood": "negative"
       }
     ]

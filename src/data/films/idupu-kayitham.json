@@ -1,0 +1,36 @@
+{
+  "sample": false,
+  "auraId": 9000075,
+  "auraName": "Idupu Kayitham",
+  "title": "Idupu Kayitham",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-12-11",
+  "featured": false,
+  "poster": "/posters/idupu-kayitham.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Vamsi Reddy, Vamsi Reddy Dondapati",
+  "cast": [],
+  "genres": [
+    "Romance",
+    "Comedy",
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-28",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-12-09",
+    "trackUntil": "2026-12-13",
+    "popularity": 0.7327
+  },
+  "report": null
+}

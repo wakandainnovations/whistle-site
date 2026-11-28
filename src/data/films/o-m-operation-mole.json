@@ -25,7 +25,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 4336,
     "trackFrom": "2026-11-18",
@@ -38,27 +38,27 @@
       "end": "2026-11-22"
     },
     "sentiment": {
-      "positive": 697,
-      "neutral": 471,
-      "negative": 427
+      "positive": 1921,
+      "neutral": 860,
+      "negative": 892
     },
-    "netSentiment": 1.63,
+    "netSentiment": 2.15,
     "awareness": {
       "level": "High",
-      "views": 110946988
+      "views": 111623013
     },
     "reach": 448,
     "mentions": {
-      "total": 1595,
+      "total": 3673,
       "daily": [
         7,
         60,
-        141,
-        161,
-        157,
-        115,
-        362,
-        455,
+        246,
+        173,
+        212,
+        146,
+        2112,
+        580,
         123,
         14
       ]
@@ -70,46 +70,50 @@
       ],
       [
         "Kerala",
-        25
+        16
       ],
       [
         "Andhra Telangana",
-        7
+        15
       ],
       [
         "Hindi Belt North India",
-        3
-      ],
-      [
-        "International",
-        1
+        2
       ],
       [
         "Karnataka",
+        2
+      ],
+      [
+        "International",
         1
       ]
     ],
     "audience": {
       "where": [
         [
-          "Tamil Nadu",
-          47
+          "Unknown",
+          42
         ],
         [
-          "Unknown",
-          28
+          "Tamil Nadu",
+          37
         ],
         [
           "Kerala",
-          18
+          9
         ],
         [
           "Andhra Telangana",
-          5
+          9
         ],
         [
           "Hindi Belt North India",
-          2
+          1
+        ],
+        [
+          "Karnataka",
+          1
         ],
         [
           "International",
@@ -119,55 +123,55 @@
       "who": [
         [
           "General public",
-          67
-        ],
-        [
-          "Fan page",
-          16
+          77
         ],
         [
           "Media press",
-          11
+          10
+        ],
+        [
+          "Fan page",
+          10
         ],
         [
           "Official studio",
-          3
+          2
         ],
         [
           "Verified celebrity influencer",
-          2
+          1
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          54
+          66
         ],
         [
           "Fan amplified promo",
-          29
+          21
         ],
         [
           "Official promo",
-          9
-        ],
-        [
-          "News press coverage",
           6
         ],
         [
+          "News press coverage",
+          5
+        ],
+        [
           "Trade box office update",
-          1
+          2
         ]
       ],
       "topics": [
         [
           "General discussion",
-          66
+          64
         ],
         [
           "Acting / cast performance",
-          21
+          15
         ],
         [
           "Music / songs",
@@ -175,14 +179,14 @@
         ],
         [
           "Story",
+          4
+        ],
+        [
+          "First half",
           3
         ],
         [
-          "Runtime",
-          1
-        ],
-        [
-          "Lead pair",
+          "Second half",
           1
         ]
       ]
@@ -190,57 +194,69 @@
     "aspects": [
       {
         "label": "Acting / cast performance",
-        "posts": 170,
+        "posts": 566,
         "score": 82,
         "mood": "positive"
       },
       {
         "label": "Music / songs",
-        "posts": 53,
-        "score": 79,
+        "posts": 257,
+        "score": 78,
         "mood": "positive"
       },
       {
         "label": "Story",
-        "posts": 24,
-        "score": 53,
-        "mood": "negative"
-      },
-      {
-        "label": "Runtime",
-        "posts": 7,
-        "score": 59,
-        "mood": "neutral"
-      },
-      {
-        "label": "Lead pair",
-        "posts": 6,
-        "score": 65,
-        "mood": "negative"
-      },
-      {
-        "label": "Screenplay",
-        "posts": 5,
-        "score": 64,
+        "posts": 143,
+        "score": 62,
         "mood": "positive"
       },
       {
         "label": "First half",
-        "posts": 3,
-        "score": 60,
-        "mood": "negative"
-      },
-      {
-        "label": "Direction",
-        "posts": 2,
-        "score": 47,
-        "mood": "negative"
+        "posts": 119,
+        "score": 78,
+        "mood": "positive"
       },
       {
         "label": "Second half",
-        "posts": 1,
-        "score": 42,
+        "posts": 52,
+        "score": 55,
         "mood": "negative"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 52,
+        "score": 61,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 50,
+        "score": 65,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 35,
+        "score": 59,
+        "mood": "negative"
+      },
+      {
+        "label": "Climax",
+        "posts": 31,
+        "score": 67,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 10,
+        "score": 74,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 4,
+        "score": 91,
+        "mood": "positive"
       }
     ]
   }

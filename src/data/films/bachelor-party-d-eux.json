@@ -25,7 +25,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 3610,
     "trackFrom": "2026-11-17",
@@ -38,18 +38,18 @@
       "end": "2026-11-21"
     },
     "sentiment": {
-      "positive": 653,
-      "neutral": 311,
-      "negative": 1641
+      "positive": 663,
+      "neutral": 328,
+      "negative": 1645
     },
     "netSentiment": 0.4,
     "awareness": {
       "level": "High",
-      "views": 30976228
+      "views": 31363284
     },
     "reach": 2559,
     "mentions": {
-      "total": 2604,
+      "total": 2635,
       "daily": [
         2,
         1,
@@ -108,12 +108,12 @@
         4,
         72,
         86,
-        214,
-        189,
-        103,
-        906,
-        701,
-        257,
+        216,
+        191,
+        110,
+        923,
+        702,
+        259,
         13
       ]
     },
@@ -169,7 +169,7 @@
         ],
         [
           "Official studio",
-          2
+          3
         ],
         [
           "Fan page",
@@ -201,26 +201,26 @@
       "topics": [
         [
           "General discussion",
-          70
+          68
         ],
         [
           "Acting / cast performance",
-          12
-        ],
-        [
-          "Music / songs",
-          6
+          13
         ],
         [
           "Direction",
-          6
+          7
+        ],
+        [
+          "Music / songs",
+          5
         ],
         [
           "Story",
-          3
+          4
         ],
         [
-          "First half",
+          "Screenplay",
           1
         ]
       ]
@@ -228,68 +228,68 @@
     "aspects": [
       {
         "label": "Acting / cast performance",
-        "posts": 227,
+        "posts": 344,
         "score": 52,
-        "mood": "negative"
-      },
-      {
-        "label": "Music / songs",
-        "posts": 110,
-        "score": 46,
         "mood": "negative"
       },
       {
         "label": "Direction",
-        "posts": 103,
-        "score": 45,
+        "posts": 172,
+        "score": 55,
         "mood": "negative"
       },
       {
-        "label": "Story",
-        "posts": 55,
-        "score": 38,
-        "mood": "negative"
-      },
-      {
-        "label": "First half",
-        "posts": 25,
-        "score": 52,
-        "mood": "negative"
-      },
-      {
-        "label": "Screenplay",
-        "posts": 22,
-        "score": 32,
-        "mood": "negative"
-      },
-      {
-        "label": "Runtime",
-        "posts": 7,
-        "score": 45,
-        "mood": "negative"
-      },
-      {
-        "label": "Lead pair",
-        "posts": 5,
-        "score": 77,
-        "mood": "positive"
-      },
-      {
-        "label": "Climax",
-        "posts": 5,
+        "label": "Music / songs",
+        "posts": 128,
         "score": 47,
         "mood": "negative"
       },
       {
+        "label": "Story",
+        "posts": 93,
+        "score": 51,
+        "mood": "negative"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 39,
+        "score": 46,
+        "mood": "negative"
+      },
+      {
+        "label": "First half",
+        "posts": 26,
+        "score": 53,
+        "mood": "negative"
+      },
+      {
         "label": "Second half",
-        "posts": 4,
-        "score": 57,
+        "posts": 10,
+        "score": 73,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 10,
+        "score": 42,
+        "mood": "negative"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 8,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 8,
+        "score": 46,
         "mood": "negative"
       },
       {
         "label": "VFX",
-        "posts": 3,
-        "score": 54,
+        "posts": 6,
+        "score": 51,
         "mood": "negative"
       }
     ]

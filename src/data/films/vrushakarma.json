@@ -10,7 +10,7 @@
   "year": 2026,
   "releaseDate": "2026-12-04",
   "featured": false,
-  "poster": "https://image.tmdb.org/t/p/w500/amNYQ0qy5NNn29ZRXdy9RdwIp1G.jpg",
+  "poster": "/posters/vrushakarma.jpg",
   "backdrop": "https://image.tmdb.org/t/p/w1280/q5GrH7opo6RBVGsJTiIwmFrMxRb.jpg",
   "trailer": null,
   "director": "Karthik Varma Dandu",
@@ -31,12 +31,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 0,
     "trackFrom": "2026-12-02",
     "trackUntil": "2026-12-06",
-    "popularity": 1.1482
+    "popularity": 1.927
   },
   "report": null
 }

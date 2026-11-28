@@ -24,7 +24,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 382,
     "trackFrom": "2026-11-12",
@@ -214,19 +214,19 @@
       "topics": [
         [
           "General discussion",
-          85
+          86
         ],
         [
           "Story",
-          7
-        ],
-        [
-          "Music / songs",
-          4
+          6
         ],
         [
           "Acting / cast performance",
-          2
+          3
+        ],
+        [
+          "Music / songs",
+          3
         ],
         [
           "Runtime",
@@ -242,16 +242,16 @@
         "mood": "positive"
       },
       {
+        "label": "Acting / cast performance",
+        "posts": 4,
+        "score": 70,
+        "mood": "positive"
+      },
+      {
         "label": "Music / songs",
         "posts": 4,
         "score": 79,
         "mood": "positive"
-      },
-      {
-        "label": "Acting / cast performance",
-        "posts": 2,
-        "score": 54,
-        "mood": "negative"
       },
       {
         "label": "Runtime",

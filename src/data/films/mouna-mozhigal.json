@@ -1,0 +1,208 @@
+{
+  "sample": false,
+  "auraId": 9000067,
+  "auraName": "Mouna Mozhigal",
+  "title": "Mouna Mozhigal",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "/posters/mouna-mozhigal.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "A C Soundar",
+  "cast": [],
+  "genres": [
+    "Romance",
+    "Drama"
+  ],
+  "runtime": "1h 59m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-28",
+  "buzz": {
+    "collected": 357,
+    "trackFrom": "2026-11-25",
+    "trackUntil": "2026-11-29",
+    "popularity": 0.1561
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-10-29",
+      "end": "2026-11-27"
+    },
+    "sentiment": {
+      "positive": 125,
+      "neutral": 8,
+      "negative": 5
+    },
+    "netSentiment": 25,
+    "awareness": {
+      "level": "High",
+      "views": 46897056
+    },
+    "reach": 239,
+    "mentions": {
+      "total": 138,
+      "daily": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        16,
+        3,
+        2,
+        2,
+        0,
+        0,
+        1,
+        7,
+        14,
+        1,
+        1,
+        2,
+        2,
+        7,
+        71,
+        2
+      ]
+    },
+    "regions": [
+      [
+        "Tamil Nadu",
+        98
+      ],
+      [
+        "International",
+        2
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          62
+        ],
+        [
+          "Tamil Nadu",
+          38
+        ],
+        [
+          "International",
+          1
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          83
+        ],
+        [
+          "Media press",
+          14
+        ],
+        [
+          "Fan page",
+          3
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          54
+        ],
+        [
+          "Fan amplified promo",
+          32
+        ],
+        [
+          "News press coverage",
+          8
+        ],
+        [
+          "Official promo",
+          5
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          57
+        ],
+        [
+          "Music / songs",
+          37
+        ],
+        [
+          "Story",
+          4
+        ],
+        [
+          "Acting / cast performance",
+          1
+        ],
+        [
+          "Direction",
+          1
+        ],
+        [
+          "Screenplay",
+          1
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Music / songs",
+        "posts": 50,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 5,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 1,
+        "score": 22,
+        "mood": "negative"
+      },
+      {
+        "label": "Direction",
+        "posts": 1,
+        "score": 92,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 1,
+        "score": 62,
+        "mood": "neutral"
+      },
+      {
+        "label": "VFX",
+        "posts": 1,
+        "score": 25,
+        "mood": "negative"
+      }
+    ]
+  }
+}

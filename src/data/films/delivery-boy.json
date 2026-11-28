@@ -24,31 +24,31 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
-    "collected": 801,
+    "collected": 1347,
     "trackFrom": "2026-11-25",
     "trackUntil": "2026-11-29",
-    "popularity": 1.1143
+    "popularity": 1.1607
   },
   "report": {
     "tracking": {
       "start": "2025-12-30",
-      "end": "2026-11-21"
+      "end": "2026-11-27"
     },
     "sentiment": {
-      "positive": 167,
-      "neutral": 73,
-      "negative": 252
+      "positive": 288,
+      "neutral": 87,
+      "negative": 279
     },
-    "netSentiment": 0.66,
+    "netSentiment": 1.03,
     "awareness": {
       "level": "High",
-      "views": 76584659
+      "views": 79611557
     },
-    "reach": 128,
+    "reach": 253,
     "mentions": {
-      "total": 483,
+      "total": 645,
       "daily": [
         1,
         0,
@@ -340,7 +340,7 @@
         4,
         4,
         0,
-        4,
+        7,
         3,
         0,
         1,
@@ -374,30 +374,32 @@
         7,
         12,
         12,
-        12,
         21,
+        21,
+        16,
+        10,
+        5,
+        6,
+        94,
+        19,
         4
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        51
+        56
       ],
       [
         "Hindi Belt North India",
-        47
+        41
       ],
       [
         "Andhra Telangana",
         1
       ],
       [
-        "Karnataka",
-        1
-      ],
-      [
-        "Kerala",
+        "International",
         1
       ]
     ],
@@ -405,7 +407,7 @@
       "where": [
         [
           "Unknown",
-          37
+          43
         ],
         [
           "Tamil Nadu",
@@ -413,25 +415,29 @@
         ],
         [
           "Hindi Belt North India",
-          30
+          23
         ],
         [
           "Andhra Telangana",
+          1
+        ],
+        [
+          "International",
           1
         ]
       ],
       "who": [
         [
           "General public",
-          68
+          70
         ],
         [
           "Media press",
-          15
+          14
         ],
         [
           "Official studio",
-          10
+          9
         ],
         [
           "Fan page",
@@ -445,15 +451,15 @@
       "postType": [
         [
           "Organic opinion",
-          49
-        ],
-        [
-          "Official promo",
-          22
+          52
         ],
         [
           "Fan amplified promo",
           22
+        ],
+        [
+          "Official promo",
+          19
         ],
         [
           "News press coverage",
@@ -463,14 +469,14 @@
       "topics": [
         [
           "General discussion",
-          70
-        ],
-        [
-          "Music / songs",
-          11
+          69
         ],
         [
           "Story",
+          12
+        ],
+        [
+          "Music / songs",
           9
         ],
         [
@@ -489,51 +495,51 @@
     },
     "aspects": [
       {
-        "label": "Music / songs",
-        "posts": 50,
-        "score": 67,
-        "mood": "neutral"
-      },
-      {
         "label": "Story",
-        "posts": 44,
+        "posts": 75,
         "score": 66,
         "mood": "positive"
       },
       {
+        "label": "Music / songs",
+        "posts": 56,
+        "score": 69,
+        "mood": "neutral"
+      },
+      {
         "label": "Acting / cast performance",
-        "posts": 35,
-        "score": 72,
+        "posts": 54,
+        "score": 76,
         "mood": "positive"
       },
       {
         "label": "Screenplay",
-        "posts": 3,
-        "score": 81,
+        "posts": 7,
+        "score": 86,
         "mood": "positive"
       },
       {
         "label": "VFX",
+        "posts": 4,
+        "score": 34,
+        "mood": "negative"
+      },
+      {
+        "label": "Runtime",
         "posts": 3,
-        "score": 33,
+        "score": 51,
+        "mood": "negative"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 2,
+        "score": 56,
         "mood": "negative"
       },
       {
         "label": "Direction",
         "posts": 1,
         "score": 28,
-        "mood": "negative"
-      },
-      {
-        "label": "Lead pair",
-        "posts": 1,
-        "score": 80,
-        "mood": "positive"
-      },
-      {
-        "label": "Runtime",
-        "posts": 1,
-        "score": 42,
         "mood": "negative"
       }
     ]

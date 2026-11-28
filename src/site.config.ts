@@ -17,11 +17,14 @@ export const SITE = {
     // opening the visitor's email app. Left empty, "Send" opens their email app with the message filled in.
     formEndpoint: '',
     grievanceOfficer: '', // name of the Grievance Officer (India's DPDP Act and IT Rules)
+    grievanceEmail: '', // the Grievance Officer's email, printed on /privacy (the law asks for real contact details)
+    host: '', // who hosts the site and where, e.g. 'Cloudflare Pages (servers worldwide)'
+    postRetention: '', // how long collected posts are kept before deletion, e.g. '30 days for YouTube comments and 6 months for other posts'
     courts: '', // city whose courts handle disputes, e.g. 'Chennai'
-    updated: '2026-11-16',
+    updated: '2026-11-26',
     draft: true, // shows "Draft, to be reviewed before launch" on both pages
   },
-  previewNote: 'Preview with sample data. Films tagged “Sample” have made-up scores for design purposes. Streaming info is real.',
+  previewNote: '', // set text here to show a ribbon at the top of every page
 };
 
 // Language filters on the homepage, in launch order.

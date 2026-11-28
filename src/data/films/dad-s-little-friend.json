@@ -1,0 +1,214 @@
+{
+  "sample": false,
+  "auraId": 9000080,
+  "auraName": "Dad's Little Friend",
+  "title": "Dad's Little Friend",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Telugu",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-11-27",
+  "featured": false,
+  "poster": "/posters/dad-s-little-friend.jpg",
+  "backdrop": null,
+  "trailer": null,
+  "director": "Sharath Kuppa Kumar",
+  "cast": [],
+  "genres": [],
+  "runtime": "2h 16m",
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-28",
+  "buzz": {
+    "collected": 461,
+    "trackFrom": "2026-11-25",
+    "trackUntil": "2026-11-29",
+    "popularity": 0.0776
+  },
+  "report": {
+    "tracking": {
+      "start": "2026-10-28",
+      "end": "2026-11-27"
+    },
+    "sentiment": {
+      "positive": 103,
+      "neutral": 5,
+      "negative": 4
+    },
+    "netSentiment": 25.75,
+    "awareness": {
+      "level": "Medium",
+      "views": 4409390
+    },
+    "reach": 347,
+    "mentions": {
+      "total": 112,
+      "daily": [
+        4,
+        9,
+        1,
+        2,
+        0,
+        0,
+        0,
+        5,
+        2,
+        2,
+        0,
+        0,
+        6,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        4,
+        2,
+        1,
+        8,
+        3,
+        45,
+        4
+      ]
+    },
+    "regions": [
+      [
+        "Andhra Telangana",
+        100
+      ]
+    ],
+    "audience": {
+      "where": [
+        [
+          "Unknown",
+          61
+        ],
+        [
+          "Andhra Telangana",
+          39
+        ]
+      ],
+      "who": [
+        [
+          "General public",
+          84
+        ],
+        [
+          "Media press",
+          7
+        ],
+        [
+          "Fan page",
+          5
+        ],
+        [
+          "Official studio",
+          5
+        ]
+      ],
+      "postType": [
+        [
+          "Organic opinion",
+          66
+        ],
+        [
+          "Fan amplified promo",
+          23
+        ],
+        [
+          "News press coverage",
+          6
+        ],
+        [
+          "Official promo",
+          5
+        ]
+      ],
+      "topics": [
+        [
+          "General discussion",
+          55
+        ],
+        [
+          "Story",
+          17
+        ],
+        [
+          "Music / songs",
+          15
+        ],
+        [
+          "Acting / cast performance",
+          6
+        ],
+        [
+          "Second half",
+          3
+        ],
+        [
+          "Climax",
+          1
+        ]
+      ]
+    },
+    "aspects": [
+      {
+        "label": "Story",
+        "posts": 17,
+        "score": 85,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 15,
+        "score": 82,
+        "mood": "positive"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 6,
+        "score": 90,
+        "mood": "positive"
+      },
+      {
+        "label": "Second half",
+        "posts": 3,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Climax",
+        "posts": 1,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Direction",
+        "posts": 1,
+        "score": 90,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 1,
+        "score": 91,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 1,
+        "score": 81,
+        "mood": "positive"
+      }
+    ]
+  }
+}

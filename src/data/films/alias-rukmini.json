@@ -10,7 +10,7 @@
   "year": 2026,
   "releaseDate": "2026-12-04",
   "featured": false,
-  "poster": null,
+  "poster": "/posters/alias-rukmini.jpg",
   "backdrop": null,
   "trailer": null,
   "director": "Murali Kanth Devasoth",
@@ -24,12 +24,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 0,
     "trackFrom": "2026-12-02",
     "trackUntil": "2026-12-06",
-    "popularity": 1.0724
+    "popularity": 1.3813
   },
   "report": null
 }

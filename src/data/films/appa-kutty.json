@@ -25,7 +25,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 2417,
     "trackFrom": "2026-11-18",
@@ -39,17 +39,17 @@
     },
     "sentiment": {
       "positive": 840,
-      "neutral": 662,
-      "negative": 271
+      "neutral": 667,
+      "negative": 272
     },
-    "netSentiment": 3.1,
+    "netSentiment": 3.09,
     "awareness": {
-      "level": "Medium",
-      "views": 28802373
+      "level": "High",
+      "views": 28904806
     },
     "reach": 636,
     "mentions": {
-      "total": 1773,
+      "total": 1779,
       "daily": [
         2,
         0,
@@ -166,11 +166,11 @@
         7,
         12,
         13,
-        105,
+        107,
         239,
-        296,
+        299,
         201,
-        348,
+        349,
         302,
         232,
         7
@@ -260,26 +260,26 @@
       "topics": [
         [
           "General discussion",
-          83
+          80
         ],
         [
           "Story",
-          8
+          9
         ],
         [
           "Acting / cast performance",
-          4
+          6
         ],
         [
           "Music / songs",
-          3
+          2
         ],
         [
-          "Runtime",
+          "Climax",
           1
         ],
         [
-          "Lead pair",
+          "Runtime",
           1
         ]
       ]
@@ -287,57 +287,63 @@
     "aspects": [
       {
         "label": "Story",
-        "posts": 75,
-        "score": 79,
+        "posts": 166,
+        "score": 83,
         "mood": "positive"
       },
       {
         "label": "Acting / cast performance",
-        "posts": 39,
-        "score": 73,
+        "posts": 102,
+        "score": 80,
         "mood": "positive"
       },
       {
         "label": "Music / songs",
-        "posts": 25,
+        "posts": 31,
         "score": 82,
         "mood": "positive"
       },
       {
+        "label": "Climax",
+        "posts": 20,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
         "label": "Runtime",
-        "posts": 9,
+        "posts": 10,
         "score": 64,
         "mood": "neutral"
       },
       {
-        "label": "Lead pair",
-        "posts": 5,
-        "score": 68,
-        "mood": "neutral"
-      },
-      {
         "label": "Direction",
-        "posts": 4,
-        "score": 89,
-        "mood": "positive"
-      },
-      {
-        "label": "Climax",
-        "posts": 3,
-        "score": 88,
-        "mood": "positive"
-      },
-      {
-        "label": "Second half",
-        "posts": 2,
-        "score": 90,
+        "posts": 8,
+        "score": 76,
         "mood": "positive"
       },
       {
         "label": "First half",
-        "posts": 1,
-        "score": 88,
+        "posts": 7,
+        "score": 84,
         "mood": "positive"
+      },
+      {
+        "label": "Second half",
+        "posts": 6,
+        "score": 86,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 6,
+        "score": 64,
+        "mood": "neutral"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 5,
+        "score": 68,
+        "mood": "neutral"
       }
     ]
   }

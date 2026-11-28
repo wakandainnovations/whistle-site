@@ -13,12 +13,10 @@ import FilmCard from '../../components/FilmCard.astro';
 import TierChip from '../../components/TierChip.astro';
 import Waves from '../../components/Waves.astro';
 import CrowdMood from '../../components/CrowdMood.astro';
-import LiveCounter from '../../components/LiveCounter.astro';
 import Locked from '../../components/Locked.astro';
 import { plain, plainDriver, inTen, buzzWord, cheersPerBoo } from '../../lib/plain';
 import { TIERS, whistleScore, tierFor, scoreLabel, compact, formatDate, daysBetween } from '../../lib/score';
-import { talkOf } from '../../lib/now';
-import { filmSummary } from '../../lib/summary';
+import { filmSummary, isAiSummary } from '../../lib/summary';
 
 export async function getStaticPaths() {
   const films = await getFilms();
@@ -43,7 +41,6 @@ const peakDate = r && peakIdx >= 0 ? addDays(r.tracking.start, peakIdx) : null;
 const peakAfterRelease = peakDate && f.releaseDate ? daysBetween(f.releaseDate, peakDate) - 1 : null;
 const plainRows = (rows: [string, number][], n = 4, say = plain) => rows.filter(([k]) => k !== 'Unknown' && k !== 'Bot spam').slice(0, n).map(([k, v]) => [say(k), v] as [string, number]);
 const net = r ? cheersPerBoo(r.netSentiment) : null;
-const posShare = r && posts ? Math.round((r.sentiment.positive / posts) * 100) : 0;
 const topTopic = r ? plainRows(r.audience.topics).find(([k]) => k !== 'The film overall' && k !== 'Promos and posters')?.[0] : undefined;
 const topRegion = r ? plain(r.regions[0]?.[0] ?? '') : '';
 
@@ -157,8 +154,6 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
               {f.releaseDate && <span class="num">{upcoming ? 'Releases' : 'Released'} {formatDate(f.releaseDate, longDate)}</span>}
               {f.runtime && <span class="num">{f.runtime}</span>}
               {f.genres.length > 0 && <span>{f.genres.join(', ')}</span>}
-              {r && <span class="num">Tracked {formatDate(r.tracking.start)} – {formatDate(r.tracking.end, longDate)}</span>}
-              {r && <span class="num">{compact(talkOf(film))} posts read</span>}
             </div>
             {(f.director || f.cast.length > 0) && (
               <dl class="credits">
@@ -167,6 +162,7 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
               </dl>
             )}
             {(verdict || recommendation) && <p class="verdict">{verdict} {recommendation && <b class="rec">{recommendation}</b>}</p>}
+            {verdict && isAiSummary(film.id) && <p class="ai-note">Summary written by AI from a sample of public posts.</p>}
             {f.watch.length > 0 && (
               <div class="where">
                 <WatchChips watch={f.watch} tmdbId={f.tmdbId} title={f.title} size="md" label />
@@ -234,7 +230,6 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
                   {recommendation}
                 </p>
               </div>
-              <LiveCounter title={f.title} reach={r.reach} positiveShare={posShare} />
             </div>
 
             <div class="quick">
@@ -368,8 +363,9 @@ const verdict = r && score !== null ? filmSummary(film.id, r, score, upcoming) :
   .empty { font-size: 14px; color: var(--faint); }
 
   /* plain-language report */
+  .ai-note { margin: -4px 0 0; font-size: 12px; color: var(--faint); }
   .verdict-head { margin: 16px 0 -4px; }
-  .headline { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+  .headline { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: stretch; }
   .headline-main { padding: 28px; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; gap: 14px; }
   .big-say { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(32px, 4vw, 48px); line-height: .98; }
   .big-say b { color: var(--gold-text); font-weight: 900; }

@@ -6,7 +6,7 @@ import FramehouseLockup from '../components/FramehouseLockup.astro';
 import Waves from '../components/Waves.astro';
 import { SITE, LANGUAGES } from '../site.config';
 import { TIERS, whistleScore, tierFor, scoreLabel } from '../lib/score';
-import { nowShowing } from '../lib/now';
+import { recentByScore } from '../lib/now';
 import { PLATFORMS } from '../lib/watch';
 
 interface Props {
@@ -40,7 +40,7 @@ const films = await getFilms();
 const scoreOf = (f: (typeof films)[number]) => (f.data.report ? whistleScore(f.data.report.sentiment) : -1);
 const scored = films.filter((f) => f.data.report).sort((a, b) => scoreOf(b) - scoreOf(a));
 // the same film the homepage leads with: in theatres or coming soon, most traction and most positive
-const spot = nowShowing(films, 1)[0] ?? scored[0];
+const spot = recentByScore(films, 1, { fill: true })[0] ?? scored[0];
 const spotScore = scoreOf(spot);
 const langCount = (l: string) => films.filter((f) => f.data.language === l).length;
 const bandCount = (t: (typeof TIERS)[number]) => scored.filter((f) => scoreOf(f) >= t.min && scoreOf(f) <= t.max).length;
@@ -165,7 +165,7 @@ const here = Astro.url.pathname.replace(/\/$/, '');
             {SITE.brand} is a public film index from Framehouse, built by {SITE.company}. Scores come from public
             posts and do not include critic reviews or user ratings.
           </p>
-          <p class="credits">Posters and stills from TMDB. This site uses the TMDB API but is not endorsed or certified by TMDB. Trailers play from the studios’ official YouTube channels.</p>
+          <p class="credits"><a class="tmdb" href="https://www.themoviedb.org/" target="_blank" rel="noopener"><img src="/brand/tmdb-logo.svg" alt="The Movie Database (TMDB)" width="92" height="12" /></a> Posters and stills from TMDB. This site uses the TMDB API but is not endorsed or certified by TMDB. Streaming info from JustWatch via TMDB. Trailers play from the studios’ official YouTube channels.</p>
         </div>
         <div class="makers">
           <a class="maker" href="/how" aria-label="Framehouse"><FramehouseLockup size="lg" /></a>
@@ -190,6 +190,8 @@ const here = Astro.url.pathname.replace(/\/$/, '');
       .brand-by .by { font-family: var(--font-mono); font-size: 11px; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; }
       .foot-text { display: flex; flex-direction: column; gap: 8px; flex: 1 1 360px; min-width: 0; }
       .credits { font-size: 12px !important; }
+      .credits .tmdb { display: inline-block; vertical-align: -1px; margin-right: 6px; }
+      .credits .tmdb img { display: block; height: 12px; width: auto; }
       .makers { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
       .maker { text-decoration: none; }
       .wakanda { width: 118px; height: auto; }

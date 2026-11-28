@@ -8,11 +8,11 @@ const L = SITE.legal;
 const sections = [
   { id: 'agree', title: 'Using this site' },
   { id: 'scores', title: 'What a Whistle is' },
-  { id: 'preview', title: 'Preview and sample data' },
   { id: 'badge', title: 'Creator badges' },
   { id: 'ours', title: 'Our content and brand' },
   { id: 'others', title: 'Other people’s content' },
   { id: 'dont', title: 'Things you can’t do' },
+  { id: 'takedown', title: 'Corrections and takedowns' },
   { id: 'pro', title: 'Whistle Pro' },
   { id: 'liability', title: 'No warranties, limited liability' },
   { id: 'law', title: 'Governing law' },
@@ -37,12 +37,8 @@ const sections = [
   <section id="scores">
     <h2>What a Whistle is</h2>
     <p>A Whistle is the share of public posts about a film that cheer it, counted from a month before release to a month after. It reflects what people chose to post, worked out by automated sorting that can get individual posts wrong. It isn't a review, a rating by us, or a prediction of box office.</p>
+    <p>The short summary of what people said on each film page is written by an AI model from a sample of the posts. It can misread or miss things, and it isn't our opinion of the film.</p>
     <p>Scores for films still in their window, including everything on The Whistle Race, change as new posts arrive. Streaming availability comes from third parties and changes often, so check with the service before you rely on it.</p>
-  </section>
-
-  <section id="preview">
-    <h2>Preview and sample data</h2>
-    <p>The site is in preview. Films tagged <b>Sample</b> carry made-up numbers for design purposes, and live counters and the Whistle Race's hourly changes are simulated. Don't quote sample numbers as real.</p>
   </section>
 
   <section id="badge">
@@ -58,12 +54,12 @@ const sections = [
 
   <section id="ours">
     <h2>Our content and brand</h2>
-    <p>The {SITE.brand} and Framehouse names, logos and whistle mark, the site design, and the scores and statistics we publish belong to us. Apart from the badge permission above and quoting a score with credit ("62% Whistle, via {SITE.brand}"), please ask before reusing them.</p>
+    <p>The {SITE.brand} and Framehouse names, logos and whistle mark, the site design and text, and the way we compile and present our scores and statistics belong to us. Apart from the badge permission above and quoting a score with credit ("62% Whistle, via {SITE.brand}"), please ask before reusing them.</p>
   </section>
 
   <section id="others">
     <h2>Other people’s content</h2>
-    <p>Film titles, posters, stills and credits belong to their owners. Posters and stills come from The Movie Database (TMDB); this site uses the TMDB API but is not endorsed or certified by TMDB. Trailers play from YouTube, and "Watch on" links lead to streaming services. Those services have their own terms, and we're not responsible for their content.</p>
+    <p>Film titles, posters, stills and credits belong to their owners. Posters and stills come from The Movie Database (TMDB); this site uses the TMDB API but is not endorsed or certified by TMDB. Trailers play from YouTube through YouTube API Services; by playing a trailer on {SITE.brand} you agree to be bound by the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a>. "Watch on" links lead to streaming services. Those services have their own terms, and we're not responsible for their content.</p>
   </section>
 
   <section id="dont">
@@ -74,6 +70,11 @@ const sections = [
       <li>Try to break, overload or get around the security of the site.</li>
       <li>Use the site in a way that breaks the law.</li>
     </ul>
+  </section>
+
+  <section id="takedown">
+    <h2>Corrections and takedowns</h2>
+    <p>If you own the rights in a poster, still or trailer shown here and want it removed, or you think a score or summary is wrong, write to us through the <a href="/contact?topic=score">contact form</a> with the page link and the details. We'll look into it and, where the request is valid, remove or correct the material promptly.</p>
   </section>
 
   <section id="pro">

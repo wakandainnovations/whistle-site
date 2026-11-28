@@ -30,7 +30,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 2054,
     "trackFrom": "2026-11-06",
@@ -43,27 +43,27 @@
       "end": "2026-11-19"
     },
     "sentiment": {
-      "positive": 578,
-      "neutral": 642,
-      "negative": 125
+      "positive": 601,
+      "neutral": 650,
+      "negative": 188
     },
-    "netSentiment": 4.62,
+    "netSentiment": 3.2,
     "awareness": {
       "level": "High",
-      "views": 57632893
+      "views": 57698762
     },
     "reach": 769,
     "mentions": {
-      "total": 1345,
+      "total": 1439,
       "daily": [
         22,
         10,
         13,
-        129,
+        130,
         377,
-        660,
-        116,
-        18
+        668,
+        177,
+        42
       ]
     },
     "regions": [
@@ -80,7 +80,7 @@
       "where": [
         [
           "Andhra Telangana",
-          69
+          70
         ],
         [
           "Unknown",
@@ -90,15 +90,15 @@
       "who": [
         [
           "General public",
-          64
+          66
         ],
         [
           "Media press",
-          20
+          19
         ],
         [
           "Fan page",
-          8
+          7
         ],
         [
           "Official studio",
@@ -112,15 +112,15 @@
       "postType": [
         [
           "Organic opinion",
-          45
+          47
         ],
         [
           "Fan amplified promo",
-          27
+          26
         ],
         [
           "News press coverage",
-          18
+          17
         ],
         [
           "Official promo",
@@ -134,11 +134,11 @@
       "topics": [
         [
           "General discussion",
-          83
+          82
         ],
         [
           "Acting / cast performance",
-          6
+          7
         ],
         [
           "Music / songs",
@@ -161,33 +161,39 @@
     "aspects": [
       {
         "label": "Acting / cast performance",
-        "posts": 86,
-        "score": 81,
+        "posts": 94,
+        "score": 79,
         "mood": "positive"
       },
       {
         "label": "Music / songs",
-        "posts": 64,
-        "score": 80,
+        "posts": 66,
+        "score": 79,
         "mood": "positive"
       },
       {
         "label": "Lead pair",
-        "posts": 40,
+        "posts": 41,
         "score": 78,
         "mood": "positive"
       },
       {
         "label": "Story",
-        "posts": 22,
-        "score": 81,
+        "posts": 24,
+        "score": 82,
         "mood": "positive"
       },
       {
         "label": "Direction",
-        "posts": 9,
-        "score": 91,
+        "posts": 17,
+        "score": 65,
         "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 5,
+        "score": 55,
+        "mood": "negative"
       },
       {
         "label": "Climax",
@@ -196,9 +202,9 @@
         "mood": "positive"
       },
       {
-        "label": "Screenplay",
+        "label": "VFX",
         "posts": 3,
-        "score": 73,
+        "score": 93,
         "mood": "positive"
       },
       {
@@ -206,12 +212,6 @@
         "posts": 2,
         "score": 14,
         "mood": "negative"
-      },
-      {
-        "label": "VFX",
-        "posts": 2,
-        "score": 92,
-        "mood": "positive"
       },
       {
         "label": "First half",

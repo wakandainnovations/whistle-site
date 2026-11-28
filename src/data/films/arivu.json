@@ -1,0 +1,34 @@
+{
+  "sample": false,
+  "auraId": 9000071,
+  "auraName": "Arivu",
+  "title": "Arivu",
+  "aka": [],
+  "titleConfirmed": true,
+  "language": "Tamil",
+  "industry": "south",
+  "year": 2026,
+  "releaseDate": "2026-12-11",
+  "featured": false,
+  "poster": null,
+  "backdrop": null,
+  "trailer": null,
+  "director": "Sathyasiva",
+  "cast": [],
+  "genres": [
+    "Drama"
+  ],
+  "runtime": null,
+  "tmdbId": null,
+  "watch": [],
+  "watchCheckedOn": null,
+  "watchPlaceholder": false,
+  "syncedOn": "2026-11-28",
+  "buzz": {
+    "collected": 0,
+    "trackFrom": "2026-12-09",
+    "trackUntil": "2026-12-13",
+    "popularity": 0.3959
+  },
+  "report": null
+}

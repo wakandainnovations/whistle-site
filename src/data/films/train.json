@@ -10,7 +10,7 @@
   "year": 2026,
   "releaseDate": "2026-12-04",
   "featured": false,
-  "poster": "https://image.tmdb.org/t/p/w500/kdR0jx7i8AmRn3UijWLb9j7osi2.jpg",
+  "poster": "/posters/train.jpg",
   "backdrop": "https://image.tmdb.org/t/p/w1280/fUoV7p1nzoajpGFsEMRfAPD4T8.jpg",
   "trailer": null,
   "director": "Mysskin",
@@ -29,12 +29,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 0,
     "trackFrom": "2026-12-02",
     "trackUntil": "2026-12-06",
-    "popularity": 1.2864
+    "popularity": 1.3018
   },
   "report": null
 }

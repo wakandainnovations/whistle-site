@@ -11,7 +11,7 @@ import Sparkline from '../components/Sparkline.astro';
 import { SITE, LANGUAGES } from '../site.config';
 import { TIERS, whistleScore, tierFor, scoreLabel, compact, releaseTimeline } from '../lib/score';
 import { plain } from '../lib/plain';
-import { nowShowing, runLabel, mostTalked, talkOf, inRace, scoreSolid, daysToRelease } from '../lib/now';
+import { recentByScore, RECENT_DAYS, runLabel, mostTalked, talkOf, inRace, scoreSolid, daysToRelease } from '../lib/now';
 
 type Film = CollectionEntry<'films'>;
 const all = await getFilms();
@@ -21,19 +21,27 @@ const byScore = [...all].filter((f) => f.data.report).sort((a, b) => scoreOf(b) 
 const topScores = byScore.filter(scoreSolid);
 const byNewest = [...all].sort((a, b) => (b.data.releaseDate ?? '').localeCompare(a.data.releaseDate ?? ''));
 
-// Hero carousel: films in theatres now or releasing soon, led by the one with the most traction and the
-// most positive talk (see src/lib/now.ts). Real AuraService films come before sample films.
-const fan = nowShowing(all, 6);
+// The homepage leads with films released in the last RECENT_DAYS days, highest Whistle first
+// (recentByScore in src/lib/now.ts). Real AuraService films come before sample films.
+const recent = recentByScore(all);
+// Hero carousel: the top six of those, topped up with the latest older releases if there are fewer
+const fan = recentByScore(all, 6, { fill: true });
 const featured = fan[0];
 const glowOf = (f: Film) => f.data.backdrop ?? f.data.poster ?? '';
 const glow = glowOf(featured) || byNewest.find((f) => f.data.backdrop)?.data.backdrop;
 // starting spots: the front card, then right, the back of the deck, and left last
 const spotFor = (i: number) => (i === 0 ? 'mid' : i === 1 ? 'right' : i === fan.length - 1 ? 'left' : 'back');
 
-// Picks: the films the crowd liked most, filterable by where they stream
-const picks = topScores.filter((f) => scoreOf(f) >= 75 && f.data.watch.length);
+// Picks: recent releases scoring PICK_MIN or more, best Whistle first, filterable by language and by where they stream. A film
+// not streaming yet counts as "In theatres". Falls back to the all-time top scores if nothing is recent.
+// Only films the crowd leaned positive on (a Whistle of at least PICK_MIN) make the row.
+const IN_THEATRES = 'In theatres';
+const PICK_MIN = 50;
+const recentPicks = recent.filter((f) => scoreOf(f) >= PICK_MIN);
+const picks = recentPicks.length ? recentPicks : topScores.filter((f) => (f.data.poster || f.data.backdrop) && scoreOf(f) >= PICK_MIN).slice(0, 12);
+const whereOf = (f: Film) => (f.data.watch.length ? f.data.watch : [IN_THEATRES]);
 const platformCounts = new Map<string, number>();
-picks.forEach((f) => f.data.watch.forEach((p) => platformCounts.set(p, (platformCounts.get(p) ?? 0) + 1)));
+picks.forEach((f) => whereOf(f).forEach((p) => platformCounts.set(p, (platformCounts.get(p) ?? 0) + 1)));
 const platforms = [...platformCounts.entries()].sort((a, b) => b[1] - a[1]).map(([p]) => p);
 
 // The Whistle Race teaser: AuraService films with enough talk (hasEnoughTalk) are in the race. It ranks
@@ -46,11 +54,18 @@ const running = topScores.filter((f) => inRace(f) && isRunning(f));
 const raceTop = running.filter((f) => f.data.poster).slice(0, 3);
 
 // In theatres or out within a week, most posts first (src/lib/now.ts). Real films only.
-const talked = mostTalked(all, 5);
-const showcase = byNewest.filter((f) => f.data.backdrop && f.data.trailer).slice(0, 4);
+// These render extra films so the language filter still has some to show; only the first few matching
+// ones are visible (TALKED_SHOWN, SHOWCASE_SHOWN, applied in the script below).
+const TALKED_SHOWN = 5, SHOWCASE_SHOWN = 4;
+const talked = mostTalked(all, 40);
+const showcase = byNewest.filter((f) => f.data.backdrop && f.data.trailer).slice(0, 40);
+
+// Language filter shared by Picks, Most talked and Trailers. It offers only languages with at least one
+// pick, so choosing one never empties the picks row.
+const homeLangs = LANGUAGES.filter((l) => picks.some((f) => f.data.language === l));
 
 const tickerA = [
-  ...topScores.slice(0, 10).map((f) => ({ strong: f.data.title, text: scoreLabel(scoreOf(f)) })),
+  ...(recent.length ? recent : topScores).slice(0, 10).map((f) => ({ strong: f.data.title, text: scoreLabel(scoreOf(f)) })),
   { strong: `${all.length}`, text: 'films on Whistle' },
 ];
 const tickerB = [
@@ -124,7 +139,7 @@ const whyLine = (f: Film) => {
       </div>
 
       <div class="tickers">
-        <Ticker items={tickerA} label="Top scores on Whistle" tilt={-2} speed={60} />
+        <Ticker items={tickerA} label="Top recent scores on Whistle" tilt={-2} speed={60} />
         <Ticker items={tickerB} label="The four whistles" variant="ink" reverse tilt={1.4} speed={36} />
       </div>
     </section>
@@ -151,12 +166,22 @@ const whyLine = (f: Film) => {
       <div class="wrap">
         <div class="row-head">
           <div class="section-head" style="margin-bottom:0">
-            <span class="eyebrow">Tonight's picks</span>
-            <h2>Loved by the crowd, ready to stream</h2>
+            <span class="eyebrow">{recentPicks.length ? `Released in the last ${RECENT_DAYS / 30} months` : "Tonight's picks"}</span>
+            <h2>{recentPicks.length ? 'New releases, best first' : 'Loved by the crowd'}</h2>
           </div>
-          <div class="pill-row" role="group" aria-label="Filter picks by platform">
-            <button class="pill" type="button" data-pick="all" aria-pressed="true">All</button>
-            {platforms.map((p) => <button class="pill" type="button" data-pick={p} aria-pressed="false">{p}</button>)}
+          <div class="filters">
+            {homeLangs.length > 1 && (
+              <div class="pill-row" role="group" aria-label="Filter by language">
+                <button class="pill" type="button" data-lang-pick="all" aria-pressed="true">All languages</button>
+                {homeLangs.map((l) => <button class="pill" type="button" data-lang-pick={l} aria-pressed="false">{l}</button>)}
+              </div>
+            )}
+            {platforms.length > 1 && (
+              <div class="pill-row" role="group" aria-label="Filter picks by where to watch">
+                <button class="pill" type="button" data-pick="all" aria-pressed="true">Anywhere</button>
+                {platforms.map((p) => <button class="pill" type="button" data-pick={p} aria-pressed="false">{p}</button>)}
+              </div>
+            )}
           </div>
         </div>
         <div class="carousel" id="picks-carousel">
@@ -167,7 +192,7 @@ const whyLine = (f: Film) => {
             const d = film.data;
             const s = scoreOf(film);
             return (
-              <article class="pick" data-watch={d.watch.join('|')}>
+              <article class="pick" data-watch={whereOf(film).join('|')} data-lang={d.language}>
                 <a class="pick-link" href={`/films/${film.id}`}>
                   <span class="pick-poster">
                     <img src={d.backdrop ?? d.poster!} alt="" loading="lazy" />
@@ -176,11 +201,11 @@ const whyLine = (f: Film) => {
                   <span class="pick-body">
                     <span class="pick-band"><Waves waves={tierFor(s).waves} size={14} />{tierFor(s).name}</span>
                     <span class="pick-title">{d.title}</span>
-                    <span class="pick-meta">{d.language} · {d.year}{d.runtime && ` · ${d.runtime}`}</span>
+                    <span class="pick-meta">{d.language} · {runLabel(film) || d.year}{d.runtime && ` · ${d.runtime}`}</span>
                     <span class="pick-why">{whyLine(film)}</span>
                   </span>
                 </a>
-                <WatchChips watch={d.watch} tmdbId={d.tmdbId} title={d.title} label />
+                {d.watch.length > 0 && <WatchChips watch={d.watch} tmdbId={d.tmdbId} title={d.title} label />}
               </article>
             );
           })}
@@ -190,7 +215,7 @@ const whyLine = (f: Film) => {
           <div class="car-dots" id="pick-dots" role="tablist" aria-label="Pick pages"></div>
           <span class="car-count num" id="pick-count"></span>
         </div>
-        <p class="empty-note" id="pick-empty" hidden>No picks on that platform yet.</p>
+        <p class="empty-note" id="pick-empty" hidden>No films match those filters yet.</p>
       </div>
     </section>
 
@@ -202,15 +227,15 @@ const whyLine = (f: Film) => {
             <span class="eyebrow">Loudest right now</span>
             <h2>Most talked about</h2>
           </div>
-          <ol class="board">
+          <ol class="board" id="board" data-shown={TALKED_SHOWN}>
             {talked.map((film, i) => {
               const d = film.data;
               const s = scoreOf(film);
               const when = runLabel(film);
               return (
-                <li>
+                <li data-lang={d.language} hidden={i >= TALKED_SHOWN}>
                   <a href={`/films/${film.id}`}>
-                    <span class="rank num">{i + 1}</span>
+                    <span class="rank num"></span>
                     <img src={d.poster!} alt="" loading="lazy" />
                     <span class="board-main">
                       <span class="board-title">{d.title}</span>
@@ -225,18 +250,19 @@ const whyLine = (f: Film) => {
               );
             })}
           </ol>
+          <p class="empty-note" id="board-empty" hidden>No films in that language right now.</p>
         </div>
         <div>
           <div class="section-head" style="margin-bottom:22px">
             <span class="eyebrow">New on Whistle</span>
             <h2>Trailers</h2>
           </div>
-          <div class="reel">
-            {showcase.map((film) => {
+          <div class="reel" id="reel" data-shown={SHOWCASE_SHOWN}>
+            {showcase.map((film, i) => {
               const d = film.data;
               const s = scoreOf(film);
               return (
-                <a class="still" href={`/films/${film.id}#trailer`}>
+                <a class="still" href={`/films/${film.id}#trailer`} data-lang={d.language} hidden={i >= SHOWCASE_SHOWN}>
                   <img src={d.backdrop!} alt="" loading="lazy" />
                   <span class="still-shade"></span>
                   <span class="still-chip">{s >= 0 ? <><b class="num">{s}%</b> Whistle</> : 'Score coming soon'}</span>
@@ -248,6 +274,7 @@ const whyLine = (f: Film) => {
               );
             })}
           </div>
+          <p class="empty-note" id="reel-empty" hidden>No trailers in that language yet.</p>
         </div>
       </div>
     </section>
@@ -366,6 +393,12 @@ const whyLine = (f: Film) => {
 
   /* ---------- picks ---------- */
   .picks-section { padding-top: 40px; }
+  .filters { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; min-width: 0; }
+  @media (max-width: 760px) { .filters { align-items: flex-start; } }
+  /* ranks count only the rows on show, so they stay 1-5 under a language filter */
+  .board { counter-reset: rank; }
+  .board li:not([hidden]) .rank::before { counter-increment: rank; content: counter(rank); }
+  .board li[hidden], .still[hidden] { display: none; }
   .carousel { position: relative; }
   .pick-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 280px); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-block: 8px 14px; scrollbar-width: none; overscroll-behavior-x: contain;
     /* fade the edges that have more cards behind them */
@@ -484,21 +517,48 @@ const whyLine = (f: Film) => {
 </style>
 
 <script>
-  // ---------- picks: filter by platform ----------
+  // ---------- filters: language (Picks, Most talked, Trailers) and where to watch (Picks) ----------
+  // The chosen language is remembered on this device, so a Tamil viewer lands on Tamil films next time.
+  const LANG_KEY = 'whistle:home-lang';
   const pickButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-pick]')];
+  const langButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-lang-pick]')];
   const picks = [...document.querySelectorAll<HTMLElement>('.pick')];
-  pickButtons.forEach((b) => b.addEventListener('click', () => {
-    const p = b.dataset.pick!;
-    pickButtons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  let platform = 'all';
+  let lang = 'all';
+  try { const saved = localStorage.getItem(LANG_KEY); if (saved && langButtons.some((b) => b.dataset.langPick === saved)) lang = saved; } catch {}
+
+  // show the first `shown` items of a list that match the language
+  function limit(list: HTMLElement | null, items: HTMLElement[], emptyId: string) {
+    if (!list) return;
+    const max = Number(list.dataset.shown);
+    let n = 0;
+    items.forEach((el) => { const ok = (lang === 'all' || el.dataset.lang === lang) && n < max; el.hidden = !ok; if (ok) n++; });
+    document.getElementById(emptyId)!.hidden = n > 0;
+  }
+
+  function applyFilters() {
+    pickButtons.forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.pick === platform)));
+    langButtons.forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.langPick === lang)));
     let shown = 0;
     picks.forEach((card) => {
-      const ok = p === 'all' || (card.dataset.watch ?? '').split('|').includes(p);
+      const ok = (platform === 'all' || (card.dataset.watch ?? '').split('|').includes(platform))
+        && (lang === 'all' || card.dataset.lang === lang);
       card.hidden = !ok;
       if (ok) shown++;
     });
     document.getElementById('pick-empty')!.hidden = shown > 0;
+    const board = document.getElementById('board');
+    limit(board, [...(board?.querySelectorAll<HTMLElement>(':scope > li') ?? [])], 'board-empty');
+    const reel = document.getElementById('reel');
+    limit(reel, [...(reel?.querySelectorAll<HTMLElement>('.still') ?? [])], 'reel-empty');
     row.scrollTo({ left: 0 });
     requestAnimationFrame(update);
+  }
+  pickButtons.forEach((b) => b.addEventListener('click', () => { platform = b.dataset.pick!; applyFilters(); }));
+  langButtons.forEach((b) => b.addEventListener('click', () => {
+    lang = b.dataset.langPick!;
+    try { localStorage.setItem(LANG_KEY, lang); } catch {}
+    applyFilters();
   }));
 
   // ---------- picks carousel: arrows, page dots, edge fades ----------
@@ -542,7 +602,7 @@ const whyLine = (f: Film) => {
   next.addEventListener('click', () => row.scrollBy({ left: step() * perPage() }));
   row.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
   addEventListener('resize', update);
-  update();
+  if (lang !== 'all') applyFilters(); else update();
 
   {
   // ---------- hero carousel: six featured films, the front one's ticket below ----------

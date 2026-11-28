@@ -23,31 +23,31 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
-    "collected": 831,
+    "collected": 2738,
     "trackFrom": "2026-11-25",
     "trackUntil": "2026-11-29",
-    "popularity": 1.8635
+    "popularity": 1.8829
   },
   "report": {
     "tracking": {
       "start": "2025-12-05",
-      "end": "2026-11-21"
+      "end": "2026-11-27"
     },
     "sentiment": {
-      "positive": 258,
-      "neutral": 275,
-      "negative": 86
+      "positive": 994,
+      "neutral": 411,
+      "negative": 320
     },
-    "netSentiment": 3,
+    "netSentiment": 3.11,
     "awareness": {
-      "level": "Medium",
-      "views": 12904616
+      "level": "High",
+      "views": 22900138
     },
-    "reach": 220,
+    "reach": 712,
     "mentions": {
-      "total": 619,
+      "total": 1725,
       "daily": [
         26,
         2,
@@ -399,8 +399,14 @@
         8,
         20,
         34,
-        74,
-        2
+        97,
+        151,
+        99,
+        83,
+        72,
+        130,
+        496,
+        54
       ]
     },
     "regions": [
@@ -410,38 +416,42 @@
       ],
       [
         "Tamil Nadu",
-        17
-      ],
-      [
-        "Andhra Telangana",
-        5
-      ],
-      [
-        "International",
-        3
+        13
       ],
       [
         "Hindi Belt North India",
-        2
+        8
+      ],
+      [
+        "Andhra Telangana",
+        4
+      ],
+      [
+        "International",
+        1
       ],
       [
         "Karnataka",
-        2
+        1
       ]
     ],
     "audience": {
       "where": [
         [
           "Unknown",
-          52
+          44
         ],
         [
           "Kerala",
-          35
+          41
         ],
         [
           "Tamil Nadu",
-          8
+          7
+        ],
+        [
+          "Hindi Belt North India",
+          5
         ],
         [
           "Andhra Telangana",
@@ -450,125 +460,145 @@
         [
           "International",
           1
-        ],
-        [
-          "Hindi Belt North India",
-          1
-        ],
-        [
-          "Karnataka",
-          1
         ]
       ],
       "who": [
         [
           "General public",
-          50
+          75
         ],
         [
           "Media press",
-          24
+          13
         ],
         [
           "Official studio",
-          16
+          7
         ],
         [
           "Fan page",
-          8
+          5
         ],
         [
           "Verified celebrity influencer",
-          2
+          1
         ]
       ],
       "postType": [
         [
+          "Organic opinion",
+          54
+        ],
+        [
           "Fan amplified promo",
-          33
+          26
         ],
         [
           "Official promo",
-          28
-        ],
-        [
-          "Organic opinion",
-          27
+          12
         ],
         [
           "News press coverage",
-          12
+          7
+        ],
+        [
+          "Trade box office update",
+          1
         ]
       ],
       "topics": [
         [
           "General discussion",
-          69
-        ],
-        [
-          "Music / songs",
-          11
+          65
         ],
         [
           "Acting / cast performance",
-          9
+          14
         ],
         [
           "Story",
+          7
+        ],
+        [
+          "Music / songs",
           5
         ],
         [
-          "VFX",
-          3
+          "Direction",
+          2
         ],
         [
-          "Direction",
+          "VFX",
           2
         ]
       ]
     },
     "aspects": [
       {
-        "label": "Music / songs",
-        "posts": 58,
-        "score": 67,
-        "mood": "neutral"
-      },
-      {
         "label": "Acting / cast performance",
-        "posts": 47,
-        "score": 76,
+        "posts": 228,
+        "score": 80,
         "mood": "positive"
       },
       {
         "label": "Story",
-        "posts": 26,
-        "score": 64,
-        "mood": "neutral"
+        "posts": 110,
+        "score": 69,
+        "mood": "positive"
       },
       {
-        "label": "VFX",
-        "posts": 13,
-        "score": 65,
-        "mood": "positive"
+        "label": "Music / songs",
+        "posts": 80,
+        "score": 71,
+        "mood": "neutral"
       },
       {
         "label": "Direction",
-        "posts": 10,
-        "score": 77,
-        "mood": "neutral"
+        "posts": 38,
+        "score": 81,
+        "mood": "positive"
       },
       {
-        "label": "Lead pair",
-        "posts": 3,
-        "score": 68,
-        "mood": "negative"
+        "label": "VFX",
+        "posts": 38,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "First half",
+        "posts": 25,
+        "score": 87,
+        "mood": "positive"
       },
       {
         "label": "Screenplay",
-        "posts": 2,
-        "score": 96,
+        "posts": 10,
+        "score": 70,
         "mood": "positive"
+      },
+      {
+        "label": "Second half",
+        "posts": 10,
+        "score": 78,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 6,
+        "score": 79,
+        "mood": "positive"
+      },
+      {
+        "label": "Runtime",
+        "posts": 4,
+        "score": 59,
+        "mood": "negative"
+      },
+      {
+        "label": "Climax",
+        "posts": 2,
+        "score": 64,
+        "mood": "negative"
       }
     ]
   }

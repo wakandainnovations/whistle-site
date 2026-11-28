@@ -23,31 +23,31 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
-    "collected": 48,
+    "collected": 149,
     "trackFrom": "2026-11-25",
     "trackUntil": "2026-11-29",
-    "popularity": 3.4686
+    "popularity": 1.5141
   },
   "report": {
     "tracking": {
       "start": "2026-06-23",
-      "end": "2026-11-20"
+      "end": "2026-11-27"
     },
     "sentiment": {
-      "positive": 20,
-      "neutral": 2,
+      "positive": 56,
+      "neutral": 3,
       "negative": 6
     },
-    "netSentiment": 3.33,
+    "netSentiment": 9.33,
     "awareness": {
       "level": "High",
-      "views": 493986598
+      "views": 496609071
     },
-    "reach": 34,
+    "reach": 104,
     "mentions": {
-      "total": 28,
+      "total": 65,
       "daily": [
         1,
         0,
@@ -199,73 +199,125 @@
         0,
         0,
         2,
+        2,
+        1,
+        0,
+        2,
+        1,
+        2,
+        29,
         2
       ]
     },
     "regions": [
       [
         "Tamil Nadu",
-        92
+        97
       ],
       [
         "International",
-        8
+        3
       ]
     ],
     "audience": {
       "where": [
         [
           "Tamil Nadu",
-          73
+          67
         ],
         [
           "Unknown",
-          20
+          31
         ],
         [
           "International",
-          7
+          2
         ]
       ],
       "who": [
         [
           "General public",
-          87
+          88
+        ],
+        [
+          "Fan page",
+          7
         ],
         [
           "Media press",
-          9
+          4
         ],
         [
           "Verified celebrity influencer",
-          4
+          2
         ]
       ],
       "postType": [
         [
           "Organic opinion",
-          50
+          59
         ],
         [
           "Fan amplified promo",
-          41
+          38
         ],
         [
           "News press coverage",
-          5
+          2
         ],
         [
           "Official promo",
-          5
+          2
         ]
       ],
       "topics": [
         [
           "General discussion",
-          100
+          62
+        ],
+        [
+          "Acting / cast performance",
+          22
+        ],
+        [
+          "Music / songs",
+          10
+        ],
+        [
+          "Story",
+          5
+        ],
+        [
+          "Lead pair",
+          2
         ]
       ]
     },
-    "aspects": []
+    "aspects": [
+      {
+        "label": "Acting / cast performance",
+        "posts": 14,
+        "score": 87,
+        "mood": "positive"
+      },
+      {
+        "label": "Music / songs",
+        "posts": 6,
+        "score": 91,
+        "mood": "positive"
+      },
+      {
+        "label": "Story",
+        "posts": 3,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 1,
+        "score": 89,
+        "mood": "positive"
+      }
+    ]
   }
 }

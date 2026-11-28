@@ -24,7 +24,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 7788,
     "trackFrom": "2026-11-18",
@@ -37,18 +37,18 @@
       "end": "2026-11-22"
     },
     "sentiment": {
-      "positive": 3484,
-      "neutral": 968,
-      "negative": 564
+      "positive": 4860,
+      "neutral": 1226,
+      "negative": 987
     },
-    "netSentiment": 6.18,
+    "netSentiment": 4.92,
     "awareness": {
       "level": "High",
-      "views": 58969468
+      "views": 59581621
     },
     "reach": 2024,
     "mentions": {
-      "total": 5016,
+      "total": 7073,
       "daily": [
         1,
         0,
@@ -351,27 +351,27 @@
         2,
         27,
         604,
-        398,
-        455,
-        715,
-        1770,
-        501,
-        497,
+        401,
+        458,
+        737,
+        3054,
+        1218,
+        525,
         5
       ]
     },
     "regions": [
       [
         "Andhra Telangana",
-        85
+        81
       ],
       [
         "Kerala",
-        7
+        8
       ],
       [
         "Tamil Nadu",
-        4
+        6
       ],
       [
         "International",
@@ -390,11 +390,11 @@
       "where": [
         [
           "Andhra Telangana",
-          50
+          46
         ],
         [
           "Unknown",
-          41
+          44
         ],
         [
           "Kerala",
@@ -402,7 +402,7 @@
         ],
         [
           "Tamil Nadu",
-          2
+          3
         ],
         [
           "International",
@@ -416,15 +416,15 @@
       "who": [
         [
           "General public",
-          74
+          77
         ],
         [
           "Media press",
-          14
+          12
         ],
         [
           "Fan page",
-          6
+          5
         ],
         [
           "Official studio",
@@ -438,19 +438,19 @@
       "postType": [
         [
           "Organic opinion",
-          61
+          66
         ],
         [
           "Fan amplified promo",
-          20
+          16
         ],
         [
           "News press coverage",
-          9
+          8
         ],
         [
           "Official promo",
-          8
+          7
         ],
         [
           "Trade box office update",
@@ -464,11 +464,11 @@
       "topics": [
         [
           "General discussion",
-          74
+          73
         ],
         [
           "Acting / cast performance",
-          9
+          11
         ],
         [
           "Story",
@@ -476,11 +476,11 @@
         ],
         [
           "Music / songs",
-          3
+          4
         ],
         [
           "First half",
-          3
+          2
         ],
         [
           "Screenplay",
@@ -491,69 +491,69 @@
     "aspects": [
       {
         "label": "Acting / cast performance",
-        "posts": 283,
-        "score": 85,
+        "posts": 747,
+        "score": 88,
         "mood": "positive"
       },
       {
         "label": "Story",
-        "posts": 161,
-        "score": 77,
+        "posts": 376,
+        "score": 80,
         "mood": "positive"
       },
       {
         "label": "Music / songs",
-        "posts": 99,
+        "posts": 303,
         "score": 88,
         "mood": "positive"
       },
       {
         "label": "First half",
-        "posts": 79,
+        "posts": 126,
         "score": 87,
         "mood": "positive"
       },
       {
         "label": "Screenplay",
-        "posts": 58,
-        "score": 87,
+        "posts": 121,
+        "score": 84,
         "mood": "positive"
       },
       {
         "label": "Lead pair",
-        "posts": 33,
-        "score": 85,
+        "posts": 74,
+        "score": 87,
         "mood": "positive"
       },
       {
         "label": "Direction",
-        "posts": 31,
+        "posts": 62,
         "score": 87,
         "mood": "positive"
       },
       {
         "label": "Climax",
-        "posts": 17,
-        "score": 89,
+        "posts": 34,
+        "score": 88,
         "mood": "positive"
       },
       {
         "label": "Second half",
-        "posts": 7,
-        "score": 68,
+        "posts": 32,
+        "score": 81,
+        "mood": "positive"
+      },
+      {
+        "label": "VFX",
+        "posts": 13,
+        "score": 74,
         "mood": "positive"
       },
       {
         "label": "Runtime",
-        "posts": 4,
-        "score": 54,
+        "posts": 9,
+        "score": 52,
         "mood": "negative"
-      },
-      {
-        "label": "VFX",
-        "posts": 3,
-        "score": 87,
-        "mood": "positive"
       }
     ]
   }

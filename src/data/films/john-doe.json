@@ -25,7 +25,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 2176,
     "trackFrom": "2026-11-06",
@@ -39,27 +39,27 @@
     },
     "sentiment": {
       "positive": 129,
-      "neutral": 60,
-      "negative": 124
+      "neutral": 61,
+      "negative": 225
     },
-    "netSentiment": 1.04,
+    "netSentiment": 0.57,
     "awareness": {
       "level": "Medium",
-      "views": 6090640
+      "views": 6120645
     },
     "reach": 429,
     "mentions": {
-      "total": 313,
+      "total": 415,
       "daily": [
         1,
         16,
         52,
         32,
-        29,
+        47,
         61,
         70,
-        44,
-        8
+        47,
+        89
       ]
     },
     "regions": [
@@ -87,12 +87,12 @@
     "audience": {
       "where": [
         [
-          "Tamil Nadu",
-          48
+          "Unknown",
+          46
         ],
         [
-          "Unknown",
-          43
+          "Tamil Nadu",
+          45
         ],
         [
           "Kerala",
@@ -106,7 +106,7 @@
       "who": [
         [
           "General public",
-          84
+          85
         ],
         [
           "Media press",
@@ -128,11 +128,11 @@
       "postType": [
         [
           "Organic opinion",
-          76
+          73
         ],
         [
           "Fan amplified promo",
-          13
+          16
         ],
         [
           "Official promo",
@@ -140,7 +140,7 @@
         ],
         [
           "News press coverage",
-          3
+          2
         ],
         [
           "Trade box office update",
@@ -150,26 +150,26 @@
       "topics": [
         [
           "General discussion",
-          72
+          79
         ],
         [
           "Acting / cast performance",
-          11
-        ],
-        [
-          "Story",
           8
         ],
         [
-          "Direction",
-          3
+          "Story",
+          7
         ],
         [
-          "Music / songs",
-          1
+          "Direction",
+          2
         ],
         [
           "Screenplay",
+          1
+        ],
+        [
+          "Music / songs",
           1
         ]
       ]
@@ -183,8 +183,8 @@
       },
       {
         "label": "Story",
-        "posts": 25,
-        "score": 58,
+        "posts": 28,
+        "score": 56,
         "mood": "negative"
       },
       {
@@ -194,16 +194,16 @@
         "mood": "positive"
       },
       {
+        "label": "Screenplay",
+        "posts": 5,
+        "score": 88,
+        "mood": "positive"
+      },
+      {
         "label": "Music / songs",
         "posts": 4,
         "score": 58,
         "mood": "negative"
-      },
-      {
-        "label": "Screenplay",
-        "posts": 4,
-        "score": 88,
-        "mood": "positive"
       },
       {
         "label": "Climax",

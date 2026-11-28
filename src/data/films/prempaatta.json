@@ -24,31 +24,31 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
-    "collected": 411,
+    "collected": 1005,
     "trackFrom": "2026-11-25",
     "trackUntil": "2026-11-29",
-    "popularity": 1.6792
+    "popularity": 2.2818
   },
   "report": {
     "tracking": {
       "start": "2026-03-25",
-      "end": "2026-11-21"
+      "end": "2026-11-27"
     },
     "sentiment": {
-      "positive": 90,
-      "neutral": 159,
-      "negative": 51
+      "positive": 345,
+      "neutral": 200,
+      "negative": 125
     },
-    "netSentiment": 1.76,
+    "netSentiment": 2.76,
     "awareness": {
-      "level": "Medium",
-      "views": 6646045
+      "level": "High",
+      "views": 11750579
     },
-    "reach": 329,
+    "reach": 731,
     "mentions": {
-      "total": 282,
+      "total": 652,
       "daily": [
         1,
         0,
@@ -290,8 +290,14 @@
         7,
         11,
         25,
-        101,
-        22
+        106,
+        52,
+        7,
+        23,
+        29,
+        83,
+        164,
+        29
       ]
     },
     "regions": [
@@ -308,11 +314,11 @@
       "where": [
         [
           "Kerala",
-          75
+          80
         ],
         [
           "Unknown",
-          24
+          18
         ],
         [
           "Tamil Nadu",
@@ -322,59 +328,63 @@
       "who": [
         [
           "General public",
-          41
+          60
         ],
         [
           "Fan page",
-          35
-        ],
-        [
-          "Official studio",
-          12
+          22
         ],
         [
           "Media press",
           10
         ],
         [
+          "Official studio",
+          7
+        ],
+        [
           "Verified celebrity influencer",
-          2
+          1
         ]
       ],
       "postType": [
         [
-          "Fan amplified promo",
-          50
+          "Organic opinion",
+          45
         ],
         [
-          "Organic opinion",
-          25
+          "Fan amplified promo",
+          37
         ],
         [
           "Official promo",
-          20
+          11
         ],
         [
           "News press coverage",
-          4
+          8
         ]
       ],
       "topics": [
         [
           "General discussion",
-          71
+          68
         ],
         [
           "Music / songs",
-          16
+          12
         ],
         [
           "Acting / cast performance",
-          10
+          11
         ],
         [
           "Story",
-          3
+          6
+        ],
+        [
+          "Climax",
+          2
         ],
         [
           "Direction",
@@ -385,26 +395,50 @@
     "aspects": [
       {
         "label": "Music / songs",
-        "posts": 26,
-        "score": 64,
-        "mood": "neutral"
+        "posts": 70,
+        "score": 71,
+        "mood": "positive"
       },
       {
         "label": "Acting / cast performance",
-        "posts": 16,
-        "score": 78,
+        "posts": 63,
+        "score": 79,
         "mood": "positive"
       },
       {
         "label": "Story",
-        "posts": 5,
-        "score": 45,
-        "mood": "negative"
+        "posts": 36,
+        "score": 70,
+        "mood": "neutral"
+      },
+      {
+        "label": "Climax",
+        "posts": 9,
+        "score": 85,
+        "mood": "positive"
       },
       {
         "label": "Direction",
-        "posts": 1,
-        "score": 42,
+        "posts": 4,
+        "score": 72,
+        "mood": "positive"
+      },
+      {
+        "label": "Screenplay",
+        "posts": 4,
+        "score": 18,
+        "mood": "negative"
+      },
+      {
+        "label": "Lead pair",
+        "posts": 2,
+        "score": 80,
+        "mood": "neutral"
+      },
+      {
+        "label": "Runtime",
+        "posts": 2,
+        "score": 50,
         "mood": "negative"
       }
     ]

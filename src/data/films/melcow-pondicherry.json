@@ -24,7 +24,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 427,
     "trackFrom": "2026-11-06",
@@ -37,23 +37,23 @@
       "end": "2026-11-19"
     },
     "sentiment": {
-      "positive": 47,
-      "neutral": 22,
+      "positive": 49,
+      "neutral": 25,
       "negative": 120
     },
-    "netSentiment": 0.39,
+    "netSentiment": 0.41,
     "awareness": {
       "level": "Medium",
-      "views": 2961261
+      "views": 2961653
     },
     "reach": 160,
     "mentions": {
-      "total": 189,
+      "total": 194,
       "daily": [
         2,
         44,
-        85,
-        13,
+        89,
+        14,
         14,
         11,
         11,
@@ -97,11 +97,11 @@
       "who": [
         [
           "General public",
-          81
+          79
         ],
         [
           "Media press",
-          13
+          15
         ],
         [
           "Fan page",
@@ -119,15 +119,15 @@
       "postType": [
         [
           "Organic opinion",
-          72
+          70
         ],
         [
           "Fan amplified promo",
-          14
+          13
         ],
         [
           "News press coverage",
-          10
+          12
         ],
         [
           "Official promo",
@@ -141,7 +141,7 @@
       "topics": [
         [
           "General discussion",
-          69
+          71
         ],
         [
           "Acting / cast performance",

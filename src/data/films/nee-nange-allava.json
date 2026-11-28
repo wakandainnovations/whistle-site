@@ -24,7 +24,7 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 654,
     "trackFrom": "2026-11-06",
@@ -33,26 +33,27 @@
   },
   "report": {
     "tracking": {
-      "start": "2026-11-12",
+      "start": "2026-11-11",
       "end": "2026-11-20"
     },
     "sentiment": {
-      "positive": 63,
-      "neutral": 8,
+      "positive": 64,
+      "neutral": 10,
       "negative": 12
     },
-    "netSentiment": 5.25,
+    "netSentiment": 5.33,
     "awareness": {
-      "level": "Medium",
-      "views": 28045436
+      "level": "High",
+      "views": 28046043
     },
     "reach": 488,
     "mentions": {
-      "total": 83,
+      "total": 86,
       "daily": [
-        4,
+        1,
+        5,
         8,
-        4,
+        5,
         6,
         2,
         6,
@@ -81,19 +82,19 @@
       "who": [
         [
           "Fan page",
-          30
+          29
         ],
         [
           "General public",
-          24
-        ],
-        [
-          "Official studio",
           23
         ],
         [
           "Media press",
-          20
+          23
+        ],
+        [
+          "Official studio",
+          22
         ],
         [
           "Verified celebrity influencer",
@@ -103,11 +104,11 @@
       "postType": [
         [
           "Official promo",
-          45
+          43
         ],
         [
           "Fan amplified promo",
-          27
+          26
         ],
         [
           "Organic opinion",
@@ -115,29 +116,29 @@
         ],
         [
           "News press coverage",
-          10
+          13
         ]
       ],
       "topics": [
         [
           "General discussion",
-          81
+          79
         ],
         [
           "Story",
-          7
+          8
         ],
         [
           "Music / songs",
-          4
-        ],
-        [
-          "Lead pair",
-          3
+          5
         ],
         [
           "Acting / cast performance",
-          1
+          3
+        ],
+        [
+          "Lead pair",
+          2
         ],
         [
           "Direction",
@@ -148,27 +149,27 @@
     "aspects": [
       {
         "label": "Story",
-        "posts": 5,
-        "score": 53,
+        "posts": 7,
+        "score": 62,
         "mood": "negative"
       },
       {
         "label": "Music / songs",
-        "posts": 3,
-        "score": 77,
+        "posts": 4,
+        "score": 73,
         "mood": "neutral"
+      },
+      {
+        "label": "Acting / cast performance",
+        "posts": 3,
+        "score": 89,
+        "mood": "positive"
       },
       {
         "label": "Lead pair",
         "posts": 2,
         "score": 65,
         "mood": "negative"
-      },
-      {
-        "label": "Acting / cast performance",
-        "posts": 1,
-        "score": 88,
-        "mood": "positive"
       },
       {
         "label": "Direction",

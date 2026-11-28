@@ -10,7 +10,7 @@
   "year": 2026,
   "releaseDate": "2026-12-04",
   "featured": false,
-  "poster": null,
+  "poster": "/posters/legacy.jpg",
   "backdrop": null,
   "trailer": null,
   "director": "Saikiran Daida",
@@ -24,12 +24,12 @@
   "watch": [],
   "watchCheckedOn": null,
   "watchPlaceholder": false,
-  "syncedOn": "2026-11-23",
+  "syncedOn": "2026-11-28",
   "buzz": {
     "collected": 0,
     "trackFrom": "2026-12-02",
     "trackUntil": "2026-12-06",
-    "popularity": 0.7484
+    "popularity": 0.7173
   },
   "report": null
 }
