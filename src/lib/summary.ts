@@ -37,8 +37,6 @@ function fromAspects(r: FilmReport, negative: boolean, upcoming: boolean): strin
 
 // No opening "The crowd leaned positive, and most of the talk came from <region>." sentence: the score box
 // already shows the leaning, and the summary should only say what people said.
-/** True when the film's summary was written by the AI model (not the fallback built from aspect moods). */
-export const isAiSummary = (slug: string) => !!crowd[slug]?.text;
 
 export function filmSummary(slug: string, r: FilmReport, score: number, upcoming: boolean): string {
   const said = crowd[slug]?.text;
